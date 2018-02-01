@@ -1,0 +1,128 @@
+\thispagestyle {empty}
+\contentsline {chapter}{List of figures}{xi}{chapter*.4}
+\contentsline {chapter}{List of tables}{xv}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivations}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Contributions}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Organization of Manuscript}{4}{section.1.3}
+\contentsline {chapter}{\numberline {2}LISP Overview}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}LISP Architecture}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}LISP Data Plane}{8}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}LISP Control Plane}{9}{subsection.2.1.2}
+\contentsline {subsubsection}{LISP+ALT}{10}{section*.9}
+\contentsline {subsubsection}{LISP-DDT}{11}{section*.11}
+\contentsline {subsection}{\numberline {2.1.3}Communication between two LISP-sites}{12}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Interworking With Legency Internet}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}Mapping Cache Update Mechanisms}{15}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Solicit-Map-Request (SMR)}{15}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Map-Versioning}{16}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}LISP Mobility}{17}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}LISP Mobile Node}{18}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}LISP MN in LISP-Site}{19}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}LISP MN in non-LISP-Site}{20}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}MN in LISP-Site}{21}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}LISP use-cases}{22}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}LISP traffic engineering}{22}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}LISP transition between IPv4 and IPv6}{22}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Mobility at client-side}{23}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Mobility in Data Center}{24}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.5}LISP SDN}{24}{subsection.2.5.5}
+\contentsline {chapter}{\numberline {3}Related Work}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}LISP platforms}{27}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}LISP Beta Network}{27}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}LISP-Lab platform}{29}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}LISP monitoring tools}{29}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}LISPmon}{29}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}LIG}{30}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}RIG}{30}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Missing work}{31}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}LISP implementations}{31}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Existing implementations}{32}{subsection.3.3.1}
+\contentsline {subsubsection}{OpenLISP}{32}{section*.24}
+\contentsline {subsubsection}{OOR}{32}{section*.25}
+\contentsline {subsubsection}{PyLisp}{32}{section*.26}
+\contentsline {subsubsection}{jLISP}{33}{section*.27}
+\contentsline {subsubsection}{LISP on OMNet++}{33}{section*.28}
+\contentsline {subsubsection}{Lispers.net}{33}{section*.29}
+\contentsline {subsubsection}{LISP controller in ONOS}{33}{section*.30}
+\contentsline {subsection}{\numberline {3.3.2}Missing work}{34}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}LISP mapping system evaluation}{34}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Current studies}{34}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Missing work}{35}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}LISP network evolution}{35}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Current studies}{35}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Missing work}{36}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}LISP interworking with legacy Internet}{36}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Impact on traffic between LISP-site and the legacy Internet}{36}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Current studies}{36}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Missing work}{37}{subsection.3.6.3}
+\contentsline {section}{\numberline {3.7}LISP mobility}{37}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Current studies}{37}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Missing work}{38}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}Troubleshooting problem}{39}{section.3.8}
+\contentsline {section}{\numberline {3.9}Other LISP Related studies}{40}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}LISP Cache performance}{40}{subsection.3.9.1}
+\contentsline {subsubsection}{Current studies}{40}{section*.32}
+\contentsline {subsubsection}{Missing work}{41}{section*.33}
+\contentsline {subsection}{\numberline {3.9.2}LISP security}{41}{subsection.3.9.2}
+\contentsline {subsubsection}{LISP security impact}{41}{section*.34}
+\contentsline {subsubsection}{LISP security proposal}{42}{section*.35}
+\contentsline {subsection}{\numberline {3.9.3}The maximum transmission unit (MTU) issue}{42}{subsection.3.9.3}
+\contentsline {chapter}{\numberline {4}Evaluation of LISP mapping system}{43}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{43}{section.4.1}
+\contentsline {section}{\numberline {4.2}Methodology}{44}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Measurements Overview}{44}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Metrics}{45}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Mapping System Stability Evaluation}{46}{section.4.3}
+\contentsline {section}{\numberline {4.4}Mapping System Consistency Evaluation}{50}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Consistency Evaluation by MR}{51}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Consistency Evaluation by VP}{54}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Conclusion}{56}{section.4.5}
+\contentsline {chapter}{\numberline {5}LISP-Views: LISP mapping system monitor}{59}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{59}{section.5.1}
+\contentsline {section}{\numberline {5.2}Proposed Monitoring Architecture}{60}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Motivation}{60}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Description of LISP-Views}{61}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}LISP-Views Validation}{63}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Methodology}{63}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}LISP-Views vs. LISPmon}{64}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Dissecting LISP with LISP-Views}{66}{section.5.4}
+\contentsline {section}{\numberline {5.5}Conclusion}{71}{section.5.5}
+\contentsline {chapter}{\numberline {6}Assessing LISP interworking performance through RIPE Atlas}{73}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{74}{section.6.1}
+\contentsline {section}{\numberline {6.2}Related Work}{74}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}RIPE Atlas}{74}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Alexa}{75}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Measurement Methodology}{75}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}For Dataset2015}{76}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}For Dataset2016}{77}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}IPv4 Ping Results from Dataset2015}{80}{section.6.4}
+\contentsline {section}{\numberline {6.5}IPv4 Ping Results from Dataset2016}{83}{section.6.5}
+\contentsline {section}{\numberline {6.6}IPv6 Ping Results}{88}{section.6.6}
+\contentsline {section}{\numberline {6.7}Traceroute-related Results}{92}{section.6.7}
+\contentsline {section}{\numberline {6.8}Conclusion}{95}{section.6.8}
+\contentsline {chapter}{\numberline {7}ns-3 Implementation of LISP and LISP-MN}{97}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{97}{section.7.1}
+\contentsline {section}{\numberline {7.2}Related work}{98}{section.7.2}
+\contentsline {section}{\numberline {7.3}LISP/LISP-MN Implementation based on ns3}{99}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Implementation of LISP Data Plane}{99}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Implementation of LISP Control Plane}{100}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Integration of TUN net interface card}{101}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Integration of DHCP}{101}{subsection.7.3.4}
+\contentsline {section}{\numberline {7.4}Evaluation}{102}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Simulation Setup}{102}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Results}{102}{subsection.7.4.2}
+\contentsline {section}{\numberline {7.5}Conclusion}{104}{section.7.5}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{105}{chapter.8}
+\contentsline {section}{\numberline {8.1}Major Contributions}{105}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{105}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}LISP-Views: LISP Mapping System Monitor}{105}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Assessing LISP interworking performance through RIPE Atlas}{105}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.4}ns-3 Implementation of LISP and LISP-MN}{105}{subsection.8.1.4}
+\contentsline {section}{\numberline {8.2}Discussion \& Future work}{105}{section.8.2}
+\contentsline {chapter}{References}{107}{chapter*.80}
+\contentsline {chapter}{Appendix \numberline {A}Source Code}{117}{Appendix.a.A}
+\contentsline {section}{\numberline {A.1}LISP Stability and Consistency analyzer}{117}{section.a.A.1}
+\contentsline {section}{\numberline {A.2}LISP-Views}{117}{section.a.A.2}
+\contentsline {section}{\numberline {A.3}LISP measurements on Atlas}{117}{section.a.A.3}
+\contentsline {section}{\numberline {A.4}LISP implementation on ns-3}{118}{section.a.A.4}

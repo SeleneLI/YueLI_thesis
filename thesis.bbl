@@ -1,0 +1,626 @@
+\begin{thebibliography}{100}
+
+\bibitem{alexa}
+Alexa.
+\newblock \url{http://www.alexa.com/}.
+
+\bibitem{alexatop}
+Alexa top sites ranking.
+\newblock \url{https://www.alexa.com/topsites}.
+
+\bibitem{bgpv4}
+As3943 ipv4 route propagation.
+\newblock \url{http://bgp.he.net/AS3943\#_graph4}.
+
+\bibitem{bgpv6}
+As3943 ipv6 route propagation.
+\newblock \url{http://bgp.he.net/AS3943\#_graph6}.
+
+\bibitem{AVMFritzBox}
+{AVM's FRITZ!Box Configuration and Operation}.
+\newblock See
+  \url{https://en.avm.de/fileadmin/user_upload/EN/Manuals/FRITZ_Box/Manual_FRITZ_Box_3490-en.pdf}.
+
+\bibitem{CiscoLISPQA}
+{Cisco Locator/ID Separation Protocol (LISP) Q\&A}.
+\newblock See
+  \url{https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/locator-id-separation-protocol-lisp/qa_c67-582925.pdf}.
+
+\bibitem{freeBSD}
+{FreeBSD (website)}.
+\newblock \url{https://www.freebsd.org/}.
+
+\bibitem{INET}
+{INET Framework (Homepage)}.
+\newblock See \url{https://inet.omnetpp.org/}.
+
+\bibitem{InternetLiveStats}
+Internet live stats.
+\newblock Accessed on Jan. 7, 2018. [Online]. Available:
+  \url{http://www.internetlivestats.com/internet- users/}.
+
+\bibitem{lip6lisp}
+{LIP6-LISP (github)}.
+\newblock \url{https://github.com/lip6-lisp}.
+
+\bibitem{lispbeta}
+{LISP Beta Network}.
+\newblock See \url{http://www.lisp4.net}.
+
+\bibitem{lispbetaarchi}
+{LISP Beta Network Latest Architecture}.
+\newblock See \url{https://www.lisp4.net//images/lisp-ddt.pdf}.
+
+\bibitem{CiscoIOS}
+Lisp cisco ios implementation (website).
+\newblock \url{http://lisp.cisco.com}.
+
+\bibitem{LISP_ODLSummit_2014}
+{LISP for SDN and NFV (OpenDaylight Submmit)}.
+\newblock See
+  \url{https://events.linuxfoundation.org/sites/events/files/slides/LISP_ODLSummit_2014.pdf}.
+
+\bibitem{lisplab}
+{LISP-Lab}.
+\newblock See \url{http://www.lisp-lab.org/}.
+
+\bibitem{lispviews}
+{LISP-Views (website)}.
+\newblock See \url{http://hunter.lisp-views.org/}.
+
+\bibitem{lispers}
+{Lispers.net}.
+\newblock See \url{https://www.lispers.net/}.
+
+\bibitem{LISPmob}
+{LISPmob (website)}.
+\newblock \url{https://www.openoverlayrouter.org/lispmob/}.
+
+\bibitem{lispmon}
+{LISPmon}.
+\newblock See \url{http://www.lispmon.net}.
+
+\bibitem{ciscovmmobility}
+{Locator ID Separation Protocol (LISP) VM Mobility Solution, (White paper)}.
+\newblock See
+  \url{https://www.cisco.com/c/dam/en/us/products/collateral/ios-nx-os-software/locator-id-separation-protocol-lisp/lisp-vm_mobility_wp.pdf}.
+
+\bibitem{ns3}
+{ns-3}.
+\newblock See \url{http://https://www.nsnam.org/}.
+
+\bibitem{omnetpp}
+{OMNet++ (Homepage)}.
+\newblock See \url{https://www.omnetpp.org/}.
+
+\bibitem{OOR}
+{Open Overlay Router (website), the successor of LISPmob}.
+\newblock See \url{https://www.openoverlayrouter.org/}.
+
+\bibitem{OpenDaylight}
+{OpenDaylight (website)}.
+\newblock See \url{https://www.opendaylight.org/}.
+
+\bibitem{OpenLISP}
+{OpenLISP (website)}.
+\newblock \url{http://www.openlisp.org/}.
+
+\bibitem{PlanetLab}
+Planetlab (website).
+\newblock \url{https://www.planet-lab.org/}.
+
+\bibitem{pylispgithub}
+{pylisp (Github)}.
+\newblock See \url{https://github.com/steffann/pylisp}.
+
+\bibitem{pylisp}
+{pylisp (Reference)}.
+\newblock See
+  \url{https://www.biostat.wisc.edu/~annis/creations/PyLisp/pylisp.html}.
+
+\bibitem{atlas}
+{RIPE Atlas}.
+\newblock \url{https://atlas.ripe.net/}.
+
+\bibitem{SmartInsights}
+Smartinsights.
+\newblock Accessed on Jan. 7, 2018. [Online]. Available:
+  \url{http://www.smartinsights.com/mobile-marketing/mobile-marketing-
+  analytics/mobile-marketing-statistics/}.
+
+\bibitem{adan2006tunneled}
+J.~Adan.
+\newblock Tunneled inter-domain routing (tidr).
+\newblock {\em Work in Progress}, 2006.
+
+\bibitem{aiash2013novel}
+M.~Aiash.
+\newblock A novel security protocol for resolving addresses in the location/id
+  split architecture.
+\newblock In {\em International Conference on Network and System Security},
+  pages 68--79. Springer, 2013.
+
+\bibitem{aiash2013securing}
+M.~Aiash, A.~Al-Nemrat, and D.~Preston.
+\newblock Securing address registration in location/id split protocol using
+  id-based cryptography.
+\newblock In {\em International Conference on Wired/Wireless Internet
+  Communication}, pages 129--139. Springer, 2013.
+
+\bibitem{atkinson2010evolving}
+R.~Atkinson, S.~Bhatti, and S.~Hailes.
+\newblock Evolving the internet architecture through naming.
+\newblock {\em IEEE Journal on Selected Areas in Communications},
+  28(8):1319--1325, 2010.
+
+\bibitem{balakrishnan2004layered}
+H.~Balakrishnan, K.~Lakshminarayanan, S.~Ratnasamy, S.~Shenker, I.~Stoica, and
+  M.~Walfish.
+\newblock A layered naming architecture for the internet.
+\newblock In {\em ACM SIGCOMM Computer Communication Review}, volume~34, pages
+  343--352. ACM, 2004.
+
+\bibitem{barkai2017lisp}
+S.~Barkai, D.~Farinacci, D.~Meyer, F.~Maino, V.~Ermagan, A.~Rodriguez-Natal,
+  and A.~Cabellos-Aparicio.
+\newblock Lisp based flowmapping for scaling nfv.
+\newblock Technical report, Internet-Draft draft-barkai-lisp-nfv-10, Internet
+  Engineering Task Force. Work in Progress, 2017.
+
+\bibitem{bhatti2012identifier}
+S.~Bhatti and R.~Atkinson.
+\newblock Identifier-locator network protocol (ilnp) architectural description.
+\newblock 2012.
+
+\bibitem{breslau2000advances}
+L.~Breslau, D.~Estrin, K.~Fall, S.~Floyd, J.~Heidemann, A.~Helmy, P.~Huang,
+  S.~McCanne, K.~Varadhan, Y.~Xu, et~al.
+\newblock Advances in network simulation.
+\newblock {\em Computer}, 33(5):59--67, 2000.
+
+\bibitem{brim2008lisp}
+S.~Brim, N.~Chiappa, D.~Farinacci, V.~Fuller, and D.~Lewis.
+\newblock Lisp-cons: A content distribution overlay network service for lisp.
+  draft-meyer-lisp-cons-04, 2008.
+
+\bibitem{rfc7834}
+A.~Cabellos and F.~Coras.
+\newblock Internet engineering task force (ietf) d. saucez request for
+  comments: 7834 inria category: Informational l. iannone.
+\newblock 2016.
+
+\bibitem{cabellos2011lispmob}
+A.~Cabellos, A.~R. Natal, L.~Jakab, V.~Ermagan, P.~Natarajan, and F.~Maino.
+\newblock Lispmob: mobile networking through lisp.
+\newblock {\em LISPmob white paper}, 2011.
+
+\bibitem{chang1999network}
+X.~Chang.
+\newblock Network simulations with opnet.
+\newblock In {\em Simulation Conference Proceedings, 1999 Winter}, volume~1,
+  pages 307--314. IEEE, 1999.
+
+\bibitem{lispCacheModel}
+F.~Coras, A.~Cabellos-Aparicio, and J.~Domingo-Pascual.
+\newblock An analytical model for the {LISP} cache size.
+\newblock In {\em Proc. {IFIP} Networking}, May 2012.
+
+\bibitem{coras2014performance}
+F.~Coras, D.~Saucez, L.~Iannone, and B.~Donnet.
+\newblock On the performance of the {LISP} beta network.
+\newblock In {\em Proc. {IFIP} Networking}, June 2014.
+
+\bibitem{deering1998rfc}
+S.~Deering and R.~Hinden.
+\newblock Rfc 2460: Internet protocol, 1998.
+
+\bibitem{ermagan2016nat}
+V.~Ermagan, D.~Farinacci, C.~White, J.~Skriver, D.~Lewis, and F.~Maino.
+\newblock Nat traversal for lisp.
+\newblock 2016.
+
+\bibitem{rfc6830}
+D.~Farinacci and et~al.
+\newblock The locator/{ID} separation protocol ({LISP}).
+\newblock {RFC} 6830, {I}nternet {E}ngineering {T}ask {F}orce, January 2013.
+
+\bibitem{rfc8112}
+D.~Farinacci, A.~Jain, I.~Kouvelas, and D.~Lewis.
+\newblock Locator/id separation protocol delegated database tree (lisp-ddt)
+  referral internet groper (rig).
+\newblock Technical report, 2017.
+
+\bibitem{mn00}
+D.~Farinacci, D.~Lewis, D.~Meyer, and C.~White.
+\newblock Lisp mobile node, draft-ietf-lisp-mn-01.
+\newblock Technical report, institution={IETF Internet draft, Apr.
+  2017.[Online]. Available: https://tools.ietf.org/html/draft-ietf-lisp-mn-01},
+  2017.
+
+\bibitem{farinacci2000rfc}
+D.~Farinacci, T.~Li, S.~Hanks, D.~Meyer, and P.~Traina.
+\newblock Rfc 2784-generic routing encapsulation (gre).
+\newblock {\em IETF, March 2000}, 2000.
+
+\bibitem{farinacci2000generic}
+D.~Farinacci, T.~Li, S.~Hanks, D.~Meyer, P.~Traina, and R.~Glenn.
+\newblock Generic routing encapsulation.
+\newblock {\em IETF (The Internet Engineering Task Force) Request for Comments
+  RFC}, 2784, 2000.
+
+\bibitem{rfc6835}
+D.~Farinacci and D.~Meyer.
+\newblock The locator/{ID} separation protocol {I}nternet groper ({LIG}).
+\newblock {RFC} 6835, {I}nternet {E}ngineering {T}ask {F}orce, 2013.
+
+\bibitem{feng2017locator}
+B.~Feng, H.~Zhang, H.~Zhou, and S.~Yu.
+\newblock Locator/identifier split networking: A promising future internet
+  architecture.
+\newblock {\em IEEE Communications Surveys \& Tutorials}, 2017.
+
+\bibitem{ford2013tcp}
+A.~Ford, C.~Raiciu, M.~Handley, and O.~Bonaventure.
+\newblock Tcp extensions for multipath operation with multiple addresses.
+\newblock Technical report, 2013.
+
+\bibitem{lispALTPourri}
+V.~Fuller.
+\newblock {LISP-DDT}: A new mapping database for {LISP}, June 2012.
+\newblock Nanog 55 Talk.
+
+\bibitem{rfc6833}
+V.~Fuller and et~al.
+\newblock Locator/{ID} separation protocol ({LISP}) map-server interface.
+\newblock {RFC} 6833, {I}nternet {E}ngineering {T}ask {F}orce, January 2013.
+
+\bibitem{rfc6836}
+V.~Fuller, D.~Farinacci, D.~Meyer, and D.~Lewis.
+\newblock Locator/{ID} separation protocol alternative logical topology
+  ({LISP+ALT}).
+\newblock {RFC} 6836, {I}nternet {E}ngineering {T}ask {F}orce, January 2013.
+
+\bibitem{lispDDT}
+V.~Fuller, D.~Lewis, and A.~Ermagan, V.~Jain.
+\newblock {LISP} {D}elegated {D}atabase {T}ree.
+\newblock Internet Draft, Work in Progress draft-ietf-lisp-ddt-01.txt,
+  {I}nternet {E}ngineering {T}ask {F}orce, March 2013.
+
+\bibitem{fuller2012lisp}
+V.~Fuller, D.~Lewis, V.~Ermagan, and A.~Jain.
+\newblock Lisp delegated database tree.
+\newblock {\em draft-ietf-lisp-ddt-09, Internet Engineering Task Force}, 2017.
+
+\bibitem{galvani2014lisp}
+A.~Galvani, A.~Rodriguez-Natal, A.~Cabellos-Aparicio, and F.~Risso.
+\newblock Lisp-roam: network-based host mobility with lisp.
+\newblock In {\em Proceedings of the 9th ACM workshop on Mobility in the
+  evolving internet architecture}, pages 19--24. ACM, 2014.
+
+\bibitem{garcia2010shim6}
+A.~Garc{\'\i}a-Mart{\'\i}nez, M.~Bagnulo, and I.~Van~Beijnum.
+\newblock The shim6 architecture for ipv6 multihoming.
+\newblock {\em IEEE Communications Magazine}, 48(9), 2010.
+
+\bibitem{han2016design}
+Y.~Han, S.~Ryu, Y.-J. Suh, and J.~W.-K. Hong.
+\newblock Design and implementation of lisp controller in onos.
+\newblock In {\em NetSoft Conference and Workshops (NetSoft), 2016 IEEE}, pages
+  417--422. IEEE, 2016.
+
+\bibitem{hanks2000generic}
+S.~Hanks, D.~Meyer, D.~Farinacci, and P.~Traina.
+\newblock Generic routing encapsulation (gre).
+\newblock 2000.
+
+\bibitem{henderson2008network}
+T.~R. Henderson, M.~Lacage, G.~F. Riley, C.~Dowell, and J.~Kopena.
+\newblock Network simulations with the ns-3 simulator.
+\newblock {\em SIGCOMM demonstration}, 14(14):527, 2008.
+
+\bibitem{info3-articles-2013-06}
+M.~Hoefling, M.~Menth, and M.~Hartmann.
+\newblock A survey on mapping systems for locator/identifier split internet
+  routing.
+\newblock {\em {IEEE} Communications Surveys and Tutorials}, 15(4):1842--1858,
+  November 2013.
+
+\bibitem{lispCacheCost}
+L.~Iannone and O.~Bonaventure.
+\newblock On the cost of caching {L}ocator/{ID} mappings.
+\newblock In {\em Proc. {ACM} {SIGCOMM} CoNEXT}, December 2007.
+
+\bibitem{rfc6834}
+L.~Iannone, D.~Saucez, and O.~Bonaventure.
+\newblock Locator/id separation protocol (lisp) map-versioning.
+\newblock Technical report, 2013.
+
+\bibitem{isah2017towards}
+M.~Isah, S.~Simpson, Y.~Sani, and C.~Edwards.
+\newblock Towards zero packet loss with lisp mobile node.
+\newblock In {\em Computing, Networking and Communications (ICNC), 2017
+  International Conference on}, pages 265--271. IEEE, 2017.
+
+\bibitem{lispTree}
+L.~Jakab, A.~Cabellos-Aparicio, F.~Coras, D.~Saucez, and O.~Bonaventure.
+\newblock {LISP-TREE}: a {DNS} hierarchy to support the {LISP} mapping system.
+\newblock {\em {IEEE} Journal on Selected Areas in Communications}, 28(8):1332
+  -- 1343, October 2010.
+
+\bibitem{jeon2010network}
+S.~Jeon, J.~Jang, and Y.-H. Kim.
+\newblock Network mobility support in the proxy mobile ipv6 domain.
+\newblock {\em Network}, 2010.
+
+\bibitem{johnson2004rfc}
+D.~Johnson, C.~Perkins, and J.~Arkko.
+\newblock {RFC 3775}.
+\newblock {\em Mobility support in IPv6}, 2004.
+
+\bibitem{lispCacheDive}
+J.~Kim, L.~Iannone, and A.~Feldmann.
+\newblock A deep dive into the {LISP} cache.
+\newblock In {\em Proc. {IFIP} Networking}, May 2011.
+
+\bibitem{kim2013caching}
+J.~Kim, L.~Iannone, and A.~Feldmann.
+\newblock Caching locator/id mappings: An experimental scalability analysis and
+  its implications.
+\newblock {\em Computer Networks}, 57(4):897--909, 2013.
+
+\bibitem{klein2012integration}
+D.~Klein, M.~Hartmann, M.~Hoefling, and M.~Menth.
+\newblock Integration of lisp and lisp-mn into inet.
+\newblock In {\em Proceedings of the 5th International ICST Conference on
+  Simulation Tools and Techniques}, pages 299--306. ICST (Institute for
+  Computer Sciences, Social-Informatics and Telecommunications Engineering),
+  2012.
+
+\bibitem{lear2013nerd}
+E.~Lear.
+\newblock Nerd: A not-so-novel endpoint id (eid) to routing locator (rloc)
+  database.
+\newblock 2013.
+
+\bibitem{rfc6832}
+D.~Lewis, D.~Meyer, D.~Farinacci, and V.~Fuller.
+\newblock Interworking between locator/id separation protocol ({LISP}) and
+  non-{LISP} sites.
+\newblock {RFC} 6832, {I}nternet {E}ngineering {T}ask {F}orce, January 2013.
+
+\bibitem{li2017lisp}
+Y.~Li, A.~Abouseif, L.~Iannone, and D.~Saucez.
+\newblock Lisp-views: Monitoring lisp at large scale.
+\newblock In {\em Teletraffic Congress (ITC 29), 2017 29th International},
+  volume~1, pages 178--186. IEEE, 2017.
+
+\bibitem{li2016performance}
+Y.~Li and et~al.
+\newblock Performance evaluation of locator/identifier separation protocol
+  through ripe atlas.
+\newblock In {\em Proceedings of the 2016 conference on ACM SIGCOMM 2016
+  Conference}, pages 561--562. ACM, 2016.
+
+\bibitem{li2016using}
+Y.~Li and L.~Iannone.
+\newblock Using ripe atlas to evaluate the locator/id separation protocol.
+\newblock In {\em Computer Communications Workshops (INFOCOM WKSHPS), 2016 IEEE
+  Conference on INFOCOM 2016 Conference}, pages 696--697. IEEE, 2016.
+
+\bibitem{Li2017}
+Y.~Li and L.~Iannone.
+\newblock Assessing locator/identifier separation protocol interworking
+  performance through {RIPE Atlas}.
+\newblock {\em Computer Networks}, pages~--, 2017.
+
+\bibitem{yue2016stability}
+Y.~Li, D.~Saucez, L.~Iannone, and B.~Donnet.
+\newblock Stability and consistency of the lisp pull routing architecture.
+\newblock In {\em Proc. Workshop on Network Measurement ({WNM})}, November
+  2016.
+
+\bibitem{mahalingam2014virtual}
+M.~Mahalingam, D.~Dutt, K.~Duda, P.~Agarwal, L.~Kreeger, T.~Sridhar,
+  M.~Bursell, and C.~Wright.
+\newblock Virtual extensible local area network (vxlan): A framework for
+  overlaying virtualized layer 2 networks over layer 3 networks.
+\newblock Technical report, 2014.
+
+\bibitem{maino2017lisp}
+F.~Maino, V.~Ermagan, A.~Cabellos, and D.~Saucez.
+\newblock Lisp-security (lisp-sec).
+\newblock {\em draft-ietf-lisp-sec-14, Internet Engineering Task Force}, 2017.
+
+\bibitem{marill1966toward}
+T.~Marill and L.~G. Roberts.
+\newblock Toward a cooperative network of time-shared computers.
+\newblock In {\em Proceedings of the November 7-10, 1966, fall joint computer
+  conference}, pages 425--431. ACM, 1966.
+
+\bibitem{menth2010improvements}
+M.~Menth, D.~Klein, and M.~Hartmann.
+\newblock Improvements to lisp mobile node.
+\newblock In {\em Teletraffic Congress (ITC), 2010 22nd International}, pages
+  1--8. IEEE, 2010.
+
+\bibitem{minolisecurity}
+D.~Minoli.
+\newblock Security considerations for mipv6.
+\newblock {\em Mobile Video with Mobile IPv6}, pages 173--189.
+
+\bibitem{mockapetrisrfc}
+P.~Mockapetris.
+\newblock Rfc 1034: Domain names-concepts and facilities, 1987.
+\newblock {\em URL: ftp://ftp. isi. edu/in-notes/rfc1034. txt}.
+
+\bibitem{moller2011simulation}
+M.~M{\"o}ller, R.~Bye, K.~Bsufka, S.~A. Camtepe, and S.~Albayrak.
+\newblock From simulation to emulation: an integrated approach for network
+  security evaluation.
+\newblock {\em Lecture Notes in Informatics}, 192, 2011.
+
+\bibitem{montero2013securing}
+D.~Montero, M.~Siddiqui, R.~Serral-Gracia, X.~Masip-Bruin, and M.~Yannuzzi.
+\newblock Securing the lisp map registration process.
+\newblock In {\em Global Communications Conference (GLOBECOM), 2013 IEEE},
+  pages 2145--2151. IEEE, 2013.
+
+\bibitem{moskowitz2015host}
+R.~Moskowitz, T.~Heer, P.~Jokela, and T.~Henderson.
+\newblock Host identity protocol version 2 (hipv2).
+\newblock Technical report, 2015.
+
+\bibitem{Moskowitz2017host}
+R.~Moskowitz and M.~Komu.
+\newblock Host identity protocol architecture.
+\newblock {\em draft-ietf-hip-rfc4423-bis-18}, 2017.
+
+\bibitem{natal2013lisp}
+A.~R. Natal, L.~Jakab, M.~Portol{\'e}s, V.~Ermagan, P.~Natarajan, F.~Maino,
+  D.~Meyer, and A.~C. Aparicio.
+\newblock Lisp-mn: mobile networking through lisp.
+\newblock {\em Wireless personal communications}, 70(1):253--266, 2013.
+
+\bibitem{nikander2010host}
+P.~Nikander, A.~Gurtov, and T.~R. Henderson.
+\newblock Host identity protocol (hip): Connectivity, mobility, multi-homing,
+  security, and privacy over ipv4 and ipv6 networks.
+\newblock {\em IEEE Communications Surveys \& Tutorials}, 12(2):186--204, 2010.
+
+\bibitem{nordmark2009shim6}
+E.~Nordmark and M.~Bagnulo.
+\newblock Shim6: Level 3 multihoming shim protocol for ipv6.
+\newblock Technical report, 2009.
+
+\bibitem{o2006gse}
+M.~O'DELL.
+\newblock Gse-an alternate addressing architecture for ipv6.
+\newblock {\em http://www. watersprings.
+  org/pub/id/draft-ietf-ipngwggseaddr-00. txt}, 2006.
+
+\bibitem{perkins2002rfc3344}
+C.~Perkins.
+\newblock {RFC 3344}.
+\newblock {\em IP Mobility Support for IPv4}, 8, 2002.
+
+\bibitem{perkins2011mobility}
+C.~Perkins, D.~Johnson, and J.~Arkko.
+\newblock Mobility support in ipv6.
+\newblock Technical report, 2011.
+
+\bibitem{perkins1997mobile}
+C.~E. Perkins.
+\newblock Mobile ip.
+\newblock {\em IEEE communications Magazine}, 35(5):84--99, 1997.
+
+\bibitem{phoomikiattisak2016control}
+D.~Phoomikiattisak and S.~N. Bhatti.
+\newblock Control plane handoff analysis for ip mobility.
+\newblock In {\em Wireless and Mobile Networking Conference (WMNC), 2016 9th
+  IFIP}, pages 65--72. IEEE, 2016.
+
+\bibitem{phung2014openlisp}
+D.~Phung, S.~Secci, D.~Saucez, and L.~Iannone.
+\newblock The openlisp control plane architecture.
+\newblock {\em IEEE Network}, 28(2):34--40, 2014.
+
+\bibitem{raheem2013supporting}
+A.~Raheem, A.~Lasebae, M.~Aiash, and J.~Loo.
+\newblock Supporting communications in the iots using the location/id split
+  protocol: a security analysis.
+\newblock In {\em Future Generation Communication Technology (FGCT), 2013
+  Second International Conference on}, pages 143--147. IEEE, 2013.
+
+\bibitem{rana2017implementation}
+M.~K. Rana, B.~Sardar, S.~Mandal, and D.~Saha.
+\newblock Implementation and performance evaluation of a mobile ipv6 (mipv6)
+  simulation model for ns-3.
+\newblock {\em Simulation Modelling Practice and Theory}, 72:1--22, 2017.
+
+\bibitem{rfc07911981internet}
+I.~RFC0791.
+\newblock Internet protocol.
+\newblock {\em J. Postel. September}, 1981.
+
+\bibitem{rodriguez2014software}
+A.~Rodriguez-Natal, S.~Barkai, V.~Ermagan, D.~Lewis, F.~Maino, and
+  D.~Farinacci.
+\newblock Software defined networking extensions for the locator/id separation
+  protocol.
+\newblock {\em IETF LISP Working Group Internet-Draft}, 2014.
+
+\bibitem{rosenbergsip}
+J.~Rosenberg et~al.
+\newblock Sip: Session initiation protocol (jun. 2008) retrieved at
+  http://tools. ietf. org/html/rfc3261.
+\newblock {\em Relevant pages provided}.
+
+\bibitem{lispCCR}
+D.~Saucez and et~al.
+\newblock A first measurement look at the deployment and evolution of the
+  locator/id separation protocol.
+\newblock {\em {ACM} {SIGCOMM} Computer Communication Review}, 43(1):37--43,
+  April 2013.
+
+\bibitem{rfc7835}
+D.~Saucez and L.~Iannone.
+\newblock O. bonaventure," locator/id separation protocol (lisp) threat
+  analysis.
+\newblock Technical report, RFC 7835, DOI 10.17487/RFC7835, April 2016,<
+  http://www. rfc-editor. org/info/rfc7835.
+
+\bibitem{saucez2009openlisp}
+D.~Saucez, L.~Iannone, O.~Bonaventure, et~al.
+\newblock Openlisp: An open source implementation of the locator/id separation
+  protocol.
+\newblock {\em ACM SIGCOMM Demos Session}, pages 1--2, 2009.
+
+\bibitem{saucez2012designing}
+D.~Saucez, L.~Iannone, O.~Bonaventure, and D.~Farinacci.
+\newblock Designing a deployable internet: The locator/identifier separation
+  protocol.
+\newblock {\em IEEE Internet Computing}, 16(6):14--21, 2012.
+
+\bibitem{saucez2016locator}
+D.~Saucez, L.~Iannone, A.~Cabellos, and F.~Coras.
+\newblock Locator/id separation protocol (lisp) impact.
+\newblock Technical report, 2016.
+
+\bibitem{stockmayer2016jlisp}
+A.~Stockmayer, M.~Schmidt, and M.~Menth.
+\newblock jlisp: An open, modular, and extensible java-based lisp
+  implementation.
+\newblock In {\em Teletraffic Congress (ITC 28), 2016 28th International},
+  volume~1, pages 205--208. IEEE, 2016.
+
+\bibitem{tang2017lisp}
+Z.~Tang, Y.~Zhou, W.~Deng, and B.~Wang.
+\newblock Lisp-hnm: Integrated fast host and network mobility control in lisp
+  networks.
+\newblock In {\em Modeling and Optimization in Mobile, Ad Hoc, and Wireless
+  Networks (WiOpt), 2017 15th International Symposium on}, pages 1--6. IEEE,
+  2017.
+
+\bibitem{thayer1998rfc}
+R.~Thayer, N.~Doraswamy, and R.~Glenn.
+\newblock Rfc 2411: Ip security document roadmap.
+\newblock {\em Internet standard, November}, 1998.
+
+\bibitem{vogt2007six}
+C.~Vogt.
+\newblock Six/one: A solution for routing and addressing in ipv6.
+\newblock {\em INTERNET DRAFT, draft-vogt-rrg-six-one-01. txt}, 2007.
+
+\bibitem{wu2014nemo}
+Y.~Wu, K.~Chen, K.~Xue, and D.~Ni.
+\newblock Nemo-based mobility management in lisp network.
+\newblock In {\em Wireless Communications and Signal Processing (WCSP), 2014
+  Sixth International Conference on}, pages 1--6. IEEE, 2014.
+
+\bibitem{lispCacheLRU}
+H.~Zhang, M.~Chen, and Y.~Zhu.
+\newblock Evaluating the performance on {ID}{L}oc mapping.
+\newblock In {\em Proc. {IEEE} Global Communications Conference ({GLOBECOM})},
+  November 2008.
+
+\end{thebibliography}

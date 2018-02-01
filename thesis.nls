@@ -1,0 +1,35 @@
+\begin{thenomenclature} 
+
+ \nomgroup{Z}
+
+  \item [{API}]\begingroup Application Programmable Interfaces\nomeqref {2.0}
+		\nompageref{25}
+  \item [{CPU}]\begingroup Central Processing Unit\nomeqref {2.0}
+		\nompageref{25}
+  \item [{FPGA}]\begingroup Field Programmable Gate Array\nomeqref {2.0}
+		\nompageref{25}
+  \item [{ICT}]\begingroup Information Communication Technology\nomeqref {1.0}
+		\nompageref{5}
+  \item [{NaaS}]\begingroup Network as a Service\nomeqref {2.0}
+		\nompageref{25}
+  \item [{NFV}]\begingroup Network Function Virtualization\nomeqref {2.0}
+		\nompageref{25}
+  \item [{NIC}]\begingroup Network Interface Card\nomeqref {2.0}
+		\nompageref{25}
+  \item [{NPU}]\begingroup Network Processing Unit\nomeqref {2.0}
+		\nompageref{25}
+  \item [{OS}]\begingroup Operating System\nomeqref {2.0}
+		\nompageref{25}
+  \item [{QoS}]\begingroup Quality of Service\nomeqref {2.0}
+		\nompageref{25}
+  \item [{SDI}]\begingroup Software Defined Infrastructures\nomeqref {1.0}
+		\nompageref{5}
+  \item [{SDN}]\begingroup Software Defined Network\nomeqref {2.0}
+		\nompageref{25}
+  \item [{TCAM}]\begingroup Ternary Content Addressable Memory\nomeqref {2.0}
+		\nompageref{25}
+  \item [{VLAN}]\begingroup Virtual Local Area Network\nomeqref {1.0}
+		\nompageref{5}
+  \item [{VM}]\begingroup Virtual Machine\nomeqref {2.0}\nompageref{25}
+
+\end{thenomenclature}
