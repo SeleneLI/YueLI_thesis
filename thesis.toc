@@ -109,20 +109,26 @@
 \contentsline {subsection}{\numberline {7.3.2}Implementation of LISP Control Plane}{100}{subsection.7.3.2}
 \contentsline {subsection}{\numberline {7.3.3}Integration of TUN net interface card}{101}{subsection.7.3.3}
 \contentsline {subsection}{\numberline {7.3.4}Integration of DHCP}{101}{subsection.7.3.4}
-\contentsline {section}{\numberline {7.4}Evaluation}{102}{section.7.4}
+\contentsline {section}{\numberline {7.4}Evaluation for LISP-MN in LISP-Site}{102}{section.7.4}
 \contentsline {subsection}{\numberline {7.4.1}Simulation Setup}{102}{subsection.7.4.1}
-\contentsline {subsection}{\numberline {7.4.2}Results}{102}{subsection.7.4.2}
-\contentsline {section}{\numberline {7.5}Conclusion}{104}{section.7.5}
-\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{105}{chapter.8}
-\contentsline {section}{\numberline {8.1}Major Contributions}{105}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{105}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}LISP-Views: LISP Mapping System Monitor}{105}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Assessing LISP interworking performance through RIPE Atlas}{105}{subsection.8.1.3}
-\contentsline {subsection}{\numberline {8.1.4}ns-3 Implementation of LISP and LISP-MN}{105}{subsection.8.1.4}
-\contentsline {section}{\numberline {8.2}Discussion \& Future work}{105}{section.8.2}
-\contentsline {chapter}{References}{107}{chapter*.80}
-\contentsline {chapter}{Appendix \numberline {A}Source Code}{117}{Appendix.a.A}
-\contentsline {section}{\numberline {A.1}LISP Stability and Consistency analyzer}{117}{section.a.A.1}
-\contentsline {section}{\numberline {A.2}LISP-Views}{117}{section.a.A.2}
-\contentsline {section}{\numberline {A.3}LISP measurements on Atlas}{117}{section.a.A.3}
-\contentsline {section}{\numberline {A.4}LISP implementation on ns-3}{118}{section.a.A.4}
+\contentsline {subsection}{\numberline {7.4.2}Results}{103}{subsection.7.4.2}
+\contentsline {section}{\numberline {7.5}Evaluation for LISP-MN in non-LISP-Site}{106}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Simulation Setup}{106}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}Results}{106}{subsection.7.5.2}
+\contentsline {section}{\numberline {7.6}Evaluation for MN in LISP-Site}{107}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}Simulation Setup}{108}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2}Results}{108}{subsection.7.6.2}
+\contentsline {section}{\numberline {7.7}Conclusion}{110}{section.7.7}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{113}{chapter.8}
+\contentsline {section}{\numberline {8.1}Major Contributions}{113}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{113}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}LISP-Views: LISP Mapping System Monitor}{113}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Assessing LISP interworking performance through RIPE Atlas}{113}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.4}ns-3 Implementation of LISP and LISP-MN}{113}{subsection.8.1.4}
+\contentsline {section}{\numberline {8.2}Discussion \& Future work}{113}{section.8.2}
+\contentsline {chapter}{References}{115}{chapter*.86}
+\contentsline {chapter}{Appendix \numberline {A}Source Code}{125}{Appendix.a.A}
+\contentsline {section}{\numberline {A.1}LISP Stability and Consistency analyzer}{125}{section.a.A.1}
+\contentsline {section}{\numberline {A.2}LISP-Views}{125}{section.a.A.2}
+\contentsline {section}{\numberline {A.3}LISP measurements on Atlas}{125}{section.a.A.3}
+\contentsline {section}{\numberline {A.4}LISP implementation on ns-3}{126}{section.a.A.4}
