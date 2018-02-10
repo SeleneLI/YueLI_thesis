@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  2 FEB 2018 21:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  9 FEB 2018 04:32
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1949,46 +1949,52 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Chapter 5.
 [59]
-Underfull \vbox (badness 1701) has occurred while \output is active []
+Underfull \vbox (badness 6775) has occurred while \output is active []
 
  [60]
 File: Chapter5/Pics/LISP-Views_Arch.eps Graphic file (type eps)
 
-<Chapter5/Pics/LISP-Views_Arch.eps> [61] [62] [63]
+<Chapter5/Pics/LISP-Views_Arch.eps> [61] [62]
 File: Chapter5/Pics/LISPmon_comparison_all.eps Graphic file (type eps)
 
 <Chapter5/Pics/LISPmon_comparison_all.eps>
-Overfull \hbox (43.74878pt too wide) in paragraph at lines 175--180
+Overfull \hbox (43.74878pt too wide) in paragraph at lines 174--179
  [][][] 
  []
 
-[64]
+[63] [64]
 File: Chapter5/Pics/LISPmon_comparison_day.eps Graphic file (type eps)
  <Chapter5/Pics/LISPmon_comparison_day.eps>
-File: Chapter5/Pics/Reliability.eps Graphic file (type eps)
-
-<Chapter5/Pics/Reliability.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65]
-File: Chapter5/Pics/median_of_RTT.eps Graphic file (type eps)
+File: Chapter5/Pics/Reliability.eps Graphic file (type eps)
 
-<Chapter5/Pics/median_of_RTT.eps> [66] [67]
+<Chapter5/Pics/Reliability.eps> [66]
+File: Chapter5/Pics/median_of_RTT.eps Graphic file (type eps)
+ <Chapter5/Pics/median_of_RTT.eps> [67]
 File: Chapter5/Pics/ecdf_of_RTT.eps Graphic file (type eps)
- <Chapter5/Pics/ecdf_of_RTT.eps>
-[68]
+
+<Chapter5/Pics/ecdf_of_RTT.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68]
 File: Chapter5/Pics/CDF_of_RLOCs.eps Graphic file (type eps)
- <Chapter5/Pics/CDF_of_RLOCs.eps>
+
+<Chapter5/Pics/CDF_of_RLOCs.eps>
 File: Chapter5/Pics/Fig_on_LISPViews.eps Graphic file (type eps)
- <Chapter5/Pics/Fig_on_LISPViews.eps>
-[69] [70] [71]) (./Chapter6/chapter6.tex [72]
+ <Chapter5/Pics/Fig_on_LISPViews.eps> [69]
+Underfull \vbox (badness 5667) has occurred while \output is active []
+
+ [70])
+(./Chapter6/chapter6.tex [71] [72
+
+]
 Chapter 6.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73
-
-]
+ [73]
 [74] [75]
 Underfull \vbox (badness 3386) has occurred while \output is active []
 
@@ -2175,30 +2181,61 @@ on input line 205.
 Underfull \vbox (badness 1902) has occurred while \output is active []
 
  [105]
+File: Chapter7/Pics/LISP_mobility_double_encap_DHCP.eps Graphic file (type eps)
+
+
+<Chapter7/Pics/LISP_mobility_double_encap_DHCP.eps>
+File: Chapter7/Pics/LISP_mobility_double_encap_PacketInterval.eps Graphic file 
+(type eps)
+
+<Chapter7/Pics/LISP_mobility_double_encap_PacketInterval.eps>
 File: Chapter7/Pics/mobility_through_subnets_2_encap_topo.eps Graphic file (typ
 e eps)
 
-<Chapter7/Pics/mobility_through_subnets_2_encap_topo.eps>
+<Chapter7/Pics/mobility_through_subnets_2_encap_topo.eps> [106]
 File: Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps Graphic file (type 
 eps)
 
-<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [106]
+<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps>
+Underfull \vbox (badness 6592) has occurred while \output is active []
+
+ [107]
+File: Chapter7/Pics/LISP_mobility_LISPMN_DHCP.eps Graphic file (type eps)
+
+<Chapter7/Pics/LISP_mobility_LISPMN_DHCP.eps>
+File: Chapter7/Pics/LISP_mobility_LISPMN_PacketInterval.eps Graphic file (type 
+eps)
+
+<Chapter7/Pics/LISP_mobility_LISPMN_PacketInterval.eps>
 File: Chapter7/Pics/mobility_through_subnets_2_encap_topo.eps Graphic file (typ
 e eps)
 
-<Chapter7/Pics/mobility_through_subnets_2_encap_topo.eps> [107]
+<Chapter7/Pics/mobility_through_subnets_2_encap_topo.eps> [108]
+
+LaTeX Warning: Text page 109 contains only floats.
+
+[109]
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
+ <Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps>
+Underfull \vbox (badness 6592) has occurred while \output is active []
 
-<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps> [108]
+ [110]
+File: Chapter7/Pics/LISP_mobility_xTR_DHCP.eps Graphic file (type eps)
+
+<Chapter7/Pics/LISP_mobility_xTR_DHCP.eps>
+File: Chapter7/Pics/LISP_mobility_xTR_PacketInterval.eps Graphic file (type eps
+)
+
+<Chapter7/Pics/LISP_mobility_xTR_PacketInterval.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [109])
-(./Chapter8/chapter8.tex [110] [111] [112
+ [111])
+(./Chapter8/chapter8.tex [112] [113] [114
 
 ]
 Chapter 8.
-[113]) [114] (./thesis.bbl
+[115]) [116] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 25--28
 [][][][]$\T1/ptm/m/n/12 en/$[][][][][][]$us/$[][][][][][]$products/$[][][][][][
 ]$collateral/$[][][][][][]$ios-[]nx-[]os-[]software/$[][][][][][]$locator-[]id-
@@ -2219,7 +2256,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--87
 os-[]software/$[][]
  []
 
-[115
+[117
 
 
 ]
@@ -2234,28 +2271,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--130
 [][][][]$mobile-[]marketing/$[][][][][][]$mobile-[]marketing-[]analytics/$[][]
  []
 
-[116] [117] [118] [119] [120]) (./Publications/ListofPublication.tex [121]
-[122
+[118] [119] [120] [121] [122]) (./Publications/ListofPublication.tex [123]
+[124
 
-]) (./Appendix1/appendix1.tex [123
+]) (./Appendix1/appendix1.tex [125
 
-] [124
+] [126
 
 ]
 Appendix A.
-[125])
+[127])
 
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
-[126]
+[128]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 41B2DBEE8D68DDC8B932B1FA161C7267;23615.
 
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 66934640B5F77BEFD87AEB2BC014B35C;23615
+(rerunfilecheck)             After:  D6F78397759C61D6F11BCAFA11A6C704;23615.
 
 LaTeX Warning: There were undefined references.
 
@@ -2268,12 +2311,12 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31651 strings out of 493015
- 553818 string characters out of 6133377
- 735045 words of memory out of 5000000
- 34650 multiletter control sequences out of 15000+600000
+ 31669 strings out of 493015
+ 554520 string characters out of 6133377
+ 735213 words of memory out of 5000000
+ 34662 multiletter control sequences out of 15000+600000
  51154 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,92p,10383b,13241s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (142 pages, 846456 bytes).
+Output written on thesis.dvi (144 pages, 850764 bytes).

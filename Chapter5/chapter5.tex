@@ -13,10 +13,9 @@
 \fi
 
 %-< ABSTRACT >--------------------------------------------------------------------
-Proposed nearly ten years ago, LISP is still at an early stage. Currently only two experimental platforms have already been deployed in the Internet: LISP Beta Network and LISP-Lab. However, only the LISP Beta Network is monitored with LISPmon that partially monitors the mapping system once a day. To accompany the growth of LISP, a dynamic and complete monitoring system is required. Therefore, we propose LISP-Views, a dynamic versatile large scale LISP monitoring architecture. LISP-Views allows to automatically conduct comprehensive and objective measurements. After running LISP-Views in the wild for several months and comparing the monitoring results with LISPmon, we confirm that LISP-Views provides more detailed and accurate information. We observe the different behaviours between every network entity within mapping system, and also explore the current LISP performance for further improvements.
+Currently only two experimental platforms have already been deployed in the Internet: LISP Beta Network and LISP-Lab. However, only the LISP Beta Network is monitored with LISPmon that monitors the mapping system once a day. To accompany the growth of LISP, a dynamic and complete monitoring system is required. Therefore, we propose LISP-Views, a dynamic versatile large scale LISP monitoring architecture. LISP-Views allows to automatically conduct comprehensive and objective measurements. After running LISP-Views in the wild for several months and comparing the monitoring results with LISPmon, we confirm that LISP-Views provides more detailed and accurate information. We observe the different behaviours between every network entity within the mapping system, and also explore the current LISP performance for further improvements.
 
-In the remainder, Sec.~\ref{sec:lispviews_archi_motivation} introduces the limitations of
-LISPmon and why we propose a new LISP monitor. Sec.~\ref{sec:lispviews_archi_description} describes our proposed LISP monitoring architecture in details. Sec.~\ref{sec:lispviews_evaluation} validates LISP-Views by comparing with LISPmon. Sec.~\ref{sec:lispviews_results} provides the snapshot of what kind of further analysis can be done with our proposal. Finally, Sec.~\ref{sec:lispviews_conclusion} concludes the chapter. 
+In the remainder, Sec.~\ref{sec:lispviews_archi_motivation} introduces LISPmon and why we propose a new LISP monitor. Sec.~\ref{sec:lispviews_archi_description} describes our proposed LISP monitoring architecture in details. Sec.~\ref{sec:lispviews_evaluation} validates LISP-Views by comparing with LISPmon. Sec.~\ref{sec:lispviews_results} provides the snapshot of what kind of further analysis can be done with our proposal. Finally, Sec.~\ref{sec:lispviews_conclusion} concludes the chapter. 
 %-< ABSTRACT >--------------------------------------------------------------------
 
 
@@ -59,7 +58,7 @@ issues.
 % \end{itemize}
 % Thus, we propose a new versatile LISP monitoring architecture, called LISP-Views.
 
-In order to move LISP forward, we need to deeply understand the behaviour of the different LISP network entities and since the \acrshort{mds} reflects the status of a LISP network as it stores all the mapping information, it is essential to be able to monitor the MDS. LISPmon was the first step towards a systematic LISP monitoring.  However, it monitors the \acrshort{mds} just from one vantage point (VP) once per day and only queries one MR.  Upon MR issues, LISPmon must be manually re-configured to  monitor another MR.  Yet the mapping information may be unstable and inconsistent between MRs, i.e., the mapping information sometimes dramatically changes within a day, and the Map-Replies from the different MRs may not coincide at a given time~\cite{yue2016stability}.  It is similar to the world-wide distributed BGP looking glass servers, which do not always provide the same responses for an IP address as the whole routing system may not have converged or because of routing policies. From such point of view, LISPmon has strong limitations since it is not able to detect the changes of mapping information within one day, and is not able to show the differences among MRs. Thus, we propose a new versatile LISP monitoring architecture, called LISP-Views, to monitor public LISP deployments, as well as to enable further performance evaluation of LISP defined by the users themselves. In fact, LISP-Views not only can be used to monitor LISP, but also can be used in the non-public networks, such as VxLAN~\cite{mahalingam2014virtual}.
+In order to move LISP forward, we need to deeply understand the behaviour of the different LISP network entities and since the \acrshort{mds} reflects the status of a LISP network as it stores all the mapping information, it is essential to be able to monitor the MDS. LISPmon was the first step towards a systematic LISP monitoring.  However, it monitors the \acrshort{mds} just from one vantage point (VP) once per day and only queries one MR.  Upon MR issues, LISPmon must be manually re-configured to  monitor another MR.  Yet the mapping information may be unstable and inconsistent between MRs, i.e., the mapping information sometimes changes within a day, and the Map-Replies from the different MRs may not coincide at a given time~\cite{yue2016stability}. It is similar to the BGP looking glass servers, which do not always provide the same responses for an IP address as the whole routing system may not have converged or because of routing policies. From such point of view, LISPmon has some limitations since it is not able to detect the changes of mapping information within one day, and is not able to show the differences among MRs. Thus, we propose a new versatile LISP monitoring architecture, called LISP-Views, to monitor public LISP deployments, as well as to enable further performance evaluation of LISP defined by the users themselves. In fact, LISP-Views not only can be used to monitor LISP, but also can be extended to be used in non-public networks, such as VxLAN~\cite{mahalingam2014virtual}.
 
 LISP-Views is an open source implementation and has been designed to fulfill the following objectives:\footnote{Source code available on Github: \url{https://github.com/SeleneLI/LISP-Views}} 
 
@@ -69,8 +68,8 @@ parallel, while LISPmon just queries one, aiming at building a complete view of
 the current LISP status.
   \item LISP-Views periodically monitors all the MRs with arbitrary
   intervals,\footnote{This interval can be changed by the experimenters to accord
-  their necessity. But in this chapter, the interval is set the shortest according to
-  the process capacity of our server.} while LISPmon just does it daily, aiming
+  their necessity.} % But in this chapter, the interval is set the shortest according to the process capacity of our server.} 
+  while LISPmon just does it daily, aiming
   at providing information about the mapping evolution at smaller time granularity.
   \item LISP-Views supervises the whole \acrshort{mds} without any manual process,
 automatically reacting to failing components (e.g., unresponsive MRs).
@@ -80,9 +79,8 @@ MR of the former one.
   \item LISP-Views is flexible and configurable, with users able to define
 different monitoring jobs and get the various measurements, whereas LISPmon
 just publishes the mapping list daily.
-  \item By design LISP-Views can be extended to be used as a monitoring facility for the internal deployed VxLAN.\footnote{In this chapter we focus on LISP.}
-  \item LISP-Views is able to be deployed on multiple VPs over the world, while
-  LISPmon publishes the results depending on one VP.
+  % \item By design LISP-Views can be extended to be used as a monitoring facility for the internal deployed VxLAN.\footnote{In this chapter we focus on LISP.}
+  \item LISP-Views is designed to be easily deployed in a distributed manner. % LISP-Views is able to be deployed on multiple VPs over the world, while LISPmon publishes the results depending on one VP.
 \end{enumerate}
 
 
@@ -132,7 +130,7 @@ The IP address that \emph{Sonar} uses to query to MRs is selected  either from t
 
 \textbf{Measurement module}: provides the composition of requested measurements (i.e., select different measurement plug-ins) based on the analysis of \emph{Raw Data} and \emph{Report}.
 
-\textbf{REST API}: is connected to \emph{Measurement module} so that the users can launch a custom experiment by setting the experiment time, the monitored MRs, and obtain the different aspects of LISP status.  We are currently implementing the REST API, so for this paper the execution of measurements was performed using command lines.
+\textbf{REST API}: is connected to \emph{Measurement module} so that the users can launch a custom experiment by setting the experiment time, the monitored MRs, and obtain the different aspects of LISP status.  We are currently implementing the REST API, so the results of measurements presented here were obtained via the command lines.
 
 \textbf{Controller module}: synchronizes all the modules in LISP-Views and also specifies the start and stop time of producing both \emph{Report} and \emph{Raw Data}. The interval of generating \emph{Report} and \emph{Raw Data} can be changed according to the hardware processing capability. However, since the inconsistency between MRs exits, the interval of producing Report and Raw Data for every MR differs from each other. Thus, the interval set in Control module should cover the slowest MR. 
 
@@ -154,7 +152,8 @@ The IP address that \emph{Sonar} uses to query to MRs is selected  either from t
 
 In order to validate and evaluate the LISP-Views monitoring tool, we used raw data and report collected during one month (from 0:00 September 4\textsuperscript{th} to midnight of October 4\textsuperscript{th} 2016), by deploying LISP-Views on one VP, which is an \acrshort{xtr} of LISP-Lab platform.
 
-The interval to produce reports was 6 hours, and the interval to produce raw data was 2 hours. Unfortunately, both MRs of LISP-Lab platform just responded to the Map-Requests at the first time and then stopped. They were not able to handle large number of queries, because the Map-Requests fill the request queues, which are not deployed in manner to sufficiently follow up the queries, resulting a drop in the MRs.  Per-se this is a success, because this bug was unknown, and the OpenLISP coders are working on a fix.  All the results of evaluation used in this section only depend on the 6 working MRs of LISP Beta Network (3 in Europe, 1 in US and 2 in Asia) and the other 6 MRs were down at the moment of conducting the experiment. The aim of the work is to validate LISP-Views by assessing if it provides at least the same results as LISPmon.
+The interval to produce reports was 6 hours, and the interval to produce raw data was 2 hours. Unfortunately, both MRs of LISP-Lab platform just responded to the Map-Requests at the first time and then stopped. They were not able to handle large number of queries, because the Map-Requests did fill the request queues, % which are not deployed in manner to sufficiently follow up the queries, 
+resulting a drop in the MRs.  Per-se this is a success, because this bug was unknown, and the OpenLISP coders fixed the issue after our measurements.  All the results of evaluation used in this section only depend on the 6 working MRs of LISP Beta Network (3 in Europe, 1 in US and 2 in Asia) and the other 6 MRs were down at the moment of conducting the experiment. The aim of the work is to validate LISP-Views by assessing if it provides at least the same results as LISPmon.
 
 
 %-< SUBSECTION >--------------------------------------------------------------------
@@ -182,16 +181,16 @@ an interval of 2 hours.}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
-In this section, we compare LISPmon and LISP-Views, so to asses if subset of information comparable between the two monitoring plateforms are identical, hence validating LISP-Views.  As we indicated in Sec.~\ref{sec:lispviews_archi_motivation}, at any time LISPmon just queries one MR, on LISP Beta Network once per day and generally begins at 7:00~a.m.. The queried MR is changed sometimes when it has issues. LISP-Views, however, keeps sending Map-Requests to all the 6 MRs with an interval of 2 hours everyday, so to retrieve the actual real status of each MR.
+In this section, we compare LISPmon and LISP-Views, so to asses if the information provided is comparable between the two monitoring platforms, hence validating LISP-Views.  As we indicated in Sec.~\ref{sec:lispviews_archi_motivation}, at any time LISPmon just queries one MR, on LISP Beta Network once per day and generally begins at 7:00~a.m.. The queried MR is changed sometimes when it has issues. LISP-Views, however, keeps sending Map-Requests to all the 6 MRs with an interval of 2 hours everyday, so to retrieve the actual real status of each MR.
 
-Fig.~\ref{lispmon_comparison} shows the number of LISP Map-Replies received from LISPmon and LISP-Views over time. The upper sub-figure makes a comparison between the 2 monitors. The line with point is obtained from the daily LISPmon publications, indicating the number of LISP Map-Replies returned by one MR in an uncertain time monitoring round every day. To facilitate the comparison, we pick up the results from LISP-Views aft 8:00 a.m., which is the nearest experimental round to LISPmon. As presented in the curve with triangle symbols, LISP-Views reflects the fact of a combination of the number of LISP Map-Reply containing the different EID-prefixes from all the MRs at a fixed experiment time. In most cases, LISP-Views receives around 20 LISP Map-Replies more than LISPmon, reflects the fact that the MRs are not coherent at any time due to the existence of convergence time for synchronizing the mapping information among them. The other 5 days, where LISP-Views receives very few LISP Map-Replies, show that there were issues to normally receive LISP status at that time, whereas LISPmon always presents a smoother trend but hides the reality.
+Fig.~\ref{lispmon_comparison} shows the number of LISP Map-Replies received from LISPmon and LISP-Views over time. The upper sub-figure makes a comparison between the 2 monitors. The line with point is obtained from the daily LISPmon publications, indicating the number of LISP Map-Replies returned by one MR in an uncertain time monitoring round every day. To facilitate the comparison, we pick up the results from LISP-Views at 8:00 a.m., which is the nearest experimental round to LISPmon. As presented in the curve with triangle symbols, LISP-Views reflects the fact of a combination of the number of LISP Map-Reply containing the different EID-prefixes from all the MRs at a fixed experiment time. In most cases, LISP-Views receives around 20 LISP Map-Replies more than LISPmon, reflects the fact that the MRs are not coherent at any time due to the existence of convergence time for synchronizing the mapping information among them. The other 5 days, where LISP-Views receives very few LISP Map-Replies, show that there were issues to normally receive LISP status at that time, whereas LISPmon always presents a smoother trend but hides the reality.
 
 The lack of stability can be better appreciated in the bottom sub-figure of Fig.~\ref{lispmon_comparison}. Such figure depicts the number of LISP Map-Reply (in dashed line) and the overall Mapping (LISP and Negative Map-Reply, in solid line) from LISP-Views for every 2 hours monitoring round during the whole experiment. Although the number of Map-Replies presented in the figure is still the combination of results from 6 MRs when the returned EID-prefixes are different, it shows that the MRs are not quite stable. Sometimes the MRs even provide 0 or less than 10 LISP Map-Replies, but in the next experiment round, the number is recovered. Besides, we evaluate the total number of successful queries every 2 hours. It also presents the behavior of instability, where it generally oscillates between 400 and 500, but it occasionally drops lower than 300. Both solid and dashed lines have almost same changing trend, indicating that the change of overall Map-Replies is mainly affected by LISP Map-Replies. Monitoring rounds where the number of LISP Map-Replies approaches 0 but where  Negative Map-Replies are still received indicate issues at the MRs, especially for answering the LISP Map-Reply.
 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
         \centering
-        \includegraphics[width=0.8\textwidth]{Pics/LISPmon_comparison_day.eps}
+        \includegraphics[width=0.7\textwidth]{Pics/LISPmon_comparison_day.eps}
         \caption{Comparison between the LISP Map-Reply of LISPmon and LISP-Views over days}
         \label{lispmon_comparison_day}
 \end{figure}
@@ -223,7 +222,7 @@ After validating LISP-Views in the previous section, this section presents sever
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
         \centering
-        \includegraphics[width=0.8\textwidth]{Pics/Reliability.eps}
+        \includegraphics[width=0.7\textwidth]{Pics/Reliability.eps}
         \caption{Reliability of each MR}
         \label{MRs_reliability}
 \end{figure}
@@ -241,6 +240,14 @@ reliability is caused by MRs having an unstable behaviour, as shown in
 Fig.~\ref{lispmon_comparison}, the number of Map-Reply changes heavily over
 time, and especially the number of LISP Map-Reply sometimes drops to 0.
 
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Pics/median_of_RTT.eps}
+	\caption{Median RTT per MR (In the most time, the Negative Map-Reply and overall are overlapped.)}
+	\label{median_rtt_per_map-resolver}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
 In order to understand the behavior of each MR in terms of latency, we analyze
 the median RTT obtained from our dataset. The RTT here refers to the Round Trip
 Time from sending out the Map-Request until receiving the Map-Reply.
@@ -254,9 +261,8 @@ registers and the \acrshort{xtr} gives back the Map-Reply. Compared to the Negat
 Map-Replies, which are normally returned by MR, LISP Map-Replies take longer
 time, especially in this case. However, MR2 and MR6 present very high
 latency, particularly for MR2 (located in Europe), but its RTT is even higher
-than MR5, which is located in Asia. It is mainly caused by a very high CPU
-usage of these two MRs preventing them sometimes to reply.  If we focus on the
-RTT of LISP Map-Replies, only MR1, MR4, and MR5 provide the best
+than MR5, which is located in Asia. It is mainly caused by a very high CPU usage of these two MRs preventing them sometimes to reply.  
+If we focus on the RTT of LISP Map-Replies, only MR1, MR4, and MR5 provide the best
 behavior, which coincides with the result of Fig.~\ref{MRs_reliability} on
 reliability. The high RTTs of LISP Map-Replies are from the other 3 MRs,
 where the median RTT is around 1300 ms, is caused by the failed queries.
@@ -266,25 +272,17 @@ Fig.~\ref{lispmon_comparison}. Half of LISP Map-Replies are more than 1300~ms
 and partly even more than 3~s. Since our measurement timeout is set to 3~s
 it implies that some Map-Replies are dropped by our measurement unit.  As the
 RTT of Negative Map-Replies is generally lower, we can receive more of them. This
-phenomenon may be very biased by the VP location. Thus, deploying LISP-Views on
-multiple VPs to get more reliability information is a paramount future work. In
-addition, Fig.~\ref{median_rtt_per_map-resolver} presents that the number of
+phenomenon may be very biased by the VP location. % Thus, deploying LISP-Views on multiple VPs to get more reliability information is a paramount future work. 
+In addition, Fig.~\ref{median_rtt_per_map-resolver} presents that the number of
 Map-Replies returning from the MRs  located in Europe and US is indeed higher
 than the number of Negative Map-Replies, which is expected. But both Asian MRs
 return LISP Map-Replies faster than Negative Map-Replies. The reason of this 
 observation is unclear and requires further exploration.
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!t]
-     \centering
-     \includegraphics[width=0.8\textwidth]{Pics/median_of_RTT.eps}
-     \caption{Median RTT per MR (In the most time, the Negative Map-Reply and overall are overlapped.)}
-     \label{median_rtt_per_map-resolver}
-\end{figure}
 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
         \centering
-        \includegraphics[width=0.8\textwidth]{Pics/ecdf_of_RTT.eps}
+        \includegraphics[width=0.7\textwidth]{Pics/ecdf_of_RTT.eps}
         \caption{ECDF RTT comparison between LISP and Negative Map-Reply}
         \label{ecdf_rtt_lisp_negative}
 \end{figure}
@@ -311,14 +309,14 @@ Fig.~\ref{median_rtt_per_map-resolver}.
     \centering
     \caption{Percentage of Mapping Source}% ~\akram{keep}
     \label{tab:percentage_of_received_from}{
-	% \resizebox{0.9\textwidth}{!}{%
+	\resizebox{0.8\textwidth}{!}{
         \begin{tabular}{c|c|c|c}
             \hline\hline
                 Map-Reply Type     & Map Resolver   & xTR       & Other \\ \hline
                 Negative Map-Reply &  98.79\%       &  -        &  1.21\% \\ \hline
                 LISP Map-Reply     & 0.14\%         & 88.37\%   &  11.49\%  \\ \hline\hline
         \end{tabular}
-        }
+        }}
 \end{table}
 %-< END TABLE >--------------------------------------------------------------------
 
@@ -327,8 +325,7 @@ information about \emph{Mapping Source}. We explore the source answering the
 Map-Replies according to different types (LISP or Negative). In the case of
 LISP Map-Replies, we expect the source of replies to come either from one of
 the ETRs or the queried MR. On the contrary, for Negative Map-Replies, replies
-should just come from the queried MR.
-Tab.~\ref{tab:percentage_of_received_from} presents the percentage of
+should just come from the queried MR. Tab.~\ref{tab:percentage_of_received_from} presents the percentage of
 observations for the two types of Map-Replies. For the Negative Map-Reply,
 98.79\% come from the queried MR and 1.21\% come from the other sources.
 Further, the other sources are actually the other MRs without query and it
@@ -343,7 +340,7 @@ investigation.
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
         \centering
-        \includegraphics[width=0.8\textwidth]{Pics/CDF_of_RLOCs.eps}
+        \includegraphics[width=0.7\textwidth]{Pics/CDF_of_RLOCs.eps}
         \caption{CDF of the number of RLOCs}
         \label{CDF_of_RLOCs}
 \end{figure}
@@ -369,8 +366,7 @@ more than 60\% LISP users are not multi-homed and among them the majority
 only has 2 RLOCs. Not only the number of RLOCs of each site does significantly
 change, but also the RLOCs themselves remains stable. We measured that the
 stability reaches 99.8\% for all the dataset, i.e., once an
-EID-prefix~--~to~--~RLOCs mapping is decided, it rarely changes. Surprisingly,
-we have not found any mobile LISP sites.
+EID-prefix~--~to~--~RLOCs mapping is decided, it rarely changes. We have not found any mobile LISP sites.
 
 All the aforementioned observations are based on the experiment made between
 September and October 2016 as described in Sec.~\ref{sec:lispviews_evaluation_meth}.
@@ -400,7 +396,7 @@ one is down. Besides, the number of observed EIDs per day heavily drops two
 times in the figure. Since the two valley don't drop to zero, we know that the
 problem doesn't come directly from the \acrshort{mds}. Instead, the problem comes from
 issues that occurred within the network of the LISP-Views server itself. This
-observation highlights the urgent need of distributing VPs.
+observation highlights the need of distributing VPs.
 
 
 %-< SECTION >--------------------------------------------------------------------

@@ -200,11 +200,30 @@ During $T_{timeout\_SMR}$ (normally is 3 seconds), xTR\_3 queries the mapping sy
 	&=& D_{DHCP} + 2* (3*2ms) + 2*2ms + 200ms + 3*(3*2ms) + 2*2ms \nonumber \\
 	&=& D_{DHCP} + 238 ms
 \end{eqnarray}
-where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. 
+where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. (Min value of handover delay = 1.300349, where packet sending interval = 0.02 s) 
 
 After several executions of simulation program, we observe that the overall handover delay changes by the various beacon intervals, in particular the Wi-Fi association delay depends on the different beacon intervals, whereas LISP SMR procedure always cost around $3s$. To get the lower bound of overall handover delay, we can ignore the Wi-Fi association delay when the beacon interval is $500ms$, and the latency due to DHCP procedure is always $1s$. Thus, adopting LISP-MN to conduct the host-based mobility takes at least $4s$. Compared to current most stable solution for host-based IP mobility management MIPv6, which latency including L2 and L3 in a real Wi-Fi testbed is around $3.68s$~\cite{vassiliou2010analysis}, LISP-MN has a higher delay caused by the double encapsulation mechanism introduced by LISP-MN behind LISP-Site. 
 
 During handover, CN can successfully receive packets from LISP-MN right after DHCP procedure being accomplished, but LISP-MN cannot receive the packets from CN until LISP SMR procedure is also finished. Thus, during DHCP procedure, all bi-directional transmitted packets are lost. To improve the performance, \cite{tang2017lisp} proposes a network-level LISP-MN solution, but has not validated their proposals neither in simulation nor in testbed. Our ns-3 implementation can be used to realize them.
+
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_double_encap_DHCP}
+	\caption{Impact of DHCP association on handover delay}
+	\label{LISP_mobility_double_encap_DHCP}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
+
+
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_double_encap_PacketInterval}
+	\caption{Impact of packet sending interval on handover delay}
+	\label{LISP_mobility_double_encap_PacketInterval}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
 
 
 %-< SECTION >--------------------------------------------------------------------
@@ -249,7 +268,27 @@ The overall handover delay in this paper is defined at the moment that LISP-MN s
 	&=& D_{DHCP} + 2* (3*2ms) + 3*(3*2ms)\nonumber \\
 	&=& D_{DHCP} + 30 ms
 \end{eqnarray}
-where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. 
+where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. (Min value of handover delay = 1.073031 s, where packet sending interval = 0.01 s) 
+
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_LISPMN_DHCP}
+	\caption{Impact of DHCP association on handover delay}
+	\label{LISP_mobility_LISPMN_DHCP}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
+
+
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_LISPMN_PacketInterval}
+	\caption{Impact of packet sending interval on handover delay}
+	\label{LISP_mobility_LISPMN_PacketInterval}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
+
 
 %-< SECTION >--------------------------------------------------------------------
 \section{Evaluation for MN in LISP-Site}
@@ -288,13 +327,31 @@ In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed i
 
 The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
 \begin{eqnarray}
-D_{overall} &=& D_{Register} + D_{Notify} + D_{CheckAlive} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
-&=& 2T_{xTR_2-MDS} + D_{CheckAlive} + 3T_{xTR_2-xTR_3} \nonumber \\
-&=& 2* (2*2ms) + D_{CheckAlive} + 3*(2*2ms) \nonumber \\
-&=& D_{CheckAlive} + 20 ms
+D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
+&=& T_{xTR_2-MDS} + T_{MDS-xTR_1} + D_{DHCP} + 3T_{xTR_2-xTR_3} \nonumber \\
+&=& 2* (2*2ms) + D_{DHCP} + 3*(2*2ms) \nonumber \\
+&=& D_{DHCP} + 20 ms
 \end{eqnarray}
-where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. $CheckAlive$ is the delay that xTR\_1 checks if MN still connects to it. For example, xTR\_1 can simply \emph{ping} MN. If MN still connects to it, it will reply to mapping system that itself is still RLOC of MN. Otherwise, if \emph{ping} meets timeout, xTR\_1 will tell the mapping system that MN has left, and sends SMR to the CNs in its cache. The later situation has higher delay, because xTR\_1 needs to wait until timeout of \emph{ping}.
+where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. $CheckAlive$ is the delay that xTR\_1 checks if MN still connects to it. For example, xTR\_1 can simply \emph{ping} MN. If MN still connects to it, it will reply to mapping system that itself is still RLOC of MN. Otherwise, if \emph{ping} meets timeout, xTR\_1 will tell the mapping system that MN has left, and sends SMR to the CNs in its cache. The later situation has higher delay, because xTR\_1 needs to wait until timeout of \emph{ping}. (Min value of simulation = 1.067679 s, where includes 1 s of DHCP delay)
 
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_xTR_DHCP}
+	\caption{Impact of DHCP association on handover delay}
+	\label{LISP_mobility_xTR_DHCP}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
+
+
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_xTR_PacketInterval}
+	\caption{Impact of packet sending interval on handover delay}
+	\label{LISP_mobility_xTR_PacketInterval}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
 
 %-< SECTION >--------------------------------------------------------------------
 \section{Conclusion}
