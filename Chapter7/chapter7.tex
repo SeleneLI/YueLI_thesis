@@ -13,45 +13,32 @@
 \fi
 
 %-< ABSTRACT >--------------------------------------------------------------------
-The \emph{Locator/Identifier Separation Protocol} (LISP) reconstructs the current IP addressing space to improve the scalability and no interrupt mobility issues. LISP Mobile Node (LISP-MN) is based on the basic LISP functionality to provide seamless mobility across networks. The basic LISP architecture is deployed on LISP Beta Network and LISP-Lab platform to offer the researchers a realistic experimental environment, but both do not support LISP-MN. Some simulation models with LISP extensions are implemented on various simulators, but are unfortunately not open source. Providing a free and flexible simulation model with the basic LISP architecture as well as the extensions so to help researchers quickly test new LISP behaviors motivates our work. This paper introduces the implementation of the basic LISP architecture model and LISP-MN on the simulator ns-3. It also provides the evaluation results in mobility scenario to validate the model and shows when the current proposal of LISP-MN is behind a LISP-site has a very high delay during the handover procedure.
+The \emph{Locator/Identifier Separation Protocol} (LISP) reconstructs the current IP addressing space so to be able to improve the no interrupt mobility issues. LISP Mobile Node (LISP-MN) is based on the basic LISP functionality to provide seamless mobility across networks. Thus, LISP can be implemented either on the border routers or directly on the end hosts to achieve the mobility. However, there are no experimental results comparing the advantages and disadvantages of each solution. The basic LISP architecture is deployed on LISP Beta Network and LISP-Lab platform to offer the researchers a realistic experimental environment, but both do not support LISP-MN. Some simulation models with LISP extensions are implemented on various simulators, but are not open source. Fortunately, there is an open source project implementing the fundamental LISP on ns-3 in 2016. Providing a free and flexible simulation model with the extensions so to help researchers quickly test new LISP mobility behaviors motivates our work. This chapter analyzes the different LISP mobility scenarios from the respects of handover delay and overhead of control plane. It describes the characteristics of each scenario. In addition, this chapter introduces the implementation of basic LISP architecture model and LISP-MN on the simulator ns-3. % It also provides the evaluation results in mobility scenario to validate the model and shows when the current proposal of LISP-MN is behind a LISP-site has a very high delay during the handover procedure.
 
-The rest of chapter is organized as follows: Sec.~\ref{sec:ns3_intro} reviews LISP architecture, highlighting the LISP mobility mechanism; Sec.~\ref{sec:ns3_related_work} ... Sec.~\ref{sec:ns3_modify} analyzes the design and implementation of our prototype, and afterwards, Sec.~\ref{sec:evaluation} presents preliminary evaluation results of our implementations. We finish with a discussion and some ideas for future work.
+The rest of chapter is organized as follows: Sec.~\ref{sec:ns3_related_work} introduces ns-3 and the existing LISP simulator on it. Sec.~\ref{sec:ns3_lispmn} analyzes the design and implementation of our prototype, and afterwards, Sec.~\ref{sec:ns3_analysis} illustrates three different LISP scenarios supporting seamless mobility, presents their traffic schema, modelizes the handover delay and overhead of control plane, and compares their advantages and disadvantages. % Sec.~\ref{sec:evaluation} presents preliminary evaluation results of our implementations. 
+Sec.~\ref{sec:ns3_conclusion} provides some ideas of evaluation based on the proposed simulation for future work.
 %-< ABSTRACT >--------------------------------------------------------------------
 
-\section{Introduction}
-\label{sec:ns3_intro}
-% The research community are on the need of an open source LISP/LISP-MN simulator to facilitate the LISP-related studies. There exist some research efforts to fulfill this gap, however these simulators are not available for the pubic neither covering LISP-MN. That's the motivation of this work and importance of our work.
-% \begin{itemize}
-%     \item present the shortcomings of measurements on the real Internet and thus the advantages of simulation
-%     \item xx
-% \end{itemize}
-The \emph{Locator/Identifier Separation Protocol} (LISP)~\cite{rfc6830} is initially proposed to solve the scalability and flexibility issues of current Internet architecture, since it decouples the Routing Locators (RLOCs) and Endpoint Identifiers (EIDs). This allows that the BGP routing tables in Internet core just announce the globally routable RLOCs whereas EIDs are only locally used within the subnets. LISP is under standardization at the IETF around ten years and as it develops, more advantages are found, such as: seamless mobility at terminal or in the Data Center, IPv6 transition and traffic engineering~\cite{saucez2016locator}. Among them, the continuous communication without interruption during the handover of terminals becomes a hot topic recently.
-
-To test the various features of LISP, two LISP testbeds are built: LISP Beta Network and LISP-Lab platform. But both of them are only the basic LISP architectures and do not support mobility functionality. Some platform-specific LISP implementations, such as: OpenLISP~\cite{phung2014openlisp}, Open Overlay Router (OOR)~\cite{LISPmob} and Cisco's implementation~\cite{CiscoIOS}, can provide realistic LISP evaluations but lack the flexibility to test the new features. A LISP simulator is a good choice for the researchers. To the best knowledge, LISP is first implemented on ns-3~\cite{ns3}, which is widely used by academic researchers and educational use in~\cite{lezama2009implementation}, but mobility support is not included as well. While within OMNET++ platform, LISP and mobility features are implemented~\cite{klein2012integration}. However, their source code is not available online. To promote the development of LISP and as ns-3 gradually shows the potential to take the momentum in network simulator domain~\cite{rana2017implementation}, it highlights the importance to implement LISP and its mobility extensions under ns-3 and motivates our work.
-
-In this paper, we introduce the implementation of basic LISP functions and mobility features on ns-3 by both modifying the existent ns-3 modules and integrating the new modules. Our simulator is validated by achieving a mobility scenario, in which a terminal changes the attachment points by keeping the communication with the remote node. All the handover procedures are transparent to the terminal, however, the delay to receive the packets again presents high.
-
+%-< SUB SECTION >--------------------------------------------------------------------
 \section{Related work}
 \label{sec:ns3_related_work}
-%-< SUB SECTION >--------------------------------------------------------------------
-% \subsection{Description of ns-3}
-% \label{sec:descriptionns-3}
+ \subsection{Description of ns-3}
+ \label{sec:ns3_ns3}
  ns-3~\cite{ns3} is a popular and free discrete-event network simulator for networking research. To be closer to the real implementation (in a real Operating System), easily include C-based implementation codes, ease debugging and reduce the cost on maintaining in a long term, C++ is prioritized to be the unique programming language for ns-3. Besides, ns-3 offers the possibility to visualize the simulation instance so to allow the users to visually confirm the packets flow as they expect.
 %\begin{itemize}
 %    \item Description of ns-3.
 %    \item The simulator supporting LISP is introduced in Sec.~\ref{subsec:implementation_OMNet}.
 %\end{itemize}
 
-
-%%-< SECTION >--------------------------------------------------------------------
-%\section{Simulation model}
-%\label{sec:sim_model}
+%-< SUB SECTION >--------------------------------------------------------------------
+\subsection{Basic LISP implementation on ns-3}
+\label{sec:ns3_basic_lisp}
+It should be noted that this work is based on a prior implementation work by Lionel. However, his implementation has no support for LISP MN.
 
 
 %-< SECTION >--------------------------------------------------------------------
-\section{LISP/LISP-MN Implementation based on ns3}
-\label{sec:ns3_modify}
-It should be noted that this work is based on a prior implementation work by Lionel. However, his implementation has no support for LISP MN.
+\section{Implementation of LISP extensions on ns-3}
+\label{sec:ns3_lispmn}
 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure*}[!t]
@@ -61,7 +48,7 @@ It should be noted that this work is based on a prior implementation work by Lio
 	\label{LISP-UML}
 \end{figure*}
 %-< END FIGURE >--------------------------------------------------------------------
-Our implementation is under ns-3.26 and based on LISP~\cite{ietf-lisp-rfc6830bis-03} and LISP-MN standards~\cite{meyer-lisp-mn-16}. The main classes are shown in Fig.~\ref{LISP-UML} in form of UML diagram. The blank blocks refer to the classes that we added into ns-3, while darker blocks are classes already in ns-3. As a design choice, we implement LISP/LISP-MN functionalities by modifying and extending the \emph{internet} module of ns-3, instead of creating a new independent module. The justification of this design is that LISP/LISP-MN and legacy internet module have an interdependent relationship. However, this kind mutually dependent relationship between modules is not supported by ns-3. Inspired from design of OpenLISP~\cite{saucez2009openlisp}, the Data Plane implementation is in "kernel space" (i.e. ns-3's \emph{TCP/IP stack}) and Control Plane is implemented in "user space" (i.e. ns-3 \emph{Application}). The communication between LISP Data and Control Plane is developed via a dedicated socket (i.e. \emph{LispMappingSocket}) that inherits from ns-3 \emph{Socket} class. It should be noted that our implementation only supports IPv4 at time of this writing. The IPv6 support (i.e. the implementation related to IPv6 such as \emph{LispOverIpv6Impl}) is still in process.  
+Our implementation is under ns-3.27 and based on LISP~\cite{rfc6830} and LISP-MN standards~\cite{meyer2016lisp}. The main classes are shown in Fig.~\ref{LISP-UML} in form of UML diagram. The blank blocks refer to the classes that we added into ns-3, while darker blocks are classes already in ns-3. As a design choice, we implement LISP/LISP-MN functionalities by modifying and extending the \emph{internet} module of ns-3, instead of creating a new independent module. The justification of this design is that LISP/LISP-MN and legacy internet module have an interdependent relationship. However, this kind mutually dependent relationship between modules is not supported by ns-3. Inspired from design of OpenLISP~\cite{saucez2009openlisp}, the Data Plane implementation is in "kernel space" (i.e. ns-3's \emph{TCP/IP stack}) and Control Plane is implemented in "user space" (i.e. ns-3 \emph{Application}). The communication between LISP Data and Control Plane is developed via a dedicated socket (i.e. \emph{LispMappingSocket}) that inherits from ns-3 \emph{Socket} class. It should be noted that our implementation only supports IPv4 at time of this writing. The IPv6 support (i.e. the implementation related to IPv6 such as \emph{LispOverIpv6Impl}) is still in process.  
 
 %-< SUB SECTION >--------------------------------------------------------------------
 \subsection{Implementation of LISP Data Plane}
@@ -108,63 +95,29 @@ To support mobility within conventional LISP node, a modified DHCP client applic
 
 
 %-< SECTION >--------------------------------------------------------------------
-\section{Evaluation for LISP-MN in LISP-Site}
-\label{sec:ns3_evaluation_lispmn_xTR}
-We validate our LISP/LISP-MN implementation by conducting a simulation and providing a preliminary performance evaluation of handover delay. The simulation topology is shown in Fig.~\ref{sim_scenario}.
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=\textwidth]{Pics/mobility_through_subnets_2_encap_topo}
-	\caption{LISP mobility simulation scenario for double encapsulation}
-	\label{sim_scenario}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Simulation Setup}
-\label{subsec:ns3_setup_lispmn_xTR}
-%\begin{itemize}
-%    \item Topology of simulation setup
-%    \item The simulation parameter settings
-%\end{itemize}
-In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Results}
-\label{sec:ns3_results_lispmn_xTR}
-%\begin{itemize}
-%    \item Show that LISP-MN procedure passes successfully
-%    \item Show that the handover delay in LISP-MN handover procedure
-%\end{itemize}
-As shown in Fig.~\ref{sim_schema_LISPMN_xTR}, when MN sending the packets to CN during the simulation, it needs double encapsulation and the packet flow sequences are as follows. The traditional IP packets with EID 172.16.0.1 as source address and EID 10.3.3.2 as destination address are encapsulated by adding Local RLOC 10.1.1.1 as outer source address and RLOC 10.1.5.2 as outer destination address after MN querying the mapping information to MR. The LISP packets are encapsulated and forwarded to xTR\_1. The latter gets the mapping information from MR and encapsulates the packets again by adding the RLOC 10.1.2.1 as the outer source address and RLOC 10.1.5.2 as the outer destination address, then sends the packets on Internet core. The xTR\_3 needs dencapsulate the packets twice after it receiving and verifying the packets, and finally sends to CN. Once LISP-MN lost its Wi-Fi connection with xTR\_1, it needs a DHCP procedure (consisting of DHCP Discover, DHCP Offer, DHCP Request and DHCP ACK) with xTR\_2 to get a new LRLOC 10.1.7.1 and then triggers LISP SMR to xTR\_3. After xTR\_3 getting new mapping information of <10.1.7.1, 10.1.3.1> and <172.16.0.1, 10.1.7.1>, the connection between LISP-MN and CN is re-established again.
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=\textwidth]{Pics/Mobility_LISPMN_xTR_schema_SMR_simplify}
-	\caption{Schema for LISP-MN in LISP-Site mobility}
-	\label{sim_schema_LISPMN_xTR}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
+\section{Theoretical analysis}
+\label{sec:ns3_analysis}
+Simulation architecture for 3 scenarios, describe for general.
+We validate our LISP/LISP-MN implementation by conducting a simulation and providing a preliminary performance evaluation of handover delay. The simulation topology is shown in Fig.~\ref{sim_archi}.
 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!th]
 	\centering
-	\includegraphics[width=\textwidth]{Pics/Mobility_LISPMN_xTR_schema_SMR_improving_simplify}
-	\caption{Schema for improving LISP-MN in LISP-Site mobility}
-	\label{sim_schema_LISPMN_xTR_improving}
+	\includegraphics[width=\textwidth]{Pics/LISP_mobility_archi}
+	\caption{LISP mobility architecture for general scenario}
+	\label{sim_archi}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
-Fig.~\ref{sim_schema_LISPMN_xTR_improving}
 
 %-< TABLE >-----------------------------------------------------------------
 \begin{table}[!tb]
 	\centering
-	\caption{Different configurations of probes in 2015}
-	\label{Probes_config_2015}{
+	\caption{Symbols for numerical analysis}
+	\label{Symbols_numerical_analysis}{
 		% \resizebox{0.9\textwidth}{!}{%
 		\begin{tabular}{@{}|c|c|@{}}
 			\hline\hline
-			Parameters & Descriptions   \\ \hline
+			Symbols & Explanations   \\ \hline
 			$D_{overall}$ & Overall handover delay	\\  \hline    
 			$D_{DHCP}$ &  DHCP address configuration delay \\  \hline    
 			$D_{Register}$ &  Delay of sending Map-Register      	\\  \hline
@@ -174,15 +127,95 @@ Fig.~\ref{sim_schema_LISPMN_xTR_improving}
 			$D_{Resolve}$ &  Delay of resolving mapping information in MDS      	\\  \hline               
 			$D_{SMR}$ &  Delay of sending SMR       	\\  \hline 
 			$D_{invokeSMR}$ &  Delay of sending invoke-SMR \\  \hline 
-			$D_{CheckAlive}$ &  Delay of checking connection of MN      	\\  \hline
+			$D_{Link}$ &  Link delay between two network entities \\  \hline 
 			$T_{A-B}$ &  Delay of packet transmission between A and B     	\\  \hline
-			$T_{timeout_SMR}$ &  Timeout of SMR     	\\  \hline
-			$T_{timeout_ping}$ &  Timeout of ping     	\\  \hline  \hline               
-		
-	\end{tabular}
+			$T_{timeout_SMR}$ &  Timeout of SMR     	\\  \hline  \hline               
+		\end{tabular}
 	}
 \end{table}
 %-< END TABLE >-----------------------------------------------------------------
+
+
+
+
+
+%-< SUBSECTION >--------------------------------------------------------------------
+\subsection{LISP-MN in non-LISP-Site}
+\label{sec:ns3_analysis_lispmn}
+We validate our LISP/LISP-MN implementation by conducting a simulation and providing a preliminary performance evaluation of handover delay. The simulation topology is shown in Fig.~\ref{sim_scenario}.
+
+In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
+
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=\textwidth]{Pics/Mobility_LISPMN_schema_SMR_simplify}
+	\caption{Schema for LISP-MN mobility}
+	\label{sim_schema}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
+
+The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
+\begin{eqnarray}
+D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
+&=& D_{DHCP} + 2T_{LISPMN-MDS} + 3T_{LISPMN-xTR_3} \nonumber \\
+&=& D_{DHCP} + 2* (3*2ms) + 3*(3*2ms)\nonumber \\
+&=& D_{DHCP} + 30 ms
+\end{eqnarray}
+where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. (Min value of handover delay = 1.073031 s, where packet sending interval = 0.01 s) 
+
+
+%-< SUBSECTION >--------------------------------------------------------------------
+\subsection{MN in LISP-Site}
+\label{sec:ns3_analysis_xTR}
+We validate our LISP/LISP-MN implementation by conducting a simulation and providing a preliminary performance evaluation of handover delay. The simulation topology is shown in Fig.~\ref{sim_scenario}.
+
+In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
+
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=\textwidth]{Pics/Mobility_xTR_schema_SMR_simplify}
+	\caption{Schema for LISP-MN mobility}
+	\label{sim_schema}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
+
+The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
+\begin{eqnarray}
+D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
+&=& D_{DHCP} +T_{xTR_2-MDS} + T_{MDS-xTR_1} + 3T_{xTR_1-xTR_3} \nonumber \\
+&=& D_{DHCP} +2* (2*2ms) + 3*(2*2ms) \nonumber \\
+&=& D_{DHCP} + 20 ms
+\end{eqnarray}
+where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. $CheckAlive$ is the delay that xTR\_1 checks if MN still connects to it. For example, xTR\_1 can simply \emph{ping} MN. If MN still connects to it, it will reply to mapping system that itself is still RLOC of MN. Otherwise, if \emph{ping} meets timeout, xTR\_1 will tell the mapping system that MN has left, and sends SMR to the CNs in its cache. The later situation has higher delay, because xTR\_1 needs to wait until timeout of \emph{ping}. (Min value of simulation = 1.067679 s, where includes 1 s of DHCP delay)
+
+
+
+%-< SUBSECTION >--------------------------------------------------------------------
+\subsection{LISP-MN in LISP-Site}
+\label{sec:ns3_analysis_lispmn_xTR}
+Specify the architecture in this scenario.
+
+
+%%-< SUB SECTION >--------------------------------------------------------------------
+%\subsection{Simulation Setup}
+%\label{subsec:ns3_setup_lispmn_xTR}
+%%\begin{itemize}
+%%    \item Topology of simulation setup
+%%    \item The simulation parameter settings
+%%\end{itemize}
+%In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per 0.01 second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
+
+As shown in Fig.~\ref{sim_schema_LISPMN_xTR}, when MN sending the packets to CN during the simulation, it needs double encapsulation and the packet flow sequences are as follows. The traditional IP packets with EID 172.16.0.1 as source address and EID 10.3.3.2 as destination address are encapsulated by adding Local RLOC 10.1.1.1 as outer source address and RLOC 10.1.5.2 as outer destination address after MN querying the mapping information to MR. The LISP packets are encapsulated and forwarded to xTR\_1. The latter gets the mapping information from MR and encapsulates the packets again by adding the RLOC 10.1.2.1 as the outer source address and RLOC 10.1.5.2 as the outer destination address, then sends the packets on Internet core. The xTR\_3 needs dencapsulate the packets twice after it receiving and verifying the packets, and finally sends to CN. Once LISP-MN lost its Wi-Fi connection with xTR\_1, it needs a DHCP procedure (consisting of DHCP Discover, DHCP Offer, DHCP Request and DHCP ACK) with xTR\_2 to get a new LRLOC 10.1.7.1 and then triggers LISP SMR to xTR\_3. After xTR\_3 getting new mapping information of <10.1.7.1, 10.1.3.1> and <172.16.0.1, 10.1.7.1>, the connection between LISP-MN and CN is re-established again.
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!th]
+	\centering
+	\includegraphics[width=\textwidth]{Pics/Mobility_double_encap_schema_SMR_simplify}
+	\caption{Schema for LISP-MN in LISP-Site mobility}
+	\label{Mobility_double_encap_schema_SMR_simplify}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
 
 The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
 \begin{eqnarray}
@@ -206,152 +239,43 @@ After several executions of simulation program, we observe that the overall hand
 
 During handover, CN can successfully receive packets from LISP-MN right after DHCP procedure being accomplished, but LISP-MN cannot receive the packets from CN until LISP SMR procedure is also finished. Thus, during DHCP procedure, all bi-directional transmitted packets are lost. To improve the performance, \cite{tang2017lisp} proposes a network-level LISP-MN solution, but has not validated their proposals neither in simulation nor in testbed. Our ns-3 implementation can be used to realize them.
 
+
+
+
+
+
+
+
+
+%%-< SECTION >--------------------------------------------------------------------
+%\section{Evaluations}
+%\label{sec:ns3_evaluation}
 %%-< FIGURE >--------------------------------------------------------------------
 %\begin{figure}[!th]
 %	\centering
-%	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_double_encap_DHCP}
-%	\caption{Impact of DHCP association on handover delay}
-%	\label{LISP_mobility_double_encap_DHCP}
+%	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_LISPMN_PacketInterval}
+%	\caption{Impact of packet sending interval on handover delay}
+%	\label{LISP_mobility_LISPMN_PacketInterval}
 %\end{figure}
 %%-< END FIGURE >--------------------------------------------------------------------
-
-
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_double_encap_PacketInterval}
-	\caption{Impact of packet sending interval on handover delay}
-	\label{LISP_mobility_double_encap_PacketInterval}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
-
-
-%-< SECTION >--------------------------------------------------------------------
-\section{Evaluation for LISP-MN in non-LISP-Site}
-\label{sec:ns3_evaluation_lispmn}
-We validate our LISP/LISP-MN implementation by conducting a simulation and providing a preliminary performance evaluation of handover delay. The simulation topology is shown in Fig.~\ref{sim_scenario}.
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=\textwidth]{Pics/mobility_through_subnets_2_encap_topo}
-	\caption{LISP mobility simulation scenario for double encapsulation}
-	\label{sim_scenario}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Simulation Setup}
-\label{subsec:ns3_setup_lispmn}
-%\begin{itemize}
-%    \item Topology of simulation setup
-%    \item The simulation parameter settings
-%\end{itemize}
-In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Results}
-\label{sec:ns3_results_lispmn}
-
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=\textwidth]{Pics/Mobility_LISPMN_schema_SMR_simplify}
-	\caption{Schema for LISP-MN mobility}
-	\label{sim_schema}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
-
-The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
-\begin{eqnarray}
-	D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
-	&=& D_{DHCP} + 2T_{LISPMN-MDS} + 3T_{LISPMN-xTR_3} \nonumber \\
-	&=& D_{DHCP} + 2* (3*2ms) + 3*(3*2ms)\nonumber \\
-	&=& D_{DHCP} + 30 ms
-\end{eqnarray}
-where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. (Min value of handover delay = 1.073031 s, where packet sending interval = 0.01 s) 
-
+%
 %%-< FIGURE >--------------------------------------------------------------------
 %\begin{figure}[!th]
 %	\centering
-%	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_LISPMN_DHCP}
-%	\caption{Impact of DHCP association on handover delay}
-%	\label{LISP_mobility_LISPMN_DHCP}
+%	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_xTR_PacketInterval}
+%	\caption{Impact of packet sending interval on handover delay}
+%	\label{LISP_mobility_xTR_PacketInterval}
 %\end{figure}
 %%-< END FIGURE >--------------------------------------------------------------------
-
-
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_LISPMN_PacketInterval}
-	\caption{Impact of packet sending interval on handover delay}
-	\label{LISP_mobility_LISPMN_PacketInterval}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
-
-
-%-< SECTION >--------------------------------------------------------------------
-\section{Evaluation for MN in LISP-Site}
-\label{sec:ns3_evaluation_xTR}
-We validate our LISP/LISP-MN implementation by conducting a simulation and providing a preliminary performance evaluation of handover delay. The simulation topology is shown in Fig.~\ref{sim_scenario}.
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=\textwidth]{Pics/mobility_through_subnets_2_encap_topo}
-	\caption{LISP mobility simulation scenario for double encapsulation}
-	\label{sim_scenario}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Simulation Setup}
-\label{subsec:ns3_setup_xTR}
-%\begin{itemize}
-%    \item Topology of simulation setup
-%    \item The simulation parameter settings
-%\end{itemize}
-In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Results}
-\label{sec:ns3_results_xTR}
-
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=\textwidth]{Pics/Mobility_xTR_schema_SMR_simplify}
-	\caption{Schema for LISP-MN mobility}
-	\label{sim_schema}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
-
-The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
-\begin{eqnarray}
-D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
-&=& D_{DHCP} +T_{xTR_2-MDS} + T_{MDS-xTR_1} + 3T_{xTR_1-xTR_3} \nonumber \\
-&=& D_{DHCP} +2* (2*2ms) + 3*(2*2ms) \nonumber \\
-&=& D_{DHCP} + 20 ms
-\end{eqnarray}
-where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. $CheckAlive$ is the delay that xTR\_1 checks if MN still connects to it. For example, xTR\_1 can simply \emph{ping} MN. If MN still connects to it, it will reply to mapping system that itself is still RLOC of MN. Otherwise, if \emph{ping} meets timeout, xTR\_1 will tell the mapping system that MN has left, and sends SMR to the CNs in its cache. The later situation has higher delay, because xTR\_1 needs to wait until timeout of \emph{ping}. (Min value of simulation = 1.067679 s, where includes 1 s of DHCP delay)
-
+%
 %%-< FIGURE >--------------------------------------------------------------------
 %\begin{figure}[!th]
 %	\centering
-%	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_xTR_DHCP}
-%	\caption{Impact of DHCP association on handover delay}
-%	\label{LISP_mobility_xTR_DHCP}
+%	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_double_encap_PacketInterval}
+%	\caption{Impact of packet sending interval on handover delay}
+%	\label{LISP_mobility_double_encap_PacketInterval}
 %\end{figure}
 %%-< END FIGURE >--------------------------------------------------------------------
-
-
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!th]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Pics/LISP_mobility_xTR_PacketInterval}
-	\caption{Impact of packet sending interval on handover delay}
-	\label{LISP_mobility_xTR_PacketInterval}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
 
 %-< SECTION >--------------------------------------------------------------------
 \section{Conclusion}

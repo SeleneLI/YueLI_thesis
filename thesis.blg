@@ -7,13 +7,8 @@ Warning--entry type for "alexa" isn't style-file defined
 --line 601 of file References/references.bib
 Warning--entry type for "alexatop" isn't style-file defined
 --line 606 of file References/references.bib
-Warning--entry type for "CiscoIOS" isn't style-file defined
---line 616 of file References/references.bib
-Warning--entry type for "LISPmob" isn't style-file defined
---line 681 of file References/references.bib
-Warning--I didn't find a database entry for "lezama2009implementation"
-Warning--I didn't find a database entry for "ietf-lisp-rfc6830bis-03"
 Warning--I didn't find a database entry for "meyer-lisp-mn-16"
+Warning--I didn't find a database entry for "vassiliou2010analysis"
 Warning--to sort, need author or key in LISP_ODLSummit_2014
 Warning--to sort, need author or key in lispbetaarchi
 Warning--to sort, need author or key in lispviews
@@ -41,8 +36,6 @@ Warning--to sort, need author or key in alexa
 Warning--to sort, need author or key in alexatop
 Warning--to sort, need author or key in bgpv4
 Warning--to sort, need author or key in bgpv6
-Warning--to sort, need author or key in LISPmob
-Warning--to sort, need author or key in CiscoIOS
 Warning--to sort, need author or key in ns3
 Warning--can't use both volume and number fields in balakrishnan2004layered
 Warning--empty journal in bhatti2012identifier
@@ -61,46 +54,45 @@ Warning--empty institution in nordmark2009shim6
 Warning--empty institution in perkins2011mobility
 Warning--empty year in rosenbergsip
 Warning--empty year in rfc7835
-Warning--empty institution in saucez2016locator
-You've used 116 entries,
+You've used 114 entries,
             2118 wiz_defined-function locations,
-            1025 strings with 20982 characters,
-and the built_in function-call counts, 34634 in all, are:
-= -- 3323
-> -- 1731
+            1017 strings with 20819 characters,
+and the built_in function-call counts, 34327 in all, are:
+= -- 3295
+> -- 1729
 < -- 32
-+ -- 708
++ -- 706
 - -- 582
-* -- 2207
-:= -- 5555
-add.period$ -- 335
-call.type$ -- 116
-change.case$ -- 647
+* -- 2196
+:= -- 5523
+add.period$ -- 331
+call.type$ -- 114
+change.case$ -- 640
 chr.to.int$ -- 0
-cite$ -- 164
-duplicate$ -- 1321
-empty$ -- 2783
+cite$ -- 159
+duplicate$ -- 1309
+empty$ -- 2739
 format.name$ -- 582
-if$ -- 7365
+if$ -- 7290
 int.to.chr$ -- 0
-int.to.str$ -- 116
-missing$ -- 66
-newline$ -- 551
+int.to.str$ -- 114
+missing$ -- 67
+newline$ -- 543
 num.names$ -- 172
-pop$ -- 942
+pop$ -- 920
 preamble$ -- 1
-purify$ -- 520
+purify$ -- 516
 quote$ -- 0
-skip$ -- 978
+skip$ -- 968
 stack$ -- 0
-substring$ -- 1480
-swap$ -- 302
+substring$ -- 1470
+swap$ -- 301
 text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 464
-warning$ -- 48
+type$ -- 456
+warning$ -- 45
 while$ -- 262
-width$ -- 119
-write$ -- 1130
-(There were 55 warnings)
+width$ -- 117
+write$ -- 1116
+(There were 49 warnings)

@@ -51,10 +51,6 @@ Internet live stats.
 {LISP Beta Network Latest Architecture}.
 \newblock See \url{https://www.lisp4.net//images/lisp-ddt.pdf}.
 
-\bibitem{CiscoIOS}
-Lisp cisco ios implementation (website).
-\newblock \url{http://lisp.cisco.com}.
-
 \bibitem{LISP_ODLSummit_2014}
 {LISP for SDN and NFV (OpenDaylight Submmit)}.
 \newblock See
@@ -71,10 +67,6 @@ Lisp cisco ios implementation (website).
 \bibitem{lispers}
 {Lispers.net}.
 \newblock See \url{https://www.lispers.net/}.
-
-\bibitem{LISPmob}
-{LISPmob (website)}.
-\newblock \url{https://www.openoverlayrouter.org/lispmob/}.
 
 \bibitem{lispmon}
 {LISPmon}.
@@ -443,6 +435,12 @@ M.~Menth, D.~Klein, and M.~Hartmann.
 \newblock In {\em Teletraffic Congress (ITC), 2010 22nd International}, pages
   1--8. IEEE, 2010.
 
+\bibitem{meyer2016lisp}
+D.~Meyer, D.~Lewis, D.~Farinacci, and C.~White.
+\newblock Lisp mobile node.
+\newblock {\em draft-meyer-lisp-mn-16. txt, Internet Engineering Task Force},
+  2016.
+
 \bibitem{minolisecurity}
 D.~Minoli.
 \newblock Security considerations for mipv6.
@@ -580,11 +578,6 @@ D.~Saucez, L.~Iannone, O.~Bonaventure, and D.~Farinacci.
 \newblock Designing a deployable internet: The locator/identifier separation
   protocol.
 \newblock {\em IEEE Internet Computing}, 16(6):14--21, 2012.
-
-\bibitem{saucez2016locator}
-D.~Saucez, L.~Iannone, A.~Cabellos, and F.~Coras.
-\newblock Locator/id separation protocol (lisp) impact.
-\newblock Technical report, 2016.
 
 \bibitem{stockmayer2016jlisp}
 A.~Stockmayer, M.~Schmidt, and M.~Menth.

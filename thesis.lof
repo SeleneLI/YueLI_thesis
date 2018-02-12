@@ -50,16 +50,10 @@
 \contentsline {figure}{\numberline {6.12}{\ignorespaces Distribution of IPv6 Relative Hops Number for LISP-Lab (left) and LIP6 (right)\relax }}{94}{figure.caption.75}
 \contentsline {figure}{\numberline {6.13}{\ignorespaces IPv6 Relative hops number clustered by different continents for LISP-Lab (left) and LIP6 (right)\relax }}{95}{figure.caption.76}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces UML diagram of LISP/LISP-MN implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }}{99}{figure.caption.77}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces LISP mobility simulation scenario for double encapsulation\relax }}{102}{figure.caption.78}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Schema for LISP-MN in LISP-Site mobility\relax }}{104}{figure.caption.79}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Schema for improving LISP-MN in LISP-Site mobility\relax }}{105}{figure.caption.80}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Impact of packet sending interval on handover delay\relax }}{106}{figure.caption.82}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces LISP mobility simulation scenario for double encapsulation\relax }}{107}{figure.caption.83}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Schema for LISP-MN mobility\relax }}{108}{figure.caption.84}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Impact of packet sending interval on handover delay\relax }}{109}{figure.caption.85}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces LISP mobility simulation scenario for double encapsulation\relax }}{110}{figure.caption.86}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Schema for LISP-MN mobility\relax }}{111}{figure.caption.87}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Impact of packet sending interval on handover delay\relax }}{112}{figure.caption.88}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces UML diagram of LISP/LISP-MN implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }}{98}{figure.caption.77}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces LISP mobility architecture for general scenario\relax }}{101}{figure.caption.78}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Schema for LISP-MN mobility\relax }}{103}{figure.caption.80}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Schema for LISP-MN mobility\relax }}{104}{figure.caption.81}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN in LISP-Site mobility\relax }}{106}{figure.caption.82}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
