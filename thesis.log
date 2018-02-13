@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  12 FEB 2018 22:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  13 FEB 2018 01:24
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -2122,56 +2122,57 @@ put line 75.
 
 [100]
 File: Chapter7/Pics/LISP_mobility_archi.eps Graphic file (type eps)
- <Chapter7/Pics/LISP_mobility_archi.eps>
-
-LaTeX Warning: Reference `sim_scenario' on page 101 undefined on input line 145
-.
-
-[101]
-File: Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps Graphic file (type 
-eps)
- <Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps>
+ <Chapter7/Pics/LISP_mobility_archi.eps> [101]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [102]
+File: Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps Graphic file (type 
+eps)
 
-LaTeX Warning: Reference `sim_scenario' on page 103 undefined on input line 171
-.
-
-[103]
+<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [103]
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
- <Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps> [104]
+
+<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps>
+Underfull \vbox (badness 3209) has occurred while \output is active []
+
+ [104]
 
 LaTeX Warning: Reference `sim_schema_LISPMN_xTR' on page 105 undefined on input
- line 210.
+ line 215.
 
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_simplify.eps Graphic file 
 (type eps)
-<Chapter7/Pics/Mobility_double_encap_schema_SMR_simplify.eps>
-Overfull \hbox (39.6953pt too wide) in alignment at lines 221--226
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_simplify.eps> [105]
+Overfull \hbox (39.6953pt too wide) in alignment at lines 226--231
  [][][] []
  []
 
 
-Overfull \hbox (30.59341pt too wide) in alignment at lines 230--235
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [106]
+File: Chapter7/Pics/Mobility_double_encap_schema_SMR_improving_simplify.eps Gra
+phic file (type eps)
+
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_improving_simplify.eps>
+Overfull \hbox (30.59341pt too wide) in alignment at lines 243--248
  [][][] []
  []
 
-[105]
 
-Package natbib Warning: Citation `vassiliou2010analysis' on page 106 undefined 
-on input line 238.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [107]
 
-Underfull \vbox (badness 5504) has occurred while \output is active []
+Package natbib Warning: Citation `vassiliou2010analysis' on page 108 undefined 
+on input line 251.
 
- [106])
-(./Chapter8/chapter8.tex [107] [108
+[108]) (./Chapter8/chapter8.tex [109] [110
 
 ]
 Chapter 8.
-[109]) [110] (./thesis.bbl
+[111]) [112] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 25--28
 [][][][]$\T1/ptm/m/n/12 en/$[][][][][][]$us/$[][][][][][]$products/$[][][][][][
 ]$collateral/$[][][][][][]$ios-[]nx-[]os-[]software/$[][][][][][]$locator-[]id-
@@ -2192,7 +2193,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--79
 os-[]software/$[][]
  []
 
-[111
+[113
 
 
 ]
@@ -2207,27 +2208,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--122
 [][][][]$mobile-[]marketing/$[][][][][][]$mobile-[]marketing-[]analytics/$[][]
  []
 
-[112] [113] [114] [115] [116]) (./Publications/ListofPublication.tex [117]
-[118
+[114] [115] [116] [117] [118]) (./Publications/ListofPublication.tex [119]
+[120
 
-]) (./Appendix1/appendix1.tex [119
+]) (./Appendix1/appendix1.tex [121
 
-] [120
+] [122
 
 ]
 Appendix A.
-[121])
+[123])
 
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
-[122]
+[124]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 546B7C62D3A5C2CEDC43A29D1E829A3E;23163.
+(rerunfilecheck)             Checksum: F47432F253B46EAAE3EC6B73F763998D;23163.
 
 
 LaTeX Warning: There were undefined references.
@@ -2241,12 +2242,12 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31632 strings out of 493015
- 553338 string characters out of 6133377
- 734134 words of memory out of 5000000
- 34632 multiletter control sequences out of 15000+600000
+ 31634 strings out of 493015
+ 553501 string characters out of 6133377
+ 734210 words of memory out of 5000000
+ 34633 multiletter control sequences out of 15000+600000
  51154 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,92p,10383b,13238s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,92p,10383b,13237s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (138 pages, 827176 bytes).
+Output written on thesis.dvi (140 pages, 833888 bytes).
