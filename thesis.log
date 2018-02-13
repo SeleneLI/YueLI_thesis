@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  13 FEB 2018 01:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  13 FEB 2018 16:30
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1572,11 +1572,7 @@ Package glossaries Info: Writing glossary file thesis.glo on input line 93.
 \openout6 = `thesis.acn'.
 
 Package glossaries Info: Writing glossary file thesis.acn on input line 93.
-) (./thesis-info.tex) (./thesis.aux
-
-LaTeX Warning: Label `sim_schema' multiply defined.
-
-)
+) (./thesis-info.tex) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
@@ -1594,7 +1590,8 @@ LaTeX Font Info:    ... okay on input line 108.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 108.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 108.
 
- (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 108.
@@ -2123,40 +2120,32 @@ put line 75.
 [100]
 File: Chapter7/Pics/LISP_mobility_archi.eps Graphic file (type eps)
  <Chapter7/Pics/LISP_mobility_archi.eps> [101]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [102]
 File: Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps Graphic file (type 
 eps)
 
-<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [103]
+<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [102] [103]
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
 
-<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps>
-Underfull \vbox (badness 3209) has occurred while \output is active []
+<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps> [104]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [104]
+ [105]
 
-LaTeX Warning: Reference `sim_schema_LISPMN_xTR' on page 105 undefined on input
- line 215.
+LaTeX Warning: Reference `sim_schema_LISPMN_xTR' on page 106 undefined on input
+ line 232.
 
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_simplify.eps Graphic file 
 (type eps)
-<Chapter7/Pics/Mobility_double_encap_schema_SMR_simplify.eps> [105]
-Overfull \hbox (39.6953pt too wide) in alignment at lines 226--231
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_simplify.eps> [106]
+Overfull \hbox (39.6953pt too wide) in alignment at lines 243--248
  [][][] []
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [106]
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_improving_simplify.eps Gra
 phic file (type eps)
-
 <Chapter7/Pics/Mobility_double_encap_schema_SMR_improving_simplify.eps>
-Overfull \hbox (30.59341pt too wide) in alignment at lines 243--248
+Overfull \hbox (30.59341pt too wide) in alignment at lines 260--265
  [][][] []
  []
 
@@ -2166,7 +2155,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [107]
 
 Package natbib Warning: Citation `vassiliou2010analysis' on page 108 undefined 
-on input line 251.
+on input line 268.
 
 [108]) (./Chapter8/chapter8.tex [109] [110
 
@@ -2233,21 +2222,18 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31634 strings out of 493015
- 553501 string characters out of 6133377
- 734210 words of memory out of 5000000
- 34633 multiletter control sequences out of 15000+600000
+ 31635 strings out of 493015
+ 553524 string characters out of 6133377
+ 734234 words of memory out of 5000000
+ 34634 multiletter control sequences out of 15000+600000
  51154 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,92p,10383b,13237s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (140 pages, 833888 bytes).
+Output written on thesis.dvi (140 pages, 839852 bytes).

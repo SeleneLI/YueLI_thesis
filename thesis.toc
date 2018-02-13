@@ -111,10 +111,10 @@
 \contentsline {subsection}{\numberline {7.2.3}Integration of TUN net interface card}{100}{subsection.7.2.3}
 \contentsline {subsection}{\numberline {7.2.4}Integration of DHCP}{101}{subsection.7.2.4}
 \contentsline {section}{\numberline {7.3}Theoretical analysis}{101}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}LISP-MN in non-LISP-Site}{103}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.1}LISP-MN in non-LISP-Site}{102}{subsection.7.3.1}
 \contentsline {subsection}{\numberline {7.3.2}MN in LISP-Site}{104}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}LISP-MN in LISP-Site}{105}{subsection.7.3.3}
-\contentsline {section}{\numberline {7.4}Conclusion}{108}{section.7.4}
+\contentsline {subsection}{\numberline {7.3.3}LISP-MN in LISP-Site}{106}{subsection.7.3.3}
+\contentsline {section}{\numberline {7.4}Conclusion}{109}{section.7.4}
 \contentsline {chapter}{\numberline {8}Conclusion and Future Work}{111}{chapter.8}
 \contentsline {section}{\numberline {8.1}Major Contributions}{111}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{111}{subsection.8.1.1}

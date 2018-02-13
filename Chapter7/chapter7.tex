@@ -111,9 +111,12 @@ As no matter LISP implemented on the border router or the end host can support s
 	\item The second one is MN in the LISP-Site (i.e., only the border router supports LISP). 
 	\item The last scenario is LISP-MN in the LISP-Site (i.e., both the border router and the end host support LISP). 
 \end{enumerate}	
-All the scenarios are based on a same simulation architecture shown in Fig.~\ref{sim_archi}, but with some slight differences, which will be respectively specified in the following parts from Sec.~\ref{sec:ns3_analysis_lispmn} to Sec.~\ref{sec:ns3_analysis_lispmn_xTR}. In our designed architecture, an MN is initially in the subnet of Router\_1. An \emph{echo} application on MN sends packets to a remote stationary node CN in the LISP-Site of xTR\_3. The connection between MN and xTR\_1 can be either Wi-Fi or wired link. If they use Wi-Fi, MN will move into the subnet of Router\_2 after the beginning of simulation. At a certain moment during the moving, the Wi-Fi link between MN and Router\_1 is down, which triggers the handover procedure. Afterwards, MN connects to Router\_2 and reestablishes the communication with CN node. If they use wired link, the connection of MN with Router\_1 will be down and the one with Router\_2 will be up at the same time. This action also triggers the handover procedure.
+% -<Descriptions with parameters>--------------------------------------------------------------------
+% All the scenarios are based on a same simulation architecture shown in Fig.~\ref{sim_archi}, but with some slight differences, which will be respectively specified in the following parts from Sec.~\ref{sec:ns3_analysis_lispmn} to Sec.~\ref{sec:ns3_analysis_lispmn_xTR}. In our designed architecture, an MN is initially in the subnet of $Router_1$. An \emph{echo} application on MN sends packets to a remote stationary node CN in the LISP-Site of $xTR_3$. The distance between xTR\_1 and xTR\_2 is $170 m$. The connection between MN and xTR\_1 can be either Wi-Fi or wired link. If they use Wi-Fi, MN will move into the subnet of $Router_2$ at speed of $7.07 m/s$ after several seconds when the simulation begins. The start time of movement is a random value in the range of $[x, x] s$. At a certain moment during the moving, the Wi-Fi link between MN and $Router_1$ is down, which triggers the handover procedure. Afterwards, MN connects to $Router_2$ and reestablishes the communication with CN node. If they use wired link, the connection of MN with $Router_1$ will be down and the one with $Router_2$ will be up at the same time. This action also triggers the handover procedure. Every link between two network entities in this simulation architecture is set to $20 ms$.
 
-In this chapter, we define the overall handover delay ($D_{overall}$) as the latency between the last packet received by MN from CN via Router\_1 and the first packet received by MN from CN via Router\_2 after the reestablishment. According to the different scenarios, the handover delay consists of nonidentical parts. All the necessary delay during the mobility are listed in Tab.~\ref{Symbols_numerical_analysis}.
+All the scenarios are based on a same simulation architecture shown in Fig.~\ref{sim_archi}, but with some slight differences, which will be respectively specified in the following parts from Sec.~\ref{sec:ns3_analysis_lispmn} to Sec.~\ref{sec:ns3_analysis_lispmn_xTR}. In our designed architecture, an MN is initially in the subnet of $Router_1$. An \emph{echo} application on MN sends packets to a remote stationary node CN in the LISP-Site of $xTR_3$. The connection between MN and $Router_1$ can be either Wi-Fi or wired link. If they use Wi-Fi, MN will move into the subnet of $Router_2$ after several seconds when the simulation begins. At a certain moment during the moving, the Wi-Fi link between MN and $Router_1$ is down, which triggers the handover procedure. Afterwards, MN connects to $Router_2$ and reestablishes the communication with CN node. If they use wired link, the connection of MN with $Router_1$ will be down and the one with $Router_2$ will be up at the same time. This action also triggers the handover procedure.
+
+In this chapter, we define the overall handover delay ($D_{overall}$) as the latency between the last packet received by MN from CN via $Router_1$ and the first packet received by MN from CN via $Router_2$ after the reestablishment. Same to the calculation of overall handover overhead ($C_{overall}$), which is the number of signals related to LISP control plane during that latency. According to the three following scenarios, the handover delay and overhead consist of different parts. All the necessary delay and LISP overhead of control plane during the mobility are listed in Tab.~\ref{Symbols_numerical_analysis}.
 %-< TABLE >-----------------------------------------------------------------
 \begin{table}[!tb]
 	\centering
@@ -134,7 +137,14 @@ In this chapter, we define the overall handover delay ($D_{overall}$) as the lat
 			$D_{invokeSMR}$ &  Delay of sending invoke-SMR \\  \hline 
 			$D_{Link}$ &  Link delay between two network entities \\  \hline 
 			$T_{A-B}$ &  Delay of packet transmission between A and B     	\\  \hline
-			$T_{timeout_SMR}$ &  Timeout of SMR     	\\  \hline  \hline               
+			$T_{timeout_SMR}$ &  Timeout of SMR      	\\  \hline
+			$C_{overall}$ &  Overall handover overhead \\  \hline    
+			$C_{Register}$ &  Overhead of sending Map-Register      	\\  \hline
+			$C_{Notify}$ &  Overhead of receiving Map-Notify      	\\  \hline           
+			$C_{Request}$ &  Overhead of sending Map-Request to MDS      	\\  \hline   
+			$C_{Reply}$ &  Overhead of receiving Map-Reply      	\\  \hline      
+			$C_{SMR}$ &  Overhead of sending SMR       	\\  \hline 
+			$C_{invokeSMR}$ &  Overhead of sending invoke-SMR \\  \hline  \hline    
 		\end{tabular}
 	}
 \end{table}
@@ -142,51 +152,54 @@ In this chapter, we define the overall handover delay ($D_{overall}$) as the lat
 
 
 
-
-
 %-< SUBSECTION >--------------------------------------------------------------------
 \subsection{LISP-MN in non-LISP-Site}
 \label{sec:ns3_analysis_lispmn}
-We validate our LISP/LISP-MN implementation by conducting a simulation and providing a preliminary performance evaluation of handover delay. The simulation topology is shown in Fig.~\ref{sim_archi}.
-
-In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
-
+The first scenario is the LISP-MN in non-LISP-Site, where the border routers are the conventional routers and LISP is only implemented on the mobile end host MN. In our simulation, the LISP-MN with permanent EID is initially placed in the subnet of $Router_1$, with the IP address distributed by $Router_1$ as its RLOC. The remote CN is a conventional stationary end host, residing in a LISP-Site of $xTR_3$. The LISP-MN communicates with CN by encapsulating the packets on itself and dencapsulating the packets on $xTR_3$, and the LISP-MN moves into subnet of $Router_2$ after the simulation begins. At a certain moment during the moving, the Wi-Fi link between LISP-MN and $Router_1$ is down, whereas LISP-MN detects $Router_2$, which triggers the handover procedure. LISP-MN first has a DHCP procedure with $Router_2$, so that the later distributes it a new IP address as its RLOC. Then LISP-MN needs register its new mapping information to the mapping system, and also send a $SMR$ to its communicating nodes in its cache (there is only $xTR_3$ in our scenario). $xTR_3$ sends an $Invoke SMR$ to the mapping system, so to obtain the new mapping information of LISP-MN. Afterwards, LISP-MN reestablishes the communication with CN node leveraging $Router_2$. The detailed traffic schema related to the handover procedure is indicated in Fig.~\ref{sim_schema_LISPMN}.  % The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!th]
 	\centering
-	\includegraphics[width=\textwidth]{Pics/Mobility_LISPMN_schema_SMR_simplify}
+	\includegraphics[width=0.8\textwidth]{Pics/Mobility_LISPMN_schema_SMR_simplify}
 	\caption{Schema for LISP-MN mobility}
-	\label{sim_schema}
+	\label{sim_schema_LISPMN}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
-The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
+The overall handover delay $D_{overall}$ in this scenario is composed by two parts: the DHCP related delay and LISP related delay. The delay of DHCP procedures consist of LISP-MN sending DHCP Discovery message to $Router_2$, receiving DHCP Offer message, sending DHCP Request message, and receiving DHCP ACK message. The delay of all the LISP procedures are presented in Fig.~\ref{sim_schema_LISPMN}. Thus, the overall handover delay is:
 \begin{eqnarray}
 D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
-&=& D_{DHCP} + 2T_{LISPMN-MDS} + 3T_{LISPMN-xTR_3} \nonumber \\
-&=& D_{DHCP} + 2* (3*2ms) + 3*(3*2ms)\nonumber \\
-&=& D_{DHCP} + 30 ms
+% &=& D_{DHCP} + T_{MN-MDS} + T_{MDS-MN} + T_{MN-xTR_3} + (T_{xTR_3-MDS} + D_{Resolve} + T_{MDS-MN}) + T_{MN-xTR_3} \nonumber \\
+&=& D_{DHCP} + 3T_{MN-MDS} + 2T_{MN-xTR_3} + T_{xTR_3-MDS} + D_{Resolve} \nonumber \\
+&=& D_{DHCP} + 3* (3*2ms) + 2*(3*2ms) + 2*2ms + 50ms\nonumber \\
+&=& D_{DHCP} + 84 ms
 \end{eqnarray}
-where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. (Min value of handover delay = 1.073031 s, where packet sending interval = 0.01 s) 
+where $D_{DHCP}$ represents the time elapsed between the DHCP Discover sent by the LISP-MN, and the $DHCP ACK$ message sent by the $Router_2$. Every link between two network entities in this simulation architecture is set to $2 ms$. % (Min value of handover delay = 1.073031 s, where packet sending interval = 0.01 s)
 
+The overall handover overhead $C_{overall}$ includes the signaling overhead of registration when LISP-MN connects to $Router_2$, and the SMR procedure. Thus, the overall handover overhead related to LISP control plane is:
+\begin{eqnarray}
+C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + C_{invokeSMR} + C_{Reply} \nonumber \\
+&=& C_{Register} + C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} \nonumber \\
+&=& 6C
+\end{eqnarray}
+
+Adv\&Dis: Can achieve seamless handover through subnets. Not Slow.
+
+Router is still normal router, can't help to reduce the BGP routing table size. EID needs permanent IP address.
 
 %-< SUBSECTION >--------------------------------------------------------------------
 \subsection{MN in LISP-Site}
 \label{sec:ns3_analysis_xTR}
-We validate our LISP/LISP-MN implementation by conducting a simulation and providing a preliminary performance evaluation of handover delay. The simulation topology is shown in Fig.~\ref{sim_archi}.
-
-In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
-
+The second scenario is the MN in LISP-Site, where the mobile node MN is conventional and LISP are only implemented on the border routers. In our simulation, the MN is initially placed in the subnet of $xTR_1$, with the distributed IP address as its EID. The remote CN is same to the first scenario. The MN communicates with CN by encapsulating the packets on $xTR_1$ and dencapsulating the packets on $xTR_3$, and the MN moves into the coverage of $xTR_2$ after the simulation begins. Since the communication should not be interrupted during the mobility, this scenario limits the movement of MN being only within the same subnet, i.e., one of the EID-prefixes of $xTR_1$ is same to one of $xTR_2$'s. At a certain moment during the moving, the Wi-Fi link between MN and $xTR_1$ is down, whereas MN detects $xTR_2$, which triggers the switching connection procedure. Same to the first scenario, the DHCP procedure is necessary so to trigger the registration of new mapping information, but MN still keeps the former IP address as its EID, instead of $xTR_2$ distributing a new one to it. Then $xTR_2$ registers its new mapping information to the mapping system. As the mapping system find out that the EID of MN has been registered and associated by $xTR_1$, it sends a Map-Notify to both xTRs. The reason for sending to $xTR_2$ is the acknowledgment of the reception of its Map-Register. Whereas the purpose to $xTR_1$ is to tell it that the MN is now mapping with $xTR_2$ and inform the remote CN to update its mapping information. Since MN used $xTR_1$ to communicate with CN in the past time, only $xTR_1$ stored in its cache that to whom MN was exchanging the packets instead of $xTR_2$. Thus, $xTR_1$ sends a $SMR$ to $xTR_3$, and $xTR_3$ sends an $Invoke SMR$ to the mapping system, so to obtain the new mapping information of MN. Afterwards, MN reestablishes the communication with CN node leveraging $xTR_2$. The detailed traffic schema related to the handover procedure is indicated in Fig.~\ref{sim_schema_xTR}.
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!th]
 	\centering
-	\includegraphics[width=\textwidth]{Pics/Mobility_xTR_schema_SMR_simplify}
+	\includegraphics[width=0.8\textwidth]{Pics/Mobility_xTR_schema_SMR_simplify}
 	\caption{Schema for LISP-MN mobility}
-	\label{sim_schema}
+	\label{sim_schema_xTR}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
-The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
+The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with $xTR_3$ receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
 \begin{eqnarray}
 D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
 &=& D_{DHCP} +T_{xTR_2-MDS} + T_{MDS-xTR_1} + 3T_{xTR_1-xTR_3} \nonumber \\
@@ -194,6 +207,10 @@ D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} +
 &=& D_{DHCP} + 20 ms
 \end{eqnarray}
 where $D$ is the delay, $BI$ is Beacon Interval, subscriptions $Wi-Fi$, $DHCP$ and $SMR$ respectively refers to Wi-Fi association, DHCP procedure and LISP SMR. $CheckAlive$ is the delay that xTR\_1 checks if MN still connects to it. For example, xTR\_1 can simply \emph{ping} MN. If MN still connects to it, it will reply to mapping system that itself is still RLOC of MN. Otherwise, if \emph{ping} meets timeout, xTR\_1 will tell the mapping system that MN has left, and sends SMR to the CNs in its cache. The later situation has higher delay, because xTR\_1 needs to wait until timeout of \emph{ping}. (Min value of simulation = 1.067679 s, where includes 1 s of DHCP delay)
+
+Adv\&Dis: Router is xTR, can help to reduce the BGP routing table size.
+
+Can quickly achieve seamless switch the xTRs within a subnet, but can't through subnets.
 
 
 
@@ -212,29 +229,29 @@ Specify the architecture in this scenario.
 %%\end{itemize}
 %In our simulation, a LISP-MN with permanent EID 172.16.0.1 is initially placed in network 10.1.1.0/24. An \emph{echo} application on LISP-MN sends one packet per 0.01 second to a remote stationary node CN with EID 10.3.3.2, and the LISP-MN moves into network 10.1.7.0/24 at speed of $7.07m/s$. The distance between xTR\_1 and xTR\_2 is $170m$. LISP-MN node uses Wi-Fi to connect to xTR\_1. At a certain moment during the moving, the Wi-Fi link between LISP-MN and xTR\_1 is down, which triggers the handover procedure. Afterwards, LISP-MN connects to xTR\_2 and reestablishes the communication with CN node. The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
 
-As shown in Fig.~\ref{sim_schema_LISPMN_xTR}, when MN sending the packets to CN during the simulation, it needs double encapsulation and the packet flow sequences are as follows. The traditional IP packets with EID 172.16.0.1 as source address and EID 10.3.3.2 as destination address are encapsulated by adding Local RLOC 10.1.1.1 as outer source address and RLOC 10.1.5.2 as outer destination address after MN querying the mapping information to MR. The LISP packets are encapsulated and forwarded to xTR\_1. The latter gets the mapping information from MR and encapsulates the packets again by adding the RLOC 10.1.2.1 as the outer source address and RLOC 10.1.5.2 as the outer destination address, then sends the packets on Internet core. The xTR\_3 needs dencapsulate the packets twice after it receiving and verifying the packets, and finally sends to CN. Once LISP-MN lost its Wi-Fi connection with xTR\_1, it needs a DHCP procedure (consisting of DHCP Discover, DHCP Offer, DHCP Request and DHCP ACK) with xTR\_2 to get a new LRLOC 10.1.7.1 and then triggers LISP SMR to xTR\_3. After xTR\_3 getting new mapping information of <10.1.7.1, 10.1.3.1> and <172.16.0.1, 10.1.7.1>, the connection between LISP-MN and CN is re-established again.
+As shown in Fig.~\ref{sim_schema_LISPMN_xTR}, when MN sending the packets to CN during the simulation, it needs double encapsulation and the packet flow sequences are as follows. The traditional IP packets with EID 172.16.0.1 as source address and EID 10.3.3.2 as destination address are encapsulated by adding Local RLOC 10.1.1.1 as outer source address and RLOC 10.1.5.2 as outer destination address after MN querying the mapping information to MR. The LISP packets are encapsulated and forwarded to xTR\_1. The latter gets the mapping information from MR and encapsulates the packets again by adding the RLOC 10.1.2.1 as the outer source address and RLOC 10.1.5.2 as the outer destination address, then sends the packets on Internet core. The $xTR_3$ needs dencapsulate the packets twice after it receiving and verifying the packets, and finally sends to CN. Once LISP-MN lost its Wi-Fi connection with xTR\_1, it needs a DHCP procedure (consisting of DHCP Discover, DHCP Offer, DHCP Request and DHCP ACK) with xTR\_2 to get a new LRLOC 10.1.7.1 and then triggers LISP SMR to $xTR_3$. After $xTR_3$ getting new mapping information of <10.1.7.1, 10.1.3.1> and <172.16.0.1, 10.1.7.1>, the connection between LISP-MN and CN is re-established again.
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!th]
 	\centering
-	\includegraphics[width=\textwidth]{Pics/Mobility_double_encap_schema_SMR_simplify}
+	\includegraphics[width=0.8\textwidth]{Pics/Mobility_double_encap_schema_SMR_simplify}
 	\caption{Schema for LISP-MN in LISP-Site mobility}
 	\label{Mobility_double_encap_schema_SMR_simplify}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
-The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with xTR\_3 receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
+The overall handover delay in this paper is defined at the moment that LISP-MN sending DHCP Discover message to xTR\_2 and end up with $xTR_3$ receiving the last Map-Reply from xTR\_2. Precisely, it is composed by three parts: the Wi-Fi association delay, the DHCP related delay and LISP SMR delay:
 \begin{eqnarray}
 D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + T_{timeout_SMR} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
 &=& D_{DHCP} + 2T_{LISPMN-MDS} + 4T_{LISPMN-xTR_3} + T_{timeout_SMR}\nonumber \\
 &=& D_{DHCP} + 2* (3*2ms) + 4*(3*2ms) + 1s\nonumber \\
 &=& D_{DHCP} + 1036 ms
 \end{eqnarray}
-During $T_{timeout\_SMR}$ (normally is 3 seconds), xTR\_3 queries the mapping system for the RLOC of LISP-MN LRLOC.
+During $T_{timeout\_SMR}$ (normally is 3 seconds), $xTR_3$ queries the mapping system for the RLOC of LISP-MN LRLOC.
 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!th]
 	\centering
-	\includegraphics[width=\textwidth]{Pics/Mobility_double_encap_schema_SMR_improving_simplify}
+	\includegraphics[width=0.8\textwidth]{Pics/Mobility_double_encap_schema_SMR_improving_simplify}
 	\caption{Schema for LISP-MN in LISP-Site mobility}
 	\label{Mobility_double_encap_schema_SMR_improving_simplify}
 \end{figure}
@@ -253,6 +270,9 @@ After several executions of simulation program, we observe that the overall hand
 During handover, CN can successfully receive packets from LISP-MN right after DHCP procedure being accomplished, but LISP-MN cannot receive the packets from CN until LISP SMR procedure is also finished. Thus, during DHCP procedure, all bi-directional transmitted packets are lost. To improve the performance, \cite{tang2017lisp} proposes a network-level LISP-MN solution, but has not validated their proposals neither in simulation nor in testbed. Our ns-3 implementation can be used to realize them.
 
 
+Adv\&Dis: Router is xTR, can help to reduce the BGP routing table size. Can achieve seamless handover through subnets. EID needs permanent IP address.
+
+Handover delay is longer than the other 2 mechanisms.
 
 
 
