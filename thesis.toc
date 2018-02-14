@@ -21,12 +21,11 @@
 \contentsline {subsection}{\numberline {2.4.2}LISP MN in LISP-Site}{19}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}LISP MN in non-LISP-Site}{20}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}MN in LISP-Site}{21}{subsection.2.4.4}
-\contentsline {section}{\numberline {2.5}LISP use-cases}{22}{section.2.5}
+\contentsline {section}{\numberline {2.5}LISP alternative use-cases}{21}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}LISP traffic engineering}{22}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}LISP transition between IPv4 and IPv6}{22}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Mobility at client-side}{23}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}Mobility in Data Center}{24}{subsection.2.5.4}
-\contentsline {subsection}{\numberline {2.5.5}LISP SDN}{24}{subsection.2.5.5}
+\contentsline {subsection}{\numberline {2.5.4}LISP SDN}{24}{subsection.2.5.4}
 \contentsline {chapter}{\numberline {3}Related Work}{27}{chapter.3}
 \contentsline {section}{\numberline {3.1}LISP platforms}{27}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}LISP Beta Network}{27}{subsection.3.1.1}

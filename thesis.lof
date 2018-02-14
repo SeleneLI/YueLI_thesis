@@ -13,7 +13,7 @@
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Packet flow of mobility when LISP-MN in LISP-Site\relax }}{20}{figure.caption.19}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Packet flow of mobility when LISP-MN in non-LISP-Site\relax }}{21}{figure.caption.20}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Illustration of LISP transmission between IPv4 and IPv6\relax }}{23}{figure.caption.21}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces LISP in OpenDaylight (source:\nobreakspace {}\cite {LISP_ODLSummit_2014})\relax }}{25}{figure.caption.22}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces LISP in OpenDaylight (source:\nobreakspace {}\cite {LISP_ODLSummit_2014})\relax }}{24}{figure.caption.22}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces International LISP Beta Network High Level Topology \IeC {\textendash } October 2017\nobreakspace {}\cite {lispbetaarchi}\relax }}{28}{figure.caption.23}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of LISP troubleshooting\relax }}{39}{figure.caption.31}

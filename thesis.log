@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  14 FEB 2018 01:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  14 FEB 2018 12:07
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1868,7 +1868,7 @@ File: Chapter2/Pics/LISP-MN_in_LISP-Site.eps Graphic file (type eps)
 File: Chapter2/Pics/LISP-MN_in_non-LISP-Site.eps Graphic file (type eps)
 
 <Chapter2/Pics/LISP-MN_in_non-LISP-Site.eps> [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7888) has occurred while \output is active []
 
  [21]
 File: Chapter2/Pics/transmission_ipv4_ipv6.eps Graphic file (type eps)
@@ -2231,19 +2231,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: EDADB20E974E98EEC678219E0B5B6649;23252.
+(rerunfilecheck)             Checksum: 4DADAC88BCBCA75458D4AABD7FA4D51C;23096.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31633 strings out of 493015
- 553490 string characters out of 6133377
- 734339 words of memory out of 5000000
- 34632 multiletter control sequences out of 15000+600000
+ 31631 strings out of 493015
+ 553449 string characters out of 6133377
+ 734112 words of memory out of 5000000
+ 34630 multiletter control sequences out of 15000+600000
  51154 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,92p,10383b,13236s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,92p,10383b,13228s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (142 pages, 852440 bytes).
+Output written on thesis.dvi (142 pages, 844564 bytes).
