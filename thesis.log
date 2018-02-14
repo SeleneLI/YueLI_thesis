@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  14 FEB 2018 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  14 FEB 2018 18:23
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1805,18 +1805,18 @@ File: Chapter1/Pics/Growth_BGP_Table.eps Graphic file (type eps)
 <Chapter1/Pics/Growth_BGP_Table.eps> [1
 
 ]
-Underfull \vbox (badness 6252) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 [3]
 File: Chapter1/Pics/structure_thesis.eps Graphic file (type eps)
  <Chapter1/Pics/structure_thesis.eps>
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 78.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 87.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1755) has occurred while \output is active []
 
  [4])
 (./Chapter2/chapter2.tex [5] [6
@@ -2231,7 +2231,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4DADAC88BCBCA75458D4AABD7FA4D51C;23096.
+(rerunfilecheck)             Checksum: 52DDB57E76FAA9C3306C7A8FBABFD626;23078.
  )
 (\end occurred inside a group at level 1)
 
@@ -2240,10 +2240,10 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  31631 strings out of 493015
  553449 string characters out of 6133377
- 734112 words of memory out of 5000000
+ 734091 words of memory out of 5000000
  34630 multiletter control sequences out of 15000+600000
  51154 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,92p,10383b,13228s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,92p,10383b,13226s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (142 pages, 844564 bytes).
+Output written on thesis.dvi (142 pages, 842696 bytes).
