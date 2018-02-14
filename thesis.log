@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  14 FEB 2018 00:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  14 FEB 2018 01:19
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1836,6 +1836,9 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
+
+Underfull \vbox (badness 4660) has occurred while \output is active []
+
  [9]
 File: Chapter2/Pics/LISP_ALT.eps Graphic file (type eps)
 
@@ -1844,21 +1847,21 @@ File: Chapter2/Pics/LISP_DDT.eps Graphic file (type eps)
  <Chapter2/Pics/LISP_DDT.eps> [11]
 File: Chapter2/Pics/LISP_D_C_planes.eps Graphic file (type eps)
 
-<Chapter2/Pics/LISP_D_C_planes.eps> [12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
+<Chapter2/Pics/LISP_D_C_planes.eps> [12] [13]
 File: Chapter2/Pics/LISP_archi_PxTR.eps Graphic file (type eps)
 
-<Chapter2/Pics/LISP_archi_PxTR.eps> [14]
-File: Chapter2/Pics/SMR_schema.eps Graphic file (type eps)
- <Chapter2/Pics/SMR_schema.eps>
-[15]
-File: Chapter2/Pics/Map_versioning_schema.eps Graphic file (type eps)
- <Chapter2/Pics/Map_versioning_schema.eps> [16] [17]
-File: Chapter2/Pics/LISP-MN_archi.eps Graphic file (type eps)
+<Chapter2/Pics/LISP_archi_PxTR.eps>
+Underfull \vbox (badness 1009) has occurred while \output is active []
 
-<Chapter2/Pics/LISP-MN_archi.eps> [18]
+ [14]
+File: Chapter2/Pics/SMR_schema.eps Graphic file (type eps)
+
+<Chapter2/Pics/SMR_schema.eps> [15]
+File: Chapter2/Pics/Map_versioning_schema.eps Graphic file (type eps)
+ <Chapter2/Pics/Map_versioning_schema.eps>
+[16] [17]
+File: Chapter2/Pics/LISP-MN_archi.eps Graphic file (type eps)
+ <Chapter2/Pics/LISP-MN_archi.eps> [18]
 File: Chapter2/Pics/LISP-MN_in_LISP-Site.eps Graphic file (type eps)
 
 <Chapter2/Pics/LISP-MN_in_LISP-Site.eps> [19]
@@ -1899,9 +1902,15 @@ Underfull \vbox (badness 2662) has occurred while \output is active []
  [43
 
 ]
-[44] [45]
+Underfull \vbox (badness 7631) has occurred while \output is active []
+
+ [44]
+Underfull \vbox (badness 1062) has occurred while \output is active []
+
+ [45]
 File: Chapter4/Pics/Percentage_stability_5VP_time.eps Graphic file (type eps)
- <Chapter4/Pics/Percentage_stability_5VP_time.eps>
+
+<Chapter4/Pics/Percentage_stability_5VP_time.eps>
 File: Chapter4/Pics/cdf_instability_occur.eps Graphic file (type eps)
 
 <Chapter4/Pics/cdf_instability_occur.eps>
@@ -2127,14 +2136,14 @@ eps)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [103]
-Underfull \vbox (badness 5036) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [104]
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
 
 <Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps> [105]
-Overfull \hbox (26.15152pt too wide) in alignment at lines 229--238
+Overfull \hbox (26.15152pt too wide) in alignment at lines 228--237
  [][][] []
  []
 
@@ -2142,23 +2151,23 @@ Overfull \hbox (26.15152pt too wide) in alignment at lines 229--238
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [106]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [107]
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps Graphi
 c file (type eps)
 
 <Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [107]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1342) has occurred while \output is active []
 
  [108]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [109]
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps Graphi
 c file (type eps)
 
 <Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [109]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [110]
@@ -2237,4 +2246,4 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  55i,12n,92p,10383b,13236s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (142 pages, 854088 bytes).
+Output written on thesis.dvi (142 pages, 852440 bytes).

@@ -175,8 +175,7 @@ D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} +
 &=& D_{DHCP} + 17D_{Link} + 200 ms  \\
 &=& D_{DHCP} + 234 ms \nonumber
 \end{eqnarray}
-where $D_{DHCP}$ represents the time elapsed between the DHCP Discover sent by the LISP-MN, and the $DHCP ACK$ message sent by the $Router_2$. % Every link between two network entities in this simulation architecture is set to $2 ms$. 
-According to the experimental results in~\cite{coras2014performance}, we set the resolving time in the mapping system as $200 ms$. % (Min value of handover delay = 1.073031 s, where packet sending interval = 0.01 s)
+where $D_{DHCP}$ represents the time elapsed between the DHCP Discover sent by the LISP-MN, and the $DHCP ACK$ message sent by the $Router_2$. Every link between two network entities in this simulation architecture is set to $2 ms$. According to the experimental results in~\cite{coras2014performance}, we set the resolving time in the mapping system as $200 ms$. % (Min value of handover delay = 1.073031 s, where packet sending interval = 0.01 s)
 
 The overall handover overhead $C_{overall}$ includes the signaling overhead of registration when LISP-MN connects to $Router_2$, and the SMR procedure. Thus, the overall handover overhead related to LISP control plane is:
 \begin{eqnarray}
