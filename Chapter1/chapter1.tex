@@ -64,9 +64,15 @@ With the goal of evaluating LISP from the different views, in this dissertation 
 	To evaluate LISP interworking performance with legacy Internet, we conduct two times experiments. The results of twice experiments are coherent. Both of them show that LISP is stable although the stretch is introduced due to the introducing of proxy. We find that the proxy indeed introduces the negative effects for the destinations located in Europe and America, but can be ignored for the intercontinental long-distance transmission to Asia destinations. Besides, we observe that the position of proxy is very important. It either near to the sources or the destinations can decrease the latency a lot. % Further, the performance of LISP-Lab PxTR is more reliable than the one of LISP Beta Network. 
 	This work is published in INFOCOM Student workshop~\cite{li2016using}, ACM SIGCOMM Student workshop~\cite{li2016performance}, and Elsevier Computer Networks~\cite{Li2017}.
 	
-	\item Mobility
+	\item As LISP separates the identifier and the topological attachment point from the traditional IP address, it is able to maintain the communication between two hosts during the handover without interruption. LISP can be implemented on the border routers or the terminals or even both of them. Thus, which network element supports LISP showing a better performance, i.e., having a shorter handover delay or introducing less overhead during the mobility? What are the advantages and shortcomings of each case? Leveraging on which simulator can we verify?
 	
-	numerical analysis. ns-3
+	To explore the mobility performance of the LISP implementation on each network element, we design three different scenarios:
+	\begin{inparaenum}[1)]
+		\item Only mobile node supports LISP;
+		\item Only border routers support LISP;
+		\item Both mobile node and border routers support LISP.
+	\end{inparaenum}
+	The numerical analysis shows that the 1\textsuperscript{st} and 3\textsuperscript{rd} scenarios can achieve the mobile node roam through the different subnets, whereas they require additional permanent EID for each mobile node. The 1\textsuperscript{st} has no help on reducing the BGP table size and the 3\textsuperscript{rd} scenario shows much longer handover delay than the other two's. The 2\textsuperscript{nd} scenario presents the smallest handover delay and needs the least IP addresses, but it can only conduct the mobility within a same subnet. To verify the numerical analysis, we implement a LISP simulator with LISP mobility extensions under ns-3.27 by extending another ns-3 based LISP simulator.
 	
 \end{enumerate}	
 
