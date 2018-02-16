@@ -22,135 +22,30 @@ Sec.~\ref{sec:ns3_conclusion} provides some ideas of evaluation based on the pro
 %-< SUB SECTION >--------------------------------------------------------------------
 \section{Related work}
 \label{sec:ns3_related_work}
- \subsection{Description of ns-3}
- \label{sec:ns3_ns3}
- ns-3~\cite{ns3} is a popular and free discrete-event network simulator for networking research. To be closer to the real implementation (in a real Operating System), easily include C-based implementation codes, ease debugging and reduce the cost on maintaining in a long term, C++ is prioritized to be the unique programming language for ns-3. Besides, ns-3 offers the possibility to visualize the simulation instance so to allow the users to visually confirm the packets flow as they expect.
+%-< SUB SECTION >--------------------------------------------------------------------
+\subsection{Basic LISP implementation on ns-3}
+\label{sec:ns3_basic_lisp}
+Simulation is becoming more important for deploying new technologies or as a proof of concept of new protocols. In the study of LISP, there exist few simulators based OMNet++~\cite{vesely2015locator, vesely2014multicast, klein2012integration} or based on Java~\cite{stockmayer2016jlisp}. However, these existing simulators are not open-source, which hinders other researchers to modify or adapt the simulator with respect to their own research purposes.
+
+To our best knowledge, the unique open-source LISP simulator that we found in the literature is~\cite{lionel2016}. The authors implemented a basic LISP simulator\footnote{The source code is available at \url{https://bitbucket.org/Lionel_Agbodjan/tfe__towards_a_lisp_simulator}} under ns-3.24, but this work can be further polished. For example, the encoding of LISP control plane messages does not respect~\cite{rfc6830} and there exist some bugs when using this simulator. More importantly, their implementation has no support for LISP mobility. Our implementation work is inspired by work of~\cite{lionel2016}. By leveraging their source code, we implemented an open source LISP simulator with LISP mobility extension under ns-3.27, which is the latest ns-3 version. 
+
+\subsection{Description of ns-3}
+\label{sec:ns3_ns3}
+ns-3~\cite{ns3} is a popular and free discrete-event network simulator for networking research. It is developed and distributed completely in the C++ programming language, because it better facilitated the inclusion of C-based implementation code. The ns3 architecture is similar to Linux computers with application, TCP/IP protocol stack, network interface, sockets, etc. ns-3 is very well documented and has an active community which facilitate the researches to adapt ns-3 source code for their researches.  Besides, ns-3 offers the possibility to visualize the simulation instance so to allow the users to visually confirm the packets flow as they expect. 
 %\begin{itemize}
 %    \item Description of ns-3.
 %    \item The simulator supporting LISP is introduced in Sec.~\ref{subsec:implementation_OMNet}.
 %\end{itemize}
 
-
-
-The detailed simulation model is based on NS-3 (version 3.27, the latest version). The NS3 simulator is developed and distributed completely in the C++ programming language, because it better facilitated the inclusion of C-based implementation code. The NS3 architecture is similar to Linux computers.
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Basic LISP implementation on ns-3}
-\label{sec:ns3_basic_lisp}
-It should be noted that this work is based on a prior implementation work by Lionel. However, his implementation has no support for LISP MN.
-
-
-The most related work is~\cite{lionel2016} in which a basic ns-3 based LISP simulator is implemented\footnote{The source code is available at \url{https://bitbucket.org/Lionel_Agbodjan/tfe__towards_a_lisp_simulator}}. Our implementation work is inspired by this work. The differences compared with~\cite{lionel2016} are as follow: our implementation is under ns-3.27 which is the most recent version. Their implementation has not completely respects to LISP standard~\cite{rfc6830}. For example, the encoding of LISP control plane messages does not respect~\cite{rfc6830} and LISP control messages in the PCAP files cannot be resolved by Wireshark. More importantly, their implementation has no support for LISP-MN. Thus, our implementation.  
-
-
-%-< SECTION >--------------------------------------------------------------------
-\section{Implementation of LISP and LISP-MN on ns-3}
-\label{sec:ns3_lispmn}
-Our implementation is under ns-3.27 and respects LISP~\cite{rfc6830} and LISP-MN standards~\cite{meyer2016lisp}. As a design choice, we implement LISP/LISP-MN functionalities by modifying and extending two already existing modules of ns-3:~\emph{internet} and \emph{internet-apps}, instead of by creating a new independent module. The justification behind this design is that LISP/LISP-MN and legacy internet module have an interdependent relationship: a IP layer packet is processed by LISP and then passed to IP protocol again. However, this kind mutually dependent relationship between modules is not supported by ns-3. Our implementation mainly consists of two parts: Data plane and Control plane. The communication between LISP Data and Control Plane is achieved via a dedicated socket (i.e. \emph{LispMappingSocket}) that inherits from ns-3 \emph{Socket} class. The Data Plane implementation is in "kernel space" (i.e. ns-3's \emph{TCP/IP stack}) and Control Plane is implemented in "user space" (i.e. ns-3 \emph{Application}). Such a design is inspired by that of OpenLISP~\cite{saucez2009openlisp}.  
-
-The UML diagram of proposed LISP and LISP-MN implementation is illustrated Fig.~\ref{LISP-UML}. The blank blocks refer to the classes that we added into ns-3, while darker blocks are classes already in ns-3. It should be noted that our implementation only supports IPv4 at time of this writing. The IPv6 support (i.e. the implementation related to IPv6 such as \emph{LispOverIpv6Impl}) is still in process. In addition, the authentication procedure involved in LISP is not considered in our implementation.\yue{This figure should be revised. For example, LispHeader should be renamed as LispDataPlaneHeader. MapTable should contains a list of MapEntry.}
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure*}[!t]
-	\centering
-	\includegraphics[width=\textwidth]{Pics/LISP-NS3-UML}
-	\caption{UML diagram of LISP/LISP-MN implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.}
-	\label{LISP-UML}
-\end{figure*}
-%-< END FIGURE >--------------------------------------------------------------------
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Implementation of LISP Data Plane}
-\label{subsec:modifyInternet}
-%\begin{itemize}
-%    \item Modification of Receive method
-%    \item Modification of Delivery method
-%    \item Implementation of LISP encapsulation and decapsulation
-%\end{itemize}
-The implementation of LISP Data plane mainly consists of \emph{LispOverIp} and \emph{MapTable} classes and their subclasses, along side with some auxiliary classes (e.g. \emph{LispHeader}). In addition, To support LISP functionalites, the \emph{Ipv4L3Protcol}, which is the IP protocol implementation in ns-3, contains one \emph{LispOverIp} object and \emph{Ipv4L3Protcol}'s packet transmission, reception, forward and delivery procedures are accordingly adapted.
-\subsubsection{LISP Database and cache}
-\label{subsec:database-impl}
-Each LISP-speaking node should maintain one LISP database and LISP cache for LISP encapsulation and decapsulation operations. In our implementation, both LISP database and cache are modellized by the same class~\emph{MapTable} that stores and manages EID-RLOC mapping information. This class is in charge of CRUD (Create, Retrieve, Update, Delete) operations for mappings. Each mapping entry in LISP database and cache is an instance of \emph{MapEntry}. For the sake of flexibility, the class \emph{MapTable} is an abstract base class. The CRUD methods are implemented in its subclass \emph{BasicMapTable}. The mapping search operation is a straightforward iteration over LISP database or cache. It is possible that for other users to provide their own LISP database and cache implementation, for example, which employs more sophisticated mapping entry look up algorithms, by extending \emph{MapTable} class.
-
-In addition, \emph{MapTable} has a callback which allows to send the buffered packet (either LISP data plane or control plane) due to LISP cache miss event, upon insertion of the required EID-RLOC mapping information into LISP cache.
-
-\subsubsection{Implementation of LISP encapsulation and decapsulation}
-A LISP-compatible node (terminal or router) should be capable of determining whether a packet should be passed to LISP-related procedure and retrieving the associated mapping information if necessary. To this end, a new class called \emph{LispOverIp} and its extended classes (refer to Fig.~\ref{LISP-UML}) are added to ns-3 \emph{internet} module. This class is in charge of checking whether necessary to do LISP-related operations (\emph{NeedEncapsulation()}, \emph{NeedDecapsulation()}), and encapsulating conventional IP packets (i.e., \emph{LispOutput()}) as well as decapsulating LISP packets(\emph{LispInput()}). It also contains a smart pointer pointing to the LISP database and LISP cache, namely an instance of \emph{MapTable}. This class cooperates with \emph{Ipv4L3Protcol} to implement LISP and LISP-MN.
-
-We take an example to illustrate how LISP encapsulation and decapsulation is implemented. We assume that LISP-MN node has enough mapping information in its database and cache.
-Imagining we have a LISP-MN node behind a xTR router need to communicate with CN before another xTR router. The example involves packet transmission, forwarding, reception, which is illustrated by Fig.\yue{Remember to add a figure here}. When upper layer calls the \emph{send()} method of \emph{Ipv4L3Protcol},a packet comes down to IP layer. The \emph{send()} method is adapted so that    
-it first verifies whether the \emph{LispOverIp} object is present. If yes, some checks are then conducted to determine that this packet should be processed by \emph{LispOutput()} (to encapsulate the packets) or by conventional packet transmission routine. For example, if both source and destination IP address of this packet belong to the same network, the LISP-related process (e.g., encapsulation) is skipped and this packet is processed as in a non-LISP network. Otherwise, EID-RLOC mapping information is searched from LISP cache and LISP database on LISP-MN node. 
-
-
-
-When the considered packet is forwarded to xTR1, This procedure is illustrated in Fig.~\yue{Add one figure here}. Low layer invokes the \emph{Receive} method of \emph{Ipv4L3Protocol} to pass this packet to IP layer. Since this packet is destinated to a remote CN instead of itself, this packet is processed by patched \emph{IpForward} method. , \emph{IpForward} method of \emph{Ipv4L3Protocol} is called. With this method, LISP encapsulation is verified. LispOverIp looks for source RLOC (RLOC of xTR1) and destination RLOC (RLOC of xTR2) for the outter IP header building. Once this step is done, Ipv4L3Protocol's send method transmits these encapsulated packet to MAC layer for transmission.
-
-When this packet arrives at xTR2, xTR2 finds that the destination of this packet is the node itself, the packet is processed by \emph{LocalDelivery} method in \emph{Ipv4L3Protocol}. Before passing to transport layer, \emph{LocalDelivery} checks if the packet should be decapsulated. If yes, it is passed to \emph{LispInput} method, in which the packet is decapsulated and reinjected in the IP stack. That is to say, \emph{Receive} method is called again after decapsulation operation. If the packet sitll has LISP header, the aforementioned procedure will repeated until it has no need to be decapsulated.
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Implementation of LISP Control Plane}
-\label{subsec:control-plane-impl}
-%\begin{itemize}
-%    \item Implementation of xTR under ns3
-%    \item Implementation of MS under ns3
-%    \item Socket communication between control plan and data plan
-%\end{itemize}
-The implementation of LISP Control Plane at least should provide ITR/ETR, MR and MS. In practice, ETR and ITR functionalities are usually placed on a same router called xTR. In our implementation, they are included into classs \emph{LispEtrItrApplication}.
-The functionalities of MS and MR are respectively implemented by class \emph{MapServer} and \emph{MapResolver}. The LISP Control plane messages (map register, map request, etc.) are represented by the derived classes of \emph{LispControlMsg}. In addition, to communicate with LISP data plane, a socket class \emph{LispMappingSocket} is proposed.
-
-\subsubsection{Implementation of xTR functionalities}
- A ns-3 node that runs \emph{LispEtrItrApplication} is a LISP-compatible router. It should be able to communicate with \emph{LispOverIp} on the same node (e.g. inform cache missing event) and other LISP-compatible routers (e.g. Map-Request/Map-Reply). 
-
-The state transition diagram is illustrated in Fig.~{\yue{Add this figure}}. When destination RLOC is not found in the cache of xTR for a processed packet, the cache miss event occurs and LISP data plane (e.g. \emph{LispOverIp}) notifies \emph{LispEtrItrApplication} on the same LISP-MN node of this event via a \emph{LispMappingSocket} socket. Once reception of cache missing event from LISP Data Plane (i.e. \emph{LispOverIp} object), \emph{LispEtrItrApplication} initiates a Map-Request message to LISP mapping system. Once reception of Map-Reply, the received EID-RLOC mapping is inserted into LISP cache. 
-It should be noted that as an implementation choice, before the reception of Map-Reply message, all transmitted packets with the required RLOC as desination are dropped. One can also design a buffer to queue these packets and resend them once the required mapping information is received via Map-Reply.
-
-In case of reception of map request, \emph{LispEtrItrApplication} executes database look up on \emph{MapTable} and generates the corresponding map reply containing EID-RLOC mapping.
-
-When xTR application starts or LISP database on a node has information update (e.g. during a handover scenario), xTR application send map register message and waits for map notify message. In case of LISP database update, xTR initiates a SMR message to all xTR whose RLOC is present in its cache, upon the reception of map notify message. According to~\cite{rfc6830}, the xTR receiving the SMR may have two possibilities of reactions about sending invoked-SMR:  towards a mapping system or the xTR initiating this SMR. Both cases are implemented in our work and this can be configured by an attribute of \emph{LispEtrItrApplication}. It should be noted that in double-encapsulation, if invoked-SMR is directly sent to LISP-MN node whose local RLOC address is unknown for xTR, the first invoked-SMR cannot not sent due to cache miss. We implement a callback function on within \emph{BasicMapTable} which allows to send immediately the buffered invoked-SMR upon insertion of required EID-RLOC mapping into cache. Note that this mechanism is designed only for LISP control plan message. LISP data plane is dropped in case of cache miss.
-
-To support LISP-MN feature, \emph{LispEtrItrApplication} also communicates with DHCP client application. For example, once a LISP-MN obtains an IP address from DHCP server, \emph{LispEtrItrApplication} receives the corresponding EID-RLOC mapping and sends a Map-Register message~\cite{meyer-lisp-mn-16}.
-
-\subsubsection{Implementation of Map server and Map resolver}
-A node that runs a \emph{MapServer} application is the MS in a LISP-supported network. This class maintains a LISP database to store the EID-RLOC mapping information, learned from Map-Register message at the initialization stage. Each time MS receives a map request message, it looks up the required EID and forward this request to the corresponding xTR. In current implementation, the role of MR is to receive the Map-Request message from xTR and forward it to the MS.
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Integration of TUN net interface card}
-\label{subsec:tundevice}
-To support mobility, LISP-MN actually can be regarded as a small LISP-Site. The xTR functionalities and DHCP service should be implemented on LISP-MN node. The address of MR and MS should be configured. As a LISP-MN node, it has a static permanent EID and dynamic RLOC assigned by the DHCP server. To differentiate with conventional RLOC of xTR interface, such kind of RLOC is referred to as the local RLOC (LRLOC). Thus, different from a conventional LISP node, at least two net interface cards (NIC) should be installed into LISP-MN node. One is normal NIC such as~\emph{WifiNetDevice}. The DHCP client application runs on this kind of card and thus the LRLOC is allocated to this card. The other is a TUN type card. The TUN net interface card is a virtual card which should actually invoke~\emph{Send} of another real net interface card. The permanent EID is assigned to \emph{VirtualNetDevice} net card. 
-
-To make the packets from application layer always use EID as the source IP address of inner IP header, two static route entries (shown in Tab.~\ref{tab:static-route-table}) are added into static route of LISP-MN node:
-\begin{table}[]
-	\centering
-	\caption{Static route table of LISP-MN node}
-	\label{tab:static-route-table}
-	\begin{tabular}{ll}
-		Destination Prefix & Interface \\
-		0.0.0.0/1          & TUN       \\
-		128.0.0.1/1        & TUN      
-	\end{tabular}
-\end{table}
-
-modify the node's routing table so that each packet's inner header contains IP address on \emph{TunNetDevice} and outer header contains IP address of \emph{WifiNetDevice} as source address.
-
-%-< SUB SECTION >--------------------------------------------------------------------
-\subsection{Modification of DHCP client to support LISP-MN}
-\label{subsec:DHCP}
-%\begin{itemize}
-%    \item LISP-MN, in case of IPv4, need the intervention of DHCP procedure
-%    \item The current version of DHCPv4 is not compatible with LISP
-%    \item Implementation of LISP-compatible DHCPv4 based on conventional DHCPv4
-%\end{itemize}
-To support LISP mobility for IPv4, the intervention of DHCP is indispensable. From ns-3.27, DHCP client and server have been implemented in module \emph{internet-apps}. However, the DHCP client of ns-3 is not compatible with LISP. Thus, conventional DHCP client is adapted to support LISP.
-
-The state transition diagram of DHCP client is illustrated in Fig.~{\yue{Remember to insert a figure here}. When a LISP-MN node roams into the area covered by another xTR, the boot procedure of DHCP client is triggered once that the link state is changed. Afterwards, the DHCP client sequentially pass `INIT`, `SELECTING`, `Requesting` states and enter into `Bound` state after the reception of DHCP ACK message from DHCP server.
-In `Bound` state, apart from saving the newly obtained IPv4 address (namely local RLOC) and default gateway, DHCP client should be able to check if the local RLOC is different from the one associated with its EID in its LISP database.
-If local RLOC is changed, DHCP client enters into state of `LISP database update`. DHCP client is equipped with a dedicated socket of type \emph{LispMappingSocket}. By this socket, DHCP client notifies the \emph{LispEtrItrApplication} by sending a dedicated message that contains the EID-LRLOC mapping. \emph{LispEtrItrApplication} is in charge of populating the received mapping entry into LISP database and sending a map register message to map server.
-
-To be compatible with DHCP, conventional LISP-related process is also modified. For example, to transmit a DHCP Discovery message (application layer message), its source IP address is set as $0.0.0.0$. The \emph{Send} method of \emph{Ipv4L3Protocol} should be modified so that this message is not processed \emph{LispOverIp}.
-
-
 %-< SECTION >--------------------------------------------------------------------
 \section{Theoretical analysis}
 \label{sec:ns3_analysis}
-As no matter LISP implemented on the border router or the end host can support seamless mobility, we design three different scenarios in this chapter to illustrate their characteristics, calculate their handover delay and overhead of control plane. 
+The seamless IP mobility be leveraging LISP can be implemented either on the border router or the end host. To explore the characteristics of each scheme, we proposed the following three different scenarios and analyze the handover delay and control plane overhead.
+\begin{enumerate}[noitemsep,topsep=0pt]
+	\item LISP-MN in the non-LISP-Site (i.e., only the end host supports LISP). 
+	\item MN in the LISP-Site (i.e., only the border router supports LISP). 
+	\item LISP-MN in the LISP-Site (i.e., both the border router and the end host support LISP). 
+\end{enumerate}	
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!th]
 	\centering
@@ -159,17 +54,16 @@ As no matter LISP implemented on the border router or the end host can support s
 	\label{sim_archi}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
-\begin{enumerate}[noitemsep,topsep=0pt]
-	\item The first scenario is LISP-MN in the non-LISP-Site (i.e., only the end host supports LISP). 
-	\item The second one is MN in the LISP-Site (i.e., only the border router supports LISP). 
-	\item The last scenario is LISP-MN in the LISP-Site (i.e., both the border router and the end host support LISP). 
-\end{enumerate}	
+
 % -<Descriptions with parameters>--------------------------------------------------------------------
 % All the scenarios are based on a same simulation architecture shown in Fig.~\ref{sim_archi}, but with some slight differences, which will be respectively specified in the following parts from Sec.~\ref{sec:ns3_analysis_lispmn} to Sec.~\ref{sec:ns3_analysis_lispmn_xTR}. In our designed architecture, an MN is initially in the subnet of $Router_1$. An \emph{echo} application on MN sends packets to a remote stationary node CN in the LISP-Site of $xTR_3$. The distance between xTR\_1 and xTR\_2 is $170 m$. The connection between MN and xTR\_1 can be either Wi-Fi or wired link. If they use Wi-Fi, MN will move into the subnet of $Router_2$ at speed of $7.07 m/s$ after several seconds when the simulation begins. The start time of movement is a random value in the range of $[x, x] s$. At a certain moment during the moving, the Wi-Fi link between MN and $Router_1$ is down, which triggers the handover procedure. Afterwards, MN connects to $Router_2$ and reestablishes the communication with CN node. If they use wired link, the connection of MN with $Router_1$ will be down and the one with $Router_2$ will be up at the same time. This action also triggers the handover procedure. Every link between two network entities in this simulation architecture is set to $20 ms$.
 
-All the scenarios are based on a same simulation architecture shown in Fig.~\ref{sim_archi}, but with some slight differences, which will be respectively specified in the following parts from Sec.~\ref{sec:ns3_analysis_lispmn} to Sec.~\ref{sec:ns3_analysis_lispmn_xTR}. In our designed architecture, an MN is initially in the subnet of $Router_1$. An \emph{echo} application on MN sends packets to a remote stationary node CN in the LISP-Site of $xTR_3$. The connection between MN and $Router_1$ can be either Wi-Fi or wired link. If they use Wi-Fi, MN will move into the subnet of $Router_2$ after several seconds when the simulation begins. At a certain moment during the moving, the Wi-Fi link between MN and $Router_1$ is down, which triggers the handover procedure. Afterwards, MN connects to $Router_2$ and reestablishes the communication with CN node. If they use wired link, the connection of MN with $Router_1$ will be down and the one with $Router_2$ will be up at the same time. This action also triggers the handover procedure.
+All the scenarios are based on a same simulation topology shown in Fig.~\ref{sim_archi}, but with some slight differences, which will be respectively specified in the following parts from Sec.~\ref{sec:ns3_analysis_lispmn} to Sec.~\ref{sec:ns3_analysis_lispmn_xTR}. In our designed topology, a MN is initially in the subnet of $Router_1$. An \emph{echo} application on MN sends packets to a remote stationary node CN in the LISP-Site of $xTR_3$. The connection between MN and $Router_1$ can be either Wi-Fi or wired link. If they use Wi-Fi, MN will move into the subnet of $Router_2$ after several seconds when the simulation begins. At a certain moment during the moving, the Wi-Fi link between MN and $Router_1$ is down, which triggers the handover procedure. Afterwards, MN connects to $Router_2$ and reestablishes the communication with CN node. If they use wired link, the connection of MN with $Router_1$ will be down and the one with $Router_2$ will be up at the same time. This action also triggers the handover procedure.
+\qsong{If still have time, try to revise the description about wifi and wired link.}
 
-In this chapter, we define the overall handover delay ($D_{overall}$) as the latency between the last packet received by MN from CN via $Router_1$ and the first packet received by MN from CN via $Router_2$ after the reestablishment. Same to the calculation of overall handover overhead ($C_{overall}$), which is the number of signals related to LISP control plane during that latency. According to the three following scenarios, the handover delay and overhead consist of different parts. All the necessary delay and LISP overhead of control plane during the mobility are listed in Tab.~\ref{Symbols_numerical_analysis}.
+In this chapter, we define the overall handover delay $D_{overall}$ as the latency between the last packet received by MN from CN via $Router_1$ and the first packet received by MN from CN via $Router_2$ after the link reestablishment. 
+Same to the calculation of overall handover overhead $C_{overall}$, which is the number of signals related to LISP control plane during that latency. 
+According to the three following scenarios, the handover delay and overhead consist of different parts. All the necessary delay and LISP overhead of control plane during the mobility are listed in Tab.~\ref{Symbols_numerical_analysis}.
 %-< TABLE >-----------------------------------------------------------------
 \begin{table}[!tb]
 	\centering
@@ -208,7 +102,7 @@ In this chapter, we define the overall handover delay ($D_{overall}$) as the lat
 %-< SUBSECTION >--------------------------------------------------------------------
 \subsection{LISP-MN in non-LISP-Site}
 \label{sec:ns3_analysis_lispmn}
-The first scenario is the LISP-MN in non-LISP-Site, where the border routers are the conventional routers and LISP is only implemented on the mobile end host MN. In our simulation, the LISP-MN with permanent EID is initially placed in the subnet of $Router_1$, with the IP address distributed by $Router_1$ as its RLOC. The remote CN is a conventional stationary end host, residing in a LISP-Site of $xTR_3$. The LISP-MN communicates with CN by encapsulating the packets on itself and decapsulating the packets on $xTR_3$. If we use Wi-Fi, the LISP-MN moves into subnet of $Router_2$ after the simulation begins. At a certain moment during the moving, the Wi-Fi link between LISP-MN and $Router_1$ is down, whereas LISP-MN detects $Router_2$, which triggers the handover procedure. If we use wired link, after a certain time that the simulation begins, we turn down the wired link between LISP-MN and $Router_1$, while set the link between LISP-MN and $Router_2$ up at the same time. LISP-MN first has a DHCP procedure with $Router_2$, so that the later distributes it a new IP address as its RLOC. Then LISP-MN needs register its new mapping information to the mapping system, and also send a $SMR$ to its communicating nodes in its cache (there is only $xTR_3$ in our scenario). $xTR_3$ sends an SMR-invoked Map-Request to the mapping system, so to obtain the new mapping information of LISP-MN. Afterwards, LISP-MN reestablishes the communication with CN node leveraging $Router_2$. The detailed traffic schema related to the handover procedure is indicated in Fig.~\ref{sim_schema_LISPMN}.  % The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
+The first scenario is the LISP-MN in non-LISP-Site, where the border routers are the conventional routers and LISP is only implemented on the mobile end host MN. In our simulation, the LISP-MN with permanent EID is initially placed in the subnet of $Router_1$, with the IP address distributed by $Router_1$ as its RLOC. The remote CN is a conventional stationary end host, residing in a LISP-Site of $xTR_3$. The LISP-MN communicates with CN by encapsulating the packets on itself and decapsulating the packets on $xTR_3$. If we use Wi-Fi, the LISP-MN moves into subnet of $Router_2$ after the simulation begins. At a certain moment during the moving, the Wi-Fi link between LISP-MN and $Router_1$ is down, whereas LISP-MN detects $Router_2$, which triggers the handover procedure. If we use wired link, after a certain time that the simulation begins, we turn down the wired link between LISP-MN and $Router_1$, while set the link between LISP-MN and $Router_2$ up at the same time. LISP-MN first has a DHCP procedure with $Router_2$, so that the later allocates it a new IP address as its RLOC. Then LISP-MN needs register its new mapping information to the mapping system, and also send a $SMR$ to its communicating nodes in its cache (there is only $xTR_3$ in our scenario). $xTR_3$ sends an SMR-invoked Map-Request to the mapping system, so to obtain the new mapping information of LISP-MN. Afterwards, LISP-MN reestablishes the communication with CN node leveraging $Router_2$. The detailed traffic schema related to the handover procedure is illustrated in Fig.~\ref{sim_schema_LISPMN}.  % The total simulation time is set to $45s$ and the DHCP procedure delay is set to $1s$. We conduct many times of simulations with the various beacon interval of Wi-Fi channel in the range of $0.05s$ to $2s$.
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!th]
 	\centering
@@ -442,6 +336,129 @@ However, same to the shortcomings for the first scenario, each LISP-MN needs a p
 %%-< END FIGURE >--------------------------------------------------------------------
 
 %-< SECTION >--------------------------------------------------------------------
+
+ 
+%-< SECTION >--------------------------------------------------------------------
+\section{Implementation of LISP and LISP-MN on ns-3}
+\label{sec:ns3_lispmn}
+Our implementation respects LISP~\cite{rfc6830} and LISP mobility standards~\cite{meyer2016lisp}. As a design choice, we implement LISP and LISP mobility functionalities by modifying and extending two already existing modules of ns-3:~\emph{internet} and \emph{internet-apps}, instead of by creating a new independent module. The justification behind this design is that LISP protocol and legacy internet module have an interdependent relationship: an IP layer packet is processed by LISP and then passed to IP protocol again. However, this kind mutually dependent relationship between modules is not supported by ns-3. Our implementation mainly consists of two parts: Data plane and Control plane. The communication between LISP Data and Control Plane is achieved via a dedicated socket (i.e. \emph{LispMappingSocket}) that inherits from ns-3 \emph{Socket} class. The Data Plane implementation is in "kernel space" (i.e. ns-3's \emph{TCP/IP stack}) and Control Plane is implemented in "user space" (i.e. ns-3 \emph{Application}). Such a design is inspired by that of OpenLISP~\cite{saucez2009openlisp}.  
+
+The UML diagram of proposed LISP and LISP mobility implementation is illustrated Fig.~\ref{LISP-UML}. The blank blocks refer to the classes that we added into ns-3, while darker blocks are classes already in ns-3. It should be noted that our implementation currently only supports IPv4 at time of this writing. The IPv6 support (i.e. the implementation related to IPv6 such as \emph{LispOverIpv6Impl}) is still in process. In addition, the authentication procedure involved in LISP is not considered in our implementation.\yue{This figure should be revised. For example, LispHeader should be renamed as LispDataPlaneHeader. MapTable should contains a list of MapEntry.}
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\textwidth]{Pics/LISP-NS3-UML}
+	\caption{UML diagram of LISP and LISP mobility implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.}
+	\label{LISP-UML}
+\end{figure*}
+%-< END FIGURE >--------------------------------------------------------------------
+%-< SUB SECTION >--------------------------------------------------------------------
+\subsection{Implementation of LISP Data Plane}
+\label{subsec:modifyInternet}
+%\begin{itemize}
+%    \item Modification of Receive method
+%    \item Modification of Delivery method
+%    \item Implementation of LISP encapsulation and decapsulation
+%\end{itemize}
+The implementation of LISP Data plane mainly consists of \emph{LispOverIp} and \emph{MapTable} classes and their subclasses, along side with some auxiliary classes (e.g. \emph{LispHeader}). In addition, to support LISP functionalites, \emph{Ipv4L3Protcol}'s packet transmission, reception, forward and delivery procedures are accordingly adapted.
+\subsubsection{LISP Database and cache}
+\label{subsec:database-impl}
+Each LISP-speaking node should maintain one LISP database and LISP cache for LISP encapsulation and decapsulation operations. In our implementation, both LISP database and cache are modellized by the same class~\emph{MapTable} that stores and manages EID-RLOC mapping information. This class is in charge of CRUD (Create, Retrieve, Update, Delete) operations for mappings. Each mapping entry in LISP database and cache is an instance of \emph{MapEntry}. For the sake of flexibility, the class \emph{MapTable} is an abstract base class. The CRUD methods are implemented in its subclass \emph{BasicMapTable}. The mapping search operation is a straightforward iteration over LISP database or cache. It is possible that for other users to provide their own LISP database and cache implementation, for example, which employs more sophisticated mapping entry look up algorithms, by extending \emph{MapTable} class.
+
+In addition, \emph{MapTable} has a callback which allows to send the buffered packet (either LISP data plane or control plane) due to LISP cache miss event, upon insertion of the required EID-RLOC mapping information into LISP cache.
+
+\subsubsection{Implementation of LISP encapsulation and decapsulation}
+To integrate LISP and LISP mobility into conventional Internet protocol stack, one key technical difficulty is that \emph{Ipv4L3Protcol} should be able to determine when passing a packet being processed to LISP-related procedure and how to retrieve the associated mapping information if necessary. To this end, a new class called \emph{LispOverIp} and its extended classes (refer to Fig.~\ref{LISP-UML}) are added to ns-3 \emph{internet} module. This class is in charge of checking whether necessary to do LISP-related operations (\emph{NeedEncapsulation()}, \emph{NeedDecapsulation()}), and encapsulating conventional IP packets (i.e., \emph{LispOutput()}) as well as decapsulating LISP packets(\emph{LispInput()}). It contains a smart pointer pointing to the LISP database and LISP cache (e.g.~\emph{MapTable}) on which executes mapping search.
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\textwidth]{Pics/ns3_lisp_data_plane.eps}
+	\caption{State transition diagram of xTR application}
+	\label{fig:ns3-lisp-data-plane}
+\end{figure*}
+
+We take an example to illustrate how LISP encapsulation and decapsulation is implemented. We assume that LISP-MN node has enough mapping information in its database and cache.
+Imagining we have a LISP-MN node behind a xTR router need to communicate with CN before another xTR router. The example involves packet transmission, forwarding, reception, which is illustrated by Fig.~\ref{fig:ns3-lisp-data-plane}. When upper layer calls the \emph{send()} method of \emph{Ipv4L3Protcol},a packet comes down to IP layer. The \emph{send()} method is adapted so that    
+it first verifies whether the \emph{LispOverIp} object is present. If yes, some checks are then conducted to determine that this packet should be processed by \emph{LispOutput()} (to encapsulate the packets) or by conventional packet transmission routine. For example, if both source and destination IP address of this packet belong to the same network, the LISP-related process (e.g., encapsulation) is skipped and this packet is processed as in a non-LISP network. Otherwise, EID-RLOC mapping information is searched from LISP cache and LISP database on LISP-MN node. 
+
+
+
+When the considered packet is forwarded to xTR1, This procedure is illustrated in Fig.~\yue{Add one figure here}. Low layer invokes the \emph{Receive} method of \emph{Ipv4L3Protocol} to pass this packet to IP layer. Since this packet is destinated to a remote CN instead of itself, this packet is processed by patched \emph{IpForward} method. , \emph{IpForward} method of \emph{Ipv4L3Protocol} is called. With this method, LISP encapsulation is verified. LispOverIp looks for source RLOC (RLOC of xTR1) and destination RLOC (RLOC of xTR2) for the outter IP header building. Once this step is done, Ipv4L3Protocol's send method transmits these encapsulated packet to MAC layer for transmission.
+
+When this packet arrives at xTR2, xTR2 finds that the destination of this packet is the node itself, the packet is processed by \emph{LocalDelivery} method in \emph{Ipv4L3Protocol}. Before passing to transport layer, \emph{LocalDelivery} checks if the packet should be decapsulated. If yes, it is passed to \emph{LispInput} method, in which the packet is decapsulated and reinjected in the IP stack. That is to say, \emph{Receive} method is called again after decapsulation operation. If the packet sitll has LISP header, the aforementioned procedure will repeated until it has no need to be decapsulated.
+
+%-< SUB SECTION >--------------------------------------------------------------------
+\subsection{Implementation of LISP Control Plane}
+\label{subsec:control-plane-impl}
+%\begin{itemize}
+%    \item Implementation of xTR under ns3
+%    \item Implementation of MS under ns3
+%    \item Socket communication between control plan and data plan
+%\end{itemize}
+The implementation of LISP Control Plane at least should provide ITR/ETR, MR and MS. In practice, ETR and ITR functionalities are usually placed on a same router called xTR. In our implementation, they are included into classs \emph{LispEtrItrApplication}.
+The functionalities of MS and MR are respectively implemented by class \emph{MapServer} and \emph{MapResolver}. The LISP Control plane messages (map register, map request, etc.) are represented by the derived classes of \emph{LispControlMsg}. In addition, to communicate with LISP data plane, a socket class \emph{LispMappingSocket} is proposed.
+
+\subsubsection{Implementation of xTR functionalities}
+ A ns-3 node that runs \emph{LispEtrItrApplication} is a LISP-compatible router. It should be able to communicate with \emph{LispOverIp} on the same node (e.g. inform cache missing event) and other LISP-compatible routers (e.g. Map-Request/Map-Reply). 
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\textwidth]{Pics/xTR_state_transition.eps}
+	\caption{State transition diagram of xTR application}
+	\label{fig:xTR-state-transition}
+\end{figure*}
+The state transition diagram is illustrated in Fig.~\ref{fig:xTR-state-transition}. When destination RLOC is not found in the cache of xTR for a processed packet, the cache miss event occurs and LISP data plane (e.g. \emph{LispOverIp}) notifies \emph{LispEtrItrApplication} on the same LISP-MN node of this event via a \emph{LispMappingSocket} socket. Once reception of cache missing event from LISP Data Plane (i.e. \emph{LispOverIp} object), \emph{LispEtrItrApplication} initiates a Map-Request message to LISP mapping system. Once reception of Map-Reply, the received EID-RLOC mapping is inserted into LISP cache. 
+It should be noted that as an implementation choice, before the reception of Map-Reply message, all transmitted packets with the required RLOC as desination are dropped. One can also design a buffer to queue these packets and resend them once the required mapping information is received via Map-Reply.
+
+In case of reception of map request, \emph{LispEtrItrApplication} executes database look up on \emph{MapTable} and generates the corresponding map reply containing EID-RLOC mapping.
+
+When xTR application starts or LISP database on a node has information update (e.g. during a handover scenario), xTR application send map register message and waits for map notify message. In case of LISP database update, xTR initiates a SMR message to all xTR whose RLOC is present in its cache, upon the reception of map notify message. According to~\cite{rfc6830}, the xTR receiving the SMR may have two possibilities of reactions about sending invoked-SMR:  towards a mapping system or the xTR initiating this SMR. Both cases are implemented in our work and this can be configured by an attribute of \emph{LispEtrItrApplication}. It should be noted that in double-encapsulation, if invoked-SMR is directly sent to LISP-MN node whose local RLOC address is unknown for xTR, the first invoked-SMR cannot not sent due to cache miss. We implement a callback function on within \emph{BasicMapTable} which allows to send immediately the buffered invoked-SMR upon insertion of required EID-RLOC mapping into cache. Note that this mechanism is designed only for LISP control plan message. LISP data plane is dropped in case of cache miss.
+
+To support LISP-MN feature, \emph{LispEtrItrApplication} also communicates with DHCP client application. For example, once a LISP-MN obtains an IP address from DHCP server, \emph{LispEtrItrApplication} receives the corresponding EID-RLOC mapping and sends a Map-Register message~\cite{meyer-lisp-mn-16}.
+
+\subsubsection{Implementation of Map server and Map resolver}
+A node that runs a \emph{MapServer} application is the MS in a LISP-supported network. This class maintains a LISP database to store the EID-RLOC mapping information, learned from Map-Register message at the initialization stage. Each time MS receives a map request message, it looks up the required EID and forward this request to the corresponding xTR. In current implementation, the role of MR is to receive the Map-Request message from xTR and forward it to the MS.
+
+%-< SUB SECTION >--------------------------------------------------------------------
+\subsection{Integration of TUN net interface card}
+\label{subsec:tundevice}
+To support mobility, LISP-MN actually can be regarded as a small LISP-Site. The xTR functionalities and DHCP service should be implemented on LISP-MN node. The address of MR and MS should be configured. As a LISP-MN node, it has a static permanent EID and dynamic RLOC assigned by the DHCP server. To differentiate with conventional RLOC of xTR interface, such kind of RLOC is referred to as the local RLOC (LRLOC). Thus, different from a conventional LISP node, at least two net interface cards (NIC) should be installed into LISP-MN node. One is normal NIC such as~\emph{WifiNetDevice}. The DHCP client application runs on this kind of card and thus the LRLOC is allocated to this card. The other is a TUN type card. The TUN net interface card is a virtual card which should actually invoke~\emph{Send} of another real net interface card. The permanent EID is assigned to \emph{VirtualNetDevice} net card. 
+
+To make the packets from application layer always use EID as the source IP address of inner IP header, two static route entries (shown in Tab.~\ref{tab:static-route-table}) are added into static route of LISP-MN node:
+\begin{table}[]
+	\centering
+	\caption{Static route table of LISP-MN node}
+	\label{tab:static-route-table}
+	\begin{tabular}{ll}
+		Destination Prefix & Interface \\
+		0.0.0.0/1          & TUN       \\
+		128.0.0.1/1        & TUN      
+	\end{tabular}
+\end{table}
+
+modify the node's routing table so that each packet's inner header contains IP address on \emph{TunNetDevice} and outer header contains IP address of \emph{WifiNetDevice} as source address.
+
+%-< SUB SECTION >--------------------------------------------------------------------
+\subsection{Modification of DHCP client to support LISP-MN}
+\label{subsec:DHCP}
+%\begin{itemize}
+%    \item LISP-MN, in case of IPv4, need the intervention of DHCP procedure
+%    \item The current version of DHCPv4 is not compatible with LISP
+%    \item Implementation of LISP-compatible DHCPv4 based on conventional DHCPv4
+%\end{itemize}
+To support LISP mobility for IPv4, the intervention of DHCP is indispensable. From ns-3.27, DHCP client and server have been implemented in module \emph{internet-apps}. However, the DHCP client of ns-3 is not compatible with LISP. Thus, conventional DHCP client is adapted to support LISP.
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\textwidth]{Pics/DHCP_transition_state.eps}
+	\caption{LISP-compatible DHCP client state transition diagram}
+	\label{fig:DHCP-state-transition}
+\end{figure*}
+The state transition diagram of DHCP client is illustrated in Fig.~\ref{fig:DHCP-state-transition}. When a LISP-MN node roams into the area covered by another xTR, the boot procedure of DHCP client is triggered once that the link state is changed. Afterwards, the DHCP client sequentially pass `INIT`, `SELECTING`, `Requesting` states and enter into `Bound` state after the reception of DHCP ACK message from DHCP server.
+In `Bound` state, apart from saving the newly obtained IPv4 address (namely local RLOC) and default gateway, DHCP client should be able to check if the local RLOC is different from the one associated with its EID in its LISP database.
+If local RLOC is changed, DHCP client enters into state of `LISP database update`. DHCP client is equipped with a dedicated socket of type \emph{LispMappingSocket}. By this socket, DHCP client notifies the \emph{LispEtrItrApplication} by sending a dedicated message that contains the EID-LRLOC mapping. \emph{LispEtrItrApplication} is in charge of populating the received mapping entry into LISP database and sending a map register message to map server.
+
+To be compatible with DHCP, conventional LISP-related process is also modified. For example, to transmit a DHCP Discovery message (application layer message), its source IP address is set as $0.0.0.0$. The \emph{Send} method of \emph{Ipv4L3Protocol} should be modified so that this message is not processed \emph{LispOverIp}.
+
+
+
 \section{Conclusion and future work}
 \label{sec:ns3_conclusion}
 %\begin{itemize}
