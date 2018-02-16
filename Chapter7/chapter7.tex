@@ -134,17 +134,10 @@ In this chapter, we define the overall handover delay ($D_{overall}$) as the lat
 			$D_{Reply}$ &  Delay of receiving Map-Reply      	\\  \hline      
 			$D_{Resolve}$ &  Delay of resolving mapping information in MDS      	\\  \hline               
 			$D_{SMR}$ &  Delay of sending SMR       	\\  \hline 
-			$D_{invokeSMR}$ &  Delay of sending invoke-SMR \\  \hline 
+			$D_{Request_{SMR}}$ &  Delay of sending a SMR-invoked Map-Request \\  \hline 
 			$D_{Link}$ &  Link delay between two network entities \\  \hline 
 			$T_{A-B}$ &  Delay of packet transmission between A and B     	\\  \hline
-			$T_{timeout_SMR}$ &  Timeout of SMR      	\\  \hline
-			$C_{overall}$ &  Overall handover overhead \\  \hline    
-			$C_{Register}$ &  Overhead of sending Map-Register      	\\  \hline
-			$C_{Notify}$ &  Overhead of receiving Map-Notify      	\\  \hline           
-			$C_{Request}$ &  Overhead of sending Map-Request to MDS      	\\  \hline   
-			$C_{Reply}$ &  Overhead of receiving Map-Reply      	\\  \hline      
-			$C_{SMR}$ &  Overhead of sending SMR       	\\  \hline 
-			$C_{invokeSMR}$ &  Overhead of sending invoke-SMR \\  \hline  \hline    
+			$T_{timeout_SMR}$ &  Timeout of SMR \\  \hline  \hline    
 		\end{tabular}
 	}
 \end{table}
@@ -160,14 +153,14 @@ The first scenario is the LISP-MN in non-LISP-Site, where the border routers are
 \begin{figure}[!th]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Pics/Mobility_LISPMN_schema_SMR_simplify}
-	\caption{Schema for LISP-MN mobility}
+	\caption{Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)}
 	\label{sim_schema_LISPMN}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
 The overall handover delay $D_{overall}$ in this scenario is composed by two parts: the DHCP related delay and LISP related delay. The delay of DHCP procedures consist of LISP-MN sending DHCP Discovery message to $Router_2$, receiving DHCP Offer message, sending DHCP Request message, and receiving DHCP ACK message. The delay of all the LISP procedures are presented in Fig.~\ref{sim_schema_LISPMN}. Thus, the overall handover delay is:
 \begin{eqnarray}
-D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
+D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{Request_{SMR}} + D_{Reply} \nonumber \\
 % &=& D_{DHCP} + T_{MN-MDS} + T_{MDS-MN} + T_{MN-xTR_3} + (T_{xTR_3-MDS} + D_{Resolve} + T_{MDS-MN}) + T_{MN-xTR_3} \nonumber \\
 &=& D_{DHCP} + 3T_{MN-MDS} + 2T_{MN-xTR_3} + T_{xTR_3-MDS} + D_{Resolve} \nonumber \\
 &=& D_{DHCP} + 3* (3*D_{Link}) + 2*(3*D_{Link}) + 2*D_{Link} + 200ms\nonumber \\
@@ -177,16 +170,16 @@ D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} +
 \end{eqnarray}
 where $D_{DHCP}$ represents the time elapsed between the DHCP Discover sent by the LISP-MN, and the $DHCP ACK$ message sent by the $Router_2$. Every link between two network entities in this simulation architecture is set to $2 ms$. According to the experimental results in~\cite{coras2014performance}, we set the resolving time in the mapping system as $200 ms$. % (Min value of handover delay = 1.073031 s, where packet sending interval = 0.01 s)
 
-The overall handover overhead $C_{overall}$ includes the signaling overhead of registration when LISP-MN connects to $Router_2$, and the SMR procedure. Thus, the overall handover overhead related to LISP control plane is:
-\begin{eqnarray}
-C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + C_{invokeSMR} + C_{Reply} \nonumber \\
-&=& C_{Register} + C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} \nonumber \\
-&=& 6 C
-\end{eqnarray}
+The handover overhead is 6 messages of LISP control plane. It includes 2 signalings of registration when LISP-MN connects to $Router_2$ (Map-Register and Map-Notify), and 4 signalings related to SMR procedure: 1 SMR from $xTR_3$ to $Router_2$, 1 SMR-invoked Map-Request from $xTR_3$ to the mapping system, 1 Map-Request forwarded by mapping system to $Router_2$, and 1 Map-Reply from $Router_2$ to $xTR_3$.
+%\begin{eqnarray}
+%C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + C_{Request_{SMR}} + C_{Reply} \nonumber \\
+%&=& C_{Register} + C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} \nonumber \\
+%&=& 6 C
+%\end{eqnarray}
 
 There are two options when $xTR_3$ receives $SMR$. It can send the SMR-invoked Map-Request to the mapping system as we described before, or it can directly send the SMR-invoked Map-Request to the source locator address of $SMR$~\cite{rfc6830}. In this scenario, the source of $SMR$ is LISP-MN. Thus, the numerical analysis of overall handover delay $D_{overall}$ is as follows:
 \begin{eqnarray}
-D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
+D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{Request_{SMR}} + D_{Reply} \nonumber \\
 % &=& D_{DHCP} + T_{MN-MDS} + T_{MDS-MN} + T_{MN-xTR_3} + T_{xTR_3-MN} + T_{MN-xTR_3} \nonumber \\
 &=& D_{DHCP} + 2T_{MN-MDS} + 3T_{MN-xTR_3}  \nonumber \\
 &=& D_{DHCP} + 2* (3*D_{Link}) + 3*(3*D_{Link}) \nonumber \\
@@ -196,12 +189,12 @@ D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} +
 \end{eqnarray}
 Compared to sending SMR-invoked Map-Request to the mapping system, the overall handover delay of sending the SMR-invoked Map-Request back to the source of $SMR$ is much smaller, since there is no resolving delay in the mapping system. This solution is more interesting for the case that the distance to mapping system is much longer than that to the source of $SMR$.
 
-The overall handover overhead $C_{overall}$ is:
-\begin{eqnarray}
-C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + C_{invokeSMR} + C_{Reply} \nonumber \\
-&=& C_{Register} + C_{Notify} + C_{SMR} + C_{Request} + C_{Reply} \nonumber \\
-&=& 5 C
-\end{eqnarray}
+In this scenario, the handover overhead associated to LISP control plane is 5 messages. Since the SMR-invoked Map-Request is directly sent from $xTR_3$ to $Router_2$ instead of passing the mapping system, it has 1 signal less than the one sent to the mapping system.
+%\begin{eqnarray}
+%C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + C_{Request_{SMR}} + C_{Reply} \nonumber \\
+%&=& C_{Register} + C_{Notify} + C_{SMR} + C_{Request} + C_{Reply} \nonumber \\
+%&=& 5 C
+%\end{eqnarray}
 
 The advantages of this scenario, i.e., LISP-MN in non-LISP-Site, are: 
 \begin{inparaenum}[1)]
@@ -219,14 +212,14 @@ The second scenario is the MN in LISP-Site, where the mobile node MN is conventi
 \begin{figure}[!th]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Pics/Mobility_xTR_schema_SMR_simplify}
-	\caption{Schema for LISP-MN mobility}
+	\caption{Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)}
 	\label{sim_schema_xTR}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
 The overall handover delay $D_{overall}$ in this scenario is generally same to the first one but has slight difference. The numerical analysis is as follows:
 \begin{eqnarray}
-D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
+D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{Request_{SMR}} + D_{Reply} \nonumber \\
 % &=& D_{DHCP} + T_{xTR_2-MDS} + T_{MDS-xTR_1} + T_{xTR_1-xTR_3} + T_{xTR_3-MDS} + D_{Resolve} + T_{MDS-xTR_2} + T_{xTR_2-xTR_3} \nonumber \\
 &=& D_{DHCP} + 2T_{xTR_2-MDS} + T_{MDS-xTR_1} + T_{xTR_1-xTR_3} + T_{xTR_3-MDS} + \nonumber \\
 & & D_{Resolve} + T_{xTR_2-xTR_3} \nonumber \\
@@ -237,16 +230,16 @@ D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} +
 \end{eqnarray}
 % $CheckAlive$ is the delay that xTR\_1 checks if MN still connects to it. For example, xTR\_1 can simply \emph{ping} MN. If MN still connects to it, it will reply to mapping system that itself is still RLOC of MN. Otherwise, if \emph{ping} meets timeout, xTR\_1 will tell the mapping system that MN has left, and sends SMR to the CNs in its cache. The later situation has higher delay, because xTR\_1 needs to wait until timeout of \emph{ping}. % (Min value of simulation = 1.067679 s, where includes 1 s of DHCP delay)
 
-The overall handover overhead $C_{overall}$ is:
-\begin{eqnarray}
-C_{overall} &=& C_{Register} + 2C_{Notify} + C_{SMR} + C_{invokeSMR} + C_{Reply} \nonumber \\
-&=& C_{Register} + 2C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} \nonumber \\
-&=& 7 C
-\end{eqnarray}
+The handover overhead in this scenario is 7. Besides 4 messages used for SMR procedure, it needs 3 signalings to complete the registration. There are 1 Map-Register from MN to the mapping system and 2 messages of Map-Notify: 1 to the $xTR_2$ and 1 to the $xTR_1$.
+%\begin{eqnarray}
+%C_{overall} &=& C_{Register} + 2C_{Notify} + C_{SMR} + C_{Request_{SMR}} + C_{Reply} \nonumber \\
+%&=& C_{Register} + 2C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} \nonumber \\
+%&=& 7 C
+%\end{eqnarray}
 
 Same to the first scenario having two options, when $xTR_3$ receives the $SMR$ from $xTR_1$, it can also directly send SMR-invoked Map-Request back to $xTR_1$. The overall handover delay $D_{overall}$ is as follows:
 \begin{eqnarray}
-D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} \nonumber \\
+D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{Request_{SMR}} + D_{Reply} \nonumber \\
 % &=& D_{DHCP} + T_{xTR_2-MDS} + T_{MDS-xTR_1} + T_{xTR_1-xTR_3} + T_{xTR_3-xTR_2} + T_{xTR_2-xTR_3} \nonumber \\
 &=& D_{DHCP} + T_{xTR_2-MDS} + T_{MDS-xTR_1} + T_{xTR_1-xTR_3} + 2T_{xTR_2-xTR_3} \nonumber \\
 &=& D_{DHCP} +2*D_{Link} + 2*D_{Link} + 2*D_{Link} + 2*(2*D_{Link}) \nonumber \\
@@ -256,12 +249,12 @@ D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} +
 \end{eqnarray}
 Since the SMR-invoked Map-Request is not sent to the mapping system, there is no resolving delay, and the overall handover delay is much smaller than the former solution. However, in this scenario, as $xTR_1$ has not been in charged of MN, how long it stores the CNs for MN in its cache is an important point to discuss. If the expired time is set too long, it wastes the source of $xTR_1$ and is not necessary. Whereas if the time is too short, there is the risk that remote CNs like $xTR_3$ in our scenario, do not have enough time to request the new mapping information.
 
-The overall handover overhead $C_{overall}$ is:
-\begin{eqnarray}
-C_{overall} &=& C_{Register} + 2C_{Notify} + C_{SMR} + C_{invokeSMR} + C_{Reply} \nonumber \\
-&=& C_{Register} + 2C_{Notify} + C_{SMR} + C_{Request} + C_{Reply} \nonumber \\
-&=& 6 C
-\end{eqnarray}
+Same to the first scenario that directly responding to the source locator of SMR has 1 signaling less than the one requesting to the mapping system first. Thus, the overall handover overhead in this case is 6.
+%\begin{eqnarray}
+%C_{overall} &=& C_{Register} + 2C_{Notify} + C_{SMR} + C_{Request_{SMR}} + C_{Reply} \nonumber \\
+%&=& C_{Register} + 2C_{Notify} + C_{SMR} + C_{Request} + C_{Reply} \nonumber \\
+%&=& 6 C
+%\end{eqnarray}
 
 Since the routers support LISP, i.e., are the xTRs in this scenario, it can help to reduce the BGP routing table size, which is the fundamental motivation of proposing LISP. Besides, the numerical analysis presents that the overall handover delay of this scenario is the shortest. However, it can only provide the mobility within a same subnet without any interrupt, but it is not able to offer the seamless handover through different subnets. Thus, this scenario is more suitable to be applied for the mobility of virtual machines in the Data Center.
 
@@ -273,14 +266,14 @@ The third scenario is the LISP-MN in LISP-Site, where both the border routers an
 \begin{figure}[!th]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Pics/Mobility_double_encap_schema_SMR_askMDS_simplify}
-	\caption{Schema for LISP-MN in LISP-Site mobility}
+	\caption{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)}
 	\label{Mobility_double_encap_schema_SMR_askMDS_simplify}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
 Since this scenario is double encapsulation that $xTR_3$ needs to know both inner and outer mapping information of LISP-MN for sending the packets. The overall handover delay $D_{overall}$ in this scenario is larger than the first two scenarios. The numerical analysis is as follows:
 \begin{eqnarray}
-D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} + D_{Reply} +  \nonumber \\
+D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{Request_{SMR}} + D_{Reply} +  \nonumber \\
 & & D_{Request}+ D_{Reply} \nonumber \\
 % &=& D_{DHCP} + 2T_{MN-MDS} + T_{MN-xTR_3} + T_{xTR_3-MDS} + D_{Resolve} + T_{MDS-MN} + T_{MN-xTR_3} + T_{xTR_3-MDS} + D_{Resolve} + T_{MDS-xTR_2} + T_{xTR_2-xTR_3}   \nonumber \\
 &=& D_{DHCP} + 3T_{MN-MDS} + 2T_{MN-xTR_3} + 2T_{xTR_3-MDS} + 2D_{Resolve} +   \nonumber \\
@@ -293,19 +286,19 @@ D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{invokeSMR} +
 &=& D_{DHCP} + 446 ms \nonumber
 \end{eqnarray}
 
-The overall handover overhead $C_{overall}$ is:
-\begin{eqnarray}
-C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + C_{invokeSMR} + C_{Reply} + C_{Request} + C_{Reply} \nonumber \\
-&=& C_{Register} + C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} + 2C_{Request} + C_{Reply} \nonumber \\
-&=& 9 C
-\end{eqnarray}
+The double encapsulation causes not only longer handover delay but also more handover overhead related to LISP control plane. Two messages are needed for the registration, three signalings are used to obtain the $LRLOC$ of $EID$. Besides, two more Map-Requests (one from $xTR_3$ to the mapping system, one from the mapping system to $xTR_2$) and one more Map-Reply are required to get the $RLOC$ of $LRLOC$. Thus, the handover overhead is 9, which has 3 messages more than the first scenario.
+%\begin{eqnarray}
+%C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + C_{Request_{SMR}} + C_{Reply} + C_{Request} + C_{Reply} \nonumber \\
+%&=& C_{Register} + C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} + 2C_{Request} + C_{Reply} \nonumber \\
+%&=& 9 C
+%\end{eqnarray}
 
-Not similar to the first two scenarios when $xTR_3$ directly sends the SMR-invoked Map-Request back to the source of $SMR$ has smaller overall handover delay, this solution for the third scenario has bigger delay instead. It is caused by the double encapsulation in this scenario while the first two scenarios have only single encapsulation. When $xTR_3$ receives the $SMR$ from LISP-MN, it wants to sends Invoke $SMR$ to the LISP-MN for the mapping information of $<EID_{LISP-MN}, LRLOC_{LISP-MN}>$, but it does not know how to go LISP-MN, i.e., it lacks the mapping information of $<LRLOC_{LISP-MN}, RLOC_xTR2>$. Thus, it discards the $SMR$ and sends the $Map-Request$ to the mapping information first. Then, the mapping information of $<LRLOC_{LISP-MN}, RLOC_xTR2>$ is stored in its cache, and waits for the next $SMR$ so to send the SMR-invoked Map-Request to the LISP-MN. The traffic schema is shown in Fig.~\ref{Mobility_double_encap_schema_SMR_askxTR_simplify}.
+Not similar to the first two scenarios when $xTR_3$ directly sends the SMR-invoked Map-Request back to the source of $SMR$ has smaller overall handover delay, this solution for the third scenario has bigger delay instead. It is caused by the double encapsulation in this scenario while the first two scenarios have only single encapsulation. When $xTR_3$ receives the $SMR$ from LISP-MN, it wants to sends SMR-Invoked Map-Request to the LISP-MN for the mapping information of $<EID_{LISP-MN}, LRLOC_{LISP-MN}>$, but it does not know how to go LISP-MN, i.e., it lacks the mapping information of $<LRLOC_{LISP-MN}, RLOC_xTR2>$. Thus, it discards the $SMR$ and sends the $Map-Request$ to the mapping information first. Then, the mapping information of $<LRLOC_{LISP-MN}, RLOC_xTR2>$ is stored in its cache, and waits for the next $SMR$ so to send the SMR-invoked Map-Request to the LISP-MN. The traffic schema is shown in Fig.~\ref{Mobility_double_encap_schema_SMR_askxTR_simplify}.
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!th]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Pics/Mobility_double_encap_schema_SMR_askxTR_simplify}
-	\caption{Schema for LISP-MN in LISP-Site mobility}
+	\caption{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)}
 	\label{Mobility_double_encap_schema_SMR_askxTR_simplify}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
@@ -313,7 +306,7 @@ Not similar to the first two scenarios when $xTR_3$ directly sends the SMR-invok
 The overall handover delay $D_{overall}$ by sending the SMR-invoked Map-Request to the source of $SMR$ in this scenario is as follows, where $T_{timeout\_SMR}$ is set to $1 s$ in the simulation:
 \begin{eqnarray}
 D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + T_{timeout_SMR} + D_{SMR} +  \nonumber \\
-& & D_{invokeSMR} + D_{Reply} \nonumber \\
+& & D_{Request_{SMR}} + D_{Reply} \nonumber \\
 &=& D_{DHCP} + 2T_{MN-MDS} + 4T_{MN-xTR_3} + T_{timeout_SMR}\nonumber \\
 &=& D_{DHCP} + 2* (3*D_{Link}) + 4*(3*D_{Link}) + T_{timeout\_SMR} \nonumber \\
 % &=& D_{DHCP} + 2* (3*2ms) + 4*(3*2ms) + 1s \nonumber \\
@@ -321,13 +314,13 @@ D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + T_{timeout_SMR}
 &=& D_{DHCP} + 1036 ms \nonumber
 \end{eqnarray}
 
-The overall handover overhead $C_{overall}$ is:
-\begin{eqnarray}
-C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} + C_{SMR} +  \nonumber \\
-& & C_{invokeSMR} + C_{Reply} \nonumber \\
-&=& C_{Register} + C_{Notify} + 2C_{SMR} + 3C_{Request} + 2C_{Reply}  \nonumber \\
-&=& 9 C
-\end{eqnarray}
+Although when the SMR-invoked Map-Request directly sent to the source of SMR has the different traffic schema from the one sent to the mapping system, the overall handover overhead is still 9. The difference between them is only the order of getting mapping information on $xTR_3$, where this case is to obtain the outer mapping first but the last case is to get the inner mapping first.
+%\begin{eqnarray}
+%C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} + C_{SMR} +  \nonumber \\
+%& & C_{Request_{SMR}} + C_{Reply} \nonumber \\
+%&=& C_{Register} + C_{Notify} + 2C_{SMR} + 3C_{Request} + 2C_{Reply}  \nonumber \\
+%&=& 9 C
+%\end{eqnarray}
 
 %%-< FIGURE >--------------------------------------------------------------------
 %\begin{figure}[!th]
@@ -339,7 +332,7 @@ C_{overall} &=& C_{Register} + C_{Notify} + C_{SMR} + 2C_{Request} + C_{Reply} +
 %%-< END FIGURE >--------------------------------------------------------------------
 %If we do not consider the security issues, the handover schema can be simplified as shown in Fig.~\ref{Mobility_double_encap_schema_SMR_improving_simplify}.
 %\begin{eqnarray}
-%	D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{Request} + D_{Reply} + D_{invokeSMR} + D_{Reply} \nonumber \\
+%	D_{overall} &=& D_{DHCP} + D_{Register} + D_{Notify} + D_{SMR} + D_{Request} + D_{Reply} + D_{Request_{SMR}} + D_{Reply} \nonumber \\
 %	&=& D_{DHCP} + 2T_{LISPMN-MDS} + D_{Resolve} + 3T_{LISPMN-xTR_3} \nonumber \\
 %	&=& D_{DHCP} + 2* (3*2ms) + 200ms + 3*(3*2ms) \nonumber \\
 %	&=& D_{DHCP} + 230 ms

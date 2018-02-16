@@ -43,6 +43,7 @@ Describe the main observations of Chapter.~\ref{cha:ns-3}.
     \begin{itemize}[noitemsep,topsep=0pt]
         \item Evaluate LISP IPv6 performance for LISP-Lab probe.
         \item Compare LISP IPv6 performance between LIP6 probe connecting to PETR with MPLS or not.
+        \item In our experiment, as LIP6 probe does not receive any \emph{ping} responses for 42 IPv4 and 10 IPv6 destinations, we plan to cluster these destinations by geography and explore the reasons. Besides, we try to modify the configurations so that PxTR of LISP-Lab allows to receive the IPv6 traffic from LISP-Lab probe. The aim is to evaluate thoroughly IPv6 performance of LISP-Lab platform. Furthermore, as the degradation on performance observed in our paper is mainly due to the PITR selection by the destinations. It will be interesting to explore more the interaction between BGP anycast and LISP interworking. 
     \end{itemize}
     
     \item ns-3 Implementation of LISP and LISP-MN (Chapter.~\ref{cha:ns-3}).
