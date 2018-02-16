@@ -18,43 +18,44 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces International LISP Beta Network High Level Topology \IeC {\textendash } October 2017\nobreakspace {}\cite {lispbetaarchi}\relax }}{28}{figure.caption.23}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of LISP troubleshooting\relax }}{39}{figure.caption.31}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Overall percentage of stability observed at five different VPs.\relax }}{47}{figure.caption.37}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces CDF of instability frequency. X-axis is instability frequency, indicating the ratio of instability occurrence number for one <$EID, MR, VP$> tuple over total experiment number.\relax }}{48}{figure.caption.38}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces CDF of stability duration (in number of experimental rounds). X-axis is stability duration, indicating during how many experiment rounds that the mapping for one <$EID, MR, VP$> tuple is stable.\relax }}{49}{figure.caption.39}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces CDF of the dissimilarity among different types of instabilities.\relax }}{50}{figure.caption.41}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Overall consistency by MR at 5 different Vantage Points.\relax }}{52}{figure.caption.42}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Cumulative Distribution Function of inconsistency frequency by MR. X-axis is inconsistency frequency by VP, indicating the ratio of inconsistency occurrence for each <$EID, *, VP$> tuple over total experiment number.\relax }}{53}{figure.caption.43}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Overall consistency by VP from the different Map-Resolvers.\relax }}{54}{figure.caption.44}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Cumulative Distribution Function of inconsistency frequency by VP. X-axis is inconsistency frequency by VP, indicating the ratio of inconsistency occurrence for each <$EID, MR, *$> tuple over total experiment number.\relax }}{55}{figure.caption.45}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overall percentage of stability observed at five different VPs.\relax }}{47}{figure.caption.33}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces CDF of instability frequency. X-axis is instability frequency, indicating the ratio of instability occurrence number for one <$EID, MR, VP$> tuple over total experiment number.\relax }}{48}{figure.caption.34}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces CDF of stability duration (in number of experimental rounds). X-axis is stability duration, indicating during how many experiment rounds that the mapping for one <$EID, MR, VP$> tuple is stable.\relax }}{49}{figure.caption.35}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces CDF of the dissimilarity among different types of instabilities.\relax }}{50}{figure.caption.37}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Overall consistency by MR at 5 different Vantage Points.\relax }}{52}{figure.caption.38}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Cumulative Distribution Function of inconsistency frequency by MR. X-axis is inconsistency frequency by VP, indicating the ratio of inconsistency occurrence for each <$EID, *, VP$> tuple over total experiment number.\relax }}{53}{figure.caption.39}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Overall consistency by VP from the different Map-Resolvers.\relax }}{54}{figure.caption.40}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Cumulative Distribution Function of inconsistency frequency by VP. X-axis is inconsistency frequency by VP, indicating the ratio of inconsistency occurrence for each <$EID, MR, *$> tuple over total experiment number.\relax }}{55}{figure.caption.41}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Monitoring Architecture\relax }}{62}{figure.caption.46}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison between LISPmon and LISP-Views. The upper sub-figure shows the number of LISP Map-Reply from LISPmon generally at 7:00 and LISP-Views exactly at 8:00 over days. The bottom sub-figure indicates the LISP Map-Reply and overall Mapping from LISP-Views over time with an interval of 2 hours.\relax }}{64}{figure.caption.47}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparison between the LISP Map-Reply of LISPmon and LISP-Views over days\relax }}{65}{figure.caption.48}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Reliability of each MR\relax }}{66}{figure.caption.49}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Median RTT per MR (In the most time, the Negative Map-Reply and overall are overlapped.)\relax }}{67}{figure.caption.50}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces ECDF RTT comparison between LISP and Negative Map-Reply\relax }}{68}{figure.caption.51}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces CDF of the number of RLOCs\relax }}{69}{figure.caption.53}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces EIDs by Quantity of Associated RLOCs\nobreakspace {}\cite {lispviews}\relax }}{70}{figure.caption.54}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Monitoring Architecture\relax }}{62}{figure.caption.42}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison between LISPmon and LISP-Views. The upper sub-figure shows the number of LISP Map-Reply from LISPmon generally at 7:00 and LISP-Views exactly at 8:00 over days. The bottom sub-figure indicates the LISP Map-Reply and overall Mapping from LISP-Views over time with an interval of 2 hours.\relax }}{64}{figure.caption.43}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparison between the LISP Map-Reply of LISPmon and LISP-Views over days\relax }}{65}{figure.caption.44}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Reliability of each MR\relax }}{66}{figure.caption.45}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Median RTT per MR (In the most time, the Negative Map-Reply and overall are overlapped.)\relax }}{67}{figure.caption.46}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces ECDF RTT comparison between LISP and Negative Map-Reply\relax }}{68}{figure.caption.47}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces CDF of the number of RLOCs\relax }}{69}{figure.caption.49}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces EIDs by Quantity of Associated RLOCs\nobreakspace {}\cite {lispviews}\relax }}{70}{figure.caption.50}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Locations of probes and anchor\relax }}{77}{figure.caption.56}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces cdf of average RTT between different probes\relax }}{80}{figure.caption.60}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Smallest mean RTT (left) and smallest median RTT (right) grouped by continent.\relax }}{81}{figure.caption.62}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Relative mean (left) and median (right) RTT clustered by different continents.\relax }}{82}{figure.caption.63}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces CDF of median RTT between different probes (IPv4)\relax }}{83}{figure.caption.64}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Smallest median RTT grouped by continent (IPv4). \relax }}{84}{figure.caption.65}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces IPv4 Relative median RTT clustered by different continents for LISP-Lab (left) and LIP6 (right)\relax }}{86}{figure.caption.67}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces ECDF of median RTT between different probes (IPv6)\relax }}{88}{figure.caption.69}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces IPv6 Relative median RTT clustered by different continents for LISP-Lab (left) and LIP6 (right)\relax }}{89}{figure.caption.70}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Distribution of IPv4 Relative Hops Number for LISP-Lab (left) and LIP6 (right)\relax }}{92}{figure.caption.73}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces IPv4 Relative hops number clustered by different continents for LISP-Lab (left) and LIP6 (right)\relax }}{93}{figure.caption.74}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Distribution of IPv6 Relative Hops Number for LISP-Lab (left) and LIP6 (right)\relax }}{94}{figure.caption.75}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces IPv6 Relative hops number clustered by different continents for LISP-Lab (left) and LIP6 (right)\relax }}{95}{figure.caption.76}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Deployment of probes on RIPE Atlas in 2017\relax }}{74}{figure.caption.51}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Locations of probes and anchor in 2016\relax }}{77}{figure.caption.53}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces CDF of average RTT between different probes from Dataset 2015\relax }}{80}{figure.caption.57}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Smallest mean RTT (left) and smallest median RTT (right) grouped by continent from Dataset 2015.\relax }}{81}{figure.caption.58}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Relative mean (left) and median (right) RTT clustered by different continents from Dataset 2015.\relax }}{81}{figure.caption.59}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces CDF of median RTT between different probes (IPv4) from Dataset 2016\relax }}{82}{figure.caption.61}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Smallest median RTT grouped by continent (IPv4) from Dataset 2016.\relax }}{84}{figure.caption.62}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces IPv4 Relative median RTT clustered by different continents for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }}{85}{figure.caption.64}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces CDF of median RTT between different probes (IPv6) from Dataset 2016\relax }}{88}{figure.caption.66}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces IPv6 Relative median RTT clustered by different continents for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }}{89}{figure.caption.67}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Distribution of IPv4 Relative Hops Number for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }}{91}{figure.caption.70}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces IPv4 Relative hops number clustered by different continents for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }}{92}{figure.caption.71}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Distribution of IPv6 Relative Hops Number for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }}{93}{figure.caption.72}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces IPv6 Relative hops number clustered by different continents for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }}{94}{figure.caption.73}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces UML diagram of LISP/LISP-MN implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }}{98}{figure.caption.77}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces General scenario for LISP mobility architecture\relax }}{101}{figure.caption.78}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Schema for LISP-MN mobility\relax }}{104}{figure.caption.80}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Schema for LISP-MN mobility\relax }}{106}{figure.caption.81}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN in LISP-Site mobility\relax }}{109}{figure.caption.82}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Schema for LISP-MN in LISP-Site mobility\relax }}{110}{figure.caption.83}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces UML diagram of LISP/LISP-MN implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }}{98}{figure.caption.74}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces General scenario for LISP mobility architecture\relax }}{101}{figure.caption.75}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{103}{figure.caption.77}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{106}{figure.caption.78}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{108}{figure.caption.79}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)\relax }}{110}{figure.caption.80}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
