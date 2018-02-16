@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  16 FEB 2018 02:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  16 FEB 2018 14:59
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1769,14 +1769,13 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 ]
 [4
 
-]) [5
+] [5
 
-] [6
-
-] (./thesis.toc
+])
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
- [7
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 125.
+ [6] (./thesis.toc [7
+
 
 ] [8] [9])
 \tf@toc=\write8
@@ -1819,10 +1818,7 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 93.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Underfull \vbox (badness 1394) has occurred while \output is active []
-
- [5])
+) [5])
 (./Chapter2/chapter2.tex [6]
 Chapter 2.
 [7
@@ -2238,4 +2234,4 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  55i,12n,92p,10383b,13224s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (142 pages, 834252 bytes).
+Output written on thesis.dvi (142 pages, 842208 bytes).
