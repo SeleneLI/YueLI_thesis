@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  16 FEB 2018 14:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  16 FEB 2018 22:36
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1762,33 +1762,37 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 
 
 ]
-(./Acknowledgement/acknowledgement.tex [2
+(./Declaration/declaration.tex [2
 
-]) (./Abstract/abstract.tex [3
+]) (./Acknowledgement/acknowledgement.tex
+[3
 
-]
-[4
+] [4
 
-] [5
+]) (./Abstract/abstract.tex [5
+
+] [6
+
+] [7
 
 ])
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 125.
- [6] (./thesis.toc [7
+ [8] (./thesis.toc [9
 
 
-] [8] [9])
+] [10]
+[11])
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
- [10] (./thesis.lof [11
+ [12] (./thesis.lof [13
 
-] [12])
+] [14])
 \tf@lof=\write9
 \openout9 = `thesis.lof'.
 
- [13]
-[14
+ [15] [16
 
 ] (./thesis.lot)
 \tf@lot=\write10
@@ -1796,7 +1800,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 
 
 No file thesis.acr.
-[15] [16
+[17] [18
 
 ] (./Chapter1/chapter1.tex
 Chapter 1.
@@ -2219,19 +2223,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1A649F24D03A569EE3790B1A6A7698A8;22445.
+(rerunfilecheck)             Checksum: 9D0F4C67E8277D6728B9E9E446F71F65;22385.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31620 strings out of 493015
- 553226 string characters out of 6133377
- 733579 words of memory out of 5000000
+ 31623 strings out of 493015
+ 553294 string characters out of 6133377
+ 733508 words of memory out of 5000000
  34618 multiletter control sequences out of 15000+600000
  51154 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,92p,10383b,13224s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (142 pages, 842208 bytes).
+Output written on thesis.dvi (144 pages, 844264 bytes).
