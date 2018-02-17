@@ -261,7 +261,7 @@ registers and the \acrshort{xtr} gives back the Map-Reply. Compared to the Negat
 Map-Replies, which are normally returned by MR, LISP Map-Replies take longer
 time, especially in this case. However, MR2 and MR6 present very high
 latency, particularly for MR2 (located in Europe), but its RTT is even higher
-than MR5, which is located in Asia. It is mainly caused by a very high CPU usage of these two MRs preventing them sometimes to reply.  
+than MR5, which is located in Asia. % It is mainly caused by a very high CPU usage of these two MRs preventing them sometimes to reply.  
 If we focus on the RTT of LISP Map-Replies, only MR1, MR4, and MR5 provide the best
 behavior, which coincides with the result of Fig.~\ref{MRs_reliability} on
 reliability. The high RTTs of LISP Map-Replies are from the other 3 MRs,
@@ -283,12 +283,12 @@ observation is unclear and requires further exploration.
 \begin{figure}[!t]
         \centering
         \includegraphics[width=0.7\textwidth]{Pics/ecdf_of_RTT.eps}
-        \caption{ECDF RTT comparison between LISP and Negative Map-Reply}
+        \caption{CDF RTT comparison between LISP and Negative Map-Reply}
         \label{ecdf_rtt_lisp_negative}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
-We also calculate the Empirical Cumulative Distribution Function (ECDF) of the
-RTT for the 6 MRs. Fig.~\ref{ecdf_rtt_lisp_negative} provides the ECDF of the
+We also calculate the Cumulative Distribution Function (CDF) of the
+RTT for the 6 MRs. Fig.~\ref{ecdf_rtt_lisp_negative} provides the CDF of the
 RTT for Negative, LISP, and overall Map-Replies. As indicated in
 Sec.~\ref{sec:background_lisp}, the LISP \acrshort{mds} needs more time to solve a
 complete mapping (LISP Map-Reply) than the Negative Map-Reply.  We observe that
@@ -363,7 +363,7 @@ shows that this trend keeps going on, i.e., more mappings use fewer RLOCs and
 the maximum number of RLOC is~4. An interesting point is that although LISP is a
 good candidate to support the increasing multi-homing in Internet,
 more than 60\% LISP users are not multi-homed and among them the majority
-only has 2 RLOCs. Not only the number of RLOCs of each site does significantly
+only has 2 RLOCs. Not only the number of RLOCs of each site does not significantly
 change, but also the RLOCs themselves remains stable. We measured that the
 stability reaches 99.8\% for all the dataset, i.e., once an
 EID-prefix~--~to~--~RLOCs mapping is decided, it rarely changes. We have not found any mobile LISP sites.
@@ -433,4 +433,4 @@ observation highlights the need of distributing VPs.
 
 Very little is known about the behavior of LISP in operational environments and it still lacks of troubleshooting tools. Motivated by the only LISP monitor deployed so far, named LISPmon, which records the current LISP status only from a specific MR just once per day, we propose a more dynamic LISP monitoring architecture, namely LISP-Views, so to deepen the understandings on LISP and to ease day-to-day operations and troubleshooting. As LISP-Views aims at being deployed in large scale and dynamic networks, we make a comparison with LISPmon to validate the former one by comparing their behavior during one full month.
 
-It demonstrates that LISP-Views provides more information by discovering more mapping information from all MRs and more complete mapping information of each MR. Furthermore, with our proposed monitoring platform, more mapping system performance metrics such as reliability, latency, and configuration issues can be assessed, which helps for further LISP improvements. LISP-Views is still in the first phase, so the implementation of a REST API, the deployment on multiple VPs and the test of IPv6 behavior are still ongoing and future work. 
+It demonstrates that LISP-Views provides more information by discovering more mapping information from all MRs and more complete mapping information of each MR. Furthermore, with our proposed monitoring platform, more mapping system performance metrics such as reliability, latency, and configuration issues can be assessed, which helps for further LISP improvements.

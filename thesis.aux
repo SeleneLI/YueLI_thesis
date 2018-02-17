@@ -413,8 +413,8 @@
 \newlabel{sec:lispviews_results}{{5.4}{66}{Dissecting LISP with LISP-Views}{section.5.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Median RTT per MR (In the most time, the Negative Map-Reply and overall are overlapped.)\relax }}{67}{figure.caption.47}}
 \newlabel{median_rtt_per_map-resolver}{{5.5}{67}{Median RTT per MR (In the most time, the Negative Map-Reply and overall are overlapped.)\relax }{figure.caption.47}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces ECDF RTT comparison between LISP and Negative Map-Reply\relax }}{68}{figure.caption.48}}
-\newlabel{ecdf_rtt_lisp_negative}{{5.6}{68}{ECDF RTT comparison between LISP and Negative Map-Reply\relax }{figure.caption.48}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces CDF RTT comparison between LISP and Negative Map-Reply\relax }}{68}{figure.caption.48}}
+\newlabel{ecdf_rtt_lisp_negative}{{5.6}{68}{CDF RTT comparison between LISP and Negative Map-Reply\relax }{figure.caption.48}{}}
 \citation{lispviews}
 \citation{lispviews}
 \citation{lispCCR}
@@ -517,71 +517,95 @@
 \newlabel{v6_Relative_hops_num}{{6.14}{94}{IPv6 Relative hops number clustered by different continents for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }{figure.caption.74}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.7}Summary}{95}{section.6.7}}
 \newlabel{sec:pxtr_conclusion}{{6.7}{95}{Summary}{section.6.7}{}}
-\citation{ns3}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}ns-3 Implementation of LISP and LISP-MN}{97}{chapter.7}}
+\citation{vesely2015locator,vesely2014multicast,klein2012integration}
+\citation{stockmayer2016jlisp}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Analysis of LISP mobility and ns-3 Implementation}{97}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{cha:ns-3}{{7}{97}{ns-3 Implementation of LISP and LISP-MN}{chapter.7}{}}
+\newlabel{cha:ns-3}{{7}{97}{Analysis of LISP mobility and ns-3 Implementation}{chapter.7}{}}
+\citation{lionel2016}
+\citation{rfc6830}
+\citation{lionel2016}
+\citation{ns3}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Related work}{98}{section.7.1}}
+\newlabel{sec:ns3_related_work}{{7.1}{98}{Related work}{section.7.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Basic LISP implementation on ns-3}{98}{subsection.7.1.1}}
+\newlabel{sec:ns3_basic_lisp}{{7.1.1}{98}{Basic LISP implementation on ns-3}{subsection.7.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.2}Description of ns-3}{98}{subsection.7.1.2}}
+\newlabel{sec:ns3_ns3}{{7.1.2}{98}{Description of ns-3}{subsection.7.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Theoretical analysis}{98}{section.7.2}}
+\newlabel{sec:ns3_analysis}{{7.2}{98}{Theoretical analysis}{section.7.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces General scenario for LISP mobility architecture\relax }}{99}{figure.caption.75}}
+\newlabel{sim_archi}{{7.1}{99}{General scenario for LISP mobility architecture\relax }{figure.caption.75}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces Symbols for numerical analysis\relax }}{100}{table.caption.76}}
+\newlabel{Symbols_numerical_analysis}{{7.1}{100}{Symbols for numerical analysis\relax }{table.caption.76}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}LISP-MN in non-LISP-Site}{100}{subsection.7.2.1}}
+\newlabel{sec:ns3_analysis_lispmn}{{7.2.1}{100}{LISP-MN in non-LISP-Site}{subsection.7.2.1}{}}
+\citation{coras2014performance}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{101}{figure.caption.77}}
+\newlabel{sim_schema_LISPMN}{{7.2}{101}{Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }{figure.caption.77}{}}
+\citation{rfc6830}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}MN in LISP-Site}{102}{subsection.7.2.2}}
+\newlabel{sec:ns3_analysis_xTR}{{7.2.2}{102}{MN in LISP-Site}{subsection.7.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{103}{figure.caption.78}}
+\newlabel{sim_schema_xTR}{{7.3}{103}{Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }{figure.caption.78}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.3}LISP-MN in LISP-Site}{105}{subsection.7.2.3}}
+\newlabel{sec:ns3_analysis_lispmn_xTR}{{7.2.3}{105}{LISP-MN in LISP-Site}{subsection.7.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{106}{figure.caption.79}}
+\newlabel{Mobility_double_encap_schema_SMR_askMDS_simplify}{{7.4}{106}{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }{figure.caption.79}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)\relax }}{107}{figure.caption.80}}
+\newlabel{Mobility_double_encap_schema_SMR_askxTR_simplify}{{7.5}{107}{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)\relax }{figure.caption.80}{}}
 \citation{rfc6830}
 \citation{meyer2016lisp}
 \citation{saucez2009openlisp}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces UML diagram of LISP/LISP-MN implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }}{98}{figure.caption.75}}
-\newlabel{LISP-UML}{{7.1}{98}{UML diagram of LISP/LISP-MN implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }{figure.caption.75}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Related work}{98}{section.7.1}}
-\newlabel{sec:ns3_related_work}{{7.1}{98}{Related work}{section.7.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Description of ns-3}{98}{subsection.7.1.1}}
-\newlabel{sec:ns3_ns3}{{7.1.1}{98}{Description of ns-3}{subsection.7.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.2}Basic LISP implementation on ns-3}{98}{subsection.7.1.2}}
-\newlabel{sec:ns3_basic_lisp}{{7.1.2}{98}{Basic LISP implementation on ns-3}{subsection.7.1.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Implementation of LISP extensions on ns-3}{98}{section.7.2}}
-\newlabel{sec:ns3_lispmn}{{7.2}{98}{Implementation of LISP extensions on ns-3}{section.7.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Implementation of LISP Data Plane}{99}{subsection.7.2.1}}
-\newlabel{subsec:modifyInternet}{{7.2.1}{99}{Implementation of LISP Data Plane}{subsection.7.2.1}{}}
-\citation{meyer-lisp-mn-16}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Implementation of LISP Control Plane}{100}{subsection.7.2.2}}
-\newlabel{subsec:control-plane-impl}{{7.2.2}{100}{Implementation of LISP Control Plane}{subsection.7.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.3}Integration of TUN net interface card}{100}{subsection.7.2.3}}
-\newlabel{subsec:tundevice}{{7.2.3}{100}{Integration of TUN net interface card}{subsection.7.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.4}Integration of DHCP}{101}{subsection.7.2.4}}
-\newlabel{subsec:DHCP}{{7.2.4}{101}{Integration of DHCP}{subsection.7.2.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Theoretical analysis}{101}{section.7.3}}
-\newlabel{sec:ns3_analysis}{{7.3}{101}{Theoretical analysis}{section.7.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces General scenario for LISP mobility architecture\relax }}{101}{figure.caption.76}}
-\newlabel{sim_archi}{{7.2}{101}{General scenario for LISP mobility architecture\relax }{figure.caption.76}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces Symbols for numerical analysis\relax }}{102}{table.caption.77}}
-\newlabel{Symbols_numerical_analysis}{{7.1}{102}{Symbols for numerical analysis\relax }{table.caption.77}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}LISP-MN in non-LISP-Site}{103}{subsection.7.3.1}}
-\newlabel{sec:ns3_analysis_lispmn}{{7.3.1}{103}{LISP-MN in non-LISP-Site}{subsection.7.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{103}{figure.caption.78}}
-\newlabel{sim_schema_LISPMN}{{7.3}{103}{Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }{figure.caption.78}{}}
-\citation{coras2014performance}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Implementation of LISP and LISP-MN on ns-3}{108}{section.7.3}}
+\newlabel{sec:ns3_lispmn}{{7.3}{108}{Implementation of LISP and LISP-MN on ns-3}{section.7.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces UML diagram of LISP and LISP mobility implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }}{109}{figure.caption.81}}
+\newlabel{LISP_UML}{{7.6}{109}{UML diagram of LISP and LISP mobility implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }{figure.caption.81}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}Implementation of LISP Data Plane}{109}{subsection.7.3.1}}
+\newlabel{subsec:modifyInternet}{{7.3.1}{109}{Implementation of LISP Data Plane}{subsection.7.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{LISP Database and cache}{109}{section*.82}}
+\newlabel{subsec:database-impl}{{7.3.1}{109}{LISP Database and cache}{section*.82}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Illustration of LISP encapsulation and decapsulation\relax }}{110}{figure.caption.84}}
+\newlabel{fig:ns3-lisp-data-plane}{{7.7}{110}{Illustration of LISP encapsulation and decapsulation\relax }{figure.caption.84}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Implementation of LISP encapsulation and decapsulation}{110}{section*.83}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}Implementation of LISP Control Plane}{111}{subsection.7.3.2}}
+\newlabel{subsec:control-plane-impl}{{7.3.2}{111}{Implementation of LISP Control Plane}{subsection.7.3.2}{}}
 \citation{rfc6830}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}MN in LISP-Site}{105}{subsection.7.3.2}}
-\newlabel{sec:ns3_analysis_xTR}{{7.3.2}{105}{MN in LISP-Site}{subsection.7.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{106}{figure.caption.79}}
-\newlabel{sim_schema_xTR}{{7.4}{106}{Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }{figure.caption.79}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}LISP-MN in LISP-Site}{107}{subsection.7.3.3}}
-\newlabel{sec:ns3_analysis_lispmn_xTR}{{7.3.3}{107}{LISP-MN in LISP-Site}{subsection.7.3.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{108}{figure.caption.80}}
-\newlabel{Mobility_double_encap_schema_SMR_askMDS_simplify}{{7.5}{108}{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }{figure.caption.80}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)\relax }}{110}{figure.caption.81}}
-\newlabel{Mobility_double_encap_schema_SMR_askxTR_simplify}{{7.6}{110}{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)\relax }{figure.caption.81}{}}
-\citation{rfc6834}
-\@writefile{toc}{\contentsline {section}{\numberline {7.4}Summary and future work}{111}{section.7.4}}
-\newlabel{sec:ns3_conclusion}{{7.4}{111}{Summary and future work}{section.7.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{113}{chapter.8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.8}{\ignorespaces State transition diagram of xTR application\relax }}{112}{figure.caption.86}}
+\newlabel{fig:xTR-state-transition}{{7.8}{112}{State transition diagram of xTR application\relax }{figure.caption.86}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Implementation of xTR functionalities}{112}{section*.85}}
+\@writefile{toc}{\contentsline {subsubsection}{Implementation of Map server and Map resolver}{113}{section*.87}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}Modification of DHCP client to support LISP-MN}{113}{subsection.7.3.3}}
+\newlabel{subsec:DHCP}{{7.3.3}{113}{Modification of DHCP client to support LISP-MN}{subsection.7.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.9}{\ignorespaces LISP-compatible DHCP client state transition diagram\relax }}{114}{figure.caption.88}}
+\newlabel{fig:DHCP-state-transition}{{7.9}{114}{LISP-compatible DHCP client state transition diagram\relax }{figure.caption.88}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.4}Integration of TUN net interface card}{114}{subsection.7.3.4}}
+\newlabel{subsec:tundevice}{{7.3.4}{114}{Integration of TUN net interface card}{subsection.7.3.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.2}{\ignorespaces Static route table of LISP-MN node\relax }}{115}{table.caption.89}}
+\newlabel{tab:static-route-table}{{7.2}{115}{Static route table of LISP-MN node\relax }{table.caption.89}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Summery}{115}{section.7.4}}
+\newlabel{sec:ns3_conclusion}{{7.4}{115}{Summery}{section.7.4}{}}
+\citation{lispmon}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{117}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{cha:conclusion}{{8}{113}{Conclusion and Future Work}{chapter.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Major Contributions}{113}{section.8.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{113}{subsection.8.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}LISP-Views: LISP Mapping System Monitor}{113}{subsection.8.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}Assessing LISP interworking performance through RIPE Atlas}{113}{subsection.8.1.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.4}ns-3 Implementation of LISP and LISP-MN}{113}{subsection.8.1.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Discussion \& Future work}{113}{section.8.2}}
+\newlabel{cha:conclusion}{{8}{117}{Conclusion and Future Work}{chapter.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Major Contributions}{117}{section.8.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{117}{subsection.8.1.1}}
+\citation{lispviews}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}LISP-Views: LISP Mapping System Monitor}{118}{subsection.8.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}Assessing LISP interworking performance through RIPE Atlas}{118}{subsection.8.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.4}Analysis of LISP mobility and ns-3 Implementation}{119}{subsection.8.1.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Discussion \& Future work}{119}{section.8.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Evaluation of LISP Mapping System}{119}{subsection.8.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}LISP-Views: LISP Mapping System Monitor}{120}{subsection.8.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.3}Assessing LISP interworking performance through RIPE Atlas}{120}{subsection.8.2.3}}
+\citation{rfc6834}
 \bibstyle{abbrv}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.4}Analysis of LISP mobility and ns-3 Implementation}{121}{subsection.8.2.4}}
 \bibdata{References/references}
 \bibcite{alexa}{{1}{}{{}}{{}}}
 \bibcite{alexatop}{{2}{}{{}}{{}}}
@@ -603,7 +627,7 @@
 \bibcite{ciscovmmobility}{{18}{}{{}}{{}}}
 \bibcite{ns3}{{19}{}{{}}{{}}}
 \bibcite{omnetpp}{{20}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{References}{115}{chapter*.82}}
+\@writefile{toc}{\contentsline {chapter}{References}{123}{chapter*.90}}
 \bibcite{OOR}{{21}{}{{}}{{}}}
 \bibcite{OpenDaylight}{{22}{}{{}}{{}}}
 \bibcite{OpenLISP}{{23}{}{{}}{{}}}
@@ -703,12 +727,12 @@
 \citation{li2016performance}
 \citation{li2017lisp}
 \citation{Li2017}
-\@writefile{toc}{\contentsline {chapter}{Appendix \numberline {A}Source Code}{125}{Appendix.a.A}}
+\@writefile{toc}{\contentsline {chapter}{Appendix \numberline {A}Source Code}{133}{Appendix.a.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}LISP Stability and Consistency analyzer}{125}{section.a.A.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}LISP-Views}{125}{section.a.A.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}LISP measurements on Atlas}{125}{section.a.A.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}LISP Stability and Consistency analyzer}{133}{section.a.A.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}LISP-Views}{133}{section.a.A.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}LISP measurements on Atlas}{133}{section.a.A.3}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{toc}{\contentsline {section}{\numberline {A.4}LISP implementation on ns-3}{126}{section.a.A.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.4}LISP implementation on ns-3}{134}{section.a.A.4}}

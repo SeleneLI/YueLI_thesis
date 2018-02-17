@@ -32,7 +32,7 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Comparison between the LISP Map-Reply of LISPmon and LISP-Views over days\relax }}{65}{figure.caption.45}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Reliability of each MR\relax }}{66}{figure.caption.46}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Median RTT per MR (In the most time, the Negative Map-Reply and overall are overlapped.)\relax }}{67}{figure.caption.47}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces ECDF RTT comparison between LISP and Negative Map-Reply\relax }}{68}{figure.caption.48}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces CDF RTT comparison between LISP and Negative Map-Reply\relax }}{68}{figure.caption.48}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces CDF of the number of RLOCs\relax }}{69}{figure.caption.50}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces EIDs by Quantity of Associated RLOCs\nobreakspace {}\cite {lispviews}\relax }}{70}{figure.caption.51}
 \addvspace {10\p@ }
@@ -51,11 +51,14 @@
 \contentsline {figure}{\numberline {6.13}{\ignorespaces Distribution of IPv6 Relative Hops Number for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }}{93}{figure.caption.73}
 \contentsline {figure}{\numberline {6.14}{\ignorespaces IPv6 Relative hops number clustered by different continents for LISP-Lab (left) and LIP6 (right) from Dataset 2016\relax }}{94}{figure.caption.74}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces UML diagram of LISP/LISP-MN implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }}{98}{figure.caption.75}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces General scenario for LISP mobility architecture\relax }}{101}{figure.caption.76}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces General scenario for LISP mobility architecture\relax }}{99}{figure.caption.75}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{101}{figure.caption.77}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{103}{figure.caption.78}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{106}{figure.caption.79}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{108}{figure.caption.80}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)\relax }}{110}{figure.caption.81}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{106}{figure.caption.79}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)\relax }}{107}{figure.caption.80}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces UML diagram of LISP and LISP mobility implementation. The solid arrow refers to a composition relation, while the blank one refers to a inheritance relation.\relax }}{109}{figure.caption.81}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Illustration of LISP encapsulation and decapsulation\relax }}{110}{figure.caption.84}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces State transition diagram of xTR application\relax }}{112}{figure.caption.86}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces LISP-compatible DHCP client state transition diagram\relax }}{114}{figure.caption.88}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -91,30 +91,38 @@
 \contentsline {section}{\numberline {6.5}IPv6 Ping Results}{87}{section.6.5}
 \contentsline {section}{\numberline {6.6}Traceroute-related Results}{91}{section.6.6}
 \contentsline {section}{\numberline {6.7}Summary}{95}{section.6.7}
-\contentsline {chapter}{\numberline {7}ns-3 Implementation of LISP and LISP-MN}{97}{chapter.7}
+\contentsline {chapter}{\numberline {7}Analysis of LISP mobility and ns-3 Implementation}{97}{chapter.7}
 \contentsline {section}{\numberline {7.1}Related work}{98}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Description of ns-3}{98}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Basic LISP implementation on ns-3}{98}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}Implementation of LISP extensions on ns-3}{98}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Implementation of LISP Data Plane}{99}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Implementation of LISP Control Plane}{100}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Integration of TUN net interface card}{100}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Integration of DHCP}{101}{subsection.7.2.4}
-\contentsline {section}{\numberline {7.3}Theoretical analysis}{101}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}LISP-MN in non-LISP-Site}{103}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}MN in LISP-Site}{105}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}LISP-MN in LISP-Site}{107}{subsection.7.3.3}
-\contentsline {section}{\numberline {7.4}Summary and future work}{111}{section.7.4}
-\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{113}{chapter.8}
-\contentsline {section}{\numberline {8.1}Major Contributions}{113}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{113}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}LISP-Views: LISP Mapping System Monitor}{113}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Assessing LISP interworking performance through RIPE Atlas}{113}{subsection.8.1.3}
-\contentsline {subsection}{\numberline {8.1.4}ns-3 Implementation of LISP and LISP-MN}{113}{subsection.8.1.4}
-\contentsline {section}{\numberline {8.2}Discussion \& Future work}{113}{section.8.2}
-\contentsline {chapter}{References}{115}{chapter*.82}
-\contentsline {chapter}{Appendix \numberline {A}Source Code}{125}{Appendix.a.A}
-\contentsline {section}{\numberline {A.1}LISP Stability and Consistency analyzer}{125}{section.a.A.1}
-\contentsline {section}{\numberline {A.2}LISP-Views}{125}{section.a.A.2}
-\contentsline {section}{\numberline {A.3}LISP measurements on Atlas}{125}{section.a.A.3}
-\contentsline {section}{\numberline {A.4}LISP implementation on ns-3}{126}{section.a.A.4}
+\contentsline {subsection}{\numberline {7.1.1}Basic LISP implementation on ns-3}{98}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Description of ns-3}{98}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}Theoretical analysis}{98}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}LISP-MN in non-LISP-Site}{100}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}MN in LISP-Site}{102}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}LISP-MN in LISP-Site}{105}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}Implementation of LISP and LISP-MN on ns-3}{108}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Implementation of LISP Data Plane}{109}{subsection.7.3.1}
+\contentsline {subsubsection}{LISP Database and cache}{109}{section*.82}
+\contentsline {subsubsection}{Implementation of LISP encapsulation and decapsulation}{110}{section*.83}
+\contentsline {subsection}{\numberline {7.3.2}Implementation of LISP Control Plane}{111}{subsection.7.3.2}
+\contentsline {subsubsection}{Implementation of xTR functionalities}{112}{section*.85}
+\contentsline {subsubsection}{Implementation of Map server and Map resolver}{113}{section*.87}
+\contentsline {subsection}{\numberline {7.3.3}Modification of DHCP client to support LISP-MN}{113}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Integration of TUN net interface card}{114}{subsection.7.3.4}
+\contentsline {section}{\numberline {7.4}Summery}{115}{section.7.4}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{117}{chapter.8}
+\contentsline {section}{\numberline {8.1}Major Contributions}{117}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{117}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}LISP-Views: LISP Mapping System Monitor}{118}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Assessing LISP interworking performance through RIPE Atlas}{118}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.4}Analysis of LISP mobility and ns-3 Implementation}{119}{subsection.8.1.4}
+\contentsline {section}{\numberline {8.2}Discussion \& Future work}{119}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Evaluation of LISP Mapping System}{119}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}LISP-Views: LISP Mapping System Monitor}{120}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Assessing LISP interworking performance through RIPE Atlas}{120}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}Analysis of LISP mobility and ns-3 Implementation}{121}{subsection.8.2.4}
+\contentsline {chapter}{References}{123}{chapter*.90}
+\contentsline {chapter}{Appendix \numberline {A}Source Code}{133}{Appendix.a.A}
+\contentsline {section}{\numberline {A.1}LISP Stability and Consistency analyzer}{133}{section.a.A.1}
+\contentsline {section}{\numberline {A.2}LISP-Views}{133}{section.a.A.2}
+\contentsline {section}{\numberline {A.3}LISP measurements on Atlas}{133}{section.a.A.3}
+\contentsline {section}{\numberline {A.4}LISP implementation on ns-3}{134}{section.a.A.4}

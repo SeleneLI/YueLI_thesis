@@ -7,49 +7,62 @@
 In this chapter, we summarize our major contributions and discuss future research directions.
 
 \section{Major Contributions}
-The objective of this dissertation is to thoroughly evaluate LISP from different aspects. Concretely, the main contributions can be summarized as follows:
+The objective of this dissertation is to thoroughly evaluate \emph{\acrfull{lisp}} from different aspects: from measuring its performance by conducting the experiments in the large-scale realistic networks, numerically analyzing the low bounds, to implementing the prototype and simulator. The measurement works are related to the evaluation of mapping system and the assessment of interworking performance with the legacy Internet. Due to the new findings in the mapping system, we propose a more comprehensive \acrshort{lisp} monitor to address the additional requirements. The theoretical analysis is about the LISP mobility. More precisely, we analyze the low bounds of handover for the different network components supporting \acrshort{lisp}. Besides, we implement \acrshort{lisp} mobility extensions on ns-3.27 by leveraging an existing simulator. Concretely, the main contributions can be summarized as follows:
 
 \subsection{Evaluation of LISP Mapping System}
-Describe the main observations of Chapter.~\ref{cha:mds_evaluation}.
+% Describe the main observations of Chapter.~\ref{cha:mds_evaluation}.
+We continuously measured the LISP Beta Network for seventeen days to assess the stability and consistency of the mapping system. The experiments are conducted from July 2\textsuperscript{nd} to 18\textsuperscript{th} 2013, from 5 \acrlong{vp}s (\acrshort{vp}s), sending \emph{Map-Request} messages to all the 13 \acrlong{mr}s (\acrshort{mr}s) of the LISP Beta Network, for all selected 613 destination IP addresses every 30 minutes. The \acrshort{vp}s were composed by part of academic networks, commercial Internet, PlanetLab and spread across Europe and USA. The destination IP addresses consisted of the first address within each prefix derived from the LISPmon project~\cite{lispmon} regardless of the type (i.e., the EID-prefixes or regular prefixes). The results of measurements show that the mapping system is stable during 91.49\% of time, is consistent respectively by \acrshort{mr} in 86.3\% and by \acrshort{vp} in 90.48\% of cases. As the instability and inconsistency are observed and for studying them in details we developed a new taxonomy. It shows that the Map-Reply only changes once in the most instability cases, and the inconsistency is mainly caused by the different types of received Map-Replies (the mix of Negative Map-Reply and LISP Map-Reply). All in all, instability and inconsistency are rare events. At last, the utilization of multi-homing and dual-stack (i.e., IPv4 and IPv6) are observed during the whole experiment.
 
 \subsection{LISP-Views: LISP Mapping System Monitor}
-Describe the main observations of Chapter.~\ref{cha:LISPViews}.
+% Describe the main observations of Chapter.~\ref{cha:LISPViews}.
+The evaluation of the mapping system shows that there exist instability and inconsistency, which are hard to be found by the only current LISP monitor LISPmon. A dynamic and complete monitoring system is required to accompany the growth of LISP. We propose LISP-Views, a dynamic versatile large scale LISP monitoring architecture. LISP-Views allows to automatically conduct comprehensive and objective measurements. Users can deploy it on whichever \acrshort{vp} and define to monitor which \acrshort{mr}s. They are also able to define the type of measurements. All these operations can be conducted via the provided API. At the moment of writing, LISP-Views is deployed on one \acrshort{vp} to supervise all the existing \acrshort{mr}s on both LISP-Beta Network and LISP-Lab Platform. After running LISP-Views in the wild for several months and comparing the monitoring results with LISPmon, we confirm that LISP-Views provides more detailed and accurate information. We observe that every \acrshort{mr} has different behaviours between the others such as in the reliability and resolving time. Besides, the measurements helped the OpenLISP coders fix an unknown bug in the \acrshort{mr} of LISP-Lab platform. The preliminary graphic results, such as the number of LISP Map-Reply, the number of RLOCs contained in each LISP Map-Reply, and the responsiveness of each \acrshort{mr} are shown on the website of LISP-Views~\cite{lispviews}.
 
 \subsection{Assessing LISP interworking performance through RIPE Atlas}
-Describe the main observations of Chapter.~\ref{cha:pxtr}.
+% Describe the main observations of Chapter.~\ref{cha:pxtr}.
+We conducted two experiments to evaluate LISP interworking performance with legacy Internet. It is the first thorough sight on the performance of LISP \acrfull{pxtr}. The first one as the setup phase, we selected 4 probes ping to the top 50 Alexa sites every 10 minutes during 6 hours on November 6\textsuperscript{th} 2015. The second one is done from December 15\textsuperscript{th} to 29\textsuperscript{th} in 2016. We chose 5 probes ping and traceroute to top 500 Alexa IPv4 and 122 IPv6 addresses respectively every 30 minutes and 60 minutes. Both experiments show that the \acrshort{pxtr} indeed introduces the negative effects for the nearby destinations, but the negative impact of \acrshort{pxtr} can be ignored for the intercontinental long-distance transmission. The results also show that the position of \acrshort{pxtr} is very important. The \acrshort{pxtr} either near to the sources or the destinations can decrease the latency a lot. LISP is generally stable, except for the IPv6 performance of LISP Beta Network. Further, the performance of LISP-Lab \acrshort{pxtr} is more reliable than the one of LISP Beta Network, although at the time of writing the latter has 6 worldwide \acrshort{pxtr}s used for IPv4 and 2 located in US for IPv6, whereas LISP-Lab has only 1 \acrshort{pxtr} for both IPv4 and IPv6. Natively forwarding without using LISP decreases the latency, but not much. The traceroute experiment shows that introducing PxTR of course brings more hops, but if the \acrshort{pxtr} is well configured, so to always have peers to the destinations, there are only 4 more hops compared to the packets being natively forward by \acrshort{xtr} without encapsulating with LISP. 
 
-\subsection{ns-3 Implementation of LISP and LISP-MN}
-Describe the main observations of Chapter.~\ref{cha:ns-3}.
-
+\subsection{Analysis of LISP mobility and ns-3 Implementation}
+% Describe the main observations of Chapter.~\ref{cha:ns-3}.
+As there are three methods to support LISP mobility: host-based (i.e. \acrlong{lispmn} (\acrshort{lispmn})), network-based (i.e., \acrlong{xtr} (\acrshort{xtr})), both host-based and network-based (i.e., \acrshort{lispmn} behinds \acrshort{xtr}) mobility. We then define three scenarios for them. Precisely, in the first scenario, there is only \acrshort{mn} supporting LISP (\acrshort{lispmn} in the non-LISP-Site); in the second scenario, there is only border router supporting LISP (\acrshort{mn} in the LISP-Site); and in the third scenario, both \acrshort{mn} and border routers supporting LISP (\acrshort{lispmn} in the LISP-Site). We numerically analyze the overall handover delay and the overhead of LISP control plane among them. The second scenario has the smallest handover delay, but the \acrshort{mn} can only roam within the same subnet. The first and third scenarios support the \acrshort{mn} seamless roaming through the different subnets, but the first scenario is no help in reducing the BGP routing table, and the third scenario takes much longer handover delay. Based on an implementation of basic LISP on ns-3.24, we adapt it to ns-3.27 first (the latest version at the moment of writing). To facilitate the researchers to deeply track the exchange of LISP packets, we encode every bit in LISP Data Plane packets so that the Wireshark can resolve them. Finally we implement the LISP mobility extensions on it.
 
 
 \section{Discussion \& Future work}
 
-\begin{itemize}[noitemsep,topsep=0pt]
-    \item Evaluation of LISP Mapping System (Chapter.~\ref{cha:mds_evaluation})
-    \begin{itemize}[noitemsep,topsep=0pt]
-        \item Evaluate the latest \emph{Stability} and \emph{Consistency} performance of LISP mapping system. 
-        \item Compare to the results in Chapter.~\ref{cha:mds_evaluation} and get LISP developing trend.
-        \item Synchronized mechanism should be proposed to the MDS.
-    \end{itemize}
-    
-    \item LISP-Views: LISP Mapping System Monitor (Chapter.~\ref{cha:LISPViews}).
-    \begin{itemize}[noitemsep,topsep=0pt]
-        \item The implementation of a REST API for LISP-Views.
-        \item The deployment of LISP-Views on multiple VPs.
-        \item Test of IPv6 behavior for LISP-Views.
-    \end{itemize}
-    
-    \item Assessing LISP interworking performance through RIPE Atlas (Chapter.~\ref{cha:pxtr}).
-    \begin{itemize}[noitemsep,topsep=0pt]
-        \item Evaluate LISP IPv6 performance for LISP-Lab probe.
-        \item Compare LISP IPv6 performance between LIP6 probe connecting to PETR with MPLS or not.
-        \item In our experiment, as LIP6 probe does not receive any \emph{ping} responses for 42 IPv4 and 10 IPv6 destinations, we plan to cluster these destinations by geography and explore the reasons. Besides, we try to modify the configurations so that PxTR of LISP-Lab allows to receive the IPv6 traffic from LISP-Lab probe. The aim is to evaluate thoroughly IPv6 performance of LISP-Lab platform. Furthermore, as the degradation on performance observed in our paper is mainly due to the PITR selection by the destinations. It will be interesting to explore more the interaction between BGP anycast and LISP interworking. 
-    \end{itemize}
-    
-    \item ns-3 Implementation of LISP and LISP-MN (Chapter.~\ref{cha:ns-3}).
-    \begin{itemize}[noitemsep,topsep=0pt]
-        \item Comparison the performance between only host supporting LISP, only router supporting LISP and both of them supporting LISP (LISP double encapsulation).
-        \item Comparison the performance between SMR and Map-Versioning.
-    \end{itemize}
-\end{itemize}
+\subsection{Evaluation of LISP Mapping System}
+% Evaluation of LISP Mapping System (Chapter.~\ref{cha:mds_evaluation})
+%    \begin{itemize}[noitemsep,topsep=0pt]
+%        \item Evaluate the latest \emph{Stability} and \emph{Consistency} performance of LISP mapping system. 
+%        \item Compare to the results in Chapter.~\ref{cha:mds_evaluation} and get LISP developing trend.
+%        \item Synchronized mechanism should be proposed to the MDS.
+%    \end{itemize}
+The experiment was conducted in 2013, while there is a growth of LISP in the following years. The architecture of the mapping system has also changed, in which there were 13 \acrshort{mr}s during the measurement but only 7 \acrshort{mr}s in 2017. Besides, the LISP Beta Network is the only LISP testbed at that time. However, the LISP-Lab platform is open to the experimenters in 2015. The later consists of 3 \acrshort{mr}s and interconnects with the mapping system of LISP Beta Network. Thus, it is very necessary to conduct a new experiment to evaluate the latest \emph{Stability} and \emph{Consistency} performance of LISP mapping system. The results can be compared to the results in Chapter.~\ref{cha:mds_evaluation} so to get the LISP developing trend. 
+
+The mapping information should be identical on all the \acrshort{mr}s at the same time, but the experimental results show that there exist the inconsistency between the \acrshort{mr}s and \acrshort{vp}s. The reason is difficult to explore by such kind of experiment, since the procedures of forwarding Map-Requests within the mapping system is transparent to the experimenters. Based on the theory, it is probably caused by the cache of each \acrshort{mr} storing the mapping information at the different time. Thus, leveraging on \acrfull{rig} to troubleshoot the inconsistent issues within the mapping system is useful. If the assumption is correct, to propose a synchronized mechanism should be important to the mapping system.
+
+\subsection{LISP-Views: LISP Mapping System Monitor}    
+% LISP-Views: LISP Mapping System Monitor (Chapter.~\ref{cha:LISPViews}).
+%    \begin{itemize}[noitemsep,topsep=0pt]
+%        \item The implementation of a REST API for LISP-Views.
+%        \item The deployment of LISP-Views on multiple VPs.
+%        \item Test of IPv6 behavior for LISP-Views.
+%    \end{itemize}
+LISP-Views is still in the first phase, we deployed it on only one \acrshort{vp} and execute the measurements by using the command lines. Thus, we respect to deploy the LISP-Views on multiple \acrshort{vp}s to see if all the \acrshort{vp}s receive the same mapping information. Besides, the command lines are not efficient to conduct the experiments, we plan to implement a REST API on LISP-Views for setting the experiment time, the monitored \acrshort{mr}s, and obtain the different aspects of LISP status. At the moment of writing this dissertation, all the monitored IP addresses via LISP-Views are IPv4, it should be interesting to test IPv6 behaviors. 
+
+\subsection{Assessing LISP interworking performance through RIPE Atlas}
+% Assessing LISP interworking performance through RIPE Atlas (Chapter.~\ref{cha:pxtr}).
+%    \begin{itemize}[noitemsep,topsep=0pt]
+%        \item Evaluate LISP IPv6 performance for LISP-Lab probe.
+%        \item Compare LISP IPv6 performance between LIP6 probe connecting to PETR with MPLS or not.
+%    \end{itemize}
+In our experiment, as LIP6 probe does not receive any \emph{ping} responses for 42 IPv4 and 10 IPv6 destinations, we plan to cluster these destinations by geography and explore the reasons. As the IPv6 packets sent from the LISP-Lab probe are natively forwarded instead of encapsulating into LISP packets during our experiment, we try to modify the configurations so that \acrshort{petr} of LISP-Lab allows to receive the IPv6 traffic from LISP-Lab probe. Then we can know the LISP IPv6 performance. Besides, the path between the LIP6 probe and its \acrshort{petr} is BGP routing and is not configured with MPLS tunnel. Thus, it will be interesting to compare the performance with and without MPLS tunnel. Furthermore, as the degradation of performance observed in Chapter.~\ref{cha:pxtr} is mainly due to the \acrshort{pitr} selection by the destinations. It will be helpful to explore the interaction between BGP anycast and LISP interworking. If the destinations leverage on the \emph{anycast} to select the nearest \acrshort{pitr}, we suppose that the additional delay introduced by LISP will be decreased a lot.
+
+\subsection{Analysis of LISP mobility and ns-3 Implementation}
+% ns-3 Implementation of LISP and LISP-MN (Chapter.~\ref{cha:ns-3}).
+%    \begin{itemize}[noitemsep,topsep=0pt]
+%        \item Support IPv6.
+%        \item Comparison the performance between SMR and Map-Versioning.
+%        \item MAC address is used as EID to support network-based mobility.
+%    \end{itemize}
+There are some directions for the further work. First we plan to validate the numerical analysis on the simulator. As Map-Versioning~\cite{rfc6834} is another Mapping Cache update mechanism, we can also compare the performance between it and $SMR$ that we present in this Chapter.~\ref{cha:ns-3} by our implemented simulator. 
+
+The second scenario has the shortest handover delay, but it does not support the \acrshort{mn} roaming through the different subnets. Thus, we propose to use MAC address as the EID so that the \acrshort{mn} is able to change the subnet without the interruption of the communication. Further, since the third scenario uses double encapsulation, which causes a big increase in the delay, we propose that the mapping system can differently processes SMR-invoked Map-Request and the normal Map-Request. When mapping system receives an SMR-invoked Map-Request, if it finds that the $RLOC$ of the queried EID is actually a $LRLOC$, e.g., the $LRLOC$ of LISP-MN in our third scenario, it then forwards the Map-Request not only to the LISP-MN, but also to the $xTR_2$, so that LISP-MN replies to the $xTR_3$ with the mapping information of <$EID_{LISP-MN}, LRLOC_{LISP-MN}$>, and $xTR_2$ replies to the $xTR_3$ with the mapping information of <$LRLOC_{LISP-MN}, RLOC_{xTR_2}$>. In this way, $xTR_3$ only needs query to the mapping system once, so the handover delay due to the LISP related procedure can reduce a lot. The future work for the implementation of LISP mobility extensions is intended to support IPv6 and Map-Versioning mechanism.
