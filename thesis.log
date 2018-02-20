@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  17 FEB 2018 20:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  20 FEB 2018 01:10
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1762,37 +1762,34 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 
 
 ]
-(./Declaration/declaration.tex [2
+(./Acknowledgement/acknowledgement.tex [2
 
-]) (./Acknowledgement/acknowledgement.tex
-[3
+]) (./Abstract/abstract.tex [3
 
-] [4
+]
+[4
 
-]) (./Abstract/abstract.tex [5
+]) [5
 
 ] [6
 
-] [7
-
-])
+] (./thesis.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 125.
- [8] (./thesis.toc [9
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
+ [7
 
-
-] [10]
-[11])
+] [8] [9])
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
- [12] (./thesis.lof [13
+ [10] (./thesis.lof [11
 
-] [14])
+] [12])
 \tf@lof=\write9
 \openout9 = `thesis.lof'.
 
- [15] [16
+ [13]
+[14
 
 ] (./thesis.lot)
 \tf@lot=\write10
@@ -1800,7 +1797,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 
 
 No file thesis.acr.
-[17] [18
+[15] [16
 
 ] (./Chapter1/chapter1.tex
 Chapter 1.
@@ -1808,10 +1805,16 @@ File: Chapter1/Pics/Growth_BGP_Table.eps Graphic file (type eps)
 <Chapter1/Pics/Growth_BGP_Table.eps> [1
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
  [2]
-[3]
+Underfull \vbox (badness 1303) has occurred while \output is active []
+
+ [3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
@@ -1833,54 +1836,50 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
  [8]
 File: Chapter2/Pics/Hierarchical_taxonomy_of_mapping_systems.eps Graphic file (
 type eps)
- <Chapter2/Pics/Hierarchical_taxonomy_of_mapping_systems.eps>
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
-
-Underfull \vbox (badness 4660) has occurred while \output is active []
-
- [9]
+ <Chapter2/Pics/Hierarchical_taxonomy_of_mapping_systems.eps> [9]
 File: Chapter2/Pics/LISP_ALT.eps Graphic file (type eps)
 
 <Chapter2/Pics/LISP_ALT.eps> [10]
 File: Chapter2/Pics/LISP_DDT.eps Graphic file (type eps)
- <Chapter2/Pics/LISP_DDT.eps> [11]
+ <Chapter2/Pics/LISP_DDT.eps>
+Underfull \vbox (badness 3029) has occurred while \output is active []
+
+ [11]
 File: Chapter2/Pics/LISP_D_C_planes.eps Graphic file (type eps)
 
-<Chapter2/Pics/LISP_D_C_planes.eps> [12] [13]
+<Chapter2/Pics/LISP_D_C_planes.eps> [12]
 File: Chapter2/Pics/LISP_archi_PxTR.eps Graphic file (type eps)
+ <Chapter2/Pics/LISP_archi_PxTR.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<Chapter2/Pics/LISP_archi_PxTR.eps>
-Underfull \vbox (badness 1009) has occurred while \output is active []
-
- [14]
+ [13]
+[14]
 File: Chapter2/Pics/SMR_schema.eps Graphic file (type eps)
-
-<Chapter2/Pics/SMR_schema.eps> [15]
+ <Chapter2/Pics/SMR_schema.eps> [15]
 File: Chapter2/Pics/Map_versioning_schema.eps Graphic file (type eps)
- <Chapter2/Pics/Map_versioning_schema.eps>
-[16] [17]
+
+<Chapter2/Pics/Map_versioning_schema.eps> [16] [17]
 File: Chapter2/Pics/LISP-MN_archi.eps Graphic file (type eps)
- <Chapter2/Pics/LISP-MN_archi.eps> [18]
+
+<Chapter2/Pics/LISP-MN_archi.eps> [18] [19]
 File: Chapter2/Pics/LISP-MN_in_LISP-Site.eps Graphic file (type eps)
 
-<Chapter2/Pics/LISP-MN_in_LISP-Site.eps> [19]
+<Chapter2/Pics/LISP-MN_in_LISP-Site.eps> [20]
 File: Chapter2/Pics/LISP-MN_in_non-LISP-Site.eps Graphic file (type eps)
 
-<Chapter2/Pics/LISP-MN_in_non-LISP-Site.eps> [20]
-Underfull \vbox (badness 7888) has occurred while \output is active []
+<Chapter2/Pics/LISP-MN_in_non-LISP-Site.eps>
+Underfull \vbox (badness 4647) has occurred while \output is active []
 
  [21]
 File: Chapter2/Pics/transmission_ipv4_ipv6.eps Graphic file (type eps)
 
-<Chapter2/Pics/transmission_ipv4_ipv6.eps> [22] [23]
+<Chapter2/Pics/transmission_ipv4_ipv6.eps> [22]
 File: Chapter2/Pics/LISP_in_OpenDaylight.eps Graphic file (type eps)
 
-<Chapter2/Pics/LISP_in_OpenDaylight.eps> [24]) (./Chapter3/chapter3.tex
+<Chapter2/Pics/LISP_in_OpenDaylight.eps> [23]) (./Chapter3/chapter3.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
 [25] [26
 
 ]
@@ -2113,31 +2112,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Chapter 7.
 
-Package natbib Warning: Citation `vesely2015locator' on page 97 undefined on in
-put line 28.
-
-
-Package natbib Warning: Citation `vesely2014multicast' on page 97 undefined on 
-input line 28.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [97]
-
-Package natbib Warning: Citation `lionel2016' on page 98 undefined on input lin
-e 30.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
 [][][][][][][]\T1/ptm/m/n/10 The source code is avail-able at [][][][][]$\T1/pt
 m/m/n/12 https : //$[][][][][][]$bitbucket.$[][][][][][]$org/$[][][][][][]$Lion
 el _ Agbodjan/$[][]
  []
-
-
-Package natbib Warning: Citation `lionel2016' on page 98 undefined on input lin
-e 30.
 
 [98]
 File: Chapter7/Pics/LISP_mobility_archi.eps Graphic file (type eps)
@@ -2150,7 +2132,7 @@ File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
 
 <Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps> [102]
-Overfull \hbox (26.15152pt too wide) in alignment at lines 167--176
+Overfull \hbox (32.43214pt too wide) in alignment at lines 168--177
  [][][] []
  []
 
@@ -2158,10 +2140,13 @@ Overfull \hbox (26.15152pt too wide) in alignment at lines 167--176
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [103]
-[104]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [104]
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps Graphi
 c file (type eps)
- <Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps>
+
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [105]
@@ -2169,99 +2154,104 @@ File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps Graphi
 c file (type eps)
 
 <Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps> [106]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [107]
-[108]
+[107]
 File: Chapter7/Pics/LISP_NS3_UML.eps Graphic file (type eps)
- <Chapter7/Pics/LISP_NS3_UML.eps> [109]
+ <Chapter7/Pics/LISP_NS3_UML.eps>
+Underfull \vbox (badness 6461) has occurred while \output is active []
+
+ [108]
 File: Chapter7/Pics/ns3_lisp_data_plane.eps Graphic file (type eps)
 
-<Chapter7/Pics/ns3_lisp_data_plane.eps> [110] [111]
-File: Chapter7/Pics/xTR_state_transition.eps Graphic file (type eps)
+<Chapter7/Pics/ns3_lisp_data_plane.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<Chapter7/Pics/xTR_state_transition.eps> [112]
+ [109]
+[110]
+File: Chapter7/Pics/xTR_state_transition.eps Graphic file (type eps)
+ <Chapter7/Pics/xTR_state_transition.eps> [111]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [112]
 File: Chapter7/Pics/DHCP_transition_state.eps Graphic file (type eps)
 
-<Chapter7/Pics/DHCP_transition_state.eps> [113] [114]
+<Chapter7/Pics/DHCP_transition_state.eps> [113]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 437.
+               Default added (so using `tbp') on input line 438.
 
-) (./Chapter8/chapter8.tex [115] [116
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [114])
+(./Chapter8/chapter8.tex [115] [116
 
 ]
 Chapter 8.
-[117] [118] [119] [120]) [121] [122
+[117] [118]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [119]
+Underfull \vbox (badness 7814) has occurred while \output is active []
+
+ [120])
+[121] [122
 
 ] (./thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 25--28
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
 [][][][]$\T1/ptm/m/n/12 en/$[][][][][][]$us/$[][][][][][]$products/$[][][][][][
 ]$collateral/$[][][][][][]$ios-[]nx-[]os-[]software/$[][][][][][]$locator-[]id-
 []separation-[]protocol-[]lisp/$[][][][][][]$qa_$[][]
  []
 
 
-Underfull \hbox (badness 5908) in paragraph at lines 55--58
+Underfull \hbox (badness 5908) in paragraph at lines 59--62
 [][]\T1/ptm/m/n/12 LISP for SDN and NFV (Open-Day-light Sub-m-mit).  See [][][]
 [][]$https : //$[][][][][][]$events.$[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--79
-\T1/ptm/m/n/12 See [][][][][]$https : //$[][][][][][]$www.$[][][][][][]$cisco.$
-[][][][][][]$com/$[][][][][][]$c/$[][][][][][]$dam/$[][][][][][]$en/$[][][][][]
-[]$us/$[][][][][][]$products/$[][][][][][]$collateral/$[][][][][][]$ios-[]nx-[]
-os-[]software/$[][]
  []
 
 [123
 
 ]
-Underfull \hbox (badness 5359) in paragraph at lines 118--122
+Underfull \hbox (badness 5359) in paragraph at lines 117--121
 [][]\T1/ptm/m/n/12 Smartinsights.  Ac-cessed on Jan. 7, 2018. [On-line]. Avail-
 able: [][][][][]$http : //$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--122
+Underfull \hbox (badness 10000) in paragraph at lines 117--121
 [][][][]$\T1/ptm/m/n/12 www.$[][][][][][]$smartinsights.$[][][][][][]$com/$[][]
 [][][][]$mobile-[]marketing/$[][][][][][]$mobile-[]marketing-[]analytics/$[][]
  []
 
-[124] [125] [126] [127] [128]) (./Publications/ListofPublication.tex [129]
-[130
+[124] [125] [126] [127] [128] [129]) (./Publications/ListofPublication.tex
+[130]) (./Appendix1/appendix1.tex [131
 
-]) (./Appendix1/appendix1.tex [131
 
 ] [132
 
 ]
 Appendix A.
 [133])
-
-Package natbib Warning: There were undefined citations.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
-[134]
+ [134]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 80AD48AB1040245DD05A1734DF055CE2;23892.
+(rerunfilecheck)             Checksum: B30079620837A4F82DF68B4D4F9E082E;24217.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31638 strings out of 493015
- 553686 string characters out of 6133377
- 735528 words of memory out of 5000000
- 34630 multiletter control sequences out of 15000+600000
+ 31648 strings out of 493015
+ 553857 string characters out of 6133377
+ 736333 words of memory out of 5000000
+ 34643 multiletter control sequences out of 15000+600000
  51154 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,92p,10383b,13342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,92p,10383b,13419s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (152 pages, 895372 bytes).
+Output written on thesis.dvi (150 pages, 895476 bytes).

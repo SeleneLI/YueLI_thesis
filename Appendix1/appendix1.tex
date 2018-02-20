@@ -1,7 +1,6 @@
 % ******************************* Thesis Appendix A ****************************
 \chapter{Source Code} 
-Some of our implementations are modified from previous open source projects. So we upload related codes to GitHub in my personal repositories as \url{https://github.com/SeleneLI}. It is convenient to download and explore the codes. % For instance, in order to find out all the modifications on OFsoftswitch, we can find all commitment history in a diff mode by using following link \url{https://github.com/zeinsteinz/ofsoftswitch13/commits/master}.
-A brief introduction of each repository is provided as follows.
+Some of our implementations are originally written and some are modified from previous open source projects. So we upload related codes to GitHub in my personal repositories as \url{https://github.com/SeleneLI}. It is convenient to download and explore the codes. A brief introduction of each repository is provided as follows.
 
 
 \section{LISP Stability and Consistency analyzer}
@@ -14,7 +13,6 @@ This project is totally originally written to analyze the stability and consiste
 \url{https://github.com/SeleneLI/LISP-Views}
 
 This project is the original codes for LISP-Views architecture.
-%For OFsoftswitch, we have made two main modifications. One is to improve its performance in packet parsing by more efficient codes to replace original Netbee library. The other one is to extend it to support NSH for SFC implementation.
 
 
 \section{LISP measurements on Atlas}
@@ -26,9 +24,7 @@ This project is used to conduct the experiment on RIPE Atlas and analyze the pin
 \section{LISP implementation on ns-3}
 \url{https://github.com/SeleneLI/LISP_ns-3}
 
-This project is an implementation of LISP simulator on ns-3 to evaluate LISP mobility performance.
-%Aiming at in-band control simulation, Mininet is modified to allow OpenvSwitch running in private network namespace. It is also extended to support Docker for distributed controller measurement. In addition, several test
-%scripts and customized CLI commands are provided as well.
+This project is an implementation of LISP mobility extensions on an existing LISP simulator under ns-3. It also provides the scripts evaluating LISP mobility performance.
 
 
 

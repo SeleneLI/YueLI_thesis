@@ -21,6 +21,10 @@ As3943 ipv6 route propagation.
 \newblock See
   \url{https://en.avm.de/fileadmin/user_upload/EN/Manuals/FRITZ_Box/Manual_FRITZ_Box_3490-en.pdf}.
 
+\bibitem{bgptableanalysis}
+{BGP Routing Table Analysis Reports}.
+\newblock See \url{https://bgp.potaroo.net/}.
+
 \bibitem{CiscoLISPQA}
 {Cisco Locator/ID Separation Protocol (LISP) Q\&A}.
 \newblock See
@@ -72,11 +76,6 @@ Internet live stats.
 {LISPmon}.
 \newblock See \url{http://www.lispmon.net}.
 
-\bibitem{ciscovmmobility}
-{Locator ID Separation Protocol (LISP) VM Mobility Solution, (White paper)}.
-\newblock See
-  \url{https://www.cisco.com/c/dam/en/us/products/collateral/ios-nx-os-software/locator-id-separation-protocol-lisp/lisp-vm_mobility_wp.pdf}.
-
 \bibitem{ns3}
 {ns-3}.
 \newblock See \url{http://https://www.nsnam.org/}.
@@ -124,6 +123,12 @@ Smartinsights.
 J.~Adan.
 \newblock Tunneled inter-domain routing (tidr).
 \newblock {\em Work in Progress}, 2006.
+
+\bibitem{lionel2016}
+L.~Agbodjan.
+\newblock Towards a lisp simulator.
+\newblock Master's thesis, Université de Liège, 2016.
+\newblock Unpublished master's thesis.
 
 \bibitem{aiash2013novel}
 M.~Aiash.
@@ -598,6 +603,18 @@ Z.~Tang, Y.~Zhou, W.~Deng, and B.~Wang.
 R.~Thayer, N.~Doraswamy, and R.~Glenn.
 \newblock Rfc 2411: Ip security document roadmap.
 \newblock {\em Internet standard, November}, 1998.
+
+\bibitem{vesely2014multicast}
+V.~Vesel{\`y}, M.~Marek, O.~Ry{\v{s}}av{\`y}, and M.~{\v{S}}v{\'e}da.
+\newblock Multicast, trill and lisp extensions for inet.
+\newblock {\em International Journal on Advances in Networks and Services
+  Volume 7, Number 3 \& 4, 2014}, 2014.
+
+\bibitem{vesely2015locator}
+V.~Vesel{\`y} and O.~Ry{\v{s}}av{\`y}.
+\newblock Locator/id split protocol improvement for high-availability
+  environment.
+\newblock {\em ICNS 2015}, page~75, 2015.
 
 \bibitem{vogt2007six}
 C.~Vogt.

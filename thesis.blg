@@ -7,15 +7,13 @@ Warning--entry type for "alexa" isn't style-file defined
 --line 601 of file References/references.bib
 Warning--entry type for "alexatop" isn't style-file defined
 --line 606 of file References/references.bib
-Warning--I didn't find a database entry for "meyer-lisp-mn-16"
-Warning--I didn't find a database entry for "vassiliou2010analysis"
+Warning--to sort, need author or key in bgptableanalysis
 Warning--to sort, need author or key in LISP_ODLSummit_2014
 Warning--to sort, need author or key in lispbetaarchi
 Warning--to sort, need author or key in lispviews
 Warning--to sort, need author or key in InternetLiveStats
 Warning--to sort, need author or key in SmartInsights
 Warning--to sort, need author or key in OOR
-Warning--to sort, need author or key in ciscovmmobility
 Warning--to sort, need author or key in OpenDaylight
 Warning--to sort, need author or key in lispbeta
 Warning--to sort, need author or key in lisplab
@@ -54,45 +52,45 @@ Warning--empty institution in nordmark2009shim6
 Warning--empty institution in perkins2011mobility
 Warning--empty year in rosenbergsip
 Warning--empty year in rfc7835
-You've used 114 entries,
+You've used 117 entries,
             2118 wiz_defined-function locations,
-            1017 strings with 20819 characters,
-and the built_in function-call counts, 34327 in all, are:
-= -- 3295
-> -- 1729
-< -- 32
-+ -- 706
-- -- 582
-* -- 2196
-:= -- 5523
-add.period$ -- 331
-call.type$ -- 114
-change.case$ -- 640
+            1030 strings with 21161 characters,
+and the built_in function-call counts, 35137 in all, are:
+= -- 3375
+> -- 1772
+< -- 33
++ -- 723
+- -- 596
+* -- 2239
+:= -- 5672
+add.period$ -- 341
+call.type$ -- 117
+change.case$ -- 656
 chr.to.int$ -- 0
-cite$ -- 159
-duplicate$ -- 1309
-empty$ -- 2739
-format.name$ -- 582
-if$ -- 7290
+cite$ -- 162
+duplicate$ -- 1343
+empty$ -- 2792
+format.name$ -- 596
+if$ -- 7456
 int.to.chr$ -- 0
-int.to.str$ -- 114
-missing$ -- 67
-newline$ -- 543
-num.names$ -- 172
-pop$ -- 920
+int.to.str$ -- 117
+missing$ -- 69
+newline$ -- 559
+num.names$ -- 178
+pop$ -- 935
 preamble$ -- 1
-purify$ -- 516
+purify$ -- 529
 quote$ -- 0
-skip$ -- 968
+skip$ -- 994
 stack$ -- 0
-substring$ -- 1470
-swap$ -- 301
-text.length$ -- 32
+substring$ -- 1489
+swap$ -- 308
+text.length$ -- 33
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 456
+type$ -- 468
 warning$ -- 45
-while$ -- 262
-width$ -- 117
-write$ -- 1116
-(There were 49 warnings)
+while$ -- 269
+width$ -- 120
+write$ -- 1150
+(There were 47 warnings)
