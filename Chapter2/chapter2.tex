@@ -177,7 +177,7 @@ Given that LISP mapping distribution is based on a pull model, in case that mapp
 \subsection{Solicit-Map-Request (SMR)}
 \label{sec:SMR}
 Soliciting a Map-Request is used by \acrshort{etr}s to tell remote \acrshort{itr}s to update the mappings they have cached. When the mappings in the Database of an \acrshort{etr} changes, the \acrshort{etr} sends the Map-Requests with the \acrshort{smr} bit set (called \acrfull{smr} message) for each RLOC in its Cache. A remote \acrshort{itr} that receives the \acrshort{smr} message will take a check in its Cache whether the source RLOC of the \acrshort{smr} message, i.e., the RLOC of \acrshort{etr} with mappings change is in its Cache. If yes, the remote \acrshort{itr} sends a Map-Request to the MR (as shown in the left hand part of Fig.~\ref{SMR_schema}) or directly to the sender of \acrshort{smr} (as shown in the right hand part of Fig.~\ref{SMR_schema}). % In the case that the sender of \acrshort{smr} has the unique RLOC in the Locator-set of \acrshort{etr} that \acrshort{itr} caches, the \acrshort{itr} can only send the Map-Request to the MR, to avoid the \acrshort{etr} changes its RLOC and can not receive the SMR-invoked Map-Request any more. 
-If the RLOC\yue{check} of sender is not in the Cache of \acrshort{itr} any longer, the later drops the \acrshort{smr} and does not send the Map-Request. The later situation occurs when the \acrshort{etr} sends the \acrshort{smr} to all RLOCs stored in its Cache, but the remote \acrshort{itr} actually has not sent the packets to it for a long time. Between sending the \acrshort{smr} message and receiving the new Map-Reply, the \acrshort{itr} continues to use the mapping information previously cached, and that may cause packet loss.
+If the RLOC of sender is not in the Cache of \acrshort{itr} any longer, the later drops the \acrshort{smr} and does not send the Map-Request. The later situation occurs when the \acrshort{etr} sends the \acrshort{smr} to all RLOCs stored in its Cache, but the remote \acrshort{itr} actually has not sent the packets to it for a long time. Between sending the \acrshort{smr} message and receiving the new Map-Reply, the \acrshort{itr} continues to use the mapping information previously cached, and that may cause packet loss.
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
 	\centering
@@ -288,7 +288,6 @@ When the \acrshort{mn} is normal host without any LISP function, while the borde
 %-< SUBSECTION >--------------------------------------------------------------------
 \subsection{LISP-MN mobility in LISP-Site}
 \label{subsec:lispMN_LS}
-
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
 	\centering
@@ -298,12 +297,11 @@ When the \acrshort{mn} is normal host without any LISP function, while the borde
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
-This section describes how a \acrshort{lispmn} moves from one LISP-Site to another and the packet flow is shown in Fig.~\ref{LISP-MN_in_LISP-Site}. At first, packets exchanged between $\text{LISP-MN}$ residing in $\text{LISP-Site}_1$ and $CN$ are double encapsulated LISP packets as mentioned in Sec.~\ref{subsec:lispMN}. After conducting the handover, $\text{LISP-MN}$ still uses its permanent $EID_{MN}$. However, since it changes the attachment point, $xTR_2$ distributes a new EID from its EID-prefix to it, and it uses this as its new \acrshort{lrloc}, labeled $LRLOC_2$ in the figure. The $\text{LISP-MN}$ should register itself with the new mapping information to the \acrshort{mds} and ask $CN$ to update its LISP-Cache by \acrshort{smr} or Map-Versioning (introduced in Sec.~\ref{sec:updateMechanisms}). When receiving the packets from $\text{LISP-MN}$, the $xTR_2$ conducts the second encapsulation and sends the packets to $xTR_3$. The benefit of such mobility is that the $\text{LISP-MN}$ can roam through the different subnets without interrupting the communication with the remote $CN$, because $\text{LISP-MN}$ never changes its EID. However, to conduct double registration may lead to higher delay of handover.
+This section describes how a \acrshort{lispmn} moves from one LISP-Site to another and the packet flow is shown in Fig.~\ref{LISP-MN_in_LISP-Site}. At first, packets exchanged between $\text{LISP-MN}$ residing in $\text{LISP-Site}_1$ and $CN$ are double encapsulated LISP packets as mentioned in Sec.~\ref{subsec:lispMN}. After conducting the handover, $\text{LISP-MN}$ still uses its permanent $EID_{MN}$. However, since it changes the attachment point, $xTR_2$ distributes a new EID from its EID-prefix to it, and it uses this as its new \acrshort{lrloc}, labeled $LRLOC_2$ in the figure. The $\text{LISP-MN}$ should register itself with the new mapping information to the \acrshort{mds} and ask the ${xTR_3}$ ($xTR$ of $CN$) to update its LISP-Cache by $\acrshort{smr}$ or $Map\textbf{-}Versioning$ (introduced in Sec.~\ref{sec:updateMechanisms}). When receiving the packets from $\text{LISP-MN}$, the $xTR_2$ conducts the second encapsulation and sends the packets to $xTR_3$. The benefit of such mobility is that the $\text{LISP-MN}$ can roam through the different subnets without interrupting the communication with the remote $CN$, because $\text{LISP-MN}$ never changes its EID. However, to conduct double registration may lead to higher delay of handover.
 
 %-< SUBSECTION >--------------------------------------------------------------------
 \subsection{LISP-MN mobility in non-LISP-Site}
 \label{subsec:lispMN_NLS}
-
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
 	\centering
@@ -312,12 +310,23 @@ This section describes how a \acrshort{lispmn} moves from one LISP-Site to anoth
 	\label{LISP-MN_in_non-LISP-Site}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
-The Fig.~\ref{LISP-MN_in_non-LISP-Site} illustrates the packet flow of the $\text{LISP-MN}$ roaming between two non-LISP-Sites. The $Site_1$ distributes an IP address from its prefix to $\text{LISP-MN}$, and the later uses this as its \acrshort{lrloc}, labeled as $LRLOC_1$ in the figure. The $\text{LISP-MN}$ encapsulates the packets by itself and sends to $Router_1$. $Router_1$ just natively forwards the packets to $xTR_3$. When $\text{LISP-MN}$ moves to another site labeled $Site_2$, it receives an IP address from a different prefix and uses it as the new \acrshort{lrloc}. It registers itself to the \acrshort{mds} with the $EID_{MN}\text{-to-}LRLOC_2$, and informs the remote $CN$ to update the mapping information by sending \acrshort{smr} or using Map-Versioning. In this scenario, $\text{LISP-MN}$ can also permit to roam through the different subnets, but it can also reduce the high latency of double registration during the handover. 
+The Fig.~\ref{LISP-MN_in_non-LISP-Site} illustrates the packet flow of the $\text{LISP-MN}$ roaming between two non-LISP-Sites. The $Site_1$ distributes an IP address from its prefix to $\text{LISP-MN}$, and the later uses this as its \acrshort{lrloc}, labeled as $LRLOC_1$ in the figure. The $\text{LISP-MN}$ encapsulates the packets by itself and sends to $Router_1$. $Router_1$ just natively forwards the packets to $xTR_3$. When $\text{LISP-MN}$ moves to another site labeled $Site_2$, it receives an IP address from a different prefix and uses it as the new \acrshort{lrloc}. It registers itself to the \acrshort{mds} with the $EID_{MN}\text{-to-}LRLOC_2$, and informs the remote ${xTR_3}$ ($RLOC$ of $CN$) to update the mapping information by sending $\acrshort{smr}$ or using $Map\textbf{-}Versioning$. In this scenario, $\text{LISP-MN}$ can also permit to roam through the different subnets, but it can also reduce the high latency of double registration during the handover. 
 
 
  %-< SUBSECTION >--------------------------------------------------------------------
  \subsection{LISP-MN mobility between LISP-Site \&  non-LISP-Site}
  \label{subsec:MN_NLS}
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=\textwidth]{Pics/LISP-MN_in_LISP-Site_non-LISP-Site.eps}
+	\caption{Packet flow of LISP-MN mobility between LISP-Site and non-LISP-Site}
+	\label{LISP-MN_in_LISP-Site_non-LISP-Site}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
+This section describes how a \acrshort{lispmn} moves from one LISP-Site (from $LISP\text{-}Site_1$) to non-LISP-Site (to $Site_2$) and vice versa (to $LISP\text{-}Site_4$). Its mechanism combines Sec.~\ref{subsec:lispMN_LS} and Sec.~\ref{subsec:lispMN_NLS}, and the packet flow is shown in Fig.~\ref{LISP-MN_in_LISP-Site_non-LISP-Site}. At first, when the \acrshort{lispmn} resides in $LISP\text{-}Site_1$, it uses the allocated $EID$ as its $LRLOC$ and exchanges the packets with $CN$ via $xTR_1$ by double encapsulation. When it moves to the $Site_2$, it receives the assigned IP address from $Router_2$ as its new $LRLOC$. \acrshort{lispmn} registers its new mapping information ${<EID_{MN}, LRLOC_2>}$ to the mapping system and informs the ${xTR_3}$ ($xTR$ of $CN$) to update the mapping in its cache by $\acrshort{smr}$ or $Map\textbf{-}Versioning$. The $Router_2$ just natively forwards the packets to $xTR_3$. When the \acrshort{lispmn} roams behind $xTR_4$, it uses the allocated EID from $xTR_4$ as the latest $LRLOC$ and register this mapping information ${<EID_{MN}, LRLOC_4>}$ to the mapping system. Also, it tells ${xTR_3}$ ($RLOC$ of $CN$) to update its mapping by using $\acrshort{smr}$ or $Map\textbf{-}Versioning$. Once the handover procedure is completed, the packets exchanged between \acrshort{lispmn} and $CN$ will be double encapsulated: once on the \acrshort{lispmn} itself and once on the $xTR_4$.
+
+
 
 %-< SUB SECTION >--------------------------------------------------------------------
 \section{LISP alternative use-cases}

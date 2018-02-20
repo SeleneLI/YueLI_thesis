@@ -35,6 +35,7 @@ Warning--to sort, need author or key in alexatop
 Warning--to sort, need author or key in bgpv4
 Warning--to sort, need author or key in bgpv6
 Warning--to sort, need author or key in ns3
+Warning--to sort, need author or key in lionel
 Warning--to sort, need author or key in wireshark
 Warning--can't use both volume and number fields in balakrishnan2004layered
 Warning--empty journal in bhatti2012identifier
@@ -53,45 +54,45 @@ Warning--empty institution in nordmark2009shim6
 Warning--empty institution in perkins2011mobility
 Warning--empty year in rosenbergsip
 Warning--empty year in rfc7835
-You've used 118 entries,
+You've used 119 entries,
             2118 wiz_defined-function locations,
-            1033 strings with 21241 characters,
-and the built_in function-call counts, 35294 in all, are:
-= -- 3389
-> -- 1773
+            1036 strings with 21401 characters,
+and the built_in function-call counts, 35451 in all, are:
+= -- 3403
+> -- 1774
 < -- 33
-+ -- 724
++ -- 725
 - -- 596
-* -- 2244
-:= -- 5688
-add.period$ -- 343
-call.type$ -- 118
-change.case$ -- 659
+* -- 2249
+:= -- 5704
+add.period$ -- 345
+call.type$ -- 119
+change.case$ -- 662
 chr.to.int$ -- 0
-cite$ -- 164
-duplicate$ -- 1350
-empty$ -- 2815
+cite$ -- 166
+duplicate$ -- 1357
+empty$ -- 2838
 format.name$ -- 596
-if$ -- 7495
+if$ -- 7534
 int.to.chr$ -- 0
-int.to.str$ -- 118
+int.to.str$ -- 119
 missing$ -- 69
-newline$ -- 563
+newline$ -- 567
 num.names$ -- 178
-pop$ -- 946
+pop$ -- 957
 preamble$ -- 1
-purify$ -- 531
+purify$ -- 533
 quote$ -- 0
-skip$ -- 1000
+skip$ -- 1006
 stack$ -- 0
-substring$ -- 1494
-swap$ -- 309
+substring$ -- 1499
+swap$ -- 310
 text.length$ -- 33
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 472
-warning$ -- 46
+type$ -- 476
+warning$ -- 47
 while$ -- 269
-width$ -- 121
-write$ -- 1157
-(There were 48 warnings)
+width$ -- 122
+write$ -- 1164
+(There were 49 warnings)
