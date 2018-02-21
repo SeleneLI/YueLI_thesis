@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  21 FEB 2018 02:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  21 FEB 2018 19:35
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -2127,69 +2127,78 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [99]
 File: Chapter7/Pics/ns3_lisp_data_plane.eps Graphic file (type eps)
 
-<Chapter7/Pics/ns3_lisp_data_plane.eps> [100] [101]
+<Chapter7/Pics/ns3_lisp_data_plane.eps> [100]
+Underfull \vbox (badness 4084) has occurred while \output is active []
+
+ [101]
 File: Chapter7/Pics/xTR_state_transition.eps Graphic file (type eps)
 
-<Chapter7/Pics/xTR_state_transition.eps> [102] [103]
+<Chapter7/Pics/xTR_state_transition.eps> [102] [103] [104]
 File: Chapter7/Pics/DHCP_transition_state.eps Graphic file (type eps)
 
-<Chapter7/Pics/DHCP_transition_state.eps> [104]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 150.
-
-
-Underfull \vbox (badness 3758) has occurred while \output is active []
-
- [105]
+<Chapter7/Pics/DHCP_transition_state.eps> [105] [106]
 File: Chapter7/Pics/LISP_mobility_archi.eps Graphic file (type eps)
 
-<Chapter7/Pics/LISP_mobility_archi.eps> [106]
+<Chapter7/Pics/LISP_mobility_archi.eps> [107]
 File: Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps Graphic file (type 
 eps)
 
-<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [107] [108]
+<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [108]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [109]
+Underfull \vbox (badness 1460) has occurred while \output is active []
+
+ [110]
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
 
-<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps> [109]
-Overfull \hbox (32.43214pt too wide) in alignment at lines 293--302
- [][][] []
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [110]
+<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [111]
-File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps Graphi
-c file (type eps)
-
-<Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [112]
+File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps Graphi
+c file (type eps)
+
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps> [113]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [114]
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps Graphi
 c file (type eps)
 
-<Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps> [113]
-Underfull \vbox (badness 2698) has occurred while \output is active []
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [114])
-(./Chapter8/chapter8.tex [115] [116
+ [115]
+Underfull \vbox (badness 5893) has occurred while \output is active []
+
+ [116]
+File: Chapter7/Pics/LISP_handover_delay_Bar.eps Graphic file (type eps)
+
+<Chapter7/Pics/LISP_handover_delay_Bar.eps>
+File: Chapter7/Pics/LISP_handover_overhead_Bar.eps Graphic file (type eps)
+
+<Chapter7/Pics/LISP_handover_overhead_Bar.eps>
+Overfull \hbox (2.28003pt too wide) in paragraph at lines 451--461
+[][]$[]$ $[]$ 
+ []
+
+) (./Chapter8/chapter8.tex [117] [118
 
 ]
 Chapter 8.
-[117] [118]
+[119] [120]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [119]
+ [121]
 Underfull \vbox (badness 2941) has occurred while \output is active []
 
- [120])
-[121] [122
+ [122])
+[123] [124
 
 ] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 29--32
@@ -2204,7 +2213,7 @@ Underfull \hbox (badness 5908) in paragraph at lines 59--62
 [][]$https : //$[][][][][][]$events.$[][]
  []
 
-[123
+[125
 
 ]
 Underfull \hbox (badness 5359) in paragraph at lines 121--125
@@ -2218,17 +2227,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--125
 [][][][]$mobile-[]marketing/$[][][][][][]$mobile-[]marketing-[]analytics/$[][]
  []
 
-[124] [125] [126] [127] [128] [129]) (./Publications/ListofPublication.tex
-[130]) (./Appendix1/appendix1.tex [131
+[126] [127] [128] [129] [130] [131]) (./Publications/ListofPublication.tex
+[132]) (./Appendix1/appendix1.tex [133
 
 
-] [132
+] [134
 
 ]
 Appendix A.
-[133])
+[135])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
- [134]
+ [136]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
@@ -2241,12 +2250,12 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31693 strings out of 493015
- 554582 string characters out of 6133377
- 736435 words of memory out of 5000000
- 34687 multiletter control sequences out of 15000+600000
+ 31697 strings out of 493015
+ 554729 string characters out of 6133377
+ 736526 words of memory out of 5000000
+ 34689 multiletter control sequences out of 15000+600000
  54546 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,92p,10383b,13477s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (150 pages, 905988 bytes).
+Output written on thesis.dvi (152 pages, 914576 bytes).
