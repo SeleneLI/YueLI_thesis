@@ -72,6 +72,10 @@ Internet live stats.
 {Lispers.net}.
 \newblock See \url{https://www.lispers.net/}.
 
+\bibitem{LISPmob}
+{LISPmob (website)}.
+\newblock \url{https://www.openoverlayrouter.org/lispmob/}.
+
 \bibitem{lispmon}
 {LISPmon}.
 \newblock See \url{http://www.lispmon.net}.
@@ -123,11 +127,6 @@ Smartinsights.
 {The official website of Wireshark}.
 \newblock See \url{https://www.wireshark.org/}.
 
-\bibitem{lionel}
-{The source code of Basic LISP implementation under ns-3.24 on the bitbucket}.
-\newblock See
-  \url{https://bitbucket.org/Lionel_Agbodjan/tfe__towards_a_lisp_simulator}.
-
 \bibitem{adan2006tunneled}
 J.~Adan.
 \newblock Tunneled inter-domain routing (tidr).
@@ -137,7 +136,9 @@ J.~Adan.
 L.~Agbodjan.
 \newblock Towards a lisp simulator.
 \newblock Master's thesis, Université de Liège, 2016.
-\newblock Unpublished master's thesis.
+\newblock Unpublished master's thesis. The source code of Basic LISP
+  implementation under ns-3.24 is on the bitbucket:
+  \url{https://bitbucket.org/Lionel_Agbodjan/tfe__towards_a_lisp_simulator}.
 
 \bibitem{aiash2013novel}
 M.~Aiash.

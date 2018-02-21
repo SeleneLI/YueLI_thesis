@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  20 FEB 2018 18:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  21 FEB 2018 02:25
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -2121,56 +2121,64 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [97]
 [98]
 File: Chapter7/Pics/LISP_NS3_UML.eps Graphic file (type eps)
- <Chapter7/Pics/LISP_NS3_UML.eps> [99]
+ <Chapter7/Pics/LISP_NS3_UML.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [99]
 File: Chapter7/Pics/ns3_lisp_data_plane.eps Graphic file (type eps)
 
 <Chapter7/Pics/ns3_lisp_data_plane.eps> [100] [101]
 File: Chapter7/Pics/xTR_state_transition.eps Graphic file (type eps)
 
-<Chapter7/Pics/xTR_state_transition.eps> [102]
+<Chapter7/Pics/xTR_state_transition.eps> [102] [103]
 File: Chapter7/Pics/DHCP_transition_state.eps Graphic file (type eps)
 
-<Chapter7/Pics/DHCP_transition_state.eps> [103] [104]
+<Chapter7/Pics/DHCP_transition_state.eps> [104]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 150.
 
+
+Underfull \vbox (badness 3758) has occurred while \output is active []
+
+ [105]
 File: Chapter7/Pics/LISP_mobility_archi.eps Graphic file (type eps)
-<Chapter7/Pics/LISP_mobility_archi.eps> [105]
+
+<Chapter7/Pics/LISP_mobility_archi.eps> [106]
 File: Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps Graphic file (type 
 eps)
 
-<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [106] [107]
-Underfull \vbox (badness 6859) has occurred while \output is active []
-
- [108]
+<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [107] [108]
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
 
-<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps>
-Overfull \hbox (32.43214pt too wide) in alignment at lines 291--300
+<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps> [109]
+Overfull \hbox (32.43214pt too wide) in alignment at lines 293--302
  [][][] []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [109]
+ [110]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [110]
+ [111]
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps Graphi
 c file (type eps)
 
-<Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps> [111]
-[112]
-File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps Graphi
-c file (type eps)
- <Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps>
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [113]
-[114]) (./Chapter8/chapter8.tex [115] [116
+ [112]
+File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps Graphi
+c file (type eps)
+
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps> [113]
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+ [114])
+(./Chapter8/chapter8.tex [115] [116
 
 ]
 Chapter 8.
@@ -2199,13 +2207,13 @@ Underfull \hbox (badness 5908) in paragraph at lines 59--62
 [123
 
 ]
-Underfull \hbox (badness 5359) in paragraph at lines 117--121
+Underfull \hbox (badness 5359) in paragraph at lines 121--125
 [][]\T1/ptm/m/n/12 Smartinsights.  Ac-cessed on Jan. 7, 2018. [On-line]. Avail-
 able: [][][][][]$http : //$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
 [][][][]$\T1/ptm/m/n/12 www.$[][][][][][]$smartinsights.$[][][][][][]$com/$[][]
 [][][][]$mobile-[]marketing/$[][][][][][]$mobile-[]marketing-[]analytics/$[][]
  []
@@ -2233,12 +2241,12 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31663 strings out of 493015
- 554150 string characters out of 6133377
- 736252 words of memory out of 5000000
- 34657 multiletter control sequences out of 15000+600000
+ 31693 strings out of 493015
+ 554582 string characters out of 6133377
+ 736435 words of memory out of 5000000
+ 34687 multiletter control sequences out of 15000+600000
  54546 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,92p,10383b,13431s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,92p,10383b,13477s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (150 pages, 899332 bytes).
+Output written on thesis.dvi (150 pages, 905988 bytes).

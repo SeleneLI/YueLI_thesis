@@ -57,6 +57,7 @@
 \glossaryentry{ARPANET?\glossentry{arpanet}|setentrycounter[]{page}\glsnumberformat}{xv}
 \glossaryentry{LIG?\glossentry{lig}|setentrycounter[]{page}\glsnumberformat}{xv}
 \glossaryentry{RIG?\glossentry{rig}|setentrycounter[]{page}\glsnumberformat}{xv}
+\glossaryentry{NIC?\glossentry{nic}|setentrycounter[]{page}\glsnumberformat}{xv}
 \glossaryentry{ARPANET?\glossentry{arpanet}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{ARPANET?\glossentry{arpanet}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{BGP?\glossentry{bgp}|setentrycounter[]{page}\glsnumberformat}{1}
@@ -308,6 +309,12 @@
 \glossaryentry{xTR?\glossentry{xtr}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{MDS?\glossentry{mds}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{RTT?\glossentry{rtt}|setentrycounter[]{page}\glsnumberformat}{76}
+\glossaryentry{NIC?\glossentry{nic}|setentrycounter[]{page}\glsnumberformat}{105}
+\glossaryentry{NIC?\glossentry{nic}|setentrycounter[]{page}\glsnumberformat}{105}
+\glossaryentry{NIC?\glossentry{nic}|setentrycounter[]{page}\glsnumberformat}{105}
+\glossaryentry{NIC?\glossentry{nic}|setentrycounter[]{page}\glsnumberformat}{105}
+\glossaryentry{NIC?\glossentry{nic}|setentrycounter[]{page}\glsnumberformat}{105}
+\glossaryentry{NIC?\glossentry{nic}|setentrycounter[]{page}\glsnumberformat}{105}
 \glossaryentry{LISP?\glossentry{lisp}|setentrycounter[]{page}\glsnumberformat}{117}
 \glossaryentry{LISP?\glossentry{lisp}|setentrycounter[]{page}\glsnumberformat}{117}
 \glossaryentry{LISP?\glossentry{lisp}|setentrycounter[]{page}\glsnumberformat}{117}

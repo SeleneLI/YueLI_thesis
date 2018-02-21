@@ -96,18 +96,18 @@
 \contentsline {section}{\numberline {7.2}Basic LISP implementation on ns-3}{98}{section.7.2}
 \contentsline {section}{\numberline {7.3} LISP mobility extensions on ns-3}{98}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Implementation of LISP Data Plane}{99}{subsection.7.3.1}
-\contentsline {subsubsection}{LISP Database and cache}{99}{section*.76}
+\contentsline {subsubsection}{LISP Database and cache}{100}{section*.76}
 \contentsline {subsubsection}{Implementation of LISP encapsulation and decapsulation}{100}{section*.77}
-\contentsline {subsection}{\numberline {7.3.2}Implementation of LISP Control Plane}{101}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.2}Implementation of LISP Control Plane}{102}{subsection.7.3.2}
 \contentsline {subsubsection}{Implementation of xTR functionalities}{102}{section*.79}
-\contentsline {subsubsection}{Implementation of Map server and Map resolver}{103}{section*.81}
-\contentsline {subsection}{\numberline {7.3.3}Modification of DHCP client to support LISP-MN}{103}{subsection.7.3.3}
-\contentsline {subsection}{\numberline {7.3.4}Integration of TUN net interface card}{104}{subsection.7.3.4}
-\contentsline {section}{\numberline {7.4}Theoretical analysis}{105}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}LISP-MN in non-LISP-Site}{106}{subsection.7.4.1}
+\contentsline {subsubsection}{Implementation of MR and MS}{103}{section*.81}
+\contentsline {subsection}{\numberline {7.3.3}Modification of DHCP client to support LISP-MN}{104}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Integration of TUN net interface card}{105}{subsection.7.3.4}
+\contentsline {section}{\numberline {7.4}Theoretical analysis}{106}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}LISP-MN in non-LISP-Site}{107}{subsection.7.4.1}
 \contentsline {subsection}{\numberline {7.4.2}MN in LISP-Site}{109}{subsection.7.4.2}
-\contentsline {subsection}{\numberline {7.4.3}LISP-MN in LISP-Site}{111}{subsection.7.4.3}
-\contentsline {section}{\numberline {7.5}Summary}{114}{section.7.5}
+\contentsline {subsection}{\numberline {7.4.3}LISP-MN in LISP-Site}{112}{subsection.7.4.3}
+\contentsline {section}{\numberline {7.5}Summary}{115}{section.7.5}
 \contentsline {chapter}{\numberline {8}Conclusion and Future Work}{117}{chapter.8}
 \contentsline {section}{\numberline {8.1}Major Contributions}{117}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Evaluation of LISP Mapping System}{117}{subsection.8.1.1}

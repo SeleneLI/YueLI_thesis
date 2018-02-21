@@ -7,6 +7,8 @@ Warning--entry type for "alexa" isn't style-file defined
 --line 601 of file References/references.bib
 Warning--entry type for "alexatop" isn't style-file defined
 --line 606 of file References/references.bib
+Warning--entry type for "LISPmob" isn't style-file defined
+--line 681 of file References/references.bib
 Warning--to sort, need author or key in bgptableanalysis
 Warning--to sort, need author or key in LISP_ODLSummit_2014
 Warning--to sort, need author or key in lispbetaarchi
@@ -35,8 +37,8 @@ Warning--to sort, need author or key in alexatop
 Warning--to sort, need author or key in bgpv4
 Warning--to sort, need author or key in bgpv6
 Warning--to sort, need author or key in ns3
-Warning--to sort, need author or key in lionel
 Warning--to sort, need author or key in wireshark
+Warning--to sort, need author or key in LISPmob
 Warning--can't use both volume and number fields in balakrishnan2004layered
 Warning--empty journal in bhatti2012identifier
 Warning--empty journal in rfc7834
@@ -56,7 +58,7 @@ Warning--empty year in rosenbergsip
 Warning--empty year in rfc7835
 You've used 119 entries,
             2118 wiz_defined-function locations,
-            1036 strings with 21401 characters,
+            1037 strings with 21477 characters,
 and the built_in function-call counts, 35451 in all, are:
 = -- 3403
 > -- 1774
@@ -95,4 +97,4 @@ warning$ -- 47
 while$ -- 269
 width$ -- 122
 write$ -- 1164
-(There were 49 warnings)
+(There were 50 warnings)
