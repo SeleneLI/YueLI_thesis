@@ -2,7 +2,7 @@
 %****************************** Second Chapter *********************************
 %*******************************************************************************
 
-\chapter{Related Work}
+\chapter{Related work}
 \label{cha:related_work}
 
 % **************************** Define Graphics Path **************************
@@ -11,7 +11,7 @@
 \else
     \graphicspath{{Chapter3/Pics/Vector/}{Chapter3/}}
 \fi
-This chapter first presents the current LISP status, including: two available LISP platforms, the only LISP monitor, two LISP manual management tools, and some private and some open-source implementations. It also introduces the latest research achievements, from the LISP network evolution, the LISP mapping system assessment, the evaluation of interworking between LISP-site and legacy Internet, to the analysis of LISP mobility. Besides presenting the existing works, we also find some limitations in each aspect. Thus, we point out the shortcomings in the LISP monitor and implementations, as well as in the various aspects of LISP performance evaluation. We tackled most of these issues and present them in this dissertation. % The work that we conducted to complete LISP studies are presented in the following chapters, i.e., from Chapter.~\ref{cha:mds_evaluation} to Chapter.~\ref{cha:ns-3}. 
+This chapter first presents the current LISP status, including: two available LISP platforms, the only LISP monitor, two LISP manual management tools, and some private and some open-source implementations. It also introduces the latest research achievements, from the LISP network evolution, the LISP mapping system assessment, the evaluation of interworking between LISP-site and legacy Internet, to the analysis of LISP mobility. Besides presenting the existing works, we also find some limitations in each aspect. Thus, we point out the shortcomings in the LISP monitor and implementations, as well as in the various aspects of LISP performance evaluation. We tackle most of these issues and present them in this dissertation. % The work that we conducted to complete LISP studies are presented in the following chapters, i.e., from Chapter.~\ref{cha:mds_evaluation} to Chapter.~\ref{cha:ns-3}. 
 Further, we list some other LISP challenges and issues at the end of this chapter. Although these fields are not considered in this dissertation, they are also important to help researchers improve LISP technology.
 
 
@@ -244,7 +244,7 @@ The only evaluation of PxTR used for the interworking between LISP and legacy In
 % \yue{Support for Network-based User Mobility with LISP}
 To support IP mobility, the conventional LISP could be adopted. The first mobility-compatible LISP extension is LISP-MN~\cite{mn00}\cite{natal2013lisp}. LISP-MN is an end-host based IP mobility protocol which requires updating the software of the mobile terminal. In other words, the end-host that uses LISP-MN can be regarded as a small LISP-site.
 
-The main drawbacks of LISP-MN are the double encapsulation that may happen and the need to modify software in end-host. Double encapsulation increases mapping latency, overhead and MTU issues. The modification at end-host hinders the deployment of LISP-MN. To overcome these drawbacks, lots of research efforts have been made by the LISP community.
+The main drawbacks of LISP-MN are the double encapsulation that may happen and the need to modify software in end-host. Double encapsulation increases mapping latency, overhead and MTU issues. The modification at end-host hinders the deployment of LISP-MN. To overcome these drawbacks, many research efforts have been made by the LISP community.
 
 The performance of LISP-MN is investigated by M. Menth and et al.~\cite{menth2010improvements}. The authors illustrate the performance degradation due to double encapsulation and the triangle route problem under some conditions. They also propose mechanisms such as location-aware LISP mobility node, local mapping systems to improve the performance of LISP-MN. A simple model that help analyze the handoff procedure in IP mobility is proposed by~\cite{phoomikiattisak2016control}. Besides LISP-MN, the proposed model can be also used for the handoff analysis for other IP mobility protocols such as MIPv6. 
 
@@ -282,11 +282,11 @@ the list of routers between xTRs is hidden to the traceroute sender. It can only
 This issue brings inconveniences to our experiment, which will be discussed in Chapter~\ref{cha:pxtr}. In that experiment, we can only find how many hops there are between our \acrshort{vp}s and the PxTRs, but are not able to specify the exact routing paths.
 
 %-< SUB SECTION >--------------------------------------------------------------------
-\section{Other LISP Related studies}
+\section{Other LISP related studies}
 \label{subsec:other_studies}
 LISP is relatively young and there are many other aspects needed to be taken into consideration, such as: the caching, the LISP security, the MTU issue, and so on. As they are important and necessary to LISP, we list them here. However, since they are not related to this dissertation, they will not be discussed in the following chapters.
 
-\subsection{LISP Cache performance}
+\subsection{LISP cache performance}
 \label{subsec:cache}
 
 %\subsubsection{Current studies}

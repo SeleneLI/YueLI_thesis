@@ -2,7 +2,7 @@
 %****************************** Sixth Chapter *********************************
 %*******************************************************************************
 
-\chapter{Analysis of LISP mobility and ns-3 Implementation}
+\chapter{Analysis of LISP mobility and ns-3 implementation}
 \label{cha:ns-3}
 
 % **************************** Define Graphics Path **************************
@@ -67,7 +67,7 @@ This work currently only supports IPv4 at time of this writing. The IPv6 support
 %    \item Implementation of LISP encapsulation and decapsulation
 %\end{itemize}
 The implementation of LISP Data Plane mainly consists of \emph{LispOverIp} and \emph{MapTable} classes and their subclasses, along side with some auxiliary classes (e.g. \emph{LispHeader}). In addition, to support LISP functionalites, \emph{Ipv4L3Protcol}'s packet transmission, reception, forward and delivery procedures are accordingly adapted.
-\subsubsection{LISP Database and cache}
+\subsubsection{LISP database and cache}
 \label{subsec:database-impl}
 Each LISP-speaking node should maintain one LISP database and LISP cache for LISP encapsulation and decapsulation operations. In our implementation, both LISP database and cache are modellized by the same class~\emph{MapTable} that stores and manages EID-RLOC mapping information. This class is in charge of CRUD (Create, Retrieve, Update, Delete) operations for mappings. Each mapping entry in LISP database and cache is an instance of \emph{MapEntry}. For the sake of flexibility, the class \emph{MapTable} is an abstract base class. The CRUD methods are implemented in its subclass \emph{BasicMapTable}. The mapping search operation is a straightforward iteration over LISP database or cache. It is possible that for other users to provide their own LISP database and cache implementation, for example, which uses more sophisticated mapping entry look up algorithms, by extending \emph{MapTable} class.
 
@@ -357,14 +357,6 @@ Since the routers support LISP, i.e., are the xTRs in this scenario, it can help
 \label{sec:ns3_analysis_lispmn_xTR}
 The third scenario is the LISP-MN in LISP-Site, where both the border routers and the mobile node MN are implemented LISP. In our simulation, the LISP-MN with permanent EID is initially placed in the subnet of $xTR_1$, with the IP address allocated by $xTR_1$ as its LRLOC. The remote CN is still same to the first two scenarios, which is a conventional stationary end host, residing in a LISP-Site of $xTR_3$. The LISP-MN communicates with CN by double encapsulation. The first encapsulation is on itself and the second time is on the $xTR_1$. When the LISP packets arrive at $xTR_3$, it needs decapsulate them twice. % If we use Wi-Fi, the LISP-MN moves into subnet of $xTR_2$ after the simulation begins. At a certain moment during the moving, the Wi-Fi link between LISP-MN and $xTR_1$ is down, whereas LISP-MN detects $xTR_2$, which triggers the handover procedure. If we use wired link, after a certain time that the simulation begins, we turn down the wired link between LISP-MN and $xTR_1$, while set the link between LISP-MN and $xTR_2$ up at the same time. 
 LISP-MN first has a DHCP procedure with $xTR_2$, so that the later assigns it a new IP address as its LRLOC. Then LISP-MN needs register its new mapping information to the mapping system, and also send a $SMR$ to all the xTRs of CNs in its cache (actually is to the xTR of CN, i.e., $xTR_3$ in our scenario). Once $xTR_3$ receives a $SMR$, it sends an SMR-invoked Map-Request to the mapping system, so to obtain the new mapping information of LISP-MN. Actually, this mapping information that $xTR_3$ obtains is the $<EID_MN, LRLOC>$ for LISP-MN. It is not able to send the packets to LISP-MN at the moment, since it does not know how to route the packets to the $LRLOC$ of LISP-MN, i.e., it lacks the mapping information for $LRLOC$. Only until $xTR_3$ receives the packets from CN to LISP-MN, which triggers the Map-Request procedure to the mapping system, can $xTR_3$ know the mapping information of LRLOC $<LRLOC, RLOC_{xTR_2}>$. Now $xTR_3$ gets the double mapping information for LISP-MN. Afterwards, LISP-MN re-establishes  the communication with CN node by passing $xTR_2$. The detailed traffic schema related to the handover procedure is illustrated in Fig.~\ref{Mobility_double_encap_schema_SMR_askMDS_simplify}.
-%-< FIGURE >--------------------------------------------------------------------
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Pics/Mobility_double_encap_schema_SMR_askMDS_simplify}
-	\caption{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)}
-	\label{Mobility_double_encap_schema_SMR_askMDS_simplify}
-\end{figure}
-%-< END FIGURE >--------------------------------------------------------------------
 
 Since this scenario is double encapsulation that $xTR_3$ needs to know both inner and outer mapping information of LISP-MN for sending the packets. The overall handover delay $D_{overall}$ in this scenario is larger than the first two scenarios. The $D_{overall}$ is:
 \begin{eqnarray}
@@ -383,6 +375,14 @@ The numerical result is as follows:
 &=& 23D_{Link} + 2D_{Resolve}   \nonumber \\
 &=& 423 ms \nonumber
 \end{eqnarray}
+%-< FIGURE >--------------------------------------------------------------------
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Pics/Mobility_double_encap_schema_SMR_askMDS_simplify}
+	\caption{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)}
+	\label{Mobility_double_encap_schema_SMR_askMDS_simplify}
+\end{figure}
+%-< END FIGURE >--------------------------------------------------------------------
 
 The double encapsulation causes not only longer handover delay but also more handover overhead related to LISP Control Plane. Two messages are needed for the registration, 3 signalings are used to obtain the $LRLOC$ of $EID$. Besides, two more Map-Requests (one from $xTR_3$ to the mapping system, one from the mapping system to $xTR_2$) and one more Map-Reply are required to get the $RLOC$ of $LRLOC$. Thus, the handover overhead is 9, which has 3 messages more than the first scenario.
 %\begin{eqnarray}
@@ -451,7 +451,7 @@ Since both the MN and the border routers support LISP, the advantages of this sc
 \end{inparaenum}
 However, same to the shortcomings for the first scenario, each LISP-MN needs a permanent IP address as its EID, which increases the burden of IPv4 address allocation. Each permanent EID and its LRLOC needs register to the mapping system, which also increases the size of LISP mapping table. Besides, the numerical analysis indicates that the overall handover delay is much longer than the other two scenarios due to its double encapsulation.
 
-All the aforementioned analyzed results are presented in Fig.~\ref{handover_delay_overhead_bar}. The left hand figure is the numerical overall handover delay related to LISP and right hand figure is about the handover overhead.
+Depend on our designed topology, all the aforementioned analyzed results are presented in Fig.~\ref{handover_delay_overhead_bar}. The left hand figure is the numerical overall handover delay related to LISP and right hand figure is about the handover overhead.
 \begin{figure}[!t]
 	\begin{minipage}[c]{.5\linewidth}
 		\begin{center}

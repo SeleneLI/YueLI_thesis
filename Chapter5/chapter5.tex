@@ -19,7 +19,7 @@ Currently, a unique LISP monitoring system called LISPmon~\cite{lispmon} supervi
 We used a one-month long set of traces produced by LISP-Views to evaluate its performance and accuracy, including comparing it with LISPmon. We show that LISP-Views is more accurate than LISPmon since it monitors all the \acrshort{mds} elements in parallel. In addition, thanks to its detailed reporting, LISP-Views allows to assess high level metrics of LISP deployments such as reliability, latency, or configuration
 issues.
 
-In the remainder, Sec.~\ref{sec:lispviews_archi_motivation} introduces LISPmon and why we propose a new LISP monitor. Sec.~\ref{sec:lispviews_archi_description} describes our proposed LISP monitoring architecture in details. Sec.~\ref{sec:lispviews_evaluation} validates LISP-Views by comparing with LISPmon. Sec.~\ref{sec:lispviews_results} provides the snapshot of what kind of further analysis can be done with our proposal. Finally, Sec.~\ref{sec:lispviews_conclusion} concludes the chapter. 
+In the remainder, Sec.~\ref{sec:lispviews_archi_motivation} introduces LISPmon and explains why we propose a new LISP monitor. Sec.~\ref{sec:lispviews_archi_description} describes our proposed LISP monitoring architecture in details. Sec.~\ref{sec:lispviews_evaluation} validates LISP-Views by comparing with LISPmon. Sec.~\ref{sec:lispviews_results} provides the snapshot of what kind of further analysis can be done with our proposal. Finally, Sec.~\ref{sec:lispviews_conclusion} concludes the chapter. 
 %-< ABSTRACT >--------------------------------------------------------------------
 
 
@@ -48,7 +48,7 @@ In the remainder, Sec.~\ref{sec:lispviews_archi_motivation} introduces LISPmon a
 
 
 %-< SECTION >--------------------------------------------------------------------
-\section{Proposed Monitoring Architecture}
+\section{Proposed monitoring architecture}
 \label{sec:lispviews_archi}
 
 %-< SUBSECTION >--------------------------------------------------------------------
@@ -142,7 +142,7 @@ The IP address that \emph{Sonar} uses to query to MRs is selected  either from t
 
 
 %-< SECTION >--------------------------------------------------------------------
-\section{LISP-Views Validation}
+\section{LISP-Views validation}
 \label{sec:lispviews_evaluation}
 
 
@@ -204,7 +204,7 @@ The lack of stability can be better appreciated in the bottom sub-figure of Fig.
 
 We compared the number of received LISP Map-Replies within a whole day between LISPmon and LISP-Views over 30 days. Shown in Fig.~\ref{lispmon_comparison_day}, as LISPmon only publishes one record each day, the number (represented by points) is exactly identical to those in Fig.~\ref{lispmon_comparison}. LISP-Views, however, provides a combination of LISP Map-Replies not only from all MRs but also from 12 monitoring rounds within one day. We observe that our monitor architecture receives more LISP Map-Replies than LISPmon in all days with a large difference. 83.3\% of the time LISP-Views receives more than 20 LISP Map-Replies. The maximum number of LISP Map-Replies that our proposed monitor obtains is 55, while the maximum value for LISPmon is 43. Differently from the upper sub-figure of Fig.~\ref{lispmon_comparison}, where LISP-Views occasionally receives nearly 0 LISP Map-Replies, the total number within a whole day is always more than 40, which illustrates that the MRs may not work normally in some rounds but they are able to recover fast. 
 
-Since LISP-Views repeats querying simultaneously to every MRs, it is able to report on the status of each MR at anytime. It provides more complete mapping information compared to LISPmon and is also able to highlight sporadic issues with MRs.
+Since LISP-Views repeats querying simultaneously to every MRs, it is able to report on the status of each MR at any time. It provides more complete mapping information compared to LISPmon and is also able to highlight sporadic issues with MRs.
 
 
 %-< SECTION >--------------------------------------------------------------------
@@ -281,7 +281,7 @@ RTT of Negative Map-Replies is generally lower, we can receive more of them. Thi
 phenomenon may be very biased by the VP location. % Thus, deploying LISP-Views on multiple VPs to get more reliability information is a paramount future work. 
 In addition, Fig.~\ref{median_rtt_per_map-resolver} presents that the number of
 Map-Replies returning from the MRs  located in Europe and US is indeed higher
-than the number of Negative Map-Replies, which is expected. But both Asian MRs
+than the number of Negative Map-Replies, which is expected. However, both Asian MRs
 return LISP Map-Replies faster than Negative Map-Replies. The reason of this 
 observation is unclear and requires further exploration.
 
@@ -301,7 +301,7 @@ complete mapping (LISP Map-Reply) than the Negative Map-Reply.  We observe that
 the Negative Map-Reply is indeed faster than the LISP Map-Reply until the RTT
 reaches 1000 ms, then the behavior changes, i.e., the LISP Map-Reply
 sometimes becomes faster. What's more, we find that 67.03\% of RTTs within
-500 ms, 70.33\% less than 1000 ms and 90.88\% don't exceed 1500 ms
+500 ms, 70.33\% less than 1000 ms and 90.88\% do not exceed 1500 ms
 for overall Map-Replies. In details, for the Negative Map-Reply, we found that
 67.8\% of RTT values within 500 ms, for the LISP Map-Reply that 59.7\% of
 RTT values less than 500 ms. This figure almost presents a bi-modal

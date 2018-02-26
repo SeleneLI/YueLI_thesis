@@ -20,7 +20,6 @@ Warning--to sort, need author or key in OpenDaylight
 Warning--to sort, need author or key in lispbeta
 Warning--to sort, need author or key in lisplab
 Warning--to sort, need author or key in OpenLISP
-Warning--to sort, need author or key in AVMFritzBox
 Warning--to sort, need author or key in freeBSD
 Warning--to sort, need author or key in lip6lisp
 Warning--to sort, need author or key in pylisp
@@ -56,45 +55,45 @@ Warning--empty institution in nordmark2009shim6
 Warning--empty institution in perkins2011mobility
 Warning--empty year in rosenbergsip
 Warning--empty year in rfc7835
-You've used 119 entries,
+You've used 118 entries,
             2118 wiz_defined-function locations,
-            1037 strings with 21477 characters,
-and the built_in function-call counts, 35451 in all, are:
-= -- 3403
-> -- 1774
+            1033 strings with 21311 characters,
+and the built_in function-call counts, 35294 in all, are:
+= -- 3389
+> -- 1773
 < -- 33
-+ -- 725
++ -- 724
 - -- 596
-* -- 2249
-:= -- 5704
-add.period$ -- 345
-call.type$ -- 119
-change.case$ -- 662
+* -- 2244
+:= -- 5688
+add.period$ -- 343
+call.type$ -- 118
+change.case$ -- 659
 chr.to.int$ -- 0
-cite$ -- 166
-duplicate$ -- 1357
-empty$ -- 2838
+cite$ -- 164
+duplicate$ -- 1350
+empty$ -- 2815
 format.name$ -- 596
-if$ -- 7534
+if$ -- 7495
 int.to.chr$ -- 0
-int.to.str$ -- 119
+int.to.str$ -- 118
 missing$ -- 69
-newline$ -- 567
+newline$ -- 563
 num.names$ -- 178
-pop$ -- 957
+pop$ -- 946
 preamble$ -- 1
-purify$ -- 533
+purify$ -- 531
 quote$ -- 0
-skip$ -- 1006
+skip$ -- 1000
 stack$ -- 0
-substring$ -- 1499
-swap$ -- 310
+substring$ -- 1494
+swap$ -- 309
 text.length$ -- 33
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 476
-warning$ -- 47
+type$ -- 472
+warning$ -- 46
 while$ -- 269
-width$ -- 122
-write$ -- 1164
-(There were 50 warnings)
+width$ -- 121
+write$ -- 1157
+(There were 49 warnings)

@@ -16,11 +16,6 @@ As3943 ipv4 route propagation.
 As3943 ipv6 route propagation.
 \newblock \url{http://bgp.he.net/AS3943\#_graph6}.
 
-\bibitem{AVMFritzBox}
-{AVM's FRITZ!Box Configuration and Operation}.
-\newblock See
-  \url{https://en.avm.de/fileadmin/user_upload/EN/Manuals/FRITZ_Box/Manual_FRITZ_Box_3490-en.pdf}.
-
 \bibitem{bgptableanalysis}
 {BGP Routing Table Analysis Reports}.
 \newblock See \url{https://bgp.potaroo.net/}.
