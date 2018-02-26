@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  21 FEB 2018 19:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  26 FEB 2018 01:32
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1762,34 +1762,29 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 
 
 ]
-(./Acknowledgement/acknowledgement.tex [2
+(./Abstract/abstract.tex [2
 
-]) (./Abstract/abstract.tex [3
+]) [3
 
-]
-[4
-
-]) [5
-
-] [6
+] [4
 
 ] (./thesis.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
- [7
+ [5
 
-] [8] [9])
+] [6] [7])
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
- [10] (./thesis.lof [11
+ [8]
+(./thesis.lof [9
 
-] [12])
+] [10])
 \tf@lof=\write9
 \openout9 = `thesis.lof'.
 
- [13]
-[14
+ [11] [12
 
 ] (./thesis.lot)
 \tf@lot=\write10
@@ -1797,7 +1792,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 
 
 No file thesis.acr.
-[15] [16
+[13] [14
 
 ] (./Chapter1/chapter1.tex
 Chapter 1.
@@ -1841,10 +1836,7 @@ File: Chapter2/Pics/LISP_ALT.eps Graphic file (type eps)
 
 <Chapter2/Pics/LISP_ALT.eps> [10]
 File: Chapter2/Pics/LISP_DDT.eps Graphic file (type eps)
- <Chapter2/Pics/LISP_DDT.eps>
-Underfull \vbox (badness 3029) has occurred while \output is active []
-
- [11]
+ <Chapter2/Pics/LISP_DDT.eps> [11]
 File: Chapter2/Pics/LISP_D_C_planes.eps Graphic file (type eps)
 
 <Chapter2/Pics/LISP_D_C_planes.eps> [12]
@@ -1894,27 +1886,23 @@ File: Chapter3/Pics/LISP_Beta_Network_Topology.eps Graphic file (type eps)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-[29] [30]
-Underfull \vbox (badness 3049) has occurred while \output is active []
+[29] [30] [31] [32] [33] [34]
+Underfull \vbox (badness 2126) has occurred while \output is active []
 
- [31]
-[32] [33]
-Underfull \vbox (badness 7186) has occurred while \output is active []
+ [35]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-[35] [36] [37]
+ [36]
+[37]
 File: Chapter3/Pics/LISP_traceroute.eps Graphic file (type eps)
  <Chapter3/Pics/LISP_traceroute.eps> [38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
-Underfull \vbox (badness 4608) has occurred while \output is active []
-
- [40]
-[41]) (./Chapter4/chapter4.tex [42]
+[40] [41]) (./Chapter4/chapter4.tex [42]
 Chapter 4.
 
-Underfull \vbox (badness 2662) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43
 
@@ -1922,18 +1910,21 @@ Underfull \vbox (badness 2662) has occurred while \output is active []
 Underfull \vbox (badness 7631) has occurred while \output is active []
 
  [44]
-Underfull \vbox (badness 1062) has occurred while \output is active []
-
- [45]
+[45]
 File: Chapter4/Pics/Percentage_stability_5VP_time.eps Graphic file (type eps)
-
-<Chapter4/Pics/Percentage_stability_5VP_time.eps>
+ <Chapter4/Pics/Percentage_stability_5VP_time.eps>
 File: Chapter4/Pics/cdf_instability_occur.eps Graphic file (type eps)
 
 <Chapter4/Pics/cdf_instability_occur.eps>
 File: Chapter4/Pics/cdf_stability_duration.eps Graphic file (type eps)
 
-<Chapter4/Pics/cdf_stability_duration.eps> [46] [47] [48]
+<Chapter4/Pics/cdf_stability_duration.eps> [46]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
 File: Chapter4/Pics/cdf_dissmilarity.eps Graphic file (type eps)
 
 <Chapter4/Pics/cdf_dissmilarity.eps> [49] [50]
@@ -1942,19 +1933,19 @@ File: Chapter4/Pics/Percentage_consistency_5VP_MR.eps Graphic file (type eps)
 <Chapter4/Pics/Percentage_consistency_5VP_MR.eps> [51]
 File: Chapter4/Pics/cdf_incons_occur_MR.eps Graphic file (type eps)
 
-<Chapter4/Pics/cdf_incons_occur_MR.eps> [52]
+<Chapter4/Pics/cdf_incons_occur_MR.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
 Underfull \vbox (badness 1571) has occurred while \output is active []
 
  [53]
 File: Chapter4/Pics/Percentage_consistency_13MR_VP.eps Graphic file (type eps)
 
-<Chapter4/Pics/Percentage_consistency_13MR_VP.eps>
+<Chapter4/Pics/Percentage_consistency_13MR_VP.eps> [54]
 File: Chapter4/Pics/cdf_incons_occur_VP.eps Graphic file (type eps)
 
 <Chapter4/Pics/cdf_incons_occur_VP.eps>
-Underfull \vbox (badness 1210) has occurred while \output is active []
-
- [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
@@ -1962,43 +1953,49 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 5.
-[59]
-Underfull \vbox (badness 6775) has occurred while \output is active []
 
- [60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [59]
+[60]
 File: Chapter5/Pics/LISP-Views_Arch.eps Graphic file (type eps)
-
-<Chapter5/Pics/LISP-Views_Arch.eps> [61] [62]
+ <Chapter5/Pics/LISP-Views_Arch.eps> [61] [62]
 File: Chapter5/Pics/LISPmon_comparison_all.eps Graphic file (type eps)
 
 <Chapter5/Pics/LISPmon_comparison_all.eps>
-Overfull \hbox (43.74878pt too wide) in paragraph at lines 174--179
+Overfull \hbox (43.74878pt too wide) in paragraph at lines 180--185
  [][][] 
  []
 
-[63] [64]
+[63]
 File: Chapter5/Pics/LISPmon_comparison_day.eps Graphic file (type eps)
  <Chapter5/Pics/LISPmon_comparison_day.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
+ [64]
 File: Chapter5/Pics/Reliability.eps Graphic file (type eps)
 
-<Chapter5/Pics/Reliability.eps> [66]
-File: Chapter5/Pics/median_of_RTT.eps Graphic file (type eps)
- <Chapter5/Pics/median_of_RTT.eps> [67]
-File: Chapter5/Pics/ecdf_of_RTT.eps Graphic file (type eps)
-
-<Chapter5/Pics/ecdf_of_RTT.eps>
+<Chapter5/Pics/Reliability.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68]
-File: Chapter5/Pics/CDF_of_RLOCs.eps Graphic file (type eps)
+ [65]
+File: Chapter5/Pics/median_of_RTT.eps Graphic file (type eps)
 
-<Chapter5/Pics/CDF_of_RLOCs.eps>
+<Chapter5/Pics/median_of_RTT.eps> [66]
+File: Chapter5/Pics/ecdf_of_RTT.eps Graphic file (type eps)
+ <Chapter5/Pics/ecdf_of_RTT.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67]
+[68]
+File: Chapter5/Pics/CDF_of_RLOCs.eps Graphic file (type eps)
+ <Chapter5/Pics/CDF_of_RLOCs.eps>
 File: Chapter5/Pics/Fig_on_LISPViews.eps Graphic file (type eps)
- <Chapter5/Pics/Fig_on_LISPViews.eps> [69]
-Underfull \vbox (badness 5667) has occurred while \output is active []
+ <Chapter5/Pics/Fig_on_LISPViews.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [70])
 (./Chapter6/chapter6.tex [71] [72
@@ -2006,16 +2003,16 @@ Underfull \vbox (badness 5667) has occurred while \output is active []
 ]
 Chapter 6.
 File: Chapter6/Pics/Atlas_probes_deployment.eps Graphic file (type eps)
-<Chapter6/Pics/Atlas_probes_deployment.eps> [73] [74] [75] [76]
+<Chapter6/Pics/Atlas_probes_deployment.eps> [73] [74] [75]
 File: Chapter6/Pics/Probes_loc.eps Graphic file (type eps)
 
-<Chapter6/Pics/Probes_loc.eps>
-Underfull \vbox (badness 4492) has occurred while \output is active []
+<Chapter6/Pics/Probes_loc.eps> [76] [77]
+Underfull \vbox (badness 1596) has occurred while \output is active []
 
- [77]
-[78]
+ [78]
 File: Chapter6/Pics/2015/CDF_RTT_avg.eps Graphic file (type eps)
- <Chapter6/Pics/2015/CDF_RTT_avg.eps> [79]
+
+<Chapter6/Pics/2015/CDF_RTT_avg.eps> [79]
 File: Chapter6/Pics/2015/4_probes_to_alexa_top50_proportion_mean_bar_geo.eps Gr
 aphic file (type eps)
 
@@ -2024,6 +2021,9 @@ File: Chapter6/Pics/2015/4_probes_to_alexa_top50_proportion_median_bar_geo.eps
 Graphic file (type eps)
 
 <Chapter6/Pics/2015/4_probes_to_alexa_top50_proportion_median_bar_geo.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [80]
 File: Chapter6/Pics/2015/4_probes_to_alexa_top50_diff_rtt_LISP-Lab_FranceIX_mea
 n_geo.eps Graphic file (type eps)
 
@@ -2033,16 +2033,21 @@ File: Chapter6/Pics/2015/4_probes_to_alexa_top50_diff_rtt_LISP-Lab_FranceIX_med
 ian_geo.eps Graphic file (type eps)
 
 <Chapter6/Pics/2015/4_probes_to_alexa_top50_diff_rtt_LISP-Lab_FranceIX_median_g
-eo.eps> [80] [81]
-File: Chapter6/Pics/v4/CDF_avg(RTT)_median_4_20.eps Graphic file (type eps)
- <Chapter6/Pics/v4/CDF_avg(RTT)_median_4_20.eps>
+eo.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [82]
+ [81]
+File: Chapter6/Pics/v4/CDF_avg(RTT)_median_4_20.eps Graphic file (type eps)
+
+<Chapter6/Pics/v4/CDF_avg(RTT)_median_4_20.eps> [82]
 File: Chapter6/Pics/v4/Smallest_median_avg(RTT)_proporation.eps Graphic file (t
 ype eps)
 
-<Chapter6/Pics/v4/Smallest_median_avg(RTT)_proporation.eps> [83] [84]
+<Chapter6/Pics/v4/Smallest_median_avg(RTT)_proporation.eps>
+Underfull \vbox (badness 7722) has occurred while \output is active []
+
+ [83]
+[84]
 File: Chapter6/Pics/v4/Relative_median_avg(RTT)_LISP-Lab-FranceIX_changed_60.ep
 s Graphic file (type eps)
 
@@ -2051,12 +2056,12 @@ File: Chapter6/Pics/v4/Relative_median_avg(RTT)_LIP6-FranceIX_changed_60.eps Gr
 aphic file (type eps)
 
 <Chapter6/Pics/v4/Relative_median_avg(RTT)_LIP6-FranceIX_changed_60.eps>
-[85] [86]
-File: Chapter6/Pics/v6/CDF_avg(RTT)_median_4_20.eps Graphic file (type eps)
- <Chapter6/Pics/v6/CDF_avg(RTT)_median_4_20.eps>
-Underfull \vbox (badness 1303) has occurred while \output is active []
+Underfull \vbox (badness 1983) has occurred while \output is active []
 
- [87]
+ [85]
+[86]
+File: Chapter6/Pics/v6/CDF_avg(RTT)_median_4_20.eps Graphic file (type eps)
+ <Chapter6/Pics/v6/CDF_avg(RTT)_median_4_20.eps> [87]
 File: Chapter6/Pics/v6/Relative_median_avg(RTT)_LISP-Lab-FranceIX.eps Graphic f
 ile (type eps)
 
@@ -2065,11 +2070,15 @@ File: Chapter6/Pics/v6/Relative_median_avg(RTT)_LIP6-FranceIX_changed_60.eps Gr
 aphic file (type eps)
 
 <Chapter6/Pics/v6/Relative_median_avg(RTT)_LIP6-FranceIX_changed_60.eps>
-[88]
+Underfull \vbox (badness 1521) has occurred while \output is active []
+
+ [88]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [89]
-[90]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [90]
 File: Chapter6/Pics/v4/Relative_hops_num_LISP-Lab-FranceIX_hist_changed_60.eps 
 Graphic file (type eps)
 
@@ -2077,7 +2086,10 @@ Graphic file (type eps)
 File: Chapter6/Pics/v4/Relative_hops_num_LIP6-FranceIX_hist_changed_60.eps Grap
 hic file (type eps)
 
-<Chapter6/Pics/v4/Relative_hops_num_LIP6-FranceIX_hist_changed_60.eps> [91]
+<Chapter6/Pics/v4/Relative_hops_num_LIP6-FranceIX_hist_changed_60.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [91]
 File: Chapter6/Pics/v4/Relative_hops_num_LISP-Lab-FranceIX_changed_60.eps Graph
 ic file (type eps)
 
@@ -2086,9 +2098,6 @@ File: Chapter6/Pics/v4/Relative_hops_num_LIP6-FranceIX_changed_60.eps Graphic f
 ile (type eps)
 
 <Chapter6/Pics/v4/Relative_hops_num_LIP6-FranceIX_changed_60.eps>
-Underfull \vbox (badness 1983) has occurred while \output is active []
-
- [92]
 File: Chapter6/Pics/v6/Relative_hops_num_LISP-Lab-FranceIX_hist_changed_60.eps 
 Graphic file (type eps)
 
@@ -2097,6 +2106,9 @@ File: Chapter6/Pics/v6/Relative_hops_num_LIP6-FranceIX_hist_changed_60.eps Grap
 hic file (type eps)
 
 <Chapter6/Pics/v6/Relative_hops_num_LIP6-FranceIX_hist_changed_60.eps>
+Underfull \vbox (badness 1521) has occurred while \output is active []
+
+ [92]
 Underfull \vbox (badness 3612) has occurred while \output is active []
 
  [93]
@@ -2107,11 +2119,8 @@ ic file (type eps)
 File: Chapter6/Pics/v6/Relative_hops_num_LIP6-FranceIX_changed_60.eps Graphic f
 ile (type eps)
 
-<Chapter6/Pics/v6/Relative_hops_num_LIP6-FranceIX_changed_60.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [94])
-(./Chapter7/chapter7.tex [95] [96
+<Chapter6/Pics/v6/Relative_hops_num_LIP6-FranceIX_changed_60.eps>)
+(./Chapter7/chapter7.tex [94] [95] [96
 
 ]
 Chapter 7.
@@ -2121,84 +2130,78 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [97]
 [98]
 File: Chapter7/Pics/LISP_NS3_UML.eps Graphic file (type eps)
- <Chapter7/Pics/LISP_NS3_UML.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [99]
+ <Chapter7/Pics/LISP_NS3_UML.eps> [99]
 File: Chapter7/Pics/ns3_lisp_data_plane.eps Graphic file (type eps)
 
 <Chapter7/Pics/ns3_lisp_data_plane.eps> [100]
-Underfull \vbox (badness 4084) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [101]
 File: Chapter7/Pics/xTR_state_transition.eps Graphic file (type eps)
 
-<Chapter7/Pics/xTR_state_transition.eps> [102] [103] [104]
+<Chapter7/Pics/xTR_state_transition.eps> [102] [103]
 File: Chapter7/Pics/DHCP_transition_state.eps Graphic file (type eps)
 
-<Chapter7/Pics/DHCP_transition_state.eps> [105] [106]
+<Chapter7/Pics/DHCP_transition_state.eps> [104] [105]
 File: Chapter7/Pics/LISP_mobility_archi.eps Graphic file (type eps)
 
-<Chapter7/Pics/LISP_mobility_archi.eps> [107]
+<Chapter7/Pics/LISP_mobility_archi.eps> [106]
 File: Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps Graphic file (type 
 eps)
 
-<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [108]
+<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [107]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [108]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [109]
-Underfull \vbox (badness 1460) has occurred while \output is active []
-
- [110]
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
 
 <Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps>
+Underfull \vbox (badness 5077) has occurred while \output is active []
+
+ [110]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [111]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [112]
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps Graphi
 c file (type eps)
 
-<Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps> [113]
+<Chapter7/Pics/Mobility_double_encap_schema_SMR_askMDS_simplify.eps> [112]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [114]
+ [113]
 File: Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps Graphi
 c file (type eps)
 
 <Chapter7/Pics/Mobility_double_encap_schema_SMR_askxTR_simplify.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [115]
+ [114]
 Underfull \vbox (badness 5893) has occurred while \output is active []
 
- [116]
+ [115]
 File: Chapter7/Pics/LISP_handover_delay_Bar.eps Graphic file (type eps)
 
 <Chapter7/Pics/LISP_handover_delay_Bar.eps>
 File: Chapter7/Pics/LISP_handover_overhead_Bar.eps Graphic file (type eps)
 
 <Chapter7/Pics/LISP_handover_overhead_Bar.eps>
-Overfull \hbox (2.28003pt too wide) in paragraph at lines 451--461
+Overfull \hbox (2.28003pt too wide) in paragraph at lines 450--460
 [][]$[]$ $[]$ 
  []
 
-) (./Chapter8/chapter8.tex [117] [118
-
-]
+) (./Chapter8/chapter8.tex [116]
 Chapter 8.
-[119] [120]
+[117
+
+] [118]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [121]
-Underfull \vbox (badness 2941) has occurred while \output is active []
-
- [122])
-[123] [124
+ [119]
+[120]) [121] [122
 
 ] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 29--32
@@ -2213,7 +2216,7 @@ Underfull \hbox (badness 5908) in paragraph at lines 59--62
 [][]$https : //$[][][][][][]$events.$[][]
  []
 
-[125
+[123
 
 ]
 Underfull \hbox (badness 5359) in paragraph at lines 121--125
@@ -2227,35 +2230,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--125
 [][][][]$mobile-[]marketing/$[][][][][][]$mobile-[]marketing-[]analytics/$[][]
  []
 
-[126] [127] [128] [129] [130] [131]) (./Publications/ListofPublication.tex
-[132]) (./Appendix1/appendix1.tex [133
+[124] [125] [126] [127] [128] [129]) (./Publications/ListofPublication.tex
+[130]) (./Appendix1/appendix1.tex [131
 
 
-] [134
+] [132
 
 ]
 Appendix A.
-[135])
+[133])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
- [136]
+ [134]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: DE851F3203CE1334C1BCEC3A86245852;23873.
+(rerunfilecheck)             Checksum: 0511B85A3589E99C93F5E3BF371CF0BF;23612.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31697 strings out of 493015
- 554729 string characters out of 6133377
- 736526 words of memory out of 5000000
- 34689 multiletter control sequences out of 15000+600000
+ 31689 strings out of 493015
+ 554550 string characters out of 6133377
+ 736124 words of memory out of 5000000
+ 34685 multiletter control sequences out of 15000+600000
  54546 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,92p,10383b,13477s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (152 pages, 914576 bytes).
+Output written on thesis.dvi (148 pages, 898280 bytes).

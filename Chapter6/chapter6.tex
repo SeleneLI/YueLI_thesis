@@ -14,7 +14,7 @@
 %-< ABSTRACT >--------------------------------------------------------------------
 % LISP is currently under standardization in IETF and is deployed in the wild at the same time, thanks to two testbeds: the LISP Beta Network and the LISP-Lab project. 
 Thanks to two testbeds: the LISP Beta Network and the LISP-Lab project, LISP is gradually deployed in the wild. The interworking mechanism is proposed to ensure the communication between LISP-speaking sites and legacy Internet. % The performance of LISP interworking with legacy Internet is of paramount importance to promote the adoption of LISP in future Internet. 
-Although LISP has been evaluated in terms of scalability~\cite{lispCCR}, stability~\cite{yue2016stability}, LISP evolution~\cite{li2017lisp}, and delay resolving the bindings between EIDs and RLOCs (\cite{lispCCR}, \cite{coras2014performance}), LISP is never analyzed from the aspect of the interworking with the legacy Internet at large scale. This dissertation fills this gap by providing a latency evaluation and routing path measurement about LISP interworking mechanism. The work is based on two experiments (one is conducted in 2015, the other one is in 2016) by using RIPE Atlas, which is the largest existing Internet measurement infrastructure for both IPv4 and IPv6. % Experimental results show that LISP introduces additional latency, especially for close destinations, but negligible for intercontinental long-distance destinations. The additional latency highly depends on the position of the new network element being in charge of the communication between LISP-sites and the legacy Internet. % Although LISP introduces some stretch, its performance is generally stable and its latency is not very high compared to natively forwarding without using LISP.
+Although LISP has been evaluated in terms of scalability~\cite{lispCCR}, stability~\cite{yue2016stability}, LISP evolution~\cite{li2017lisp}, and delay resolving the bindings between EIDs and RLOCs (\cite{lispCCR}, \cite{coras2014performance}), LISP was never analyzed from the aspect of the interworking with the legacy Internet at large scale. This dissertation fills this gap by providing a latency evaluation and routing path measurement about LISP interworking mechanism. The work is based on two experiments (one is conducted in 2015, the other one is in 2016) by using RIPE Atlas, which is the largest existing Internet measurement infrastructure for both IPv4 and IPv6. % Experimental results show that LISP introduces additional latency, especially for close destinations, but negligible for intercontinental long-distance destinations. The additional latency highly depends on the position of the new network element being in charge of the communication between LISP-sites and the legacy Internet. % Although LISP introduces some stretch, its performance is generally stable and its latency is not very high compared to natively forwarding without using LISP.
 
 The experimental results confirm that the use of proxies to connect LISP and non-LISP sites introduce negative effects, which are important for the nearby destinations but can be ignored for the intercontinental long-distance destinations. It also shows that the selection of the proxy location is very important, since having them close either to the sources or to the destinations can decrease a lot the negative stretch. Although LISP introduces some overhead, the performance is quite stable for IPv4. However, the same conclusion does not hold for IPv6. We also observed that the interworking performance of the LISP-Lab platform is more reliable than the LISP Beta Network.
 
@@ -28,7 +28,7 @@ In the remainder, Sec.~\ref{subsec:atlas} and Sec.~\ref{subsec:alexa} introduce 
 %We conduct two experiments: one spans 6 hours in 2015 and the other one lasts 15 days in 2016. The results confirm that the use of proxies to connect LISP and non-LISP sites introduce negative effects, which are important for the nearby destinations but can be ignored for the intercontinental long-distance destinations. It also shows that the selection of the proxy location is very important, since having them close either to the sources or to the destinations can decrease a lot the negative stretch. Although LISP introduces some overhead, the performance is quite stable for IPv4. However, the same conclusion does not hold for IPv6. Furthermore, we observe that the interworking performance of LISP-Lab is more reliable than LISP Beta Network.
 
 %-< SECTION >--------------------------------------------------------------------
-\section{Related Work}
+\section{Experiment resources}
 \subsection{RIPE Atlas}
 \label{subsec:atlas}
 % \begin{itemize}[noitemsep,topsep=0pt]
@@ -77,7 +77,7 @@ As the purpose of our experiment campaign is to fully obtain the knowledge about
 	\centering
 	\caption{Different configurations of probes in 2015}
 	\label{Probes_config_2015}{
-	\resizebox{0.7\textwidth}{!}{%
+	\resizebox{0.6\textwidth}{!}{%
 		\begin{tabular}{@{}c|c|c|c@{}}
 			\hline\hline
 			Name & using LISP & network type  & probe/anchor   \\ \hline
@@ -90,7 +90,7 @@ As the purpose of our experiment campaign is to fully obtain the knowledge about
 \end{table}
 %-< END TABLE >-----------------------------------------------------------------
 
-The mPlane probe (\#13842) resides in an academic network and uses the conventional routing. It allows to compare with non-LISP academic networks. While the rmd probe (\#16958) resides in industrial network and also uses the conventional routing. It is chosen in order to compare with non-LISP and non-academic networks. Further, a stable probe with much more measurement capacity is necessary as a reference with all other probes. To this end, the only anchor in Paris named FranceIX (\#6118) is selected. It resides in an IXP (Internet exchange point) network and does not use LISP. Thus, in this experiment, there are in total 4 probes used as sources to conduct the active measurements. Tab.~\ref{Probes_config_2015} summarizes the different probes.
+The mPlane probe (\#13842) resides in an academic network and uses the conventional routing. It allows to compare with non-LISP academic networks. While the rmd probe (\#16958) resides in industrial network and also uses the conventional routing. It is chosen in order to compare with non-LISP and non-academic networks. Further, a stable probe with much more measurement capacity is necessary as a reference with all other probes. To this end, the only anchor in Paris named FranceIX (\#6118) is selected. It resides in an IXP (Internet Exchange Point) network and does not use LISP. Thus, in this experiment, there are in total 4 probes used as sources to conduct the active measurements. Tab.~\ref{Probes_config_2015} summarizes the different probes.
 
 We are now in a setup phase, where we start with a reduced number of destinations so to first setup the automated experiments. In this first experiment, the selected 4 probes ping to the top 50 Alexa sites every 10 minutes during 6 hours. However, from the experiment we find that there are 14 websites resolve to the same IPv4 addresses. We filtered them, so the assessment presented in Sec.~\ref{sec:pxtr_ping_v4_2015} are analyzed by the results of 36 top popular websites. With the collected dataset, we evaluate the various performances leveraged on \acrshort{rtt}.
 
@@ -125,7 +125,7 @@ The new experiment still leverages on the LISP-Lab probe and RIPE Atlas infrastr
 	\centering
 	\caption{Location of LISP Beta Network PxTRs in 2016}
 	\label{PxTR_loc_2016}{
-	\resizebox{0.5\textwidth}{!}{%
+	\resizebox{0.35\textwidth}{!}{%
 		\begin{tabular}{@{}c|c|c@{}}
 			\hline\hline
 			Number & Continent  & Country   \\ \hline
@@ -147,7 +147,7 @@ The newly added LIP6 probe ($\#2403$) also connects to academic network behind b
 	\centering
 	\caption{Configuration of two LISP probes in 2016}
 	\label{LISP_config}{
-	\resizebox{0.7\textwidth}{!}{%
+	\resizebox{0.6\textwidth}{!}{%
 		\begin{tabular}{@{}c|c|c@{}}
 			\hline\hline
 			Probe & PETR in Lyon  & PITR   \\ \hline
@@ -161,15 +161,15 @@ The newly added LIP6 probe ($\#2403$) also connects to academic network behind b
 \end{table}
 %-< END TABLE >-----------------------------------------------------------------
 
-Since the rmd probe is not configured with an IPv6 address, we replace it by the Gandi probe (\#3141), which also resides in industrial network and also uses the conventional routing for both IPv4 and IPv6. % Although it is a little further to the LISP-Lab probe than the rmd probe, it is the nearest probe having both IPv4 and IPv6. 
-As the mPlane probe and the FranceIX anchor satisfy all the requirements of this experiment, we still keep them as the references. The locations of all the probes and anchor are shown in Fig.~\ref{Probes_location_2016}. Tab.~\ref{Probes_config_2016} shows the different configurations of probes.
+Since the rmd probe is not configured with an IPv6 address, we replace it by the Gandi probe (\#3141), which also resides in an industrial network and also uses the conventional routing for both IPv4 and IPv6. % Although it is a little further to the LISP-Lab probe than the rmd probe, it is the nearest probe having both IPv4 and IPv6. 
+As the mPlane probe and the FranceIX anchor satisfy all the requirements of this experiment, we still keep them as the reference. The locations of all the probes and anchor are shown in Fig.~\ref{Probes_location_2016}. Tab.~\ref{Probes_config_2016} shows the different configurations of probes.
 
 %-< TABLE >-----------------------------------------------------------------
 \begin{table}[!tb]
 	\centering
 	\caption{Different configurations of probes in 2016}
 	\label{Probes_config_2016}{
-	\resizebox{0.7\textwidth}{!}{%
+	\resizebox{0.6\textwidth}{!}{%
 		\begin{tabular}{@{}c|c|c|c@{}}
 			\hline\hline
 			Name & using LISP & network type  & probe/anchor   \\ \hline
@@ -191,7 +191,7 @@ What we care about is the delay performance and the path of LISP interworking wi
 	\item 5 probes traceroute to 122 destinations during 15 days with an interval of 60 minutes (IPv6).
 \end{itemize}
 
-From the experiment, we find that some websites actually resolve to the same IPv4 (34 over 500) or IPv6 (47 over 122) addresses. Further, for some destinations, at least one probe (mainly the LIP6 probe) does not get any responses of \emph{ping} during the whole experiment (42 for IPv4 and 10 for IPv6). In this paper, we filtered the anycast destinations and only consider the destinations having the responses. Thus, after cleaning the traces for the above reasons, all the results of \emph{ping} measurements used in the following subsections consists on the 5 chosen probes as the experimental sources and 424 IPv4 and 65 IPv6 responding addresses as the destinations. Differently from the ping measurements, for the \emph{traceroute} dataset, all the successful \emph{traceroute} responses from each probe are kept for further analysis.
+From the experiment, we find that some websites actually resolve to the same IPv4 (34 over 500) or IPv6 (47 over 122) addresses. Further, for some destinations, at least one probe (mainly the LIP6 probe) does not get any responses of \emph{ping} during the whole experiment (42 for IPv4 and 10 for IPv6). In this paper, we filtered the anycast destinations and only consider responding destinations. Thus, after cleaning the traces for the above reasons, all the results of \emph{ping} measurements used in the following subsections consists on the 5 chosen probes as the experimental sources and 424 IPv4 and 65 IPv6 responding addresses as the destinations. Differently from the ping measurements, for the \emph{traceroute} dataset, all the successful \emph{traceroute} responses from each probe are kept for further analysis.
 
 
  %-< SECTION >--------------------------------------------------------------------
@@ -206,7 +206,7 @@ From the experiment, we find that some websites actually resolve to the same IPv
 %-< FIGURE >--------------------------------------------------------------------
     \begin{figure}[!t]
      	\centering
-     	\includegraphics[width=0.7\textwidth]{Pics/2015/CDF_RTT_avg.eps}
+     	\includegraphics[width=0.6\textwidth]{Pics/2015/CDF_RTT_avg.eps}
      	\caption{CDF of average RTT between different probes from Dataset 2015}
      	\label{CDF_RTT_avg_v4_2015}
      \end{figure}
@@ -258,24 +258,24 @@ We define a metric called \emph{Relative RTT (rRTT)} for each destination as:
     \label{rRTT_ll_2015}
     rRTT_{LL}(d)=RTT_{LL}(d) - RTT_{F}(d)
 \end{equation}
-where $d$ is the destination, subscriptions $LL$ and $F$ respectively refers to LISP-Lab and FranceIX. The results clustered by continents are shown in Fig.~\ref{4_probes_to_alexa_top50_diff_rtt_LISP-Lab_FranceIX_geo}. The left one shows the mean RTT, while the right one shows the median RTT. For the European and American targets, LISP-Lab is a little slower than FranceIX but with a stable behavior. On the contrary, for half of the Asian destinations, LISP-Lab is significantly faster than FranceIX. It shows that the network connection between LISP-Lab PxTR and Asian destinations has better performance. Comparing the two subfigures, there is no negative values at all in Europe and America area in left figure, but there are some in the right one. It indicates that LISP-Lab RTTs to these destinations are very unstable and the variance is quite high.
+where $d$ is the destination, subscriptions $LL$ and $F$ respectively refers to LISP-Lab and FranceIX. The results clustered by continents are shown in Fig.~\ref{4_probes_to_alexa_top50_diff_rtt_LISP-Lab_FranceIX_geo}. The left hand one shows the mean RTT, while the right hand one shows the median RTT. For the European and American targets, LISP-Lab is a little slower than FranceIX but with a stable behavior. On the contrary, for half of the Asian destinations, LISP-Lab is significantly faster than FranceIX. It shows that the network connection between LISP-Lab PxTR and Asian destinations has better performance. Comparing the two subfigures, there is no negative values at all in Europe and America area in left hand figure, but there are some in the right hand one. It indicates that LISP-Lab RTTs to these destinations are very unstable and the variance is quite high.
 
 %-< TABLE >-----------------------------------------------------------------
 \begin{table}[!tb]
 	\centering
 	\caption{Correlation coefficient to FranceIX from Dataset 2015}
 	\label{correlation_v4_2015}{
-		% \resizebox{0.8\textwidth}{!}{%
+		\resizebox{0.6\textwidth}{!}{%
 		\begin{tabular}{@{}c|c|c|c|c@{}}
 			\hline\hline
 			& LISP-Lab  & mPlane &  rmd &  FranceIX \\ \hline
 			Coefficient & 0.9733  & 0.9784 &  0.9646  &  1.0     	\\  \hline\hline                 
 		\end{tabular}
-	}
+	}}
 \end{table}
 %-< END TABLE >-----------------------------------------------------------------
 
-Since FranceIX shows the best RTT most of the time, we tried to evaluate the correlation between the RTT of the other 3 probes and FranceIX. The purpose is to see if RTT measurements are correlated or totally independent. We compute the correlation coefficient for every RTT series of different probes to all destinations with the ones of FranceIX. Tab.\ref{correlation_v4_2015} shows the results. The absolute value of coefficient is 1 in the case of a perfect direct linear relationship, whereas 0 in the case of no correlation at all. The correlation coefficient of LISP-Lab is 0.9733 (> 0.8), showing a very high correlation with FranceIX, like the other 2 probes. This means that the LISP while certainly introducing some overhead, has quite stable performance that does not deviate from normal network operation.
+Since FranceIX shows the best RTT most of the time, we tried to evaluate the correlation between the RTT of the other 3 probes and FranceIX. The purpose is to see if RTT measurements are correlated or totally independent. We compute the correlation coefficient for every RTT series of different probes to all destinations with the ones of FranceIX. Tab.\ref{correlation_v4_2015} shows the results. The absolute value of coefficient is 1 in the case of a perfect direct linear relationship, whereas 0 in the case of no correlation at all. The correlation coefficient of LISP-Lab is 0.9733 (> 0.8), showing a very high correlation with FranceIX, like the other 2 probes. This means that LISP while certainly introducing some overhead, has quite stable performance that does not deviate from normal network operation.
 
 
 %-< SECTION >--------------------------------------------------------------------
@@ -295,14 +295,14 @@ Since FranceIX shows the best RTT most of the time, we tried to evaluate the cor
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Pics/v4/CDF_avg(RTT)_median_4_20.eps}
+	\includegraphics[width=0.6\textwidth]{Pics/v4/CDF_avg(RTT)_median_4_20.eps}
 	\caption{CDF of median RTT between different probes (IPv4) from Dataset 2016}
 	\label{CDF_of_median_RTT_between_different_probes_v4_2016}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
 
 Fig.~\ref{CDF_of_median_RTT_between_different_probes_v4_2016} shows the CDF of the average RTT toward the selected IPv4 destinations for Dataset 2016. % Because of the experimental targets are worldwide, the range of observed RTTs varies from few milliseconds (ms) to nearly 500ms. 
-As an anchor, the FranceIX probe outperforms other probes in most cases, hence, showing the smallest RTT. With RTT range $[0, 200]$ms, the latency from two LISP probes, LISP-Lab and LIP6, are respectively 25ms and 60ms slower than three other non-LISP probes. Such a RTT performance degradation is caused by the path length stretch introduced by the the proxy technology (as mentioned in Sec.~\ref{sec:background_lisp}), since every packet sent between LISP probe and the legacy Internet has to pass through a PxTR. Although both LISP probes introduce the stretch, LIP6 probe is even 50ms slower than the LISP-Lab probe. Given that both LISP-Lab and LIP6 probes pass through the same PETR located in Lyon, the performance degradation of LIP6 probe is due to the PITR selection for traffic from legacy Internet to LISP network. The PITRs used by LIP6 probe belongs to the LISP Beta Network and there are in total 6 available PITRs. The PITRs announce the LISP Beta prefixes using BGP to their AS peers. So different destinations select different PITRs depending on where the destinations are and lead to the reply goes through the different paths. For example, an Asian destination normally uses the PITR in Japan instead of selecting one in Europe. As listed in Tab.~\ref{PxTR_loc_2016}, LISP Beta Network has not deployed PITR in France, while the PITR of LISP-Lab is in the same country to its probe. Thus, the return path that we measured for the LIP6 probe is longer than for the LISP-Lab probe. As a result, the closer the destination is located to the probes, the bigger the difference of RTT between the two LISP probes.
+As an anchor, the FranceIX probe outperforms other probes in most cases, hence, showing the smallest RTT. With RTT range $[0, 200]$ms, the latency from two LISP probes, LISP-Lab and LIP6, are respectively 25ms and 60ms slower than three other non-LISP probes. Such a RTT performance degradation is caused by the path length stretch introduced by the the proxy technology (as mentioned in Sec.~\ref{sec:background_lisp}), since every packet sent between LISP probe and the legacy Internet has to pass through a PxTR. Although both LISP probes introduce the stretch, LIP6 probe is even 50ms slower than the LISP-Lab probe. Given that both LISP-Lab and LIP6 probes pass through the same PETR located in Lyon, the performance degradation of LIP6 probe is due to the PITR selection for traffic from legacy Internet to LISP network. The PITRs used by LIP6 probe belongs to the LISP Beta Network and there are in total 6 available PITRs. The PITRs announce the LISP Beta prefixes to their AS peers using BGP. So different destinations select different PITRs depending on where the destinations are and lead to the reply goes through the different paths. For example, an Asian destination normally uses the PITR in Japan instead of selecting one in Europe. As listed in Tab.~\ref{PxTR_loc_2016}, LISP Beta Network has not deployed PITR in France, while the PITR of LISP-Lab is in the same country to its probe. Thus, the return path that we measured for the LIP6 probe is longer than for the LISP-Lab probe. As a result, the closer the destination is located to the probes, the bigger the difference of RTT between the two LISP probes.
 
 Within RTT range $[200, 500]$ms, all probes except LIP6 show basically the same RTT. It indicates that LISP-Lab has a better performance in scenario of long distance network connection. The reason is that stretch delay from LISP-Lab probe to PxTR (in Lyon) can be ignored. Fig.~\ref{CDF_of_median_RTT_between_different_probes_v4_2016} confirms this situation, within RTT range $[200, 500]$ ms, the difference between two probes becomes significantly smaller than that in range $[0, 200]$ ms.
 
@@ -311,7 +311,7 @@ The aforementioned results and analysis coincide with the Fig.~\ref{CDF_RTT_avg_
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Pics/v4/Smallest_median_avg(RTT)_proporation.eps}
+	\includegraphics[width=0.6\textwidth]{Pics/v4/Smallest_median_avg(RTT)_proporation.eps}
 	\caption{Smallest median RTT grouped by continent (IPv4) from Dataset 2016.}
 	\label{Smallest_median_avg(RTT)_proporation_v4_2016}
 \end{figure}
@@ -327,19 +327,19 @@ The experimental destinations are located in 4 continents, i.e., Europe, North A
  	\centering
  	\caption{Correlation coefficient to FranceIX (IPv4) from Dataset 2016}
  	\label{correlation_v4_2016}{
- 	% \resizebox{0.8\textwidth}{!}{%
+ 	\resizebox{0.7\textwidth}{!}{%
  		\begin{tabular}{@{}c|c|c|c|c|c@{}}
  			\hline\hline
  			 & Gandi  & mPlane  & LISP-Lab  & LIP6 &  FranceIX \\ \hline
  			Coefficient &  0.9647 & 0.9707 & 0.9766 & 0.8547 & 1.0     	\\  \hline\hline                 
  		\end{tabular}
- 	}
+ 	}}
  \end{table}
  %-< END TABLE >-----------------------------------------------------------------
 
 % As FranceIX is an enhanced probe with more measurement capacities presenting more stable performance, 
 Also for the Dataset 2016, we try to evaluate the correlation in term of RTT between FranceIX and other probes. % The purpose is to see if RTT measurements are correlated or totally independent. The method is to compute the correlation coefficient for every RTT series of different probes to all destinations with the ones of FranceIX. The results are shown in Tab.~\ref{correlation_v4_2016}. The absolute value of coefficient is 1 in the case of a perfect direct linear relationship, whereas 0 in the case of no correlation at all, i.e., independent. 
-The correlation coefficient of LISP-Lab is 0.9766 (> 0.8), showing a very high correlation level with FranceIX, and even higher than the correlation coefficient of all the other probes. The correlation coefficient of LIP6 is 0.8547, shows a high correlation with FranceIX as well. Both of 2 LISP probes having a high correlation with FranceIX means that while certainly introducing some overheads, LISP has quite stable performance that does not deviate from normal network operation. Such result has two sides for the performance of LISP. Good because LISP shows the stability. Bad because it means that LISP experiences the same performance and failures like the normal Internet.
+The correlation coefficient of LISP-Lab is 0.9766 (> 0.8), showing a very high correlation level with FranceIX, and even higher than the correlation coefficient of all the other probes. The correlation coefficient of LIP6 is 0.8547, shows a high correlation with FranceIX as well. Both LISP probes having a high correlation with FranceIX means that while certainly introducing some overheads, LISP has quite stable performance that does not deviate from normal network operation. Such result has two sides for the performance of LISP. Good because LISP shows stability. Bad because it means that LISP experiences the same performance and failures like the normal Internet.
 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
@@ -375,13 +375,13 @@ where $d$ is the destination, subscriptions $LL$, $L6$ and $F$ respectively refe
 	\centering
 	\caption{Reliability of each probe (IPv4) from Dataset 2016}
 	\label{reliability_v4_2016}{
-	% \resizebox{0.8\textwidth}{!}{%
+	\resizebox{0.7\textwidth}{!}{%
 		\begin{tabular}{@{}c|c|c|c|c|c@{}}
 			\hline\hline
 			& Gandi  & mPlane  & LISP-Lab  & LIP6 &  FranceIX \\ \hline
 			Reliability (\%) &  99.66 & 99.65 & 99.43 & 77.78 & 99.62     	\\  \hline\hline                 
 		\end{tabular}
-	}
+	}}
 \end{table}
 %-< END TABLE >-----------------------------------------------------------------
 
@@ -404,7 +404,7 @@ Since the experiment in 2015 just lasts 6 hours and shows no periodicity. Thus, 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Pics/v6/CDF_avg(RTT)_median_4_20.eps}
+	\includegraphics[width=0.6\textwidth]{Pics/v6/CDF_avg(RTT)_median_4_20.eps}
 	\caption{CDF of median RTT between different probes (IPv6) from Dataset 2016}
 	\label{CDF_of_median_RTT_between_different_probes_v6_2016}
 \end{figure}
@@ -414,7 +414,7 @@ In this section, LISP interworking performance of IPv6 is evaluated with the sam
 
 The CDF of average RTTs to the selected IPv6 destinations is shown on Fig.~\ref{CDF_of_median_RTT_between_different_probes_v6_2016}, which is generally similar to the Fig.~\ref{CDF_of_median_RTT_between_different_probes_v4_2016} for IPv4. The FranceIX anchor still shows the best performance with the smallest delay for almost all the destinations. The RTT of LISP-Lab probe is always higher than the other non-LISP probes with RTT range $[0, 30]ms$ and the difference is around $7 ms$. The RTTs are almost the same when the values are more than $30 ms$. Hence, the performance of IPv6 is similar to IPv4 that the stretch introduced by PxTR is significant when the range of RTT value is small, but can be ignored when the range of RTT value becomes large. 
 
-However, in the experiment for IPv6 targets, the traffic produced by LISP-Lab probe are natively forward to the destinations instead of going to PETR at Lyon first, thus the RTT difference compared to the other non-LISP probes becomes smaller compared to those for IPv4. But the latency still exists, caused by the returning traffic that still need to pass through a PITR. Since the latency decreases, it is easier to be ignored for IPv6. That is the reason why the stretch can be ignored when RTT values are higher than just $30ms$ for IPv6 while it needs to be higher than $200ms$ for IPv4. While the LIP6 probe is always the slowest compared to the other probes, the difference is even $160ms$ to the non-LISP probes and $150ms$ to the LISP-Lab probe. The reason having such a big difference is not only caused by the bidirectional traffic should pass through the PxTR, but also caused by the route between xTR of LIP6 probe to the PETR at Lyon, which has no tunnel indicating the used routing path longer than the case of having an MPLS tunnel. Similar to IPv4, when RTT values are higher than $250ms$, the difference decreases to $40ms$ in most cases.
+However, in the experiment for IPv6 targets, the traffic produced by LISP-Lab probe are natively forwarded to the destinations instead of going to the PETR in Lyon first, thus the RTT difference compared to the other non-LISP probes becomes smaller compared to those for IPv4. But the latency still exists, caused by the returning traffic that still need to pass through a PITR. Since the latency decreases, it is easier to be ignored for IPv6. That is the reason why the stretch can be ignored when RTT values are higher than just $30ms$ for IPv6 while it needs to be higher than $200ms$ for IPv4. While the LIP6 probe is always the slowest compared to the other probes, the difference is even $160ms$ to the non-LISP probes and $150ms$ to the LISP-Lab probe. The reason having such a big difference is not only caused by the bidirectional traffic should pass through the PxTR, but also caused by the route between xTR of LIP6 probe to the PETR at Lyon, which has no tunnel indicating the used routing path longer than the case of having an MPLS tunnel. Similar to IPv4, when RTT values are higher than $250ms$, the difference decreases to $40ms$ in most cases.
 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
@@ -433,7 +433,7 @@ However, in the experiment for IPv6 targets, the traffic produced by LISP-Lab pr
 	\label{Relative_median_avg(RTT)_v6_2016}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
-To further explore why two LISP probes are slower, especially to understand why the LIP6 probe has an extremely large latency compared to the others, we leverage on the Relative RTT between both LISP probes and the FranceIX anchor grouped in four continents as mentioned in Sec.~\ref{sec:pxtr_ping_v4_2016}. In the left figure of Fig.~\ref{Relative_median_avg(RTT)_v6_2016}, which is the relative RTT between LISP-Lab and FranceIX, all the values are positive, indicating that the LISP-Lab probe is slower than the FranceIX anchor no matter to which destination. For the European and North American targets, the relative RTTs are mostly between 5ms and 17ms. But the average relative RTTs decrease to 7ms for the 25 Asian destinations. It proves the fact that for the nearby transmission, the delay introduced by PxTR is significant, while it effects less for the intercontinental transmission to the Asian destinations. What's more, the absolute relative RTT values for IPv6 are smaller than those for IPv4, because there is only returning traffic passing PITR for IPv6 so to reduce the latency. Thus, natively forwarding is faster than using PETR, but not so much. From the Fig.~\ref{Relative_median_avg(RTT)_v6_2016} we also know that there are 32 destinations located in Europe and just 7 in North America. It explains the reason why the curve of CDF for LISP-Lab sharply increases when the RTT is in the small range and mixes with the other non-LISP lines so quickly. It is because a half of destinations are not far away from the probes. Thus, a high percentage (around $50\%$) consists of small RTT values and these RTTs of LISP-Lab have a consistent delay compared to the other non-LISP probes. The mix part is mainly produced by the Asian destinations, to which the RTT values are large and the delay introduced by only the PITR of LISP-Lab is less significant. The relative RTT for the LIP6 probe is shown on the right of Fig.~\ref{Relative_median_avg(RTT)_v6_2016}. The relative RTTs are all positive and much higher, indicating that the LIP6 probe is always quite slower than the FranceIX anchor to whichever target. Especially for the European destinations, the values are around 170ms. But to the North American and Asian targets, the relative RTTs are obviously smaller. As mentioned in Sec.~\ref{sec:pxtr_meth_2016}, the outgoing packets from LIP6 probe still need to go to PETR first and especially the path between its xTR and PETR has no MPLS VPN tunnel. Besides, the main reason that the higher relative RTT values for IPv6 than IPv4 is caused by the LIP6 probe using the PITRs of LISP Beta Network. Different from IPv4~\cite{bgpv4}, there are only two ASes of IPv6 PITRs and both of them are located in US~\cite{bgpv6}. As a result, no matter from which destination, all the returning packets need to pass the PITRs in US first and then forward back to the LIP6 probe located in Paris. By consequence, the relative RTTs to the North American destinations are extremely smaller than those to European destinations. Although the traffic returning back from the Asian destinations also pass through the PITRs in US, the distance between the source and destination is quite far, thus it does not effect a lot to the relative RTTs for Asian targets.
+To further explore why two LISP probes are slower, especially to understand why the LIP6 probe has an extremely large latency compared to the others, we leverage on the Relative RTT between both LISP probes and the FranceIX anchor grouped in four continents as mentioned in Sec.~\ref{sec:pxtr_ping_v4_2016}. In the left figure of Fig.~\ref{Relative_median_avg(RTT)_v6_2016}, which is the relative RTT between LISP-Lab and FranceIX, all the values are positive, indicating that the LISP-Lab probe is slower than the FranceIX anchor no matter to which destination. For the European and North American targets, the relative RTTs are mostly between 5ms and 17ms. But the average relative RTTs decrease to 7ms for the 25 Asian destinations. It proves the fact that for the nearby transmission, the delay introduced by PxTR is significant, while it effects less for the intercontinental transmission to the Asian destinations. What's more, the absolute relative RTT values for IPv6 are smaller than those for IPv4, because there is only returning traffic passing PITR for IPv6 so to reduce the latency. Thus, natively forwarding is faster than using PETR, but not so much. From the Fig.~\ref{Relative_median_avg(RTT)_v6_2016} we also know that there are 32 destinations located in Europe and just 7 in North America. It explains the reason why the curve of CDF for LISP-Lab sharply increases when the RTT is in the small range and mixes with the other non-LISP lines so quickly. It is because a half of destinations are not far away from the probes. Thus, a high percentage (around $50\%$) consists of small RTT values and these RTTs of LISP-Lab have a consistent delay compared to the other non-LISP probes. The mix part is mainly produced by the Asian destinations, to which the RTT values are large and the delay introduced by only the PITR of LISP-Lab is less significant. The relative RTT for the LIP6 probe is shown on the right hand side of Fig.~\ref{Relative_median_avg(RTT)_v6_2016}. The relative RTTs are all positive and much higher, indicating that the LIP6 probe is always quite slower than the FranceIX anchor to whichever target. Especially for the European destinations, the values are around 170ms. But to the North American and Asian targets, the relative RTTs are obviously smaller. As mentioned in Sec.~\ref{sec:pxtr_meth_2016}, the outgoing packets from LIP6 probe still need to go to PETR first and especially the path between its xTR and PETR has no MPLS VPN tunnel. Besides, the main reason that the higher relative RTT values for IPv6 than IPv4 is caused by the LIP6 probe using the PITRs of LISP Beta Network. Different from IPv4~\cite{bgpv4}, there are only two ASes of IPv6 PITRs and both of them are located in US~\cite{bgpv6}. As a result, no matter from which destination, all the returning packets need to pass the PITRs in US first and then forward back to the LIP6 probe located in Paris. By consequence, the relative RTTs to the North American destinations are extremely smaller than those to European destinations. Although the traffic returning back from the Asian destinations also pass through the PITRs in US, the distance between the source and destination is quite far, thus it does not effect a lot to the relative RTTs for Asian targets.
 
 Further, in the $84.61\%$ of cases the FranceIX anchor has the smallest RTT in the IPv6 experiment. The LISP-Lab probe and LIP6 are not the fastest to any destinations, even to the Asian targets. It shows that the LISP performance of IPv6 is a little bit worse than IPv4. Since FranceIX has the smallest RTTs in most situations and as an anchor, its higher measurement capacities lead to its higher stability, we also use the correlation between the RTT of the other 4 probes and FranceIX to see if RTT measurements of each probe are as stable as FranceIX. As shown in Tab.~\ref{correlation_v6_2016}, the correlation coefficient of LISP-Lab is 0.967, which is almost one, indicating although LISP over IPv6 has higher latency than FranceIX caused by the introducing of PxTR, the performance is still stable. However, the correlation coefficient of LIP6 probe is just 0.3734. It is higher than 0.2, but much lower than 0.8, showing that the LIP6 probe is not totally independent from FranceIX, but it has quite low correlation. In fact, the IPv6 RTT series of LIP6 fluctuate a lot over time during the experiment and are not stable.
 
@@ -453,13 +453,13 @@ Further, in the $84.61\%$ of cases the FranceIX anchor has the smallest RTT in t
 	\centering
 	\caption{Correlation coefficient to FranceIX (IPv6) from Dataset 2016}
 	\label{correlation_v6_2016}{
-	% \resizebox{0.8\textwidth}{!}{%
+	\resizebox{0.7\textwidth}{!}{%
 		\begin{tabular}{@{}c|c|c|c|c|c@{}}
 			\hline\hline
 			& Gandi  & mPlane  & LISP-Lab  & LIP6 &  FranceIX \\ \hline
 			Coefficient &  0.9565 & 0.968 & 0.967 & 0.3734 & 1.0     	\\  \hline\hline                 
 		\end{tabular}
-	}
+	}}
 \end{table}
 %-< END TABLE >-----------------------------------------------------------------
 
@@ -469,13 +469,13 @@ Further, in the $84.61\%$ of cases the FranceIX anchor has the smallest RTT in t
 	\centering
 	\caption{Reliability of each probe (IPv6) from Dataset 2016}
 	\label{reliability_v6_2016}{
-	% \resizebox{0.8\textwidth}{!}{%
+	\resizebox{0.7\textwidth}{!}{%
 		\begin{tabular}{@{}c|c|c|c|c|c@{}}
 			\hline\hline
 			& Gandi  & mPlane  & LISP-Lab  & LIP6 &  FranceIX \\ \hline
 			Reliability (\%) &  98.43 & 99.97 & 99.98 & 82.24 & 99.99     	\\  \hline \hline                
 		\end{tabular}
-	}
+	}}
 \end{table}
 %-< END TABLE >-----------------------------------------------------------------
 
@@ -496,10 +496,10 @@ The periodicity check for IPv6 is also conducted, but no probes show that their 
 %%-------------------------------------------- <Subsection> --------------------------------------------
 %\subsection{Traceroute-related Results}
 %\label{sec:results_traceroute} 
-In this section, we use hops number obtained via traceroute from sources (i.e., probes) to destinations as the metric to further evaluate the LISP performance and also further investigate the reasons for the results presented in the ping-related experiments. Since the traceroute can only present the performance of the outgoing path, i.e., the routing path from probes to destinations, we focus on the use of the PETR and existence of a VPN between the xTR and the PETR.
+In this section, we use hops number obtained via traceroute from sources (i.e., probes) to destinations as the metric to further evaluate the LISP performance and also further investigate the reasons for the results presented in the ping-related experiments. Since the traceroute can only present the outgoing path, i.e., the routing path from probes to destinations, we focus on the use of the PETR and existence of a VPN between the xTR and the PETR.
 
 When the IPv4 targets are in Europe and America, there are very few cases that the hops number of LISP-Lab or LIP6 is the smallest. Precisely, there is $7.65\%$ of cases that LISP-Lab has the shortest path by hops number to the Asian destinations and $6.63\%$ of cases that LIP6 has the shortest path in the experiment. This result coincides to the percentage of the smallest RTT shown in Fig.~\ref{Smallest_median_avg(RTT)_proporation_v4_2016}.
-This consistent relationship between smallest RTT and shortest path exists as well for the IPv6 experiment, where there is no destination at all for which the hop number or the RTT are the smallest (for both LISP-Lab and LIP6 probes). For IPv6, it is FranceIX or Gandi that always has the shortest path to all the targets.
+This consistent relationship between smallest RTT and shortest path exists as well for the IPv6 experiment, where there is no destination at all for which the hop number or the RTT are the smallest (for both LISP-Lab and LIP6 probes). For IPv6, it is FranceIX or Gandi that always have the shortest path to all the targets.
 
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure}[!t]
@@ -603,6 +603,6 @@ Concerning the RTT performance of the LISP-Lab probe to Asian destinations, whic
 %     \item Encapsulating into LISP packets has only 4 hops more compared to the packets being natively forward by xTR.
 % \end{itemize}
 % In the last years, the Locator/ID Separation Protocol (LISP) has gained attention as promising solutions of several scaling issues the Internet is facing. Various inter-operable implementations, and deployment exist, however, to promote the growth of this relatively novel technology and improve its performance, it requires large scale measurements in real deployments. 
-In this chapter, we conduct a six-hours as well as a two-weeks real network measurements with LISP Beta Network, LISP-Lab platform and RIPE Atlas to provide a comprehensive performance evaluation of LISP interworkings. Concretely, we provide a first thorough sight on the performance of LISP PxTR. Since the results of experiment in 2016 coincides to the one in 2015 and are more comprehensive. Thus, we conclude this chapter by mainly presenting the observations of the Dataset 2016. 
+In this chapter, we conduct a six-hours as well as a two-weeks real network measurements with LISP Beta Network, LISP-Lab platform and RIPE Atlas to provide a comprehensive performance evaluation of LISP interworkings. Concretely, we provide a first thorough sight on the performance of LISP PxTR. Since the results of experiment in 2016 coincides to the one in 2015 and are more comprehensive. Thus, we conclude this chapter by presenting the observations of the Dataset 2016. 
 
 In our large scale measurement campaign, we take into account 5 probes as sources, 500 IPv4 and 122 IPv6 addresses as destinations, conducting ping and traceroute experiments. We find that the PxTR indeed introduces the negative effects for the destinations located in Europe and America, but the negative impact of PxTR can be ignored for the intercontinental long-distance transmission to Asia destinations. From the experiment, the results show that the position of PxTR is very important. The PxTR either near to the sources or the destinations can decrease the latency a lot. Generally speaking, LISP is stable compared with the reference anchor FranceIX, except for the IPv6 performance of LISP Beta Network. Further, the performance of LISP-Lab PxTR is more reliable than the one of LISP Beta Network, although the latter has 6 worldwide PxTRs used for IPv4 and 2 located in US used for IPv6, whereas LISP-Lab has only 1 PxTR for both IPv4 and IPv6. Compared to leveraging on PxTR, natively forwarding without using LISP decreases the latency, but not much. The traceroute experiment shows that introducing PxTR of course brings more hops, but if the PETR is well configured, so to always have peers to the destinations, there are only 4 more hops compared to the packets being natively forward by xTR without encapsulating with LISP.
