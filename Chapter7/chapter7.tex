@@ -75,18 +75,22 @@ In addition, \emph{MapTable} has a callback which allows to send the buffered pa
 due to LISP cache miss event, upon insertion of the required EID-RLOC mapping information into LISP cache.
 
 \subsubsection{Implementation of LISP encapsulation and decapsulation}
-To integrate LISP and LISP mobility into conventional Internet protocol stack, one key technical difficulty is that \emph{Ipv4L3Protcol} should be able to determine when passing a packet being processed to LISP-related procedure and how to retrieve the associated mapping information. To this end, a new class called \emph{LispOverIp} and its extended classes (refer to Fig.~\ref{LISP_UML}) are added to ns-3 \emph{internet} module. This class is in charge of checking whether it is necessary to do LISP-related operations (\emph{NeedEncapsulation()}, \emph{NeedDecapsulation()}), and encapsulating conventional IP packets (i.e., \emph{LispOutput()}) as well as decapsulating LISP packets(\emph{LispInput()}). It contains a smart pointer\footnote{A smart pointer is an abstract data type introduced in C++ that simulates a pointer while providing additional features, such as automatic memory management or bounds checking.} pointing to the LISP database and LISP cache (e.g.~\emph{MapTable}) on which executes mapping search.
-\begin{figure*}[!t]
-	\centering
-	\includegraphics[width=\textwidth]{Pics/ns3_lisp_data_plane.eps}
-	\caption{Illustration of LISP encapsulation and decapsulation} \yue{This figure is actually the process of MN, xTR1/2. I forgot to draw to the processing of xTR3 and CN. I will make a draft of the left part and send it to you as soon as possible.}
-	\label{fig:ns3-lisp-data-plane}
-\end{figure*}
+To integrate LISP and LISP mobility into conventional Internet protocol stack, one key technical difficulty is that \emph{Ipv4L3Protcol} should be able to determine when passing a packet being processed to LISP-related procedure and how to retrieve the associated mapping information. To this end, a new class called \emph{LispOverIp} and its extended classes 
+%(refer to Fig.~\ref{LISP_UML}) 
+are added to ns-3 \emph{internet} module. This class is in charge of checking whether it is necessary to do LISP-related operations (\emph{NeedEncapsulation()}, \emph{NeedDecapsulation()}), and encapsulating conventional IP packets (i.e., \emph{LispOutput()}) as well as decapsulating LISP packets(\emph{LispInput()}). It contains a smart pointer\footnote{A smart pointer is an abstract data type introduced in C++ that simulates a pointer while providing additional features, such as automatic memory management or bounds checking.} pointing to the LISP database and LISP cache (e.g.~\emph{MapTable}) on which executes mapping search.
+%\begin{figure*}[!t]
+%	\centering
+%	\includegraphics[width=\textwidth]{Pics/ns3_lisp_data_plane.eps}
+%	\caption{Illustration of LISP encapsulation and decapsulation} 
+%%	\yue{This figure is actually the process of MN, xTR1/2. I forgot to draw to the processing of xTR3 and CN. I will make a draft of the left part and send it to you as soon as possible.}
+%	\label{fig:ns3-lisp-data-plane}
+%\end{figure*}
 
 We take the double encapsulation example shown in Fig.~\ref{LISP_archi_2encap} to illustrate how LISP encapsulation and decapsulation is implemented. We assume that the required mapping entries during LISP Data Plane operations are already in LISP-MN cache. A LISP-speaking node behind the $xTR_1$ needs to communicate with CN behind the $xTR_3$. Thus, a packet should be encapsulated within the considered node and forwarded to the $xTR_1$. Subsequently, the packet is further encapsulated and forwarded. At the $xTR_3$, % xTR which serves the CN, 
-the received packet is decapsulated twice and forwarded. Thus, the example involving packet transmission, forwarding and reception is illustrated in Fig.~\ref{fig:ns3-lisp-data-plane}. 
+the received packet is decapsulated twice and forwarded. Thus, the example involves packet transmission, forwarding and reception 
+%is illustrated in Fig.~\ref{fig:ns3-lisp-data-plane}. 
 
-With the LISP-MN node, when upper layer calls the \emph{Send()} method of \emph{Ipv4L3Protcol}, a packet comes down to IP layer. The \emph{Send()} method is adapted so that it first verifies whether the \emph{LispOverIp} object is present. If yes, some checks are then conducted to determine that this packet should be processed by \emph{LispOutput()} (to encapsulate the packets) or by conventional packet transmission routine. For example, if both source and destination IP address of this packet belong to the same network, the LISP-related process (e.g., encapsulation) is skipped and this packet is processed as in a non-LISP network. Otherwise, EID-RLOC mapping information is searched from LISP cache and LISP database on LISP-MN node. 
+Within the LISP-MN node, when the upper layer of IP protocol calls the \emph{Send()} method of \emph{Ipv4L3Protcol}, a packet comes down to IP layer. The \emph{Send()} method is adapted so that it first verifies whether the \emph{LispOverIp} object is present. If yes, some checks are then conducted to determine that this packet should be processed by \emph{LispOutput()} (to encapsulate the packets) or by conventional packet transmission routine. For example, if both source and destination IP address of this packet belong to the same network, the LISP-related process (e.g., encapsulation) is skipped and this packet is processed as in a non-LISP network. Otherwise, EID-RLOC mapping information is searched from LISP cache and LISP database on LISP-MN node. 
 
 After encapsulation and forwarding, the considered packet is forwarded to $xTR_1$. % This procedure is also illustrated in Fig.~\ref{fig:ns3-lisp-data-plane}. 
 Low layer invokes the \emph{Receive()} method of \emph{Ipv4L3Protocol} to pass this packet to IP layer. Since this packet is destinated to a remote CN instead of itself, this packet is processed by patched \emph{IpForward()} method. % , \emph{IpForward} method of \emph{Ipv4L3Protocol} is called. 
@@ -123,9 +127,9 @@ To support LISP-MN feature, \emph{LispEtrItrApplication} also communicates with 
 
 \subsubsection{Implementation of MR and MS}
 A node that runs a \emph{MapServer} application is the MS in a LISP-supported network. This class has a smart pointer pointing to a LISP database (i.e.~\emph{MapTables}) to store the all EID-RLOC mapping information. This application is always listening to UDP port 4342. Once reception of Map-Register message, it retrieves the EID-RLOC mapping inside, inserts the latter into LISP database and sends a Map-Notify message as response if necessary. %\yue{Because only a certain flag of LISP header is set as 1, a Map-Notify message is sent as a response to Map-Register message. Otherwise, no map-notify is sent. This is defied by RFC 6830.}
-Each time MS receives a Map-Request message, it looks up the required EID within its database. If the EID-RLOC mapping is found, map server forwards this request to the corresponding xTR otherwise sends a Negative Map-Reply message to the querying xTR. It is worth to indicating that class \emph{MapServer} is actually an abstract base class. The real functionalities are implemented by its subclasses, which in our implementation is \emph{MapServerDdt}. This design allows the researchers to easily integrate and test their own implementations of MS. In current implementation, the role of MR is to receive the Map-Request message from xTR and forward it to the MS.
+Each time MS receives a Map-Request message, it looks up the required EID within its database. If the EID-RLOC mapping is found, map server forwards this request to the corresponding xTR otherwise sends a Negative Map-Reply message to the querying xTR. It is worth to indicating that class \emph{MapServer} is actually an abstract base class. The real functionalities are implemented by its subclasses, which is \emph{MapServerDdt} in our implementation. This design allows the researchers to easily integrate and test their own implementations of MS. In current implementation, the role of MR is to receive the Map-Request message from xTR and forward it to the MS.
 
-\subsection{Modification of DHCP client to support LISP-MN}
+\subsection{Modification of DHCP client to support LISP mobility}
 \label{subsec:DHCP}
 %\begin{itemize}
 %    \item LISP-MN, in case of IPv4, need the intervention of DHCP procedure
