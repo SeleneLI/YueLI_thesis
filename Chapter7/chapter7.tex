@@ -13,7 +13,7 @@
 \fi
 
 %-< ABSTRACT >--------------------------------------------------------------------
-The \emph{Locator/Identifier Separation Protocol} (LISP) reconstructing the current IP addressing space brings the benefits to the mobility. LISP Mobile Node (LISP-MN) is based on the basic LISP functionality to provide mobility across networks. Thus, LISP can be implemented either on the border routers or directly on the end hosts to manage mobility. However, there are no experimental results comparing the advantages and disadvantages of each solution. Assessing the LISP mobility performance needs the testbeds or the simulators. The basic LISP architecture is deployed on LISP Beta Network and LISP-Lab platform to offer the researchers a realistic experimental environment, but both do not support LISP-MN. Moreover, since the simulators can help researchers quickly verify the proposals and test new features, we plan to implement a LISP simulator with the mobility extensions.
+The \emph{Locator/Identifier Separation Protocol} (LISP), due to its map-and-encap approach, can bring benefits to mobility. LISP Mobile Node (LISP-MN) is based on the basic LISP functionality to provide mobility across networks. Thus, LISP can be implemented either on the border routers or directly on the end hosts to manage mobility. However, there are no experimental results comparing the advantages and disadvantages of each solution. Assessing the LISP mobility performance needs the testbeds or the simulators. The basic LISP architecture is deployed on LISP Beta Network and LISP-Lab platform to offer the researchers a realistic experimental environment, but both do not support LISP-MN. Moreover, since the simulators can help researchers quickly verify the proposals and test new features, we implemented mobility extensions in a LISP simulator.
 % Some simulation models with LISP extensions are implemented on various simulators, but are not open source. Fortunately, there is an open source project implementing the fundamental LISP on ns-3 in 2016. Providing a free and flexible LISP simulator so to help researchers quickly test new LISP mobility behaviors motivates our work. 
 This chapter introduces the implementation of LISP mobility extensions under ns-3.27 leveraging on an open source basic LISP simulator. In addition, this chapter analyzes the different LISP mobility scenarios from the respects of handover delay and overhead of LISP Control Plane. It describes the characteristics of each scenario. % It also provides the evaluation results in mobility scenario to validate the model and shows when the current proposal of LISP-MN is behind a LISP-site has a very high delay during the handover procedure.
 
@@ -48,7 +48,7 @@ By leveraging the source code of Agbodjan, we implement an open source LISP simu
 \label{sec:ns3_lispmn}
 Our implementation respects LISP RFC 6830~\cite{rfc6830} and LISP mobility standards~\cite{meyer2016lisp}. As a design choice, we implement LISP and LISP mobility functionalities by modifying and extending two already existing modules of ns-3:~\emph{internet} and \emph{internet-apps}, instead of by creating a new independent module. The justification behind this design is that LISP protocol and legacy Internet module have an interdependent relationship: an IP layer packet is processed by LISP and then passed to IP protocol again. However, this kind mutually dependent relationship between modules is not supported by ns-3. Our implementation consists of two parts: LISP Data Plane and LISP Control Plane. The communication between LISP Data and Control Plane is achieved via a dedicated socket (i.e. \emph{LispMappingSocket}) that inherits from ns-3 \emph{Socket} class. The Data Plane implementation is in "kernel space" (i.e. ns-3's \emph{TCP/IP stack}) and Control Plane is implemented in "user space" (i.e. ns-3 \emph{Application}). Such a design is inspired by that of OpenLISP~\cite{saucez2009openlisp}.  
 
-The UML diagram of proposed LISP and LISP mobility implementation is illustrated Fig.~\ref{LISP_UML}. The darker blocks are classes already in ns-3, while the white blocks refer to the classes that Agbodjan~\cite{lionel2016} added into ns-3. It should be noted that our implementation keeps the same class names used in the Agbodjan's implementation. Except for the class~\emph{Header}, we rewrite the contents of all his classes to support LISP mobility, especially for the  class~\emph{LispEtrItrApplication},~\emph{LispOverIpv4Impl}, and~\emph{BasicMapTables}. % \yue{Add one sentence to differentiate our work compared with Lionel's work.} 
+The UML diagram of proposed LISP and LISP mobility implementation is illustrated Fig.~\ref{LISP_UML}. The darker blocks are classes already in ns-3, while the white blocks refer to the classes that Agbodjan~\cite{lionel2016} added into ns-3. It should be noted that our implementation keeps the same class names used in the Agbodjan's implementation. Except for the class~\emph{Header}, we rewrote the contents of all his classes to support LISP mobility, especially for the  class~\emph{LispEtrItrApplication},~\emph{LispOverIpv4Impl}, and~\emph{BasicMapTables}. % \yue{Add one sentence to differentiate our work compared with Lionel's work.} 
 This work currently only supports IPv4 at time of this writing. The IPv6 support (i.e. the implementation related to IPv6 such as \emph{LispOverIpv6Impl}) is still in process. In addition, the authentication procedure involved in LISP is not considered in our implementation.% \yue{This figure should be revised. For example, LispHeader should be renamed as LispDataPlaneHeader. MapTable should contains a list of MapEntry.}
 %-< FIGURE >--------------------------------------------------------------------
 \begin{figure*}[!t]
@@ -93,7 +93,7 @@ the received packet is decapsulated twice and forwarded. Thus, the example invol
 Within the LISP-MN node, when the upper layer of IP protocol calls the \emph{Send()} method of \emph{Ipv4L3Protcol}, a packet comes down to IP layer. The \emph{Send()} method is adapted so that it first verifies whether the \emph{LispOverIp} object is present. If yes, some checks are then conducted to determine that this packet should be processed by \emph{LispOutput()} (to encapsulate the packets) or by conventional packet transmission routine. For example, if both source and destination IP address of this packet belong to the same network, the LISP-related process (e.g., encapsulation) is skipped and this packet is processed as in a non-LISP network. Otherwise, EID-RLOC mapping information is searched from LISP cache and LISP database on LISP-MN node. 
 
 After encapsulation and forwarding, the considered packet is forwarded to $xTR_1$. % This procedure is also illustrated in Fig.~\ref{fig:ns3-lisp-data-plane}. 
-Low layer invokes the \emph{Receive()} method of \emph{Ipv4L3Protocol} to pass this packet to IP layer. Since this packet is destinated to a remote CN instead of itself, this packet is processed by patched \emph{IpForward()} method. % , \emph{IpForward} method of \emph{Ipv4L3Protocol} is called. 
+Low layer invokes the \emph{Receive()} method of \emph{Ipv4L3Protocol} to pass this packet to IP layer. Since this packet is destinated to a remote CN instead of itself, this packet is processed by the patched \emph{IpForward()} method. % , \emph{IpForward} method of \emph{Ipv4L3Protocol} is called. 
 With this method, LISP encapsulation is verified. \emph{LispOverIp} looks for the source RLOC (RLOC of $xTR_1$) and destination RLOC (RLOC of $xTR_3$) for the outer IP header building. Once this step is done, \emph{Ipv4L3Protocol}'s \emph{Send()} method transmits these encapsulated packet to MAC layer for transmission.
 
 When this packet arrives at $xTR_3$ which servers CN, $xTR_3$ finds that the destination of this packet is the node itself, the packet is processed by \emph{LocalDelivery()} method in \emph{Ipv4L3Protocol}. Before passing to transport layer, \emph{LocalDelivery} checks if the packet should be decapsulated. If yes, it is passed to \emph{LispInput()} method, in which the packet is decapsulated and re-injected into the IP stack. That is to say, \emph{Receive()} method is called again after decapsulation operation. If the packet still has LISP header, the aforementioned procedure will repeated until it has no need to be decapsulated. Finally, the packet with source address of LISP-MN and destination address of CN is forwarded to CN.
@@ -201,7 +201,7 @@ According to the three following scenarios, the handover delay and overhead cons
 	\centering
 	\caption{Symbols for numerical analysis}
 	\label{Symbols_numerical_analysis}{
-		% \resizebox{0.9\textwidth}{!}{%
+		\resizebox{0.6\textwidth}{!}{%
 		\begin{tabular}{@{}|c|c|@{}}
 			\hline\hline
 			Symbols & Explanations   \\ \hline
@@ -218,7 +218,7 @@ According to the three following scenarios, the handover delay and overhead cons
 			$T_{A-B}$ &  Delay of packet transmission between A and B     	\\  \hline
 			$T_{timeout_SMR}$ &  Timeout of SMR \\  \hline  \hline    
 		\end{tabular}
-	}
+	}}
 \end{table}
 %-< END TABLE >-----------------------------------------------------------------
 
@@ -286,7 +286,7 @@ The advantages of this scenario, i.e., LISP-MN in non-LISP-Site, are:
 \begin{inparaenum}[1)]
 	\item it is able to achieve handover through different subnets;
 	\item the numerical analysis indicates that the overall handover delay is small;
-	\item so to the overall overhead. Compared to the other two scenarios, which will be described in details in the following sections, the mobility in this scenario does not cause lots of traffic in LISP Control Plane.
+	\item so to the overall overhead. Compared to the other two scenarios, which will be described in details in the following sections, the mobility of this scenario does not cause lots of traffic in LISP Control Plane.
 \end{inparaenum}
 However, since the routers are still the normal routers in this scenario, it cannot help to reduce the BGP routing table size, which is the initial purpose to motivate LISP. Moreover, each LISP-MN needs a permanent IP address as its EID, which increases the burden of IPv4 address allocation. Each permanent EID and its LRLOC needs register to the mapping system, which also increases the size of LISP mapping table.
 
@@ -344,7 +344,7 @@ Since the SMR-invoked Map-Request is not sent to the mapping system, there is no
 However, in this scenario, as $xTR_1$ is no longer in charge of MN, how long it stores the CNs for MN in its cache is an important point to discuss. If the expired time is set too long, it wastes the source of $xTR_1$ and is not necessary. % Whereas if the time is too short, there is the risk that remote xTRs of CNs like $xTR_3$ in our scenario, do not have enough time to request the new mapping information. Thus, an optimal value of timeout that offers an appropriate tradeoff between saving the sources and effectively updating the new mapping information of remote remains an open question.
 Thus, it still remains as an open issue to seek for an optimal value of timeout that offers an appropriate tradeoff between resources saving and effectively providing the new mapping information.
 
-Same to the first scenario that directly responding to the source locator of SMR has 1 signaling less than the one requesting to the mapping system first. Thus, the overall handover overhead in this case is 6.
+Similarly to the first scenario, directly responding to the source locator of SMR has 1 signaling message less than the one requesting to the mapping system first. Thus, the overall handover overhead in this case is 6.
 %\begin{eqnarray}
 %C_{overall} &=& C_{Register} + 2C_{Notify} + C_{SMR} + C_{Request_{SMR}} + C_{Reply} \nonumber \\
 %&=& C_{Register} + 2C_{Notify} + C_{SMR} + C_{Request} + C_{Reply} \nonumber \\

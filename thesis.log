@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  28 FEB 2018 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  28 FEB 2018 19:39
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1764,11 +1764,17 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 ]
 (./Abstract/abstract.tex [2
 
-]) [3
+]
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 16.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)) [3
 
 ] [4
 
-] (./thesis.toc
+]
+(./thesis.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
  [5
@@ -1777,8 +1783,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
- [8]
-(./thesis.lof [9
+ [8] (./thesis.lof [9
 
 ] [10])
 \tf@lof=\write9
@@ -1789,7 +1794,6 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 ] (./thesis.lot)
 \tf@lot=\write10
 \openout10 = `thesis.lot'.
-
 
 No file thesis.acr.
 [13] [14
@@ -1815,13 +1819,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [4]
 File: Chapter1/Pics/structure_thesis.eps Graphic file (type eps)
 
-<Chapter1/Pics/structure_thesis.eps>
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 93.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [5])
-(./Chapter2/chapter2.tex [6]
+<Chapter1/Pics/structure_thesis.eps> [5]) (./Chapter2/chapter2.tex [6]
 Chapter 2.
 [7
 
@@ -1886,7 +1884,14 @@ File: Chapter3/Pics/LISP_Beta_Network_Topology.eps Graphic file (type eps)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-[29] [30] [31] [32] [33] [34]
+[29]
+Underfull \vbox (badness 2359) has occurred while \output is active []
+
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+[32] [33] [34]
 Underfull \vbox (badness 2126) has occurred while \output is active []
 
  [35]
@@ -2059,9 +2064,12 @@ aphic file (type eps)
 Underfull \vbox (badness 1983) has occurred while \output is active []
 
  [85]
-[86]
+Underfull \vbox (badness 1237) has occurred while \output is active []
+
+ [86]
 File: Chapter6/Pics/v6/CDF_avg(RTT)_median_4_20.eps Graphic file (type eps)
- <Chapter6/Pics/v6/CDF_avg(RTT)_median_4_20.eps> [87]
+
+<Chapter6/Pics/v6/CDF_avg(RTT)_median_4_20.eps> [87]
 File: Chapter6/Pics/v6/Relative_median_avg(RTT)_LISP-Lab-FranceIX.eps Graphic f
 ile (type eps)
 
@@ -2149,7 +2157,13 @@ File: Chapter7/Pics/LISP_mobility_archi.eps Graphic file (type eps)
 File: Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps Graphic file (type 
 eps)
 
-<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [106] [107] [108]
+<Chapter7/Pics/Mobility_LISPMN_schema_SMR_simplify.eps> [106]
+Underfull \vbox (badness 7722) has occurred while \output is active []
+
+ [107]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [108]
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
 
@@ -2245,12 +2259,12 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31682 strings out of 493015
- 554392 string characters out of 6133377
- 735015 words of memory out of 5000000
- 34679 multiletter control sequences out of 15000+600000
+ 31684 strings out of 493015
+ 554458 string characters out of 6133377
+ 735018 words of memory out of 5000000
+ 34681 multiletter control sequences out of 15000+600000
  54546 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,92p,10383b,13469s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,92p,10383b,13469s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (148 pages, 891264 bytes).
+Output written on thesis.dvi (148 pages, 891408 bytes).
