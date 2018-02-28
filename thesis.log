@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  26 FEB 2018 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.9.19)  28 FEB 2018 17:30
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1922,34 +1922,34 @@ File: Chapter4/Pics/cdf_stability_duration.eps Graphic file (type eps)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [47]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
+[48]
 File: Chapter4/Pics/cdf_dissmilarity.eps Graphic file (type eps)
+ <Chapter4/Pics/cdf_dissmilarity.eps> [49]
+Underfull \vbox (badness 2582) has occurred while \output is active []
 
-<Chapter4/Pics/cdf_dissmilarity.eps> [49] [50]
+ [50]
 File: Chapter4/Pics/Percentage_consistency_5VP_MR.eps Graphic file (type eps)
 
 <Chapter4/Pics/Percentage_consistency_5VP_MR.eps> [51]
 File: Chapter4/Pics/cdf_incons_occur_MR.eps Graphic file (type eps)
 
-<Chapter4/Pics/cdf_incons_occur_MR.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [52]
-Underfull \vbox (badness 1571) has occurred while \output is active []
-
- [53]
+<Chapter4/Pics/cdf_incons_occur_MR.eps> [52] [53]
 File: Chapter4/Pics/Percentage_consistency_13MR_VP.eps Graphic file (type eps)
 
-<Chapter4/Pics/Percentage_consistency_13MR_VP.eps> [54]
+<Chapter4/Pics/Percentage_consistency_13MR_VP.eps>
 File: Chapter4/Pics/cdf_incons_occur_VP.eps Graphic file (type eps)
 
 <Chapter4/Pics/cdf_incons_occur_VP.eps>
+Underfull \vbox (badness 1210) has occurred while \output is active []
+
+ [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
-[56]) (./Chapter5/chapter5.tex [57] [58
+Underfull \vbox (badness 1303) has occurred while \output is active []
+
+ [56])
+(./Chapter5/chapter5.tex [57] [58
 
 ]
 Chapter 5.
@@ -2153,10 +2153,7 @@ eps)
 File: Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps Graphic file (type eps
 )
 
-<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps>
-Underfull \vbox (badness 5077) has occurred while \output is active []
-
- [109]
+<Chapter7/Pics/Mobility_xTR_schema_SMR_simplify.eps> [109]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [110]
@@ -2180,7 +2177,7 @@ File: Chapter7/Pics/LISP_handover_delay_Bar.eps Graphic file (type eps)
 File: Chapter7/Pics/LISP_handover_overhead_Bar.eps Graphic file (type eps)
 
 <Chapter7/Pics/LISP_handover_overhead_Bar.eps>
-Overfull \hbox (2.28003pt too wide) in paragraph at lines 456--466
+Overfull \hbox (2.28003pt too wide) in paragraph at lines 457--467
 [][]$[]$ $[]$ 
  []
 
@@ -2250,10 +2247,10 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  31682 strings out of 493015
  554392 string characters out of 6133377
- 734978 words of memory out of 5000000
+ 735015 words of memory out of 5000000
  34679 multiletter control sequences out of 15000+600000
  54546 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,92p,10383b,13469s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (148 pages, 890628 bytes).
+Output written on thesis.dvi (148 pages, 891264 bytes).

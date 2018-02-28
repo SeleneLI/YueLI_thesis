@@ -57,22 +57,22 @@ Warning--empty year in rosenbergsip
 Warning--empty year in rfc7835
 You've used 118 entries,
             2118 wiz_defined-function locations,
-            1033 strings with 21311 characters,
-and the built_in function-call counts, 35294 in all, are:
-= -- 3389
+            1034 strings with 21303 characters,
+and the built_in function-call counts, 35312 in all, are:
+= -- 3392
 > -- 1773
-< -- 33
+< -- 32
 + -- 724
 - -- 596
-* -- 2244
-:= -- 5688
+* -- 2250
+:= -- 5691
 add.period$ -- 343
 call.type$ -- 118
 change.case$ -- 659
 chr.to.int$ -- 0
 cite$ -- 164
-duplicate$ -- 1350
-empty$ -- 2815
+duplicate$ -- 1347
+empty$ -- 2818
 format.name$ -- 596
 if$ -- 7495
 int.to.chr$ -- 0
@@ -80,20 +80,20 @@ int.to.str$ -- 118
 missing$ -- 69
 newline$ -- 563
 num.names$ -- 178
-pop$ -- 946
+pop$ -- 944
 preamble$ -- 1
 purify$ -- 531
 quote$ -- 0
-skip$ -- 1000
+skip$ -- 997
 stack$ -- 0
-substring$ -- 1494
-swap$ -- 309
-text.length$ -- 33
+substring$ -- 1511
+swap$ -- 306
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 472
 warning$ -- 46
-while$ -- 269
+while$ -- 268
 width$ -- 121
 write$ -- 1157
 (There were 49 warnings)

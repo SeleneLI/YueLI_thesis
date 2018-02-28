@@ -397,7 +397,7 @@ Y.~Li, A.~Abouseif, L.~Iannone, and D.~Saucez.
   volume~1, pages 178--186. IEEE, 2017.
 
 \bibitem{li2016performance}
-Y.~Li and et~al.
+Y.~Li and L.~Iannone.
 \newblock Performance evaluation of locator/identifier separation protocol
   through ripe atlas.
 \newblock In {\em Proceedings of the 2016 conference on ACM SIGCOMM 2016
@@ -413,7 +413,7 @@ Y.~Li and L.~Iannone.
 Y.~Li and L.~Iannone.
 \newblock Assessing locator/identifier separation protocol interworking
   performance through {RIPE Atlas}.
-\newblock {\em Computer Networks}, pages~--, 2017.
+\newblock {\em Computer Networks}, 132:118--128, 2017.
 
 \bibitem{yue2016stability}
 Y.~Li, D.~Saucez, L.~Iannone, and B.~Donnet.

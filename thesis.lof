@@ -16,7 +16,7 @@
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Illustration of LISP transmission between IPv4 and IPv6\relax }}{24}{figure.caption.21}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces LISP in OpenDaylight (source:\nobreakspace {}\cite {LISP_ODLSummit_2014})\relax }}{25}{figure.caption.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces International LISP Beta Network High Level Topology \IeC {\textendash } October 2017\nobreakspace {}\cite {lispbetaarchi}\relax }}{28}{figure.caption.23}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces International LISP Beta Network MDS elements and PxTRs \IeC {\textendash } October 2017\nobreakspace {}\cite {lispbetaarchi}\relax }}{28}{figure.caption.23}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of LISP troubleshooting\relax }}{39}{figure.caption.31}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Overall percentage of stability observed at five different VPs.\relax }}{46}{figure.caption.33}
@@ -56,10 +56,10 @@
 \contentsline {figure}{\numberline {7.2}{\ignorespaces State transition diagram of xTR application\relax }}{102}{figure.caption.78}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces LISP-compatible DHCP client state transition diagram\relax }}{104}{figure.caption.80}
 \contentsline {figure}{\numberline {7.4}{\ignorespaces General scenario for LISP mobility architecture\relax }}{106}{figure.caption.81}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{107}{figure.caption.83}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{110}{figure.caption.84}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)\relax }}{113}{figure.caption.85}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)\relax }}{114}{figure.caption.86}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Schema for LISP-MN mobility in non-LISP-Site (SMR-invoked Map-Request is sent to the mapping system)\relax }}{107}{figure.caption.83}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Schema for MN mobility in LISP-Site (SMR-invoked Map-Request is sent to the mapping system)\relax }}{110}{figure.caption.84}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Schema for LISP-MN mobility in LISP-Site (SMR-invoked Map-Request is sent to the mapping system)\relax }}{113}{figure.caption.85}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Schema for LISP-MN mobility in LISP-Site (SMR-invoked Map-Request is sent to the source of SMR)\relax }}{114}{figure.caption.86}
 \contentsline {figure}{\numberline {7.9}{\ignorespaces The handover delay related to LISP (left) and the handover overhead (right) grouped by three LISP mobility scenarios.\relax }}{115}{figure.caption.87}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

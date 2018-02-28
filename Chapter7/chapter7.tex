@@ -233,7 +233,7 @@ LISP-MN first has a DHCP procedure when MN moves to $Router_2$, so that the late
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Pics/Mobility_LISPMN_schema_SMR_simplify}
-	\caption{Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)}
+	\caption{Schema for LISP-MN mobility in non-LISP-Site (SMR-invoked Map-Request is sent to the mapping system)}
 	\label{sim_schema_LISPMN}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
@@ -286,7 +286,7 @@ The advantages of this scenario, i.e., LISP-MN in non-LISP-Site, are:
 \begin{inparaenum}[1)]
 	\item it is able to achieve handover through different subnets;
 	\item the numerical analysis indicates that the overall handover delay is small;
-	\item so to the overall overhead. The mobility does not cause lots of traffic in LISP Control Plane.
+	\item so to the overall overhead. Compared to the other two scenarios, which will be described in details in the following sections, the mobility in this scenario does not cause lots of traffic in LISP Control Plane.
 \end{inparaenum}
 However, since the routers are still the normal routers in this scenario, it cannot help to reduce the BGP routing table size, which is the initial purpose to motivate LISP. Moreover, each LISP-MN needs a permanent IP address as its EID, which increases the burden of IPv4 address allocation. Each permanent EID and its LRLOC needs register to the mapping system, which also increases the size of LISP mapping table.
 
@@ -299,7 +299,7 @@ Similar to the first scenario, the DHCP procedure is necessary so to trigger the
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Pics/Mobility_xTR_schema_SMR_simplify}
-	\caption{Schema for LISP-MN mobility (SMR-invoked Map-Request is sent to the mapping system)}
+	\caption{Schema for MN mobility in LISP-Site (SMR-invoked Map-Request is sent to the mapping system)}
 	\label{sim_schema_xTR}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
@@ -341,7 +341,8 @@ The numerical result is:
 &=& 10 ms \nonumber
 \end{eqnarray}
 Since the SMR-invoked Map-Request is not sent to the mapping system, there is no resolving delay. %, and the overall handover delay is much smaller than the former solution. 
-However, in this scenario, as $xTR_1$ is no longer in charge of MN, how long it stores the CNs for MN in its cache is an important point to discuss. If the expired time is set too long, it wastes the source of $xTR_1$ and is not necessary. Whereas if the time is too short, there is the risk that remote xTRs of CNs like $xTR_3$ in our scenario, do not have enough time to request the new mapping information.
+However, in this scenario, as $xTR_1$ is no longer in charge of MN, how long it stores the CNs for MN in its cache is an important point to discuss. If the expired time is set too long, it wastes the source of $xTR_1$ and is not necessary. % Whereas if the time is too short, there is the risk that remote xTRs of CNs like $xTR_3$ in our scenario, do not have enough time to request the new mapping information. Thus, an optimal value of timeout that offers an appropriate tradeoff between saving the sources and effectively updating the new mapping information of remote remains an open question.
+Thus, it still remains as an open issue to seek for an optimal value of timeout that offers an appropriate tradeoff between resources saving and effectively providing the new mapping information.
 
 Same to the first scenario that directly responding to the source locator of SMR has 1 signaling less than the one requesting to the mapping system first. Thus, the overall handover overhead in this case is 6.
 %\begin{eqnarray}
@@ -379,7 +380,7 @@ The numerical result is as follows:
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Pics/Mobility_double_encap_schema_SMR_askMDS_simplify}
-	\caption{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the mapping system)}
+	\caption{Schema for LISP-MN mobility in LISP-Site (SMR-invoked Map-Request is sent to the mapping system)}
 	\label{Mobility_double_encap_schema_SMR_askMDS_simplify}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
@@ -396,7 +397,7 @@ Differently from the first two scenarios, when $xTR_3$ directly sends the SMR-in
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Pics/Mobility_double_encap_schema_SMR_askxTR_simplify}
-	\caption{Schema for LISP-MN in LISP-Site mobility (SMR-invoked Map-Request is sent to the source of SMR)}
+	\caption{Schema for LISP-MN mobility in LISP-Site (SMR-invoked Map-Request is sent to the source of SMR)}
 	\label{Mobility_double_encap_schema_SMR_askxTR_simplify}
 \end{figure}
 %-< END FIGURE >--------------------------------------------------------------------
