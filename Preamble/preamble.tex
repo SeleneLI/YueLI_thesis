@@ -38,7 +38,7 @@
 
 % ************************* Algorithms and Pseudocode **************************
 
-%\usepackage{algpseudocode}
+%\ackage{algpseudocode}
 
 
 % ********************Captions and Hyperreferencing / URL **********************
@@ -89,10 +89,12 @@
 % *********************************** Using glossaries *********************************
 % Load the package
 \usepackage[toc,acronym, nonumberlist]{glossaries}
+\usepackage{glossaries}
 % Generate the glossary
-\makeglossaries
-% \makenoidxglossaries % To support list of glossary sorting
+%\makeglossaries
+\makenoidxglossaries % To support list of glossary sorting
 \setacronymstyle{long-short}
+
 \newacronym{lisp}{LISP}{Locator/Identifier Separation Protocol}
 \newacronym{eid}{EID}{Endpoint IDentifier}
 \newacronym{rloc}{RLOC}{Routing LOCator}

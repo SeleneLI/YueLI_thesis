@@ -1,6 +1,7 @@
 \thispagestyle {empty}
 \contentsline {chapter}{List of figures}{ix}{chapter*.3}
 \contentsline {chapter}{List of tables}{xiii}{chapter*.4}
+\contentsline {chapter}{Acronyms}{xv}{section*.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivations}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Contributions}{3}{section.1.2}
@@ -9,8 +10,8 @@
 \contentsline {section}{\numberline {2.1}LISP architecture}{7}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}LISP Data Plane}{8}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}LISP Control Plane}{9}{subsection.2.1.2}
-\contentsline {subsubsection}{LISP+ALT}{10}{section*.8}
-\contentsline {subsubsection}{LISP-DDT}{11}{section*.10}
+\contentsline {subsubsection}{LISP+ALT}{10}{section*.10}
+\contentsline {subsubsection}{LISP-DDT}{11}{section*.12}
 \contentsline {subsection}{\numberline {2.1.3}Communication between two LISP-sites}{12}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}Interworking with legency Internet}{14}{section.2.2}
 \contentsline {section}{\numberline {2.3}Mapping cache update mechanisms}{15}{section.2.3}
@@ -37,13 +38,13 @@
 \contentsline {subsection}{\numberline {3.2.4}Monitoring tools shortcomings}{31}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}LISP implementations}{31}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}LISP implementations}{32}{subsection.3.3.1}
-\contentsline {subsubsection}{OpenLISP}{32}{section*.24}
-\contentsline {subsubsection}{Open Overlay Router}{32}{section*.25}
-\contentsline {subsubsection}{PyLisp}{32}{section*.26}
-\contentsline {subsubsection}{jLISP}{32}{section*.27}
-\contentsline {subsubsection}{LISP on OMNet++}{33}{section*.28}
-\contentsline {subsubsection}{Lispers.net}{33}{section*.29}
-\contentsline {subsubsection}{LISP controller in ONOS}{33}{section*.30}
+\contentsline {subsubsection}{OpenLISP}{32}{section*.26}
+\contentsline {subsubsection}{Open Overlay Router}{32}{section*.27}
+\contentsline {subsubsection}{PyLisp}{32}{section*.28}
+\contentsline {subsubsection}{jLISP}{32}{section*.29}
+\contentsline {subsubsection}{LISP on OMNet++}{33}{section*.30}
+\contentsline {subsubsection}{Lispers.net}{33}{section*.31}
+\contentsline {subsubsection}{LISP controller in ONOS}{33}{section*.32}
 \contentsline {subsection}{\numberline {3.3.2}The LISP simulation gap}{34}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}LISP mapping system evaluation}{34}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Current studies}{34}{subsection.3.4.1}
@@ -94,11 +95,11 @@
 \contentsline {section}{\numberline {7.2}Basic LISP implementation on ns-3}{98}{section.7.2}
 \contentsline {section}{\numberline {7.3} LISP mobility extensions on ns-3}{98}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Implementation of LISP Data Plane}{99}{subsection.7.3.1}
-\contentsline {subsubsection}{LISP database and cache}{100}{section*.75}
-\contentsline {subsubsection}{Implementation of LISP encapsulation and decapsulation}{100}{section*.76}
+\contentsline {subsubsection}{LISP database and cache}{100}{section*.77}
+\contentsline {subsubsection}{Implementation of LISP encapsulation and decapsulation}{100}{section*.78}
 \contentsline {subsection}{\numberline {7.3.2}Implementation of LISP Control Plane}{101}{subsection.7.3.2}
-\contentsline {subsubsection}{Implementation of xTR functionalities}{102}{section*.77}
-\contentsline {subsubsection}{Implementation of MR and MS}{103}{section*.79}
+\contentsline {subsubsection}{Implementation of xTR functionalities}{102}{section*.79}
+\contentsline {subsubsection}{Implementation of MR and MS}{103}{section*.81}
 \contentsline {subsection}{\numberline {7.3.3}Modification of DHCP client to support LISP mobility}{103}{subsection.7.3.3}
 \contentsline {subsection}{\numberline {7.3.4}Integration of TUN net interface card}{105}{subsection.7.3.4}
 \contentsline {section}{\numberline {7.4}Theoretical analysis}{105}{section.7.4}
@@ -117,7 +118,7 @@
 \contentsline {subsection}{\numberline {8.2.2}LISP-Views: LISP mapping system monitor}{120}{subsection.8.2.2}
 \contentsline {subsection}{\numberline {8.2.3}Assessing LISP interworking performance through RIPE Atlas}{121}{subsection.8.2.3}
 \contentsline {subsection}{\numberline {8.2.4}Analysis of LISP mobility and ns-3 Implementation}{121}{subsection.8.2.4}
-\contentsline {chapter}{References}{123}{chapter*.88}
+\contentsline {chapter}{References}{123}{chapter*.90}
 \contentsline {chapter}{Appendix \numberline {A}Source Code}{133}{Appendix.a.A}
 \contentsline {section}{\numberline {A.1}LISP Stability and Consistency analyzer}{133}{section.a.A.1}
 \contentsline {section}{\numberline {A.2}LISP-Views}{133}{section.a.A.2}
